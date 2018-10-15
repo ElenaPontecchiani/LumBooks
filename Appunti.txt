@@ -1,0 +1,7 @@
+Per importare un css (e adattarlo allo schermo), posso fare media="opzioni varie lol"
+vedi progetto cavallin home.html linea 16
+
+dividere css per schermo
+
+chiedere al prof per intestazione riusabile
+
