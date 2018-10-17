@@ -1,0 +1,22 @@
+nav{
+    text-align: center;
+    background-color: #303030;
+    color: white;
+    padding-bottom: 0em;
+    padding-top: 0em;
+}
+
+nav span{
+  margin-bottom: 0em;
+  margin-top: 0em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  height: 2em;
+  display: inline-block;
+  border-left: 0.2em solid white;
+}
+
+nav span:last-child{
+  border-right: 0.2em solid white;
+}
