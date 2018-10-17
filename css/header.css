@@ -1,0 +1,32 @@
+header{
+  background-color: white;
+  height: 9em;
+  min-width: 900px;
+  background-color: white;
+  color: #111;
+}
+
+#logo_lumbooks{
+  width: 4em;
+  height: 4em;
+}
+#logo_cart{
+  width: 1em;
+  height: 1em;
+}
+#right_header{
+  position:relative;
+  float: right;
+  display: inline;
+}
+#left_header{
+  float: left;
+}
+#left_header h1,img{
+  display:inline;
+}
+
+#left_header h1{
+  font-size: 3.5em;
+  color: #111;
+}

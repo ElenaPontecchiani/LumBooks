@@ -1,0 +1,21 @@
+@import url("header.css");
+
+*{
+  margin: 0 auto;
+}
+
+body{
+  max-width: 1024px;
+  background-color: #dbf1ff;
+  border: 0.2em solid #aaa;
+  color: #111;
+
+}
+
+
+img{
+  max-width: 1024px;
+}
+a{
+  text-decoration: none;
+}
