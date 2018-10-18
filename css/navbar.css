@@ -1,21 +1,32 @@
-nav{
-    text-align: center;
-    background-color: #303030;
-    color: white;
-    padding-bottom: 0em;
-    padding-top: 0em;
-}
-nav span{
-  margin-bottom: 0em;
-  margin-top: 0em;
-  padding-right: 1em;
-  padding-left: 1em;
-  padding-top: 1em;
-  height: 2em;
-  display: inline-block;
-  border-left: 0.2em solid white;
+nav ul{
+  list-style-type: none;
+  background-color: #ce8500;;
+  color: white;
+  overflow: hidden;
+  padding-left:0;
 }
 
-nav span:last-child{
-  border-right: 0.2em solid white;
+nav li{
+  display: inline;
+  padding: auto;
+  float: left;
 }
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.7em;
+  text-decoration: none;
+}
+
+nav li:hover:not(.active){
+  background-color: #754b00;
+}
+
+/*Per rendere la casella della pagina corrente sempre attiva
+  bisogna fare qualche magicheria in php, per marcare il li
+  della pagina attiva con la classe active*/
+/*.active {
+  background-color: #4CAF50;
+}*/
