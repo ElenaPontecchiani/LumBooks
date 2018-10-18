@@ -20,6 +20,10 @@ nav li a {
   text-decoration: none;
 }
 
+.right{
+  float: right;
+}
+
 nav li:hover:not(.active){
   background-color: #754b00;
 }
