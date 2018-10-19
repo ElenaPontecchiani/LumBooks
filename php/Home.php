@@ -17,6 +17,7 @@
   <?php
     include '../HTML/header.html';
     include '../HTML/navbar.html';
+    include '../HTML/footer.html';
   ?>
 </body>
 </html>
