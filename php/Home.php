@@ -22,8 +22,10 @@
 	?>
 <div class="infobox">
 	<div class="comp">		
-		<h1>Lorem Ipsum</h1>
-		<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+		<h1>Sono veramamente euforico!</h1>
+		<p>	Questa descrizione &egrave; inutile, serve solamente per avere una scusa per mettere la foto
+				della tipa. Anche perch&egrave;, diciamolo, sei cos&igrave; poraccio che i libri gli stampi dai PDF.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
 				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
