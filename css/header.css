@@ -10,7 +10,7 @@ header{
   width: 4em;
   height: 4em;
 }
-#logo_cart{
+/*#logo_cart{
   width: 1em;
   height: 1em;
 }
@@ -18,7 +18,7 @@ header{
   position:relative;
   float: right;
   display: inline;
-}
+}*/
 #left_header{
   float: left;
 }
