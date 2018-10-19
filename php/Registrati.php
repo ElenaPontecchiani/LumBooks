@@ -2,10 +2,10 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-	<title>LumBooks</title>
+	<title>Registrati</title>
 	<link rel="icon" href=""/> <!-- link icona -->
-	<meta name="title" content="LumBooks" />
-	<meta name="description" content="Acquista e vendi libri" /> <!-- da fare -->
+	<meta name="title" content="Registrati" />
+	<meta name="description" content="Pagins di registrazione al sito" /> <!-- da fare -->
 	<meta name="keywords" content="libro, unipd" /> <!-- da fare -->
 	<meta name="language" content="italian it" />
 	<meta name="author" content="" /> <!-- da fare -->

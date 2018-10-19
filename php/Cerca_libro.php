@@ -2,10 +2,10 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-	<title>LumBooks</title>
+	<title>Cerca Libri</title>
 	<link rel="icon" href=""/> <!-- link icona -->
-	<meta name="title" content="LumBooks" />
-	<meta name="description" content="Acquista e vendi libri" /> <!-- da fare -->
+	<meta name="title" content="Cerca Libri" />
+	<meta name="description" content="Pagina per cercare libri" /> <!-- da fare -->
 	<meta name="keywords" content="libro, unipd" /> <!-- da fare -->
 	<meta name="language" content="italian it" />
 	<meta name="author" content="" /> <!-- da fare -->
@@ -22,7 +22,7 @@
 	?>
 <div class="infobox">
 	<div>		
-		<h1>Sono veramamente euforico!</h1>
+		<h1>Cerca un libro</h1>
 		<p>	Questa descrizione &egrave; inutile, serve solamente per avere una scusa per mettere la foto
 				della tipa. Anche perch&egrave;, diciamolo, sei cos&igrave; poraccio che i libri gli stampi dai PDF.
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
