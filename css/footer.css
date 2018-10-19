@@ -6,21 +6,8 @@ footer {
     background-color: white;
     color: black;
     text-align: center;
-<<<<<<< HEAD
-}
-
-.fa {
-    padding: 5px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%;
-=======
     border: 0.2em solid #aaa;
 
->>>>>>> 11d92ee5f7d4910f512731f172ee08f569f1b34b
 }
 
 #footer-social li {
