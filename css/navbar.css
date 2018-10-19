@@ -28,6 +28,15 @@ nav li:hover:not(.active){
   background-color: #754b00;
 }
 
+.active{
+  background-color: black;
+}
+
+.activeR{
+  background-color: black;
+  float: right;
+}
+
 /*Per rendere la casella della pagina corrente sempre attiva
   bisogna fare qualche magicheria in php, per marcare il li
   della pagina attiva con la classe active*/

@@ -17,7 +17,7 @@
 <body>
   <?php
     include '../HTML/header.html';
-    include '../HTML/navbar.html';
+    include '../php/navbar.php';
     include '../HTML/footer.html';
 	?>
 <div class="infobox">
