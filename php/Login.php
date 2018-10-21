@@ -10,7 +10,7 @@
 	<meta name="language" content="italian it" />
 	<meta name="author" content="" /> <!-- da fare -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css" /> <!-- da fare -->
+	<link rel="stylesheet" type="text/css" href="../css/login.css" /> <!-- da fare -->
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
 </head>
@@ -20,13 +20,14 @@
     include '../php/navbar.php';
     include '../HTML/footer.html';
 	?>
-<div class="infobox">
-	<div id="loginBox">
+<div class="">
+	<div id="loginBox" class="centerBox">
 		<form id="loginForm">
       <input type="email" id="loginEmail" placeholder="Email" />
       <br/>
       <input type="password" id="loginPwd" placeholder="Password" />
       <br />
+      <a href="recuperoPwd.php" id="recuperoPwd">password dimenticata?</a>
       <input type="submit" id="loginSubmit" value="Accedi"/>
     </form>
 	</div>

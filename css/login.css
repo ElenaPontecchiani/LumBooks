@@ -1,0 +1,19 @@
+@import url("style.css");
+
+.centerBox{
+  padding: 30px;
+  text-align: center;
+}
+
+#loginForm{
+  display: inline-block;
+  padding: 3.12em;
+}
+
+#loginSubmit{
+  float: right;
+}
+
+#recuperoPwd{
+  font-size: 0.63em;
+}
