@@ -21,18 +21,15 @@
     include '../HTML/footer.html';
 	?>
 <div class="infobox">
-	<div>		
-		<h1>Sono veramamente euforico!</h1>
-		<p>	Questa descrizione &egrave; inutile, serve solamente per avere una scusa per mettere la foto
-				della tipa. Anche perch&egrave;, diciamolo, sei cos&igrave; poraccio che i libri gli stampi dai PDF.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
+	<div id="loginBox">
+		<form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <br/>
+      <input type="password" id="loginPwd" placeholder="Password" />
+      <br />
+      <input type="submit" id="loginSubmit" value="Accedi"/>
+    </form>
 	</div>
-	<img src="../images/student.jpg" id="student"/>
 </div>
 </body>
 </html>
