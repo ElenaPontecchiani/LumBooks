@@ -1,16 +1,16 @@
 @import url("style.css");
 
-.centerBox{
+.outerBox{
   padding: 30px;
   text-align: center;
 }
 
-#loginForm{
+.innerBox{
   display: inline-block;
   padding: 3.12em;
 }
 
-#loginSubmit{
+#loginSubmit, #registerSubmit{
   float: right;
 }
 

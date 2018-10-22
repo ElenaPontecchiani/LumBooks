@@ -10,7 +10,7 @@
 	<meta name="language" content="italian it" />
 	<meta name="author" content="" /> <!-- da fare -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css" /> <!-- da fare -->
+	<link rel="stylesheet" type="text/css" href="../css/login.css" /> <!-- da fare -->
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
 </head>
@@ -20,19 +20,17 @@
     include '../php/navbar.php';
     include '../HTML/footer.html';
 	?>
-<div class="infobox">
-	<div>		
-		<h1>Sono veramamente euforico!</h1>
-		<p>	Questa descrizione &egrave; inutile, serve solamente per avere una scusa per mettere la foto
-				della tipa. Anche perch&egrave;, diciamolo, sei cos&igrave; poraccio che i libri gli stampi dai PDF.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-	</div>
-	<img src="../images/student.jpg" id="student"/>
+  <div id="registerBox" class="outerBox">
+    <form id="registerForm" class="innerBox">
+      <input type="email" id="registerEmail" placeholder="Email" />
+      <br/>
+      <input type="password" id="registerPwd" placeholder="Password" />
+      <br/>
+      <input type="password" id="repeatPwd" placeholder="Ripeti la Password" />
+      <br />
+      <input type="submit" id="registerSubmit" value="Registrati"/>
+    </form>
+  </div>
 </div>
 </body>
 </html>

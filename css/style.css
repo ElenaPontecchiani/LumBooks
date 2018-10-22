@@ -39,3 +39,7 @@ a{
   margin: 1em 2em;
   border: 0.1em solid grey;
 }
+
+.hidden{
+  visibility: hidden;
+}
