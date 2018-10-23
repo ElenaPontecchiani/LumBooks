@@ -23,8 +23,8 @@ Codice_Vendita int (5) primary key,
 Titolo varchar(50) not null,
 Autore varchar(50)not null,
 
-Venditore char (6)not null references Utente(Codice_Identificativo),
-Acquirente char (6) references Utente(Codice_Identificativo),
+Venditore int (6)not null references Utente(Codice_Identificativo),
+Acquirente int (6) references Utente(Codice_Identificativo),
 Prezzo decimal(5,2) not null,
 Data_Aggiunta date not null,
 
@@ -35,7 +35,7 @@ Casa_Editrice varchar(30),
 
 Stato varchar(20) not null,
 Tipo varchar(30) not null,
-Codice_identificativo_Libro char(5)  REFERENCES Libri_Listati(Codice_identificativo)
+Codice_identificativo_Libro int(5)  REFERENCES Libri_Listati(Codice_identificativo)
 );
 ALTER TABLE Libri_In_Vendita AUTO_INCREMENT=10000;
 ALTER TABLE Libri_In_Vendita 
@@ -45,12 +45,12 @@ ADD CONSTRAINT TipoArticolo CHECK (Tipo IN ("Libro","Slide","Appunti","Altro","D
 
 
 CREATE TABLE Libri_Listati(
-Codice_identificativo char (5) primary key,
+Codice_identificativo int (5) primary key,
 Titolo varchar(50) not null,
 Autore varchar(50)not null,
 Casa_Editrice varchar(30)not null,
 
-Venditore char (5)not null references Utente(Matricola),
+Venditore int (5)not null references Utente(Matricola),
 Corso varchar(30) not null
 );
 
