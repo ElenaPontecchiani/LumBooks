@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS Libri_In_Vendita;
 DROP TABLE IF EXISTS Libri_Listati;
 
 CREATE TABLE Utente(
-Codice_identificativo int (6) primary key,
+Codice_identificativo int (6) primary key AUTO_INCREMENT,
 Matricola int (5) not null,
 Nome varchar(30) not null,
 Cognome varchar(50)not null,
@@ -18,7 +18,7 @@ unique (Nome,Cognome,Matricola)
 ALTER TABLE Utente AUTO_INCREMENT=100000;
 
 CREATE TABLE Libri_In_Vendita(
-Codice_Vendita int (5) primary key,
+Codice_Vendita int (5) primary key AUTO_INCREMENT,
 
 Titolo varchar(50) not null,
 Autore varchar(50)not null,
@@ -45,11 +45,10 @@ ADD CONSTRAINT TipoArticolo CHECK (Tipo IN ("Libro","Slide","Appunti","Altro","D
 
 
 CREATE TABLE Libri_Listati(
-Codice_identificativo int (5) primary key,
+Codice_identificativo int (5) primary key AUTO_INCREMENT,
 Titolo varchar(50) not null,
 Autore varchar(50)not null,
 Casa_Editrice varchar(30)not null,
 Corso varchar(30) not null
 );
-
 ALTER TABLE Libri_Listati AUTO_INCREMENT=50000;
