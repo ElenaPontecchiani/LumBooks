@@ -1,18 +1,16 @@
-CREATE SCHEMA LumBooks;
 DROP TABLE IF EXISTS Utente;
-DROP TABLE IF EXISTS Libri_Generali;
+DROP TABLE IF EXISTS Libri_In_Vendita;
 DROP TABLE IF EXISTS Libri_Listati;
-
 
 CREATE TABLE Utente(
 Codice_identificativo int (6) primary key,
-Matricola char (5) not null,
+Matricola int (5) not null,
 Nome varchar(30) not null,
 Cognome varchar(50)not null,
 Sesso char(1) not null,
 Data_di_nascita date not null,
 Username varchar(30)not null unique,
-Pw char(8)not null, /* DA MODIFICARE */
+Pw_Hash varchar(100)not null, 
 Email varchar(50) not null unique,
 
 unique (Nome,Cognome,Matricola)
@@ -26,8 +24,9 @@ Titolo varchar(50) not null,
 Autore varchar(50)not null,
 
 Venditore char (6)not null references Utente(Codice_Identificativo),
-Acquirente char (6)not null references Utente(Codice_Identificativo),
+Acquirente char (6) references Utente(Codice_Identificativo),
 Prezzo decimal(5,2) not null,
+Data_Aggiunta date not null,
 
 ISBN char(13),
 Edizione varchar(20),
@@ -36,7 +35,7 @@ Casa_Editrice varchar(30),
 
 Stato varchar(20) not null,
 Tipo varchar(30) not null,
-Codice_identificativo_Libro char(5)  REFERENCES Libri_Listati(Codice_identificativo);/* gaurda pontez*/
+Codice_identificativo_Libro char(5)  REFERENCES Libri_Listati(Codice_identificativo)
 );
 ALTER TABLE Libri_In_Vendita AUTO_INCREMENT=10000;
 ALTER TABLE Libri_In_Vendita 
