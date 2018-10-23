@@ -25,7 +25,7 @@
       <br/>
       <input type="password" id="loginPwd" placeholder="Password" />
       <br />
-      <a href="recuperoPwd.php" id="recuperoPwd">password dimenticata?</a>
+      <a href="recuperoPwd.php" id="recuperoPwd" >password dimenticata?</a>
       <input type="submit" id="loginSubmit" value="Accedi"/>
     </form>
 	</div>
