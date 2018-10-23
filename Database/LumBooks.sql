@@ -49,8 +49,6 @@ Codice_identificativo int (5) primary key,
 Titolo varchar(50) not null,
 Autore varchar(50)not null,
 Casa_Editrice varchar(30)not null,
-
-Venditore int (5)not null references Utente(Matricola),
 Corso varchar(30) not null
 );
 
