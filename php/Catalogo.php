@@ -23,6 +23,13 @@
 <div class="outerbox">
 	<?php
 		include "phpConnect.php";
+		if(!$result = $connect->query("SELECT * FROM Libri_Listati")){
+			echo "Errore di query";
+			exit();
+		}
+		else{
+			$connect->close();
+		}
 		if($result->num_rows > 0){
 			while($row = $result->fetch_array(MYSQLI_ASSOC)){
 				$str = 	'<dl class="search_item">

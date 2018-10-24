@@ -9,13 +9,6 @@ if($connect->connect_errno){
 	exit();
 }
 mysqli_set_charset($connect,"utf8");
-if(!$result = $connect->query("SELECT * FROM Libri_Listati")){
-	echo "Errore di query";
-	exit();
-}
-else{
-	$connect->close();
-}
 
 ?>
 

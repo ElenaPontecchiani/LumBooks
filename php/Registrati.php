@@ -21,14 +21,31 @@
     include '../HTML/footer.html';
 	?>
   <div id="registerBox" class="outerBox">
-    <form id="registerForm" class="innerBox">
-      <input type="email" id="registerEmail" placeholder="Email" />
+    <form id="registerForm" class="innerBox" action="new_user.php" method="post">
+      <input type="email" name="email" id="registerEmail" placeholder="Email" />
       <br/>
+      <input type="text"  name="matricola" id="matricola" placeholder="Matricola" />
+      <br />
+      <input type="text" name="nome" id="nome" placeholder="Nome" />
+      <br />
+      <input type="text" name="cognome" id="cognome" placeholder="Cognome" />
+      <br />
+      <input type="text" name="user" id="user" placeholder="UserName" />
+      <br />
+      <input list="Sesso" name="sesso" placeholder="Sesso">
+        <datalist id="Sesso">
+          <option value="M">
+          <option value="F">
+          <option value="N">
+        </datalist>
+      <br/>
+      <input type="date" name="nascita" id="birth_date" placeholder="Data di Nascita" />
+      <br />
       <input type="password" id="registerPwd" placeholder="Password" />
       <br/>
-      <input type="password" id="repeatPwd" placeholder="Ripeti la Password" />
+      <input type="password" name="password" id="repeatPwd" placeholder="Ripeti la Password" />
       <br />
-      <input type="submit" id="registerSubmit" value="Registrati"/>
+      <input type="submit"id="registerSubmit" value="Registrati"/>
     </form>
   </div>
 </div>
