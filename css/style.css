@@ -9,12 +9,12 @@
 }
 
 body{
-  max-width: 1024px;
   background-color: #dbf1ff;
-  border: 0.2em solid #aaa;
-  color: #111;
+  color: #aaa;
 }
-
+div{
+  background-color: white;
+}
 
 img{
   max-width: 1024px;
@@ -53,6 +53,7 @@ a{
 .innerBox{
   display: inline-block;
   padding: 3.12em;
+  text-align: left;
 }
 
 .innerBox input{

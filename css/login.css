@@ -6,6 +6,16 @@
   float: right;
 }
 
-#recuperoPwd{
+#recuperoPsw{
   font-size: 0.63em;
+}
+
+
+
+.formText{
+  border: 0.1em solid #111;
+}
+
+.errorBox{
+  border-color: red;
 }

@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/login.css" /> <!-- da fare -->
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
-  <script type="text/text/javascript" src="../js/registrazione.js"></script>
+  <script type="text/javascript" src="../js/validation.js"></script>
 </head>
 <body>
   <?php
@@ -23,28 +23,42 @@
 	?>
   <div id="registerBox" class="outerBox">
     <form id="registerForm" class="innerBox" action="new_user.php" method="post">
-      <input type="email" name="email" id="registerEmail" placeholder="Email" />
+      <label>Email</label>
       <br/>
-      <input type="text"  name="matricola" id="matricola" placeholder="Matricola" />
+      <input type="email" name="email" id="registerEmail" class="formText" />
+      <br/>
+      <label>Matricola</label>
+      <br/>
+      <input type="text"  name="matricola" id="matricola" class="formText" />
       <br />
-      <input type="text" name="nome" id="nome" placeholder="Nome" />
+      <label>Nome</label>
+      <br/>
+      <input type="text" name="nome" id="nome" class="formText" />
       <br />
-      <input type="text" name="cognome" id="cognome" placeholder="Cognome" />
+      <label>Cognome</label>
+      <br/>
+      <input type="text" name="cognome" id="cognome" class="formText" />
       <br />
-      <input type="text" name="user" id="user" placeholder="UserName" />
+      <label>Nome utente</label>
+      <br/>
+      <input type="text" name="user" id="user" class="formText" />
       <br />
-      <input list="Sesso" name="sesso" placeholder="Sesso">
+      <input list="Sesso" name="sesso" placeholder="Sesso" class="formText">
         <datalist id="Sesso">
           <option value="M">
           <option value="F">
           <option value="N">
         </datalist>
       <br/>
-      <input type="date" name="nascita" id="birth_date" placeholder="Data di Nascita" />
+      <input type="date" name="nascita" id="birth_date" class="formText" />
       <br />
-      <input type="password" id="registerPwd" placeholder="Password" />
+      <label>Password</label>
       <br/>
-      <input type="password" name="password" id="repeatPwd" placeholder="Ripeti la Password" />
+      <input type="password" id="registerPsw" class="formText" />
+      <br/>
+      <label>Ripeti password</label>
+      <br/>
+      <input type="password" name="password" id="repeatPsw" class="formText" />
       <br />
       <input type="submit"id="registerSubmit" value="Registrati"/>
     </form>

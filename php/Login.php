@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/login.css" />
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
+  <script type="text/javascript" src="../js/validation.js"></script>
 </head>
 <body>
   <?php
@@ -21,11 +22,11 @@
 	?>
 	<div id="loginBox" class="outerBox">
 		<form id="loginForm" class="innerBox" action="check_login.php" method="post">
-      <input type="email" id="loginEmail" placeholder="Email" name="mail" />
+      <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
       <br/>
-      <input type="password" id="loginPwd" placeholder="Password" name="password" />
+      <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText"/>
       <br />
-      <a href="recuperoPwd.php" id="recuperoPwd" >password dimenticata?</a>
+      <a href="recuperoPwd.php" id="recuperoPsw">password dimenticata?</a>
       <input type="submit" id="loginSubmit" value="Accedi"/>
     </form>
 	</div>
