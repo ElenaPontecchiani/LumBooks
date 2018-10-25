@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/login.css" /> <!-- da fare -->
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
+  <script type="text/text/javascript" src="../js/registrazione.js"></script>
 </head>
 <body>
   <?php
