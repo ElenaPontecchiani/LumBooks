@@ -20,10 +20,10 @@
     include '../HTML/footer.html';
 	?>
 	<div id="loginBox" class="outerBox">
-		<form id="loginForm" class="innerBox">
-      <input type="email" id="loginEmail" placeholder="Email" />
+		<form id="loginForm" class="innerBox" action="check_login.php" method="post">
+      <input type="email" id="loginEmail" placeholder="Email" name="mail" />
       <br/>
-      <input type="password" id="loginPwd" placeholder="Password" />
+      <input type="password" id="loginPwd" placeholder="Password" name="password" />
       <br />
       <a href="recuperoPwd.php" id="recuperoPwd" >password dimenticata?</a>
       <input type="submit" id="loginSubmit" value="Accedi"/>
