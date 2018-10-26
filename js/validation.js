@@ -45,18 +45,16 @@ $( document ).ready(function() {
   {
   password = $('#inputPws');
   email = $('#loginEmail');
-  $.post('control.php', {
+  $.post('../php/Backend/controller.php', {
     command: 'login',
-    password: password,
-    email: email
+    email: email,
+    password: password
   }, function(data) {
-    var obj = JSON.parse(data);
-    if(obj.password_ok === true){
-      alert("login");
-    }
-    else{
-      alert(obj.error+" >:[");
-    }
-  }
+      var obj = JSON.parse(data);
+      if(obj.password_ok === true)
+        alert("login");
+      else
+        alert(obj.error+" >:[");
+      });
     });
-});
+  });
