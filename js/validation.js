@@ -46,7 +46,7 @@ $( document ).ready(function() {
   password = $('#inputPws');
   email = $('#loginEmail');
   $.post('../php/Backend/controller.php', {
-    command: 'login',
+    command: 'Login',
     email: email,
     password: password
   }, function(data) {
