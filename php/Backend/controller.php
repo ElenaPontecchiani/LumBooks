@@ -5,14 +5,8 @@ require_once("back_end.php");
 if(isset($_POST['command']))
 {
 	switch($_POST['command']) {
-        case 'Login':
-            $pwOk = back_end::checkPassword($_POST['email'],$_POST['password']);
-            if($pwOk){
-                echo "1";
-            }
-            else{
-                echo "0";
-            }
+        case 'Login':        
+                echo json_encode(back_end::checkPassword($_POST['email'],$_POST['password']);
 		break;
 
 		default:
