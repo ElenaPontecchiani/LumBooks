@@ -1,4 +1,4 @@
-window.onload = function(){
+/*window.onload = function(){
     document.getElementById("registerPsw").addEventListener("focusout", pswCheck);
 }
 
@@ -7,8 +7,12 @@ var number=false;
 var length=false;
 
 function pswCheck() {
+$("loginSubmit").click(function(){
+  var letter=false;
+  var number=false;
+  var length=false;
   // Validate lowercase letters
-  psw = document.getElementById("registerPsw");
+  psw = $("inputPsw");
   var lowerCaseLetters = /[a-z]|[A-Z]/g;
   if(psw.value.match(lowerCaseLetters))
     letter=false;
@@ -30,8 +34,29 @@ function pswCheck() {
       length=true;
 
    if((letter | number | length) & psw.value.length>0)
-   	psw.classList.add("errorBox");
+    psw.classList.add("errorBox");
    else
-   	psw.classList.remove("errorBox");
+    psw.classList.remove("errorBox");
 
 }
+*/
+$( document ).ready(function() {
+  $('#loginSubmit').click(function()
+  {
+  password = $('#inputPws');
+  email = $('#loginEmail');
+  $.post('control.php', {
+    command: 'login',
+    password: password,
+    email: email
+  }, function(data) {
+    var obj = JSON.parse(data);
+    if(obj.password_ok === true){
+      alert("login");
+    }
+    else{
+      alert(obj.error+" >:[");
+    }
+  }
+    });
+});
