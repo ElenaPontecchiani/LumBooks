@@ -41,20 +41,21 @@ $("loginSubmit").click(function(){
 }
 */
 $( document ).ready(function() {
-  $('#loginSubmit').click(function()
-  {
-  password = $('#inputPws');
-  email = $('#loginEmail');
-  $.post('../php/Backend/controller.php', {
+
+  $('#loginSubmit').click(function(){
+ password = $('#inputPws').val();
+  email = $('#loginEmail').val();
+  $.post("../php/Backend/controller.php", {
     command: 'Login',
     email: email,
     password: password
   }, function(data) {
-      var obj = JSON.parse(data);
-      if(obj.password_ok === true)
-        alert("login");
-      else
-        alert(obj.error+" >:[");
-      });
-    });
-  });
+  alert("cacca");
+    var obj = JSON.parse(data);
+    if(obj.password_ok === true)
+      alert("login");
+    else
+      alert(obj.error+" >:[");
+  	});
+	});
+});
