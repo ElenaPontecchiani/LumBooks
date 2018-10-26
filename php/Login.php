@@ -17,13 +17,13 @@
 </head>
 <body>
 	<div id="loginBox" class="outerBox">
-		<form id="loginForm" class="innerBox" action="check_login.php">
+		<form id="loginForm" class="innerBox" method="post">
       <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
       <br/>
       <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText"/>
       <br />
       <a href="recuperoPwd.php" id="recuperoPsw">password dimenticata?</a>
-      <button id="loginSubmit" />Login</div>
+      <button id="loginSubmit">Login</button>
     </form>
 	</div>
 </body>
