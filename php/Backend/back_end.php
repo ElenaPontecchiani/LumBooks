@@ -1,4 +1,4 @@
-class back_end{
+class backend{
 
     //Controlla l'hash della password inserita con l'hash nel database.
     //Se corrispondono, ritorno 1, 0 altrimenti.
