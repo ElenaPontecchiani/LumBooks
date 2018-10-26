@@ -50,7 +50,6 @@ $( document ).ready(function() {
     email: email,
     password: password
   }, function(data) {
-  alert("cacca");
     var obj = JSON.parse(data);
     if(obj.password_ok === true)
       alert("login");
