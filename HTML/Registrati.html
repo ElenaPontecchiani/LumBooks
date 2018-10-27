@@ -14,14 +14,13 @@
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
   <script type="text/javascript" src="../js/validation.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/buildStructure.js"></script>
 </head>
 <body>
-  <?php
-    include '../HTML/header.html';
-    include '../php/navbar.php';
-    include '../HTML/footer.html';
-	?>
+  <header></header>
+  <navbar></navbar>
+  
   <div id="registerBox" class="outerBox">
     <form id="registerForm" class="innerBox" action="new_user.php" method="post">
       <label>Email</label>
@@ -65,5 +64,6 @@
     </form>
   </div>
 </div>
+<footer></footer>
 </body>
 </html>

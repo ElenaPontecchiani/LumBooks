@@ -13,15 +13,15 @@
 	<link rel="stylesheet" type="text/css" href="../css/catalogo.css" /> <!-- da fare -->
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/buildStructure.js"></script>
 </head>
 <body>
-  <?php
-    include '../HTML/header.html';
-    include '../php/navbar.php';
-    include '../HTML/footer.html';
-	?>
+  <header></header>
+  <navbar></navbar>
 <div class="outerbox">
-	<?php
+<!--
+  <?php
 		include "phpConnect.php";
 		if(!$result = $connect->query("SELECT * FROM Libri_Listati")){
 			echo "Errore di query";
@@ -43,6 +43,8 @@
 			$result->free();
 		}
 	?>
+-->
 </div>
+<foter></footer>
 </body>
 </html>

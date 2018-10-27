@@ -1,4 +1,4 @@
 <?php
-header('Location: php/Home.php');
+header('Location: HTML/home.html');
 die();
 ?>
