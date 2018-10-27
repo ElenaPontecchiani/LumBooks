@@ -1,32 +1,38 @@
-header{
-  background-color: white;
-  height: 9em;
-  min-width: 900px;
-  background-color: white;
-  color: #111;
+header {
+    background-color: rgb(18,0,92);
+    height: 9em;
+    min-width: 900px;
+    color: rgb(180,180,180);
+    font-family: Arial;
+    font-style: italic;
 }
 
 #logo_lumbooks{
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
 }
-/*#logo_cart{
-  width: 1em;
-  height: 1em;
-}
-#right_header{
-  position:relative;
-  float: right;
-  display: inline;
-}*/
-#left_header{
-  float: left;
+
+#left_header {
+    float: left;
+    background-color: rgb(18, 0,92);
 }
 #left_header h1,img{
   display:inline;
 }
 
-#left_header h1{
-  font-size: 3.5em;
-  color: #111;
-}
+#left_header h1 {
+   font-size: 3.7em;
+   color: white;
+   font-family: Georgia;
+   font-weight: 100;
+   font-style: normal;
+ }
+
+
+#left_header h2 {
+   font-size: 1.6em;
+   color: rgb(180,180,180);
+   font-family: Georgia;
+   font-weight: 100;
+   font-style: italic;
+ }

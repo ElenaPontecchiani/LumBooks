@@ -1,9 +1,11 @@
-nav ul{
-  list-style-type: none;
-  background-color: #ce8500;;
-  color: white;
-  overflow: hidden;
-  padding-left:0;
+nav ul {
+    font-size: 1.1em;
+    font-family: Georgia;
+    list-style-type: none;
+    background-color: rgb(18,0,92);
+    color: white;
+    overflow: hidden;
+    padding-left: 0;
 }
 
 nav li{
@@ -13,11 +15,11 @@ nav li{
 }
 
 nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 0.7em;
-  text-decoration: none;
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 0.7em;
+   text-decoration: none;
 }
 
 .right{
