@@ -3,7 +3,17 @@
       <a href="Home.php">
         <img src="../images/logo.jpg" id="logo_lumbooks" alt="lumbooks logo"/>
         <h1>LumBooks</h1></a>
-        <h2>Non è una truffa!
-      </h2>
+        <h2>Compra e vendi libri in totale sicurezza.</h2>
+    </div>
+    <div id="search-bar">
+    	<form id="search-form" action="search.php" method="get"><!-- da fare -->
+    		<select>
+ 			<option value="all" selected="selected">Tutti i generi</option><!-- da fare -->
+ 			<option value="scientifico">Scientifico</option>
+  			<option value="letterario">Letterario</option>
+			</select>
+    		<input type="text" name="keywords" id="search-text" placeholder="Inserisci il titolo" />
+    		<input type="submit"id="search-submit" value="Cerca"/>
+    	</form>
     </div>
   </header>
