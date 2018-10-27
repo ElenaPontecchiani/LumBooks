@@ -10,7 +10,7 @@ Cognome varchar(50)not null,
 Sesso char(1) not null,
 Data_di_nascita date not null,
 Username varchar(30)not null unique,
-Pw_Hash varchar(100)not null, 
+Pw_Hash varchar(100)not null,
 Email varchar(50) not null unique,
 
 unique (Nome,Cognome,Matricola)
@@ -38,7 +38,7 @@ Tipo varchar(30) not null,
 Codice_identificativo_Libro int(5)  REFERENCES Libri_Listati(Codice_identificativo)
 );
 ALTER TABLE Libri_In_Vendita AUTO_INCREMENT=10000;
-ALTER TABLE Libri_In_Vendita 
+ALTER TABLE Libri_In_Vendita
 ADD CONSTRAINT PrezzoPos CHECK (Prezzo >= 0),
 ADD CONSTRAINT StatoVendita CHECK (Stato IN ("Venduto","In Vendita","Prenotato")),
 ADD CONSTRAINT TipoArticolo CHECK (Tipo IN ("Libro","Slide","Appunti","Altro","Dispense"));
