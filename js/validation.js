@@ -40,22 +40,23 @@ $("loginSubmit").click(function(){
 
 }
 */
-$( document ).ready(function() {
-
-  $('#loginSubmit').click(function(){
-  password = $('#inputPsw').val();
-  email = $('#loginEmail').val();
-  $.post("../php/Backend/controller.php", {
-    command: 'Login',
-    email: email,
-    password: password
-  }, function(data) {
-    console.log(data);
-    var obj = JSON.parse(data);
-    if(obj.password_ok === true)
-      alert("login");
-    else
-      alert(obj.error+" >:[");
+$( document ).ready(function()
+{
+  $('#loginSubmit').click(function()
+  {
+    var password = $('#inputPsw').val();
+    var email = $('#loginEmail').val();
+    $.post("../php/Backend/controller.php", {
+      command: 'Login',
+      email: email,
+      password: password
+    }, function(res) {
+      alert(res);
+      var obj = JSON.parse(res);
+      if(obj.password_ok === true)
+        alert("login");
+      else
+        alert(obj.error+" >:[");
   	});
 	});
 });

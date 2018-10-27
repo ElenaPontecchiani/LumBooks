@@ -1,3 +1,4 @@
+<?php
 class backend{
 
     //Controlla l'hash della password inserita con l'hash nel database.
@@ -13,7 +14,7 @@ class backend{
         }
 
         //includo la connessione al database
-        include "phpConnect.php";
+        include "../phpConnect.php";
 
         if(!$result = $connect->query("SELECT * FROM Utente WHERE Email = '$email'")){
             //errore di query
@@ -22,7 +23,7 @@ class backend{
 				"error" => "Errore di query"
 			);
 		}
-        
+
         $connect->close();
 
 		if($result->num_rows > 0){
@@ -42,3 +43,4 @@ class backend{
     }
 
 }
+?>
