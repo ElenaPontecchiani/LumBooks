@@ -13,13 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="../css/cercalibro.css" /> <!-- da fare -->
   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/buildStructure.js"></script>
 </head>
 <body>
-  <?php
-    include '../HTML/header.html';
-    include '../php/navbar.php';
-    include '../HTML/footer.html';
-	?>
+  <header></header>
+  <navbar></navbar>
+  
 <div class="outerBox">
 	<form id="searchForm" class="innerBox">
     <div class="form-group">
@@ -57,5 +57,6 @@
     <div class="form-group"><input type="submit" value="Cerca" id="submitSrc"/></div>
   </form>
 </div>
+<footer></footer>
 </body>
 </html>
