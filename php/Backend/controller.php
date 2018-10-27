@@ -6,7 +6,10 @@ if(isset($_POST['command']))
 {
 	switch($_POST['command']) {
         case 'Login':
-                echo json_encode(backend::checkPassword($_POST['email'],$_POST['password']));
+            echo json_encode(backend::checkPassword($_POST['email'],$_POST['password']));
+		break;
+		case 'getSession':
+			echo json_encode(backend::getSessionData());
 		break;
 
 		default:

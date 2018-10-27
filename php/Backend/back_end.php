@@ -28,7 +28,18 @@ class backend{
 
 		if($result->num_rows > 0){
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			$dbhash = $row["Pw_Hash"];
+            $dbhash = $row["Pw_Hash"];
+            
+            session_start();
+            $_SESSION['id'] = $row['Codice_identificativo'];
+            $_SESSION['mat'] = $row['Matricola'];
+            $_SESSION['nome'] = $row['Nome'];
+            $_SESSION['cogn'] = $row['Cognome'];
+            $_SESSION['sesso'] = $row['Sesso'];
+            $_SESSION['bdate'] = $row['Data_di_nascita'];
+            $_SESSION['user'] = $row['Username'];
+            $_SESSION['email'] = $row['Email'];
+
             if (password_verify($password, $dbhash)) {
                 return array(
                     "password_ok" => true,
@@ -38,8 +49,34 @@ class backend{
         }
         return array(
             "password_ok" => false,
-            "error" => "password e/o mail sbagliata"
+            "error" => "Password o email sbagliata. Stacca, stacaaahhhh!!!"
         );
+    }
+
+    public static function getSessionData(){
+        if (!isset($_SESSION['id']))
+        return array(
+            "sessionOpen" => false,
+			"id" => "",
+			"matricola" => "",
+			"nome" => "",
+			"cognome" => "",
+			"sesso" => "",
+			"data_nascita" => "",
+            "username" => "",
+            "email" => ""	
+        );
+    return array(
+        "sessionOpen" => true,
+        "id" => $_SESSION['id'],
+        "matricola" => $_SESSION['mat'],
+        "nome" => $_SESSION['nome'],
+        "cognome" => $_SESSION['cogn'],
+        "sesso" => $_SESSION['sesso'],
+        "data_nascita" => $_SESSION['bdate'],
+        "username" => $_SESSION['user'],
+        "email" => $_SESSION['email']	
+    );
     }
 
 }

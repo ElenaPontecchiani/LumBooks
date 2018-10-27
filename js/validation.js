@@ -51,10 +51,9 @@ $( document ).ready(function()
       email: email,
       password: password
     }, function(res) {
-      alert(res);
       var obj = JSON.parse(res);
       if(obj.password_ok === true)
-        alert("login");
+        alert("Login Effettuato con Successo");
       else
         alert(obj.error+" >:[");
   	});
