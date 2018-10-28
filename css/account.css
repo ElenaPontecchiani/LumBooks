@@ -1,0 +1,13 @@
+@import url("style.css");
+
+#submitSrc{
+  text-align: right;
+}
+
+.formText{
+  border: 0.1em solid #111;
+}
+
+#searchForm{
+  text-align: left;
+}
