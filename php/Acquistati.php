@@ -25,16 +25,19 @@
 	<h1>Libri acquistati</h1>
 		<div id="filter-bar">
 		<form method="POST" action=".php?????"> <!-- da fare importante -->
+		<label>Visualizza: </label>
 	    <select name="genere">
  		<option value="all" selected="selected">Tutti i generi</option><!-- da fare -->
  		<option value="scientifico">Scientifico</option>
   		<option value="letterario">Letterario</option>
 		</select>
+		<label>Mostra:</label>
 		<select name="numero">
- 		<option value="all" selected="selected">Tutti</option>
+ 		<option value="all" selected="selected">Tutti i libri</option>
  		<option value="scientifico">Primi 20</option>
   		<option value="letterario">Primi 50</option>
 		</select>
+		<label>Ordina:</label>
 		<select name="ordine">
  		<option value="all" selected="cronologico">Dal più recente</option>
  		<option value="crescente">Dal meno caro</option>
