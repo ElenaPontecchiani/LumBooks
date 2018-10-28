@@ -2,27 +2,25 @@
 <html lang="it">
    <head>
       <meta charset="UTF-8">
-      <title>Libri venduti - LumBooks</title>
+      <title>Libri acquistati - LumBooks</title>
       <link rel="icon" href=""/><!-- link icona -->
-      <meta name="title" content="Libri venduti - LumBooks" />
-      <meta name="description" content="In questa pagina vedi i libri che hai venduto in passato" /><!-- da fare -->
+      <meta name="title" content="Libri acquistati - LumBooks" />
+      <meta name="description" content="In questa pagina vedi i libri che hai comprato in passato" /><!-- da fare -->
       <meta name="keywords" content="libro, unipd" /><!-- da fare -->
       <meta name="language" content="italian it" />
       <meta name="author" content="" /><!-- da fare -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/css" href="../css/libri.css" /><!-- da fare -->
+      <link rel="stylesheet" type="text/css" href="../css/libri.css" /><!-- FARE CSS -->
       <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /><!-- schermi piccoli --> <!-- da fare -->
       <link rel="stylesheet" type="text/css" href="../css/" media="print" /><!-- da fare -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="../js/buildStructure.js"></script>
    </head>
-   <body>
-      <?php
-         include '../HTML/header.html';
-         include '../php/navbar.php';
-         include '../HTML/footer.html';
-         ?>
-
+<body>
+<header></header>
+<navbar></navbar>
 <div class="outerbox">
-	<h1>Libri venduti</h1>
+	<h1>Libri acquistati</h1>
 		<div id="filter-bar">
 		<form method="POST" action=".php?????"> <!-- da fare importante -->
 		<label>Visualizza: </label>
@@ -51,13 +49,13 @@
 	<dt class="item_spec">Prezzo</dt><dd class="spec_desc">Un rene</dd>
 	<dt class="item_spec">Immagine</dt><dd class="spec_desc"><img src="/images/logo.jpg" caption="Immagine del libro phpTITOLO"></dd>
 	<!-- con SCRIPT visualizza altro>
-	<dt class="item_spec">Acquirente</dt><dd class="spec_desc">NomeAcquirente</dd>
+	<dt class="item_spec">Venditore</dt><dd class="spec_desc">NomeVenditore</dd>
 	<dt class="item_spec">Corso</dt><dd class="spec_desc">CORSO</dd>
 	<dt class="item_spec">ISBN</dt><dd class="spec_desc">ISBN</dd>
 	<dt class="item_spec">Casa Editrice</dt><dd class="spec_desc">CASA ED</dd>
 	<dt class="item_spec">Anno pubblicazione</dt><dd class="spec_desc">2025</dd> -->
 	</dl>
 </div>
-
-   </body>
+<footer></footer>
+</body>
 </html>
