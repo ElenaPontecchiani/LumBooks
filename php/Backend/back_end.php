@@ -93,15 +93,15 @@ class backend{
         
         //INZIO COMPOSIZIONE DELLA QUERY"
         $query = "  SELECT Titolo,Autore,Prezzo,ISBN 
-                    FROM Libri_In_vendita WHERE 1=1 ";
+                    FROM Libri_In_Vendita WHERE 1=1 ";
         
         if (!$titolo == "")
-            $query.= " AND Titolo like '%$titolo%' AND ";
+            $query.= " AND Titolo like '%$titolo%'";
         if (!$autore == "")
-            $query.= " AND Autore like '%$autore%' AND ";
+            $query.= " AND Autore like '%$autore%'";
         if (!$isbn == null)
-            $query.= " AND ISBN = $ISBN AND ";
-        $query .= " 1 = 1 ";
+            $query.= " AND ISBN = $isbn";
+        $query .= " AND 1 = 1 ";
 
         if($ordine > 0)//ordine crescente o decrescente
         {
@@ -134,7 +134,10 @@ class backend{
                 array_push($lista_isbn  ,$row['ISBN']);
 			}
             $result->free();
-            
+            print_r($lista_titolo);
+            print_r($lista_autore);
+            print_r($lista_prezzo);
+            print_r($lista_isbn);
             return array("error" => "",
                         "titolo" => $lista_titolo,
                         "autore" => $lista_autore,
@@ -152,4 +155,5 @@ class backend{
     }
 
 }
+
 ?>
