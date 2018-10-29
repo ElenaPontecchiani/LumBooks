@@ -82,8 +82,72 @@ class backend{
 
 
     public static function searchBook($titolo,$autore,$isbn,$corso,$ordine){
+        if( $titolo == "" and
+            $autore == "" and
+            $isbn == null and
+            $corso == "" and
+            $ordine == "")
+            return array("error" => "Richiesta vuota");
+
+        
+        
+        //INZIO COMPOSIZIONE DELLA QUERY"
         $query = "  SELECT Titolo,Autore,Prezzo,ISBN 
-                    WHERE 
+                    FROM Libri_In_vendita WHERE 1=1 ";
+        
+        if (!$titolo == "")
+            $query.= " AND Titolo like '%$titolo%' AND ";
+        if (!$autore == "")
+            $query.= " AND Autore like '%$autore%' AND ";
+        if (!$isbn == null)
+            $query.= " AND ISBN = $ISBN AND ";
+        $query .= " 1 = 1 ";
+
+        if($ordine > 0)//ordine crescente o decrescente
+        {
+            $query .= " ORDER BY Prezzo ";
+            if($ordine == 1) //dal più caro
+                $query .= "DESC";
+        }
+        
+        $query .= ";"
+        //FINE COMPOSIZIONE DELLA QUERY
+
+
+        include "phpConnect.php";
+		if(!$result = $connect->query($query)){
+			return array("error" => "Errore di query");
+			exit();
+		}
+		else{
+			$connect->close();
+        }
+        $lista_titolo = [];
+        $lista_autore = [];
+        $lista_prezzo = [];
+        $lista_isbn   = [];
+		if($result->num_rows > 0){
+			while($row = $result->fetch_array(MYSQLI_ASSOC)){
+				array_push($lista_titolo,$row['Titolo']);
+                array_push($lista_autore,$row['Autore']);
+                array_push($lista_prezzo,$row['Prezzo']);
+                array_push($lista_isbn  ,$row['ISBN']);
+			}
+            $result->free();
+            
+            return array("error" => "",
+                        "titolo" => $lista_titolo,
+                        "autore" => $lista_autore,
+                        "prezzo" => $lista_prezzo,
+                        "isbn"   => $lista_isbn);
+        }
+        else{
+            return array("error" => "Nessun risultato",
+                        "titolo" => $lista_titolo,
+                        "autore" => $lista_autore,
+                        "prezzo" => $lista_prezzo,
+                        "isbn"   => $lista_isbn);
+        }
 
     }
 
