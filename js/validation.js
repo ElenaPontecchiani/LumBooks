@@ -1,45 +1,3 @@
-/*window.onload = function(){
-    document.getElementById("registerPsw").addEventListener("focusout", pswCheck);
-}
-
-var letter=false;
-var number=false;
-var length=false;
-
-function pswCheck() {
-$("loginSubmit").click(function(){
-  var letter=false;
-  var number=false;
-  var length=false;
-  // Validate lowercase letters
-  psw = $("inputPsw");
-  var lowerCaseLetters = /[a-z]|[A-Z]/g;
-  if(psw.value.match(lowerCaseLetters))
-    letter=false;
-   else
-      letter=true;
-
-
-  // Validate numbers
-  var numbers = /[0-9]/g;
-  if(psw.value.match(numbers))
-    number=false;
-   else
-      number=true;
-
-  // Validate length
-  if(psw.value.length >= 4)
-    length=false;
-   else
-      length=true;
-
-   if((letter | number | length) & psw.value.length>0)
-    psw.classList.add("errorBox");
-   else
-    psw.classList.remove("errorBox");
-
-}
-*/
 $( document ).ready(function()
 {
 
@@ -63,8 +21,6 @@ $( document ).ready(function()
       getSession();
   	});
 	});
-
-
 
 }); // end document.ready
 
@@ -100,7 +56,7 @@ function getSession(){
 /*
   funzione: cercaLibro
   ricerca i libri dati dei parametri
-  return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn} 
+  return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn}
 */
  function cercaLibro(titolo, autore, isbn, corso, ordine){
    $.post("../php/backend/controller.php", {
@@ -120,5 +76,5 @@ function getSession(){
          libro[i].isbn = obj.isbn[i];
      }
      return libri;
-   }
+   });
  }
