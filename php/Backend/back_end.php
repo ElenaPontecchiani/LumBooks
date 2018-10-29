@@ -80,5 +80,12 @@ class backend{
     );
     }
 
+
+    public static function searchBook($titolo,$autore,$isbn,$corso,$ordine){
+        $query = "  SELECT Titolo,Autore,Prezzo,ISBN 
+                    WHERE 
+
+    }
+
 }
 ?>
