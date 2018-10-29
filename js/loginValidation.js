@@ -13,6 +13,7 @@ $( document ).ready(function()
       email: email,
       password: password
     }, function(res) {
+      alert(res);
       var obj = JSON.parse(res);
       if(obj.password_ok === true)
         alert("Login Effettuato con Successo"); //darimuovere
@@ -52,29 +53,3 @@ function getSession(){
       return false;
      });
  } // end function getSession
-
-/*
-  funzione: cercaLibro
-  ricerca i libri dati dei parametri
-  return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn}
-*/
- function cercaLibro(titolo, autore, isbn, corso, ordine){
-   $.post("../php/backend/controller.php", {
-     comand: 'searchBook',
-     titolo: tiolo,
-     autore: autore,
-     isbn: isbn,
-     corso: corso,
-     ordine: ordine
-   }, function(response) {
-     var libri;
-     var obj = JSON.parse(response);
-     for(var i in obj){
-         libro[i].titolo = obj.titolo[i];
-         libro[i].autore = obj.autore[i];
-         libro[i].prezzo = obj.prezzo[i];
-         libro[i].isbn = obj.isbn[i];
-     }
-     return libri;
-   });
- }
