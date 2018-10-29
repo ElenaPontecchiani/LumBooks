@@ -54,6 +54,7 @@ class backend{
     }
 
     public static function getSessionData(){
+        session_start();
         if (!isset($_SESSION['id']))
         return array(
             "sessionOpen" => false,
