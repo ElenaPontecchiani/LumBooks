@@ -1,6 +1,6 @@
 header {
     background-color: rgb(18,0,92);
-    height: 9em;
+    height: 5em;
     min-width: 900px;
     color: rgb(180,180,180);
     font-family: Arial;
@@ -8,8 +8,8 @@ header {
 }
 
 #logo_lumbooks{
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
 }
 
 #left_header {
@@ -21,7 +21,7 @@ header {
 }
 
 #left_header h1 {
-   font-size: 3.7em;
+   font-size: 3em;
    color: white;
    font-family: Georgia;
    font-weight: 100;
@@ -35,4 +35,5 @@ header {
    font-family: Georgia;
    font-weight: 100;
    font-style: italic;
+   display:inline;
  }

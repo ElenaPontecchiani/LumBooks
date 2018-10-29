@@ -6,6 +6,7 @@ nav ul {
     color: white;
     overflow: hidden;
     padding-left: 0;
+    min-width: 25em;
 }
 
 nav li{

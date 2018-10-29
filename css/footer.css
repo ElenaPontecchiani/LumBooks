@@ -1,8 +1,4 @@
 footer {
-    position: fixed; 
-    bottom: 0;
-    width: 100%;
-    max-width: 1024px;
     background-color: white;
     color: black;
     text-align: center;
@@ -50,5 +46,3 @@ footer {
   background: #0088CC;
   color: white;
 }
-
-
