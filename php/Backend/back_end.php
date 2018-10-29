@@ -110,11 +110,11 @@ class backend{
                 $query .= "DESC";
         }
         
-        $query .= ";"
+        $query .= ";";
         //FINE COMPOSIZIONE DELLA QUERY
 
 
-        include "phpConnect.php";
+        include "../phpConnect.php";
 		if(!$result = $connect->query($query)){
 			return array("error" => "Errore di query");
 			exit();

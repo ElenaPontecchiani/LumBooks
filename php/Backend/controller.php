@@ -11,7 +11,7 @@ if(isset($_POST['command']))
 		case 'getSession':
 			echo json_encode(backend::getSessionData());
 		break;
-		case 'searchBook'
+		case 'searchBook':
 			echo json_encode(backend::searchBook($_POST['titolo'],
 												 $_POST['autore'],
 												 $_POST['isbn'],
@@ -27,28 +27,5 @@ else
 {
 	echo "Richiesta Malformata";
 }
-
-
-
-/*
-command: searchBook
-
-jQuery 2 Php: 
-	String titolo
-	String autore
-	string isbn
-	String corso
-	int ordine // 1 = dal più caro, 2 = dal meno caro, 0 = a caso
-	(almeno un campo deve essere non null)
-
-php 2 jQuery:
-	una lista di libri possibilmente vuota:
-	String titolo
-	String autore
-	int prezzo
-	String isbn
-
-
-*/
 
 ?>
