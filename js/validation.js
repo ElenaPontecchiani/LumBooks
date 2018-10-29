@@ -43,7 +43,9 @@ $("loginSubmit").click(function(){
 $( document ).ready(function()
 {
 
-  // richiesta di login al server
+  /*
+   richiesta di login al server
+  */
   $('#loginSubmit').click(function()
   {
     var password = $('#inputPsw').val();
@@ -66,15 +68,17 @@ $( document ).ready(function()
 
 }); // end document.ready
 
-// controllo stato sessione
+/*
+  funzione: getSession
+  se la sessione è aperta, ottiene i dati dell'utente
+*/
 function getSession(){
   $.post("../php/Backend/controller.php", {
     command: 'getSession'
   }, function(res) {
-    //darimuovere
-    alert(res);
       var obj = JSON.parse(res);
       if(obj.sessionOpen === true){
+        //variabili locali o globali?
         id = obj.id;
         matricola = obj.matricola;
         nome = obj.nome;
@@ -92,3 +96,29 @@ function getSession(){
       return false;
      });
  } // end function getSession
+
+/*
+  funzione: cercaLibro
+  ricerca i libri dati dei parametri
+  return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn} 
+*/
+ function cercaLibro(titolo, autore, isbn, corso, ordine){
+   $.post("../php/backend/controller.php", {
+     comand: 'searchBook',
+     titolo: tiolo,
+     autore: autore,
+     isbn: isbn,
+     corso: corso,
+     ordine: ordine
+   }, function(response) {
+     var libri;
+     var obj = JSON.parse(response);
+     for(var i in obj){
+         libro[i].titolo = obj.titolo[i];
+         libro[i].autore = obj.autore[i];
+         libro[i].prezzo = obj.prezzo[i];
+         libro[i].isbn = obj.isbn[i];
+     }
+     return libri;
+   }
+ }
