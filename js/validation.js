@@ -42,6 +42,8 @@ $("loginSubmit").click(function(){
 */
 $( document ).ready(function()
 {
+
+  // richiesta di login al server
   $('#loginSubmit').click(function()
   {
     var password = $('#inputPsw').val();
@@ -53,9 +55,40 @@ $( document ).ready(function()
     }, function(res) {
       var obj = JSON.parse(res);
       if(obj.password_ok === true)
-        alert("Login Effettuato con Successo");
+        alert("Login Effettuato con Successo"); //darimuovere
       else
-        alert(obj.error+" >:[");
+        alert(obj.error+" >:["); //darimuovere
+      getSession();
   	});
 	});
-});
+
+
+
+}); // end document.ready
+
+// controllo stato sessione
+function getSession(){
+  $.post("../php/Backend/controller.php", {
+    command: 'getSession'
+  }, function(res) {
+    //darimuovere
+    alert(res);
+      var obj = JSON.parse(res);
+      if(obj.sessionOpen === true){
+        id = obj.id;
+        matricola = obj.matricola;
+        nome = obj.nome;
+        cognome = obj.cognome;
+        sesso = obj.sesso;
+        data_nascita = obj.data_nascita; //YYYY-MM-DD
+        username = obj.username;
+        email = obj.email;
+        //darimuovere
+        alert("sessione aperta");
+        return true;
+      }
+      //darimuovere
+      alert("sessione chiusa");
+      return false;
+     });
+ } // end function getSession
