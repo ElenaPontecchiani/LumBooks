@@ -13,7 +13,6 @@ $( document ).ready(function()
       email: email,
       password: password
     }, function(res) {
-      alert(res);
       var obj = JSON.parse(res);
       if(obj.password_ok === true)
         alert("Login Effettuato con Successo"); //darimuovere
