@@ -101,6 +101,8 @@ class backend{
             $query.= " AND Autore like '%$autore%'";
         if (!$isbn == null)
             $query.= " AND ISBN = $isbn";
+        if (!$corso == "")
+            $query.= " AND Corso like '%$corso%'";
         $query .= " AND 1 = 1 ";
 
         if($ordine > 0)//ordine crescente o decrescente
@@ -112,7 +114,6 @@ class backend{
         
         $query .= ";";
         //FINE COMPOSIZIONE DELLA QUERY
-
 
         include "../phpConnect.php";
 		if(!$result = $connect->query($query)){
@@ -134,10 +135,11 @@ class backend{
                 array_push($lista_isbn  ,$row['ISBN']);
 			}
             $result->free();
-            print_r($lista_titolo);
-            print_r($lista_autore);
+            /*print_r($lista_titolo);
+            print_r($lista_autore);     PER TEST
             print_r($lista_prezzo);
-            print_r($lista_isbn);
+            print_r($lista_isbn);*/
+
             return array("error" => "",
                         "titolo" => $lista_titolo,
                         "autore" => $lista_autore,
@@ -155,5 +157,6 @@ class backend{
     }
 
 }
+
 
 ?>
