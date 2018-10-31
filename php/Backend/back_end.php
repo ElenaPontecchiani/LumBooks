@@ -182,6 +182,31 @@ class backend{
             return array("error" => "Query vuota");
     }
 
+    public static function Register($mail,$pw,$mat,$name,$fname,$user,$sex,$bdate){
+        include "../phpConnect.php";
+        $pw = password_hash("$pw", PASSWORD_DEFAULT);
+
+        $sql =  "INSERT INTO Utente
+                VALUES( NULL,
+                        '$mat',
+                        '$name', 
+                        '$fname',
+                        '$sex',
+                        '$bdate',
+                        '$user',
+                        '$pw',
+                        '$mail');";
+
+        if ($connect->query($sql) === TRUE) {
+            return array("successo" => true,
+                          "error" => "");
+        } else {
+            /*echo "Error: " . $sql . "<br>" . $connect->error;*/
+            return array("successo" => false,
+                          "error" => "$connect->error;");
+        }
+    }
+
 }
 
 ?>
