@@ -156,7 +156,32 @@ class backend{
 
     }
 
-}
 
+    public static function getTitles(){
+        include "../phpConnect.php";
+        if(!$result = $connect->query("SELECT Titolo FROM Libri_Listati")){
+            return array("error" => "Errore di query");
+            exit();
+        }
+        else{
+            $connect->close();
+        }
+        
+        $lista_titolo = [];
+        if($result->num_rows > 0){
+			while($row = $result->fetch_array(MYSQLI_ASSOC)){
+				array_push($lista_titolo,$row['Titolo']);
+			}
+            $result->free();
+            print_r($lista_titolo);
+            return array("error" => "",
+                        "titoli" => $lista_titolo);
+        }
+
+        else
+            return array("error" => "Query vuota");
+    }
+
+}
 
 ?>

@@ -18,7 +18,9 @@ if(isset($_POST['command']))
 												 $_POST['corso'],
 												 $_POST['ordine']));
 		break;
-
+		case 'getTitles':
+			echo json_encode(backend::getTitles());
+		break;
 		default:
 			exit;
 	}
