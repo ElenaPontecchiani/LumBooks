@@ -31,6 +31,15 @@ if(isset($_POST['command']))
 												$_POST['sesso'],
 												$_POST['dataNascita']));
 		break;
+		case 'checkEmail':
+			echo json_encode(backend::checkField($_POST['email'],'Email'));
+		break;
+		case 'checkUsername':
+			echo json_encode(backend::checkField($_POST['username'],'Username'));
+		break;
+		case 'getTitles':
+			echo json_encode(backend::getTitles());
+		break;
 		default:
 			exit;
 	}
@@ -39,27 +48,6 @@ else
 {
 	echo "Richiesta Malformata";
 }
-
-/*
-Registrazione utente
-
-command: Register
-
-jQuery 2 php: 
-	String email
-	String password
-	String matricola
-	String nome
-	String cognome
-	String username
-	String sesso
-	String dataNascita
-php 2 jQuery:
-	Bool successo
-	String error // in caso di insuccesso: email già esistente, password formattata male, username già usato (ci sarà un doppio controllo in jquery per ognuno di questi problemi)
-
-*/
-
 
 ?>
 

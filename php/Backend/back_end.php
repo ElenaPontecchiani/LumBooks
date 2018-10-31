@@ -207,6 +207,27 @@ class backend{
         }
     }
 
-}
+    public static function checkField($value,$field){
+        include "../phpConnect.php";
+        if(!$result = $connect->query("SELECT $field FROM Utente WHERE $field ='$value'")){
+            return array("errore" => "Errore di query");
+            exit();
+        }
+        else{
+            $connect->close();
+        }
 
+        if($result->num_rows > 0){
+            echo "presente";
+            return array(   "alreadyExist" => true,
+                            "errore" => "");
+        }
+        else{
+            echo "Assente";
+            return array(   "alreadyExist" => false,
+                            "errore" => "");
+        }
+    }
+
+}
 ?>
