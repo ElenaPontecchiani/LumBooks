@@ -16,6 +16,10 @@ class backend{
         //includo la connessione al database
         include "../phpConnect.php";
 
+        //escape dell'input
+        $email = $connect->escape_string($email);
+        $password = $connect->escape_string($password);
+
         if(!$result = $connect->query("SELECT * FROM Utente WHERE Email = '$email'")){
             //errore di query
             return array(
@@ -56,28 +60,28 @@ class backend{
     public static function getSessionData(){
         session_start();
         if (!isset($_SESSION['id']))
+            return array(
+                "sessionOpen" => false,
+                "id" => "",
+                "matricola" => "",
+                "nome" => "",
+                "cognome" => "",
+                "sesso" => "",
+                "data_nascita" => "",
+                "username" => "",
+                "email" => ""	
+            );
         return array(
-            "sessionOpen" => false,
-			"id" => "",
-			"matricola" => "",
-			"nome" => "",
-			"cognome" => "",
-			"sesso" => "",
-			"data_nascita" => "",
-            "username" => "",
-            "email" => ""	
+            "sessionOpen" => true,
+            "id" => $_SESSION['id'],
+            "matricola" => $_SESSION['mat'],
+            "nome" => $_SESSION['nome'],
+            "cognome" => $_SESSION['cogn'],
+            "sesso" => $_SESSION['sesso'],
+            "data_nascita" => $_SESSION['bdate'],
+            "username" => $_SESSION['user'],
+            "email" => $_SESSION['email']	
         );
-    return array(
-        "sessionOpen" => true,
-        "id" => $_SESSION['id'],
-        "matricola" => $_SESSION['mat'],
-        "nome" => $_SESSION['nome'],
-        "cognome" => $_SESSION['cogn'],
-        "sesso" => $_SESSION['sesso'],
-        "data_nascita" => $_SESSION['bdate'],
-        "username" => $_SESSION['user'],
-        "email" => $_SESSION['email']	
-    );
     }
 
 
@@ -88,6 +92,13 @@ class backend{
             $corso == "" and
             $ordine == "")
             return array("error" => "Richiesta vuota");
+
+        //escape dell'input
+        $titolo = $connect->escape_string($titolo);
+        $autore = $connect->escape_string($autore);
+        $isbn = $connect->escape_string($isbn);
+        $corso = $connect->escape_string($corso);
+        $ordine = $connect->escape_string($ordine);
 
         
         
@@ -184,6 +195,18 @@ class backend{
 
     public static function Register($mail,$pw,$mat,$name,$fname,$user,$sex,$bdate){
         include "../phpConnect.php";
+
+        //escape dell'input
+        $mail = $connect->escape_string($mail);
+        $pw = $connect->escape_string($pw);
+        $mat = $connect->escape_string($mat);
+        $name = $connect->escape_string($name);
+        $fname = $connect->escape_string($fname);
+        $user = $connect->escape_string($user);
+        $sex = $connect->escape_string($sex);
+        $bdate = $connect->escape_string($bdate);
+        
+
         $pw = password_hash("$pw", PASSWORD_DEFAULT);
 
         $sql =  "INSERT INTO Utente
@@ -209,6 +232,10 @@ class backend{
 
     public static function checkField($value,$field){
         include "../phpConnect.php";
+
+        //escape dell'input
+        $value = $connect->escape_string($value);
+        
         if(!$result = $connect->query("SELECT $field FROM Utente WHERE $field ='$value'")){
             return array("errore" => "Errore di query");
             exit();
