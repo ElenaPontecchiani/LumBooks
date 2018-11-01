@@ -14,13 +14,14 @@
   <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../js/buildStructure.js"></script>
+  <script type="text/javascript" src="../js/searchBook.js"></script>
 </head>
 <body>
 <header></header>
 <nav></nav>
 
 <div class="outerBox">
-	<form id="searchForm" class="innerBox">
+	<div id="searchForm" class="innerBox">
     <div class="form-group">
       <label for="form-group">Parola chiave</label>
       <br/>
@@ -44,7 +45,7 @@
     <div class="form-group">
       <label for="form-group">Corso</label>
       <br/>
-      <select name="courses" class="formText" > <!-- da completare -->
+      <select name="courses" class="formText" id="courseInput" > <!-- da completare -->
         <option value="analisi">Analisi</option>
         <option value="logica">Logica</option>
         <option value="architettura">Architettura</option>
@@ -54,7 +55,7 @@
       </select>
     </div>
     <div class="form-group"><input type="submit" value="Cerca" id="submitSrc"/></div>
-  </form>
+  </div>
 </div>
 <footer></footer>
 </body>

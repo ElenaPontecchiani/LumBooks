@@ -32,8 +32,8 @@ export function getSession(){
    ricerca i libri dati dei parametri
    return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn}
  */
-  function cercaLibro(titolo, autore, isbn, corso, ordine){
-    $.post("../php/backend/controller.php", {
+function cercaLibro(titolo, autore, isbn, corso, ordine){
+    $.post("../php/Backend/controller.php", {
       comand: 'searchBook',
       titolo: tiolo,
       autore: autore,
@@ -51,4 +51,4 @@ export function getSession(){
       }
       return libri;
     });
-  }
+}
