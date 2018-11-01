@@ -4,6 +4,7 @@ $( document ).ready(function()
   $('#registerSubmit').click(function()
   {
     var email = $("#registerEmail").val();
+    var password = $("#registerPsw").val();
     var matricola = $("#matricola").val();
     var nome = $("#nome").val();
     var cognome = $("#cognome").val();
@@ -14,6 +15,7 @@ $( document ).ready(function()
     {
       command: 'Register',
       email: email,
+      password: password,
       matricola: matricola,
       nome: nome,
       cognome: cognome,
