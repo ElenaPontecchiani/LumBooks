@@ -22,6 +22,23 @@ $( document ).ready(function()
   });
 
   /*
+    var t;
+  $.post("../php/Backend/controller.php",
+  {
+    command: 'getTitles'
+  }, function(res)
+  {
+    t = JSON.parse(res).titoli;
+
+    titleshtml = "<datalist id='titleInput'>";
+    for(i in t){
+      titleshtml += "<option value='"+ t[i] +"'/>";
+    }
+    $('#titleInput').html(titleshtml);
+  });
+  */
+
+  /*
     cerca i libri
   */
   $('#submitSrc').click(function()
