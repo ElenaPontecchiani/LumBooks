@@ -6,37 +6,19 @@ $( document ).ready(function()
   /*
     riempie il select #titleInput con i titoli
   */
-  var t;
   $.post("../php/Backend/controller.php",
   {
     command: 'getTitles'
   }, function(res)
   {
-    t = JSON.parse(res).titoli;
-    titleshtml = "<select id='titleInput' class='formText'>";
-    for(i in t){
-      titleshtml += "<option value='"+ t[i] +"'>"+ t[i] +"</option>";
+    titolo = JSON.parse(res).titoli;
+    titleshtml = "<datalist id='titleInput' class='formText'>";
+    for(i in titolo){
+      titleshtml += "<option value='"+ titolo[i] +"'>"+ titolo[i] +"</option>";
     }
-    titleshtml += "</select>";
+    titleshtml += "</datalist>";
     $('#titleInput').html(titleshtml);
   });
-
-  /*
-    var t;
-  $.post("../php/Backend/controller.php",
-  {
-    command: 'getTitles'
-  }, function(res)
-  {
-    t = JSON.parse(res).titoli;
-
-    titleshtml = "<datalist id='titleInput'>";
-    for(i in t){
-      titleshtml += "<option value='"+ t[i] +"'/>";
-    }
-    $('#titleInput').html(titleshtml);
-  });
-  */
 
   /*
     cerca i libri
@@ -71,9 +53,9 @@ $( document ).ready(function()
 
           }
           //successo
-
+          alert("libri trovati - da completare quando catalogo è pronto");
         }else {
-          alert("errore nella ricerca dei libri");
+          alert("libro non trovato");
         }
       });
       // creare la pagina con i libri trovati - (html deve essere completo) (!!!)
