@@ -71,7 +71,7 @@ $( document ).ready(function()
 
           }
           //successo
-          
+
         }else {
           alert("errore nella ricerca dei libri");
         }
@@ -82,14 +82,3 @@ $( document ).ready(function()
 
 
 });
-
-/*
-  funzione: cercaLibro
-  ricerca i libri dati dei parametri
-  return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn}
-*/
-function cercaLibro(titolo, autore, isbn, corso, ordine)
-{
-                                    //inserire le funzioni nel ready? (!!!)
-
-}
