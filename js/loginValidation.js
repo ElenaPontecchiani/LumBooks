@@ -8,7 +8,8 @@ $( document ).ready(function()
   {
     var password = $('#inputPsw').val();
     var email = $('#loginEmail').val();
-    $.post("../php/Backend/controller.php", {
+    $.post("../php/Backend/controller.php",
+    {
       command: 'Login',
       email: email,
       password: password

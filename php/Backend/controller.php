@@ -21,7 +21,7 @@ if(isset($_POST['command']))
 		case 'getTitles':
 			echo json_encode(backend::getTitles());
 		break;
-		case 'searchBook':
+		case 'Register':
 			echo json_encode(backend::Register(	$_POST['email'],
 												$_POST['password'],
 												$_POST['matricola'],
@@ -50,4 +50,3 @@ else
 }
 
 ?>
-
