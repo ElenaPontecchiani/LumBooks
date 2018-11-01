@@ -36,16 +36,16 @@ function cercaLibro(titolo, autore, isbn, corso, ordine)
     alert(res);  //errore nella traduzione json ->obj (!!!)
     var obj = JSON.parse(res);
     if(obj.error == ""){
-    for(var i in obj){
-        libro[i].titolo = obj.titolo[i];
-        libro[i].autore = obj.autore[i];
-        libro[i].prezzo = obj.prezzo[i];
-        libro[i].isbn = obj.isbn[i];
+      for(var i in obj){
+          libro[i].titolo = obj.titolo[i];
+          libro[i].autore = obj.autore[i];
+          libro[i].prezzo = obj.prezzo[i];
+          libro[i].isbn = obj.isbn[i];
+      }
+      return libro;
+    }else {
+      return obj.error;
     }
-    return libro;
-  }else {
-    return obj.error;
-  }
   });
 }
 
