@@ -31,18 +31,6 @@ $( document ).ready(function()
       var isbn = $('#isbnInput').val();
       var corso = $('#courseInput').val();
       var ordine=2;
-      var libri = cercaLibro(titolo, autore, isbn, corso, ordine);
-      // creare la pagina con i libri trovati - (html deve essere completo) (!!!)
-    });
-
-    /*
-      funzione: cercaLibro
-      ricerca i libri dati dei parametri
-      return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn}
-    */
-    function cercaLibro(titolo, autore, isbn, corso, ordine)
-    {
-                                        //inserire le funzioni nel ready? (!!!)
       $.post("../php/Backend/controller.php",
       {
         command: 'searchBook',
@@ -54,18 +42,37 @@ $( document ).ready(function()
       }, function(res)
       {
         var obj = JSON.parse(res);
+        var libri = [];
         if(obj.error == ""){
-          for(var i in obj){
-              libri[i].titolo = obj.titolo[i];
-              libri[i].autore = obj.autore[i];
-              libri[i].prezzo = obj.prezzo[i];
-              libri[i].isbn = obj.isbn[i];
+          for(var i in obj.titolo){
+              libri.push({
+                titolo: obj.titolo[i],
+                autore: obj.autore[i],
+                prezzo: obj.prezzo[i],
+                isbn:   obj.isbn[i]
+              });
+
           }
-          return libri;
+          //successo
+          
         }else {
-          return obj.error;
+          alert("errore nella ricerca dei libri");
         }
       });
-    }
+      // creare la pagina con i libri trovati - (html deve essere completo) (!!!)
+    });
+
+
 
 });
+
+/*
+  funzione: cercaLibro
+  ricerca i libri dati dei parametri
+  return: array di libri. libri è un array della struttura {titolo,autore,prezzo,isbn}
+*/
+function cercaLibro(titolo, autore, isbn, corso, ordine)
+{
+                                    //inserire le funzioni nel ready? (!!!)
+
+}
