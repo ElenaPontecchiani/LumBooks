@@ -84,8 +84,9 @@ class backend{
         );
     }
 
-
     public static function searchBook($titolo,$autore,$isbn,$corso,$ordine){
+        include "../phpConnect.php";
+        
         if( $titolo == "" and
             $autore == "" and
             $isbn == null and
@@ -126,7 +127,6 @@ class backend{
         $query .= ";";
         //FINE COMPOSIZIONE DELLA QUERY
 
-        include "../phpConnect.php";
 		if(!$result = $connect->query($query)){
 			return array("error" => "Errore di query");
 			exit();
@@ -166,7 +166,6 @@ class backend{
         }
 
     }
-
 
     public static function getTitles(){
         include "../phpConnect.php";
