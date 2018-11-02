@@ -22,40 +22,47 @@
 <div class="outerbox">
 	<h1>Libri in vendita</h1>
 	<div id="filter-bar">
-		<form method="POST" action=".php?????"> <!-- da fare importante -->
-		<label>Visualizza: </label>
-	    <select name="genere">
- 		<option value="all" selected="selected">Tutti i generi</option><!-- da fare -->
- 		<option value="scientifico">Scientifico</option>
-  		<option value="letterario">Letterario</option>
-		</select>
-		<label>Mostra:</label>
-		<select name="numero">
- 		<option value="all" selected="selected">Tutti i libri</option>
- 		<option value="scientifico">Primi 20</option>
-  		<option value="letterario">Primi 50</option>
-		</select>
-		<label>Ordina:</label>
-		<select name="ordine">
- 		<option value="all" selected="cronologico">Dal più recente</option>
- 		<option value="crescente">Dal meno caro</option>
-  		<option value="decrescente">Dal più caro</option>
-		</select>
-		</form>
+		<div id="filter-tool">
+			<label>Visualizza: </label>
+  	  		<select name="categoria">
+  	  			<option value="all" selected="selected">Tutte le categorie</option>
+ 				<option value="libro">Libro</option>
+	  			<option value="slide">Slide</option>
+ 				<option value="appunti">Appunti</option>
+ 				<option value="dispense">Dispense</option>
+  				<option value="altro">Altro</option>
+			</select>
+			<label>Mostra:</label>
+			<select name="numero">
+ 				<option value="all" selected="selected">Tutti i libri</option>
+ 				<option value="primi20">Primi 20</option>
+  				<option value="primi50">Primi 50</option>
+			</select>
+			<label>Ordina:</label>
+			<select name="ordine">
+ 				<option value="piurecente" selected="selected">Dal più recente</option>
+ 				<option value="menorecente">Dal meno recente</option>
+				<option value="AZ">Dalla A alla Z</option>
+				<option value="ZA">Dalla Z alla A</option>
+ 				<option value="crescente">Dal meno caro</option>
+  				<option value="decrescente">Dal più caro</option>
+			</select>
+		</div>
 	</div>
-
 	<dl class="search_item">
 	<dt class="item_name">Titolo</dt>
 	<dt class="item_spec">Autore</dt><dd class="spec_desc">AUTORE</dd>
-	<dt class="item_spec">Prezzo</dt><dd class="spec_desc">Un rene</dd>
-	<dt class="item_spec">Immagine</dt><dd class="spec_desc"><img src="/images/logo.jpg" caption="Immagine del libro phpTITOLO"></dd>
+	<dt class="item_spec">Prezzo</dt><dd class="spec_desc">PREZZO</dd>
+	<dt class="item_spec">Stato</dt><dd class="spec_desc">STATO</dd>
+	<dt class="item_spec">Tipo</dt><dd class="spec_desc">TIPO</dd>
 	<!-- con SCRIPT visualizza altro>
+	<dt class="item_spec">Data aggiunta</dt><dd class="spec_desc">DATA AGGIUNTA</dd>
 	<dt class="item_spec">Corso</dt><dd class="spec_desc">CORSO</dd>
+	<dt class="item_spec">Edizione</dt><dd class="spec_desc">EDIZIONE</dd>
 	<dt class="item_spec">ISBN</dt><dd class="spec_desc">ISBN</dd>
 	<dt class="item_spec">Casa Editrice</dt><dd class="spec_desc">CASA ED</dd>
 	<dt class="item_spec">Anno pubblicazione</dt><dd class="spec_desc">2025</dd> -->
 	</dl>
-
 </div>
 <footer></footer>
 </body>

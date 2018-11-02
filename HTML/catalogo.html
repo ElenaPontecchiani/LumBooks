@@ -19,7 +19,30 @@
   <header></header>
   <nav></nav>
 <div class="outerbox">
-<!--
+	<h1>Catalogo</h1>
+	<div id="filter-bar">
+	<!-- eventualmente altro -->
+		<div id="filter-tool">
+			<label>Ordina:</label>
+			<select name="ordine">
+				<option value="AZ" selected="selected">Dalla A alla Z</option>
+				<option value="ZA" selected="selected">Dalla Z alla A</option>
+ 				<option value="piurecente" selected="selected">Dal più recente</option>
+ 				<option value="menorecente">Dal meno recente</option>
+			</select>
+		</div>
+	</div>
+	<dl class="search_item">
+	<dt class="item_name">Titolo</dt>
+	<dt class="item_spec">Autore</dt><dd class="spec_desc">AUTORE</dd>
+	<dt class="item_spec">Casa Editrice</dt><dd class="spec_desc">CASA ED</dd>
+	<dt class="item_spec">Corso</dt><dd class="spec_desc">CORSO</dd>
+	<!-- Forse in futuro <dt class="item_spec">Immagine</dt><dd class="spec_desc"><img src="/images/logo.jpg" caption="Immagine del libro phpTITOLO"></dd>-->
+	</dl>
+</div>
+<!-- vecchio
+<div class="outerbox">
+
   <?php
 		include "phpConnect.php";
 		if(!$result = $connect->query("SELECT * FROM Libri_Listati")){
@@ -42,8 +65,8 @@
 			$result->free();
 		}
 	?>
--->
 </div>
-<foter></footer>
+-->
+<footer></footer>
 </body>
 </html>
