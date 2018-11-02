@@ -19,7 +19,11 @@
 <div id="accountBox" class="outerBox">
     <h1>Informazioni personali</h1>
     <p>Ciao Nome Cognome. Qui puoi visualizzare le tue impostazioni ed eventualmente modificare e-mail e password.</p>
-    <form id="accountForm" class="innerBox" action="changeSettings.php" method="post"><!-- da fare -->
+    <div id="constInfo" class="innerBox">
+      <label>Username</label>
+      <br/>
+      <input type="text" name="username" id="username" value="PHP" readonly="readonly">
+      <br/>
       <label>Numero di matricola</label>
       <br/>
       <input type="text" name="matricola" id="matricola" value="PHP" readonly="readonly">
@@ -28,6 +32,8 @@
       <br/>
       <input type="date" name="nascita" id="birth_data" value="PHP" readonly="readonly">
       <br/>
+    </div>
+    <div id="nonconstInfo" class="innerBox">
       <label>Email</label>
       <br/>
       <input type="email" name="email" id="registerEmail" class="formText" value="PHP" />
@@ -41,8 +47,7 @@
       <input type="password" name="password" id="repeatPsw" class="formText" />
       <br />
       <input type="submit"id="changeSubmit" value="Cambia"/>
-    </form>
-    </div>
+      </div>
     </div>
 <footer></footer>
    </body>
