@@ -1,39 +1,42 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-	<title>LumBooks</title>
-	<link rel="icon" href=""/> <!-- link icona -->
-	<meta name="title" content="LumBooks" />
-	<meta name="description" content="Acquista e vendi libri" /> <!-- da fare -->
-	<meta name="keywords" content="libro, unipd" /> <!-- da fare -->
-	<meta name="language" content="italian it" />
-	<meta name="author" content="" /> <!-- da fare -->
-  <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
-  <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="../js/buildStructure.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css" /> <!-- da fare -->
+    <title>LumBooks</title>
+    <link rel="icon" href="" /> <!-- link icona -->
+    <meta name="title" content="LumBooks" />
+    <meta name="description" content="Acquista e vendi libri" /> <!-- da fare -->
+    <meta name="keywords" content="libro, unipd" /> <!-- da fare -->
+    <meta name="language" content="italian it" />
+    <meta name="author" content="" /> <!-- da fare -->
+    <link rel="stylesheet" type="text/css" href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
+    <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/buildStructure.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" /> <!-- da fare -->
 </head>
 <body>
-<header id="header"></header>
-<nav id="navbar"></nav>
-<div class="infobox">
-	<div>
-		<h1>Sono veramamente euforico!</h1>
-		<p>	<?php session_start(); echo $_SESSION["user"]; ?>
-				Questa descrizione &egrave; inutile, serve solamente per avere una scusa per mettere la foto
-				della tipa. Anche perch&egrave;, diciamolo, sei cos&igrave; poraccio che i libri gli stampi dai PDF.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-	</div>
-	<img src="../images/student.jpg" id="student"/>
-</div>
-<footer id="footer"></footer>
+    <div id="page">
+        <header id="header"></header>
+        <nav id="navbar"></nav>
+        <div class="infobox">
+            <div>
+                <h1>Sono veramamente euforico!</h1>
+                <p>
+                    <?php session_start(); echo $_SESSION["user"]; ?>
+                    Questa descrizione &egrave; inutile, serve solamente per avere una scusa per mettere la foto
+                    della tipa. Anche perch&egrave;, diciamolo, sei cos&igrave; poraccio che i libri gli stampi dai PDF.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <img src="../images/student.jpg" id="student" />
+        </div>
+        <footer id="footer"></footer>
+    </div>
 </body>
 
 </html>

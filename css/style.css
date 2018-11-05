@@ -2,60 +2,77 @@
 @import url("navbar.css");
 @import url("footer.css");
 
-*{
-  margin: 0 auto;
-  border: 0;
-  box-sizing: border-box;
+* {
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    box-sizing: border-box;
 }
+
+
 
 body {
-  background-color: #fff;
-  color: #aaa;
-}
-div{
-  background-color: white;
-}
-
-img{
-  max-width: 1024px;
-}
-a{
-  text-decoration: none;
-}
-
-.infobox div{
-  max-width: 55%;
-  display:inline-block;
-  float: right;
+    background-image: url("/images/sfondo.jpg");
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    position: relative;
+    text-align: left;
+    width: 991px;
+    background-color: #fff;
+    color: #aaa;
 }
 
-.infobox img{
-  max-width:40%;
-  float: left;
-  object-fit: fill;
+div {
+    background-color: white;
 }
 
-.infobox{
-  overflow: auto;
-  margin: 1em 2em;
-  border: 0.1em solid grey;
+img {
+    max-width: 1024px;
 }
 
-.hidden{
-  visibility: hidden;
+a {
+    text-decoration: none;
 }
 
-.outerBox{
-  padding: 1.875em;
-  text-align: center;
+.infobox div {
+    max-width: 55%;
+    display: inline-block;
+    float: right;
 }
 
-.innerBox{
-  display: inline-block;
-  padding: 3.12em;
-  text-align: left;
+.infobox img {
+    max-width: 40%;
+    float: left;
+    object-fit: fill;
 }
 
-.innerBox input{
-  margin-bottom: 1em;
+.infobox {
+    overflow: auto;
+    margin: 1em 2em;
+    border: 0.1em solid grey;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.outerBox {
+    padding: 1.875em;
+    text-align: center;
+}
+
+.innerBox {
+    display: inline-block;
+    padding: 3.12em;
+    text-align: left;
+}
+
+.innerBox input {
+    margin-bottom: 1em;
 }

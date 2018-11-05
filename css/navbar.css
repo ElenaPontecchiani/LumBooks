@@ -9,35 +9,35 @@ nav ul {
     min-width: 25em;
 }
 
-nav li{
-  display: inline;
-  padding: auto;
-  float: left;
+nav li {
+    display: inline;
+    padding: auto;
+    float: left;
 }
 
 nav li a {
-   display: block;
-   color: white;
-   text-align: center;
-   padding: 0.7em;
-   text-decoration: none;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 0.7em;
+        text-decoration: none;
 }
 
-.right{
-  float: right;
+.right {
+    float: right;
 }
 
-nav li:hover:not(.active){
-  background-color: #754b00;
+nav li:hover:not(.active) {
+    background-color: #754b00;
 }
 
-.active{
-  background-color: black;
+.active {
+    background-color: black;
 }
 
-.activeR{
-  background-color: black;
-  float: right;
+.activeR {
+    background-color: black;
+    float: right;
 }
 
 /*Per rendere la casella della pagina corrente sempre attiva
@@ -46,3 +46,4 @@ nav li:hover:not(.active){
 /*.active {
   background-color: #4CAF50;
 }*/
+
