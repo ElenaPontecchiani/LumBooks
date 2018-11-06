@@ -11,8 +11,8 @@ echo "<body>";
 
 
     include "../HTML/modules/header.html";
-    include "../HTML/modules/navbar.html";
-    
+    include "../php/modules/navbar.php";
+        
     echo '<div class="outerbox">';
     include "../HTML/body/catalogo.html";
     include "modules/catalogo_lista.php";

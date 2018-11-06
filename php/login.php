@@ -11,8 +11,8 @@ echo "<body>";
 
 
     include "../HTML/modules/header.html";
-    include "../HTML/modules/navbar.html";
-
+    include "../php/modules/navbar.php";
+    
     include "../HTML/body/login.html";
 
     include "../HTML/modules/footer.html";

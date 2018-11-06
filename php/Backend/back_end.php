@@ -3,7 +3,10 @@ class backend{
 
     //Controlla l'hash della password inserita con l'hash nel database.
     //Se corrispondono, ritorno 1, 0 altrimenti.
-    public static function checkPassword($email, $password){
+    
+    
+    //IMPLEMENTATO NEL FILE DI check_login-php
+    /*public static function checkPassword($email, $password){
 
         //Controllo validità variabili
         if(!(isset($email) and isset($password))){
@@ -56,6 +59,7 @@ class backend{
             "error" => "Password o email sbagliata. Stacca, stacaaahhhh!!!"
         );
     }
+    */
 
     public static function getSessionData(){
         session_start();
