@@ -1,3 +1,7 @@
+// Registrazione - controllo esistenza email - username - matricola ecc. (in ajax)
+
+
+/*
 $( document ).ready(function()
 {
 
@@ -35,9 +39,9 @@ $( document ).ready(function()
     });
   });// end #registersubmit.click
 
-  /*
-    controlla che la password sia corretta
-  */
+
+  //  controlla che la password sia corretta
+
   $("#registerPsw").focusout(function() {
   var letter=false;
   var number=false;
@@ -73,3 +77,4 @@ $( document ).ready(function()
   });
 
 }); // end document.ready
+*/
