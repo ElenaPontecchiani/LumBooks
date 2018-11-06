@@ -1,0 +1,42 @@
+<div id="registerBox" class="outerBox">
+	<div id="registerForm" class="innerBox" action="../php/new_user.php">
+		<label>Email</label>
+		<br/>
+		<input type="email" name="email" id="registerEmail" class="formText" />
+		<br/>
+		<label>Matricola</label>
+		<br/>
+		<input type="text"  name="matricola" id="matricola" class="formText" />
+		<br />
+		<label>Nome</label>
+		<br/>
+		<input type="text" name="nome" id="nome" class="formText" />
+		<br />
+		<label>Cognome</label>
+		<br/>
+		<input type="text" name="cognome" id="cognome" class="formText" />
+		<br />
+		<label>Nome utente</label>
+		<br/>
+		<input type="text" name="user" id="user" class="formText" />
+		<br />
+		<input list="Sesso" name="sesso" placeholder="sesso" class="formText">
+			<datalist id="sesso">
+				<option value="M">
+				<option value="F">
+				<option value="N">
+			</datalist>
+		<br/>
+		<input type="date" name="nascita" id="birth_date" class="formText" />
+		<br />
+		<label>Password</label>
+		<br/>
+		<input type="password" id="registerPsw" class="formText" />
+		<br/>
+		<label>Ripeti password</label>
+		<br/>
+		<input type="password" name="password" id="repeatPsw" class="formText" />
+		<br />
+		<input type="submit"id="registerSubmit" value="Registrati"/>
+	</div>
+</div>
