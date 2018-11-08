@@ -42,7 +42,7 @@ a{
 }
 
 .hidden{
-  visibility: hidden;
+  display: none;
 }
 
 .outerBox{
