@@ -258,7 +258,8 @@ class backend{
       }
   }
 
-  public static function loginIsValid($mail, $password){
+  public static function loginIsValid($mail, $password)
+  {
     $valid = true;
     if(strlen($password)<3)
       $valid = false;
