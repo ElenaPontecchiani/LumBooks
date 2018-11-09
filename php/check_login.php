@@ -1,6 +1,6 @@
 <?php
 		include "phpConnect.php";
-		include "/Backend/back_end.php";
+		include "Backend/back_end.php";
 		$mail = $_POST["mail"];
 		$passw = $_POST["password"];
 		$_POST["password"] = "";
