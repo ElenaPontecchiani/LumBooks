@@ -8,13 +8,14 @@ include "phpConnect.php";
     $sex = $_POST["sesso"];
     $bdate = $_POST["nascita"];
     $pw = $_POST["password"];
-    
+
     $pw = password_hash("$pw", PASSWORD_DEFAULT);
+
 
     $sql =  "INSERT INTO Utente
             VALUES( NULL,
                     '$mat',
-                    '$name', 
+                    '$name',
                     '$fname',
                     '$sex',
                     '$bdate',
@@ -22,9 +23,13 @@ include "phpConnect.php";
                     '$pw',
                     '$mail');";
 
-    if ($connect->query($sql) === TRUE) {
-        echo "Nuovo utente creato con successo";
-    } else {
-        echo "Error: " . $sql . "<br>" . $connect->error;
+    if ($connect->query($sql) === TRUE)
+    {
+
+      header("Location: login.php");
+    } else
+    {
+        error_log("Error: " . $sql . ": " . $connect->error);
+
     }
 ?>

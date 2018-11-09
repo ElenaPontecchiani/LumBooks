@@ -270,4 +270,8 @@ class backend{
     return $valid;
   }
 }
+
+public static function registerIsValid(){
+  return true;
+}
 ?>
