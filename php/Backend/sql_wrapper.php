@@ -4,10 +4,11 @@ class SqlWrap{
         if ($result == null){
             return null;
         }
-        $key = array_keys($result)[0];
+        //mi ricordo di gstire il caso in cui ho un array nullo
+        $key = array_keys($result[0])[0];
         $new_result = [];
         $lim = count($result);
-        forea($i = 0; $i < $lim; $i++){
+        for($i = 0; $i < $lim; $i++){
             $new_result[$i] = $result[$i][$key];
         }
         return $new_result;
@@ -15,7 +16,6 @@ class SqlWrap{
 
     public static function query($query, $collapse = false){
         include "phpConnect.php";
-        echo $query;
         if(!$result = $connect->query($query)){
             throw Exception("La query non è andata a buon fine");
         }
