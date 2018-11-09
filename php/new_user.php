@@ -37,6 +37,7 @@ include "phpConnect.php";
     }else
     {
       header("Location: registrati.php");
+      error_log("parametri per la registrazione non corretti");
     }
 
 
