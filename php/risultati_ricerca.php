@@ -1,5 +1,6 @@
 <?php
 include "Backend/sql_wrapper.php";
+include "Backend/htmlMaker.php";
 $titolo = $_POST['titolo']; 
 $autore = $_POST['autore'];
 $isbn = $_POST['isbn'];
@@ -37,16 +38,30 @@ if (!($corso == "Qualsiasi"))
     $query.= " AND Corso like '%$corso%'";
 $query .= " AND 1 = 1; ";
 
-echo $query;
 //FINE COMPOSIZIONE DELLA QUERY
 
 $libri = SqlWrap::query($query);
-print_r($libri);
+if ($libri)
+    $ris = htmlMaker::searchItem($libri);
+else
+    $ris = "NESSUN RISULTATO CORRISPONDENTE";
+$html = file_get_contents("../HTML/body/risultati_ricerca.html");
+$html = str_replace("££RISULTATI££",$ris,$html);
 
 
+echo "<!DOCTYPE html>";
+echo '<html lang="it">';
 
+//HEAD
+include "../HTML/head/risultati_ricerca.html";
 
+echo "<body>";
+    include "../HTML/modules/header.html";
+    include "../php/modules/navbar.php";
+    echo $html;
 
+echo "</body>";
+echo "</html>";
 
 
 
