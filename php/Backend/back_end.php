@@ -260,6 +260,20 @@ class backend{
 
   public static function loginIsValid($mail, $password)
   {
+
+    /*
+        esistono già delle cose apposta, meglio usare quelle prima
+
+    http://php.net/manual/en/filter.examples.validation.php
+    
+    Anche qua molta roba interessante
+    http://php.net/manual/en/function.filter-input.php
+
+    if (filter_var($email_a, FILTER_VALIDATE_EMAIL)) {
+    echo "Email address '$email_a' is considered valid.\n";
+    }
+    */
+
     $valid = true;
     if(strlen($password)<3){
       $valid = false;
