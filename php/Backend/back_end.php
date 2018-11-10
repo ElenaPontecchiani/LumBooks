@@ -266,14 +266,22 @@ class backend{
     }
     $username = substr($mail,0, strpos($mail, '@'));
     $mail_f = substr($mail,strpos($mail, '@'), strlen($mail));
-    if(strlen(username) < 3){
+    if(strlen($username) < 3)
       $valid = false;
     }
     return $valid;
   }
 
-  public static function registerIsValid(){
-    return true;
+  public static function registerIsValid($mail,$matricola,$nome, $cognome, $user, $sex, $nascita, $password){
+    $valid = self::loginIsValid($mail, $password);
+    if($valid)
+    {
+      if(strlen($matricola) > 9 || strlen($nome) > 12 || strlen($cognome) > 12 || strlen($user) > 12 )
+      {
+        $valid = false;
+      }
+    }
+    return $valid;
   }
 }
 

@@ -1,4 +1,5 @@
 <?php
+include "Backend/back_end.php";
 include "phpConnect.php";
     $mail = $_POST["email"];
     $mat = $_POST["matricola"];
@@ -11,25 +12,33 @@ include "phpConnect.php";
 
     $pw = password_hash("$pw", PASSWORD_DEFAULT);
 
-
-    $sql =  "INSERT INTO Utente
-            VALUES( NULL,
-                    '$mat',
-                    '$name',
-                    '$fname',
-                    '$sex',
-                    '$bdate',
-                    '$user',
-                    '$pw',
-                    '$mail');";
-
-    if ($connect->query($sql) === TRUE)
+    if(backend::registerIsValid($mail, $mat, $name, $fname, $user, $sex, $bdate, $pw))
     {
+      $sql =  "INSERT INTO Utente
+              VALUES( NULL,
+                      '$mat',
+                      '$name',
+                      '$fname',
+                      '$sex',
+                      '$bdate',
+                      '$user',
+                      '$pw',
+                      '$mail');";
 
-      header("Location: login.php");
-    } else
+      if ($connect->query($sql) === TRUE)
+      {
+
+        header("Location: login.php");
+      } else
+      {
+          header("Location: registrati.php");
+          error_log("Error: " . $sql . ": " . $connect->error);
+      }
+    }else
     {
-        error_log("Error: " . $sql . ": " . $connect->error);
-
+      header("Location: registrati.php");
+      error_log("parametri per la registrazione non corretti");
     }
+
+
 ?>
