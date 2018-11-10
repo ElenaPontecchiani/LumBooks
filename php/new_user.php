@@ -10,10 +10,10 @@ include "phpConnect.php";
     $bdate = $_POST["nascita"];
     $pw = $_POST["password"];
 
-    $pw = password_hash("$pw", PASSWORD_DEFAULT);
 
     if(backend::registerIsValid($mail, $mat, $name, $fname, $user, $sex, $bdate, $pw))
     {
+      $pw = password_hash("$pw", PASSWORD_DEFAULT);
       $sql =  "INSERT INTO Utente
               VALUES( NULL,
                       '$mat',
@@ -27,7 +27,6 @@ include "phpConnect.php";
 
       if ($connect->query($sql) === TRUE)
       {
-
         header("Location: login.php");
       } else
       {
@@ -36,7 +35,7 @@ include "phpConnect.php";
       }
     }else
     {
-      header("Location: registrati.php");
+      //header("Location: registrati.php");
       error_log("parametri per la registrazione non corretti");
     }
 
