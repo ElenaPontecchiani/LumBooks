@@ -1,5 +1,5 @@
 <div class="outerBox">
-    <div id="searchForm" class="innerBox">
+    <form id="searchForm" class="innerBox" action="risultati_ricerca.php" method="post">
         <div class="form-group">
             <label for="form-group">Parola chiave</label>
             <br/>
@@ -8,28 +8,20 @@
     <div class="form-group">
         <label for="form-group">Titolo</label>
         <br/>
-        <input list="titleInput"/>
+        <input list="titleInput" name="titolo"/>
         <datalist id="titleInput" class="formText">
+            ££titoli££
         </datalist>
     </div>
-    <!--
-            <div class="form-group">
-        <label for="form-group">Titolo</label>
-        <br/>
-        <input list="titleInput" placeholder="Titolo" class="formText"/>
-        <datalist id="titleInput">
-        </datalist>
-    </div>
-    -->
     <div class="form-group">
         <label for="form-group">Autore</label>
         <br/>
-        <input type="text" id="authorInput" class="formText" />
+        <input type="text" id="authorInput" class="formText" name="autore" />
     </div>
     <div class="form-group">
         <label for="form-group">ISBN</label>
         <br/>
-        <input type="text" id="isbnInput" class="formText" />
+        <input type="text" id="isbnInput" class="formText" name="isbn"/>
     </div>
     <div class="form-group">
         <label for="form-group">Corso</label>

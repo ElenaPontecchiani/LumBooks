@@ -88,7 +88,7 @@ class backend{
       );
   }
 
-  public static function searchBook($titolo,$autore,$isbn,$corso,$ordine){
+  /*public static function searchBook($titolo,$autore,$isbn,$corso,$ordine){
       include "../phpConnect.php";
 
       if( $titolo == "" and
@@ -169,7 +169,7 @@ class backend{
                       "isbn"   => $lista_isbn);
       }
 
-  }
+  }*/
 
   public static function getTitles(){
       include "../phpConnect.php";
@@ -261,17 +261,21 @@ class backend{
   public static function loginIsValid($mail, $password)
   {
     $valid = true;
-    if(strlen($password)<3)
+    if(strlen($password)<3){
       $valid = false;
+    }
     $username = substr($mail,0, strpos($mail, '@'));
     $mail_f = substr($mail,strpos($mail, '@'), strlen($mail));
-    if(strlen(username) < 3)
+    if(strlen(username) < 3){
       $valid = false;
+    }
     return $valid;
+  }
+
+  public static function registerIsValid(){
+    return true;
   }
 }
 
-public static function registerIsValid(){
-  return true;
-}
+
 ?>
