@@ -1,5 +1,18 @@
 <?php
 class SqlWrap{
+    private static function connect(){
+        $dbname = 'LB';
+        $dbuser = 'admin';
+        $dbpass = 'admin';
+        $dbhost = 'localhost';
+        $connect = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+        if($connect->connect_errno){
+            throw Exception("Connessione al database fallita");
+        }
+        mysqli_set_charset($connect,"utf8");
+        return $connect;
+    }
+
     private static function collapse($result){
         if ($result == null){
             return null;
@@ -15,7 +28,7 @@ class SqlWrap{
     }
 
     public static function query($query, $collapse = false){
-        include "phpConnect.php";
+        $connect = self::connect();
         if(!$result = $connect->query($query)){
             throw Exception("La query non è andata a buon fine");
         }
@@ -34,6 +47,15 @@ class SqlWrap{
   
         else
             return null;
+    }
+
+
+    public static function input_escape($input_arr){
+        $connection = self::connect();
+        foreach($input_arr as &$input){
+            $input = $connection->escape_string($input);
+        }
+        $connection->close();
     }
 
 }
