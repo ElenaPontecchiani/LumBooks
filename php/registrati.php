@@ -1,24 +1,9 @@
 <?php
-echo "<!DOCTYPE html>";
-echo '<html lang="it">';
+include "Backend/htmlMaker.php";
 
-//HEAD
-include "../HTML/head/registrati.html";
-
-
-
-echo "<body>";
-
-
-    include "../HTML/modules/header.html";
-    include "../php/modules/navbar.php";
-    
-    include "../HTML/body/registrati.html";
-
-    include "../HTML/modules/footer.html";
-
-echo "</body>";
-
-
-echo "</html>";
+$output = file_get_contents("../HTML/registrati.html");
+$output = str_replace("<header></header>",htmlMaker::header(),$output);
+$output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
+$output = str_replace("<footer></footer>",htmlMaker::footer(),$output); 
+echo $output;
 ?>
