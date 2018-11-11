@@ -52,6 +52,7 @@ class htmlMaker{
     public static function footer(){
         return file_get_contents("../HTML/modules/footer.html");
     }
+
 }
 
 

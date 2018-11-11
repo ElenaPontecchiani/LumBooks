@@ -1,26 +1,16 @@
 <?php
-echo "<!DOCTYPE html>";
-echo '<html lang="it">';
+include "Backend/htmlMaker.php";
+include "Backend/sql_wrapper.php";
 
-//HEAD
-include "../HTML/head/catalogo.html";
+$query = "  SELECT Titolo,Autore,Casa_Editrice as Editore, Corso 
+            FROM Libri_Listati";
+$libri = htmlMaker::searchItem(SqlWrap::query($query));
+$output = file_get_contents("../HTML/catalogo.html");
+$output = str_replace("<dl class=\"search_item\"></dl>",$libri,$output);
+$output = str_replace("<header></header>",htmlMaker::header(),$output);
+$output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
+$output = str_replace("<footer></footer>",htmlMaker::footer(),$output); 
 
+echo $output;
 
-
-echo "<body>";
-
-
-    include "../HTML/modules/header.html";
-    include "../php/modules/navbar.php";
-        
-    echo '<div class="outerbox">';
-    include "../HTML/body/catalogo.html";
-    include "modules/catalogo_lista.php";
-    echo '</div>';
-    include "../HTML/modules/footer.html";
-
-echo "</body>";
-
-
-echo "</html>";
 ?>
