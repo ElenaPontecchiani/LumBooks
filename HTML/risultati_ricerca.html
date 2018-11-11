@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Libri in vendita - LumBooks</title>
+    <link rel="icon" href=""/><!-- link icona -->
+    <meta name="title" content="Libri in vendita - LumBooks" />
+    <meta name="description" content="In questa pagina trovi i libri che hai cercato" /><!-- da fare -->
+    <meta name="keywords" content="libro, unipd" /><!-- da fare -->
+    <meta name="language" content="italian it" />
+    <meta name="author" content="" /><!-- da fare -->
+    <link rel="stylesheet" type="text/css" href="../css/libri.css" /><!-- da fare -->
+    <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /><!-- schermi piccoli --> <!-- da fare -->
+    <link rel="stylesheet" type="text/css" href="../css/" media="print" /><!-- da fare -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/buildStructure.js"></script>
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+    <div class="outerbox">
+        <h1>Libri in vendita</h1>
+        <div id="filter-bar">
+            <div id="filter-tool">
+                <label>Visualizza: </label>
+                    <select name="categoria">
+                        <option value="all" selected="selected">Tutte le categorie</option>
+                        <option value="libro">Libro</option>
+                        <option value="slide">Slide</option>
+                        <option value="appunti">Appunti</option>
+                        <option value="dispense">Dispense</option>
+                        <option value="altro">Altro</option>
+                </select>
+                <label>Mostra:</label>
+                <select name="numero">
+                        <option value="all" selected="selected">Tutti i libri</option>
+                        <option value="primi20">Primi 20</option>
+                        <option value="primi50">Primi 50</option>
+                </select>
+                <label>Ordina:</label>
+                <select name="ordine">
+                        <option value="piurecente" selected="selected">Dal più recente</option>
+                        <option value="menorecente">Dal meno recente</option>
+                    <option value="AZ">Dalla A alla Z</option>
+                    <option value="ZA">Dalla Z alla A</option>
+                        <option value="crescente">Dal meno caro</option>
+                        <option value="decrescente">Dal più caro</option>
+                </select>
+            </div>
+        </div>
+        ££RISULTATI££
+    </div>
+    <footer></footer>
+</body>
+</html>

@@ -45,25 +45,13 @@ if ($libri)
     $ris = htmlMaker::searchItem($libri);
 else
     $ris = "NESSUN RISULTATO CORRISPONDENTE";
-$html = file_get_contents("../HTML/body/risultati_ricerca.html");
-$html = str_replace("££RISULTATI££",$ris,$html);
+$output = file_get_contents("../HTML/risultati_ricerca.html");
+$output = str_replace("££RISULTATI££",$ris,$output);
+$output = str_replace("<header></header>",htmlMaker::header(),$output);
+$output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
+$output = str_replace("<footer></footer>",htmlMaker::footer(),$output);  
 
-
-echo "<!DOCTYPE html>";
-echo '<html lang="it">';
-
-//HEAD
-include "../HTML/head/risultati_ricerca.html";
-
-echo "<body>";
-    include "../HTML/modules/header.html";
-    include "../php/modules/navbar.php";
-    echo $html;
-
-echo "</body>";
-echo "</html>";
-
-
+echo $output;
 
 
 
