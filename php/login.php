@@ -1,34 +1,19 @@
 <?php
-echo "<!DOCTYPE html>";
-echo '<html lang="it">';
+include "Backend/htmlMaker.php";
 
-//HEAD
-include "../HTML/head/login.html";
+$output = file_get_contents("../HTML/login.html");
 
+if(!isset($_SESSION))
+  session_start();
+if(isset($_SESSION['login']) && !$_SESSION['login']){
+  $output = str_replace("<label id='loginError' class='hidden'>","<label id='loginError'>",$output);
+  session_destroy();
+}
 
-
-echo "<body>";
-
-
-    $html = file_get_contents("../HTML/body/login.html");
-    if(!isset($_SESSION))
-      session_start();
-    if(isset($_SESSION['login']) && !$_SESSION['login'])
-    {
-      $html = str_replace("<label id='loginError' class='hidden'>","<label id='loginError'>",$html);
-      session_destroy();
-    }
-    include "../HTML/modules/header.html";
-    include "../php/modules/navbar.php";
-
-    echo $html;
-
-    include "../HTML/modules/footer.html";
-
-echo "</body>";
-
-
-echo "</html>";
+$output = str_replace("<header></header>",htmlMaker::header(),$output);
+$output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
+$output = str_replace("<footer></footer>",htmlMaker::footer(),$output); 
+echo $output;
 
 
 ?>
