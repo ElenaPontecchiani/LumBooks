@@ -20,35 +20,37 @@
     <h1>Informazioni personali</h1>
     <p>Ciao Nome Cognome. Qui puoi visualizzare le tue impostazioni ed eventualmente modificare e-mail e password.</p>
     <div id="constInfo" class="innerBox">
-      <label>Username</label>
-      <br/>
-      <input type="text" name="username" id="username" value="PHP" readonly="readonly">
-      <br/>
-      <label>Numero di matricola</label>
-      <br/>
-      <input type="text" name="matricola" id="matricola" value="PHP" readonly="readonly">
-      <br/>
-      <label>Data di nascita</label>
-      <br/>
-      <input type="date" name="nascita" id="birth_data" value="PHP" readonly="readonly">
-      <br/>
+    	<div class="account-info">
+    		<label>Username</label>
+      		<input type="text" name="username" value="PHP" readonly="readonly">
+      	</div>
+      	<div class="account-info">
+      		<label>Numero di matricola</label>
+      		<input type="text" name="matricola" value="PHP" readonly="readonly">
+      	</div>
+      	<div class="account-info">
+      		<label>Data di nascita</label>
+      		<input type="date" name="nascita" value="PHP" readonly="readonly">
+      	</div>
     </div>
-    <div id="nonconstInfo" class="innerBox">
-      <label>Email</label>
-      <br/>
-      <input type="email" name="email" id="registerEmail" class="formText" value="PHP" />
-      <br/>
-      <label>Nuova Password</label>
-      <br/>
-      <input type="password" id="newPsw" class="formText" />
-      <br/>
-      <label>Conferma password</label>
-      <br/>
-      <input type="password" name="password" id="repeatPsw" class="formText" />
-      <br />
-      <input type="submit"id="changeSubmit" value="Cambia"/>
-      </div>
-    </div>
+    <form id="nonconstInfo" class="innerBox" action="SCRIPT.php" method="post">
+    	<div class="form-input">
+      		<label>Email</label>
+      		<input type="email" name="email" value="PHP" />
+      	</div>
+      	<div class="form-input">
+      		<label>Nuova Password</label>
+      		<input type="password" name="password"/>
+      	</div>
+      	<div class="form-input">
+      		<label>Conferma password</label>
+      		<input type="password" name="repeatpassword"/>
+      	</div>
+      	<div class="form-input">
+      		<input type="submit" id="changeSubmit" value="Cambia"/>
+      	</div>
+    </form>
+</div>
 <footer></footer>
    </body>
 </html>
