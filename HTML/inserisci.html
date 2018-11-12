@@ -12,6 +12,8 @@
       <link rel="stylesheet" type="text/css" href="../css/account.css" /><!-- FARE CSS -->
       <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /><!-- schermi piccoli --> <!-- da fare -->
       <link rel="stylesheet" type="text/css" href="../css/" media="print" /><!-- da fare -->
+      <script src="../js/inserisci.js"></script>
+
    </head>
    <body>
 <header></header>
@@ -20,8 +22,8 @@
     <h1>Inserisci libro</h1>
     <p>Il libro che vuoi vendere è già nel nostro catalogo?</p>
     <div id="radio-check">
-		<input type="radio" name="type" value="listato">Sì<br>
-  		<input type="radio" name="type" value="personale" selected="selected">No<br>
+		<input type="radio" name="type" id="listato" value="listato">Sì<br>
+  		<input type="radio" name="type" value="personale" id="personale" selected="selected">No<br>
   	</div>
   	<!-- Mostra uno dei due div sotto-->
   	<div id="inserisci-personale">
@@ -37,7 +39,7 @@
       <label>Corso:</label>
       <input type="text" name="corso" id="insertCorso" class="formText"/>
   	</div>
-    <div id="inserisci-listato">	  
+    <div id="inserisci-listato">
       <label>Selezionare il libro dal catalogo:</label>
       <select>
       	<option value="TODO" selected="selected">TODO</option>
