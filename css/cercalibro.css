@@ -1,13 +1,32 @@
 @import url("style.css");
 
-#submitSrc{
-  text-align: right;
+#submitSrc {
+    text-align: right;
 }
 
-.formText{
-  border: 0.1em solid #111;
+br {
+    border color:red;
 }
 
-#searchForm{
-  text-align: left;
+.formText {
+    color: gray;
+    font-family: Georgia;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    border: 0.1em solid black;
+}
+
+label {
+    color: black;
+    font-size: 1.1em;
+    font-family: Georgia;
+}
+
+#searchForm {
+    text-align: center;
+}
+
+.outerBox {
+    background-color: white;
 }
