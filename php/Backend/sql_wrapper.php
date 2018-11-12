@@ -27,6 +27,10 @@ class SqlWrap{
         return $new_result;
     }
 
+    //Esegue un'interrogazione a database
+    //Se collapse è true, vuol dire che il chiamante è sicuro
+    //che la query ha solo una riga, pertanto verrà tornato un array
+    //monodimensionale
     public static function query($query, $collapse = false){
         $connect = self::connect();
         if(!$result = $connect->query($query)){
@@ -47,6 +51,16 @@ class SqlWrap{
   
         else
             return null;
+    }
+
+    //Esegue un comando su database
+    //Lancia un'eccezione se non va a buon fine
+    public static function command($command){
+        $connect = self::connect();
+        if($connect->query($command)){
+            throw Exception("L'operazione '$command' non è andata a buon fine");
+        }
+        $connect->close();
     }
 
 
