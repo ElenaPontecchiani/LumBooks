@@ -1,6 +1,6 @@
 <?php
-include "Backend/htmlMaker.php";
-include "Backend/sql_wrapper.php";
+require_once "Backend/htmlMaker.php";
+require_once "Backend/sql_wrapper.php";
 
 $query = "  SELECT Titolo,Autore,Casa_Editrice as Editore, Corso 
             FROM Libri_Listati";

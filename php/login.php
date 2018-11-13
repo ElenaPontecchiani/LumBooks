@@ -1,5 +1,5 @@
 <?php
-include "Backend/htmlMaker.php";
+require_once "Backend/htmlMaker.php";
 
 $output = file_get_contents("../HTML/login.html");
 

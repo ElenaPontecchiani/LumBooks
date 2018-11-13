@@ -1,11 +1,14 @@
 <?php
-include "Backend/sql_wrapper.php";
+require_once "Backend/sql_wrapper.php";
 
 //MANCA TIPO!
 
 //QUA DEVO ALMENO VALIDARE I CAMPI CHE VANNO INSERITI IN ENTRAMBI I CASI
+
+//Non nulli in caso inserisco io il libro
 $titolo = $_POST['titolo'];
 $autore = $_POST['autore'];
+
 $casa_editrice = $_POST['casaeditrice'];
 $corso = $_POST['corso'];
 //validazione
@@ -13,7 +16,11 @@ $corso = $_POST['corso'];
 $edizione = $_POST['edizione'];
 $annopub = $_POST['anno'];
 $isbn = $_POST['ISBN'];
+
+//Non nullo
 $prezzo = $_POST['prezzo'];
+
+
 //validazione
 
 $libro_da_catalogo = $_POST['catalogo'];
@@ -24,9 +31,9 @@ session_start();
 if (isset($_POST['type'])){
     if($_POST['type'] == "listato" && $libro_da_catalogo){
         //caso precompilato
-        $dati = SqlWrap::query(" SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
-                                    FROM Libri_Listati
-                                    WHERE Titolo = '$libro_da_catalogo'",false)[0];
+        $dati = SqlWrap::query("SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
+                                FROM Libri_Listati
+                                WHERE Titolo = '$libro_da_catalogo'",false)[0];
     }
     else if(($_POST['type'] == "personale")){
         //caso non precompilato
