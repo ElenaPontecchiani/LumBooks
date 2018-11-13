@@ -8,14 +8,6 @@ br {
     border color:red;
 }
 
-.formText {
-    color: gray;
-    font-family: Georgia;
-    font-size: 15px;
-    text-rendering: optimizeLegibility;
-    text-align: center;
-    border: 0.1em solid black;
-}
 
 label {
     color: black;

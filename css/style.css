@@ -30,6 +30,14 @@ body {
 
 div {
     color: #aaa;
+    border-radius: 10px;
+}
+
+.infobox {
+    background-image: url("/images/bianca.png");
+    overflow: auto;
+    margin: 1em 2em;
+    border: 0.1em solid grey;
 }
 
 footer, nav ul, #search-bar button, input, select {
@@ -89,6 +97,9 @@ header {
         font-family: Georgia;
         font-size: 15px;
         text-rendering: optimizeLegibility;
+        text-align: center;
+        border: 0.1em solid black;
+        color: black
     }
 
 
@@ -104,6 +115,9 @@ header {
 
 
 /*PARTE NAVBAR*/
+{
+}
+
 nav ul {
     border-color: grey;
     margin-top: 50px;
@@ -117,6 +131,7 @@ nav ul {
 }
 
 nav li {
+    margin-top: 0px;
     display: inline;
     padding: auto;
     float: left;
