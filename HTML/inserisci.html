@@ -21,63 +21,61 @@
 <div id="insertBox" class="outerBox">
     <h1>Inserisci libro</h1>
     <p>Il libro che vuoi vendere è già nel nostro catalogo?</p>
-    <div id="radio-check">
-		<input type="radio" name="type" id="listato" value="listato">Sì<br>
-  		<input type="radio" name="type" value="personale" id="personale" selected="selected">No<br>
-  	</div>
-  	<!-- Mostra uno dei due div sotto-->
-  	<!-- LASCIO GLI ID perché non so se fate in js o php ma sistemeremo quando ci vediamo-->
-  	<div id="inserisci-personale">
-  		<div class="form-input">
-	  		<label>Titolo:</label>
-      		<input type="text" name="titolo" id="insertTitolo"/>
-      	</div>
-      	<div class="form-input">
-      		<label>Autore:</label>
-      		<input type="text" name="autore" id="insertAutore"/>
-      	</div>
-      	<div class="form-input">
-      		<label>Casa editrice:</label>
-      		<input type="text" name="casaeditrice" id="insertCasaEditrice"/>
-      	</div>
-      	<div class="form-input">
-      		<label>Corso:</label>
-      		<input type="text" name="corso" id="insertCorso"/>
-  		</div>
-  	</div>
-    <div id="inserisci-listato">
-    	<div class="form-input">
-      		<label>Selezionare il libro dal catalogo:</label>
-     		<select>
-      			<option value="TODO" selected="selected">TODO</option>
-      		</select>
-    	</div>
-    <!-- Mostra sempre il div sotto-->
-    <div id="inserisci-sempre">
-    	<div class="form-input">
-    		<label>Stato:</label>
-      		<input type="text" name="stato" id="insertStato"/>
-      	</div>
-  		<div class="form-input">
-			<label>Edizione:</label>
-     		 <input type="text" name="edizione" id="insertEdizione"/>
-     	</div>
-      	<div class="form-input">
-			<label>Anno di pubblicazione:</label>
-      		<input type="text" name="anno" id="insertAnno"/>
-      	</div>
-  		<div class="form-input">
-			<label>ISBN:</label>
-      		<input type="text" name="ISBN" id="insertISBN"/>
-      	</div>
-  		<div class="form-input">
-			<label>Prezzo:</label>
-      		<input type="text" name="prezzo" id="insertPrezzo"/>
-      	</div>
-  		<div class="form-input">
-	    	<input type="submit"id="insertSubmit" value="Inserisci"/>
-	    </div>
-    </div>
+	<form id="input_libri" method="post" action="../php/new_book.php">
+		<div id="radio-check">
+			<input type="radio" name="type" id="listato" value="listato">Sì<br>
+			<input type="radio" name="type" value="personale" id="personale" selected="selected">No<br>
+		</div>
+		<!-- Mostra uno dei due div sotto-->
+		<!-- LASCIO GLI ID perché non so se fate in js o php ma sistemeremo quando ci vediamo-->
+		<div id="inserisci-personale">
+			<div class="form-input">
+				<label>Titolo:</label>
+				<input type="text" name="titolo" id="insertTitolo"/>
+			</div>
+			<div class="form-input">
+				<label>Autore:</label>
+				<input type="text" name="autore" id="insertAutore"/>
+			</div>
+			<div class="form-input">
+				<label>Casa editrice:</label>
+				<input type="text" name="casaeditrice" id="insertCasaEditrice"/>
+			</div>
+			<div class="form-input">
+				<label>Corso:</label>
+				<input type="text" name="corso" id="insertCorso"/>
+			</div>
+		</div>
+		<div id="inserisci-listato">
+			<div class="form-input">
+				<label>Selezionare il libro dal catalogo:</label>
+				<select name="catalogo">
+					<option value="TODO" selected="selected">TODO</option>
+				</select>
+			</div>
+		<!-- Mostra sempre il div sotto-->
+		<div id="inserisci-sempre">
+			<div class="form-input">
+				<label>Edizione:</label>
+				<input type="text" name="edizione" id="insertEdizione"/>
+			</div>
+			<div class="form-input">
+				<label>Anno di pubblicazione:</label>
+				<input type="text" name="anno" id="insertAnno"/>
+			</div>
+			<div class="form-input">
+				<label>ISBN:</label>
+				<input type="text" name="ISBN" id="insertISBN"/>
+			</div>
+			<div class="form-input">
+				<label>Prezzo:</label>
+				<input type="text" name="prezzo" id="insertPrezzo"/>
+			</div>
+			<div class="form-input">
+				<input type="submit"id="insertSubmit" value="Inserisci"/>
+			</div>
+		</div>
+	</form>
 </div>
 <footer></footer>
    </body>

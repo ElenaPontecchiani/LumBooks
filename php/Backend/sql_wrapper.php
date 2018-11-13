@@ -7,7 +7,7 @@ class SqlWrap{
         $dbhost = 'localhost';
         $connect = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
         if($connect->connect_errno){
-            throw Exception("Connessione al database fallita");
+            throw new Exception("Connessione al database fallita");
         }
         mysqli_set_charset($connect,"utf8");
         return $connect;
@@ -34,7 +34,7 @@ class SqlWrap{
     public static function query($query, $collapse = false){
         $connect = self::connect();
         if(!$result = $connect->query($query)){
-            throw Exception("La query non è andata a buon fine");
+            throw new Exception("La query non è andata a buon fine");
         }
         $connect->close();
         $lista_return = [];
@@ -57,8 +57,8 @@ class SqlWrap{
     //Lancia un'eccezione se non va a buon fine
     public static function command($command){
         $connect = self::connect();
-        if($connect->query($command)){
-            throw Exception("L'operazione '$command' non è andata a buon fine");
+        if(!($connect->query($command))){
+            throw new Exception("L'operazione '$command' non è andata a buon fine");
         }
         $connect->close();
     }

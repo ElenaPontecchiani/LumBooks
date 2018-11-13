@@ -25,7 +25,10 @@
             </div>
         	<div class="form-input">
            		<label>Titolo</label>
-            	<input type="text" name="titolo"/>
+				   <input list="titleInput" name="titolo"/>
+				   <datalist id="titleInput" class="formText">
+					   ££titoli££
+				   </datalist>
         	</div>
         	<div class="form-input">
             	<label>Autore</label>
@@ -33,13 +36,13 @@
         	</div>
         	<div class="form-input">
             	<label>ISBN</label>
-            	<input type="text" name="ISBN"/>
+            	<input type="text" name="isbn"/>
         	</div>
         	<div class="form-input">
             	<label for="form-group">Corso</label>
             	<select name="corso" form="searchForm">
-                	<option value="all" selected="selected>Qualsiasi</option>
-                	<option value="programmazione">££ CORSI ££</option>
+                	<option value="Qualsiasi" selected="selected">Qualsiasi</option>
+                	££opzioni££
             	</select>
        		</div>
         	<div class="form-input">

@@ -1,54 +1,76 @@
 <?php
-include "/Backend/sql_wrapper.php";
+include "Backend/sql_wrapper.php";
 
-/*  INSERIMENTO DELLE VARIABILI DALLA POST
-    E CONSEGUENTE VALIDAZIONE
-*/
+//MANCA TIPO!
 
 //QUA DEVO ALMENO VALIDARE I CAMPI CHE VANNO INSERITI IN ENTRAMBI I CASI
+$titolo = $_POST['titolo'];
+$autore = $_POST['autore'];
+$casa_editrice = $_POST['casaeditrice'];
+$corso = $_POST['corso'];
+//validazione
 
+$edizione = $_POST['edizione'];
+$annopub = $_POST['anno'];
+$isbn = $_POST['ISBN'];
+$prezzo = $_POST['prezzo'];
+//validazione
 
+$libro_da_catalogo = $_POST['catalogo'];
 
-//NELLE QUERY DEVO METTERE ASSOLUTAMENTE GLI ATTRIVUTI CON IL LORO NOME DA DATABASE
 $dati = [];
-if (isset($_POST['precomp']))
-    if($_POST['precomp'] == "Si" && $libro_da_catalogo){
+session_start();
+
+if (isset($_POST['type'])){
+    if($_POST['type'] == "listato" && $libro_da_catalogo){
         //caso precompilato
-        $dati = SqlWrapper::query(" SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo
+        $dati = SqlWrap::query(" SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
                                     FROM Libri_Listati
-                                    WHERE Titolo = $libro_da_catalogo",true);
+                                    WHERE Titolo = '$libro_da_catalogo'",false)[0];
     }
-    else if(($_POST['precomp'] == "No")){
+    else if(($_POST['type'] == "personale")){
         //caso non precompilato
-        $dati = array(  "Titolo" => $titolo
-                        "Autore" => $autore
-                        "Casa_Editrice" => $casa_editrice
+        $dati = array(  "Titolo" => $titolo,
+                        "Autore" => $autore,
+                        "Casa_Editrice" => $casa_editrice,
                         "Corso" => $corso);
     }
     else
-        throw Exception("Richiesta Malformata");
+        throw new Exception("Richiesta Malformata");
 }
+else
+    throw new Exception("Richiesta Malformata");
 
-$dati = $dati + array(  "Stato" => $stato
-                        "Edizione" => $edizione
-                        "AnnoPub" => $annopub
-                        "ISBN" => $isbn
-                        "Prezzo" => $prezzo);
+//Aggiunta valori comuni
+$dati = $dati + array(  "Stato" => "In vendita",
+                        "Edizione" => $edizione,
+                        "Anno_Pubblicazione" => $annopub,
+                        "ISBN" => $isbn,
+                        "Prezzo" => $prezzo,
+                        "Data_Aggiunta" => date("Y-m-d"),
+                        "Venditore" => $_SESSION['id']); 
 
 
-$insert = "INSERT INTO Libri_Listati(";
 $par1 = "";
 $par2 = "";
 $keys = array_keys($dati);
 foreach($keys as $key){
     $par1 .= $key.",";
-    $par2 .= $dati[$key].","; //problema: virgole alla fine
+    if($dati[$key]!= null){
+        if (gettype($dati[$key]) != "string")
+            $par2 .= $dati[$key].",";
+        else
+            $par2 .= "'".$dati[$key]."'".",";
+    }
+    else
+        $par2 .= "NULL,";
 }
-//risolvibile forse mettendo in più l'id come null
 
-$insert .= $par1.") VALUES(\"".$par2.");"
-SqlWrapper::Command($insert);
+$par1 = substr($par1,0,-1);
+$par2 = substr($par2,0,-1);
 
-echo "libro inserito con successo";
+$insert = "INSERT INTO Libri_In_Vendita(".$par1.") VALUES(".$par2.");";
+SqlWrap::Command($insert);
 
+echo "Libro Inserito con successo!";
 ?>

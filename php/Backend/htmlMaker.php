@@ -10,9 +10,10 @@ class htmlMaker{
             $html .= "<dl class=\"search_item\">\n";
             $html .= str_replace('££TITOLO££',$libro['Titolo'],$item_title)."\n";
             foreach($campi as $campo){
-                $html.= str_replace('££NOMECAMPO££',$campo,
-                        str_replace('££CAMPO££',$libro[$campo],
-                        $item_spec))."\n";
+                if ($libro[$campo] != "")
+                    $html.= str_replace('££NOMECAMPO££',$campo,
+                            str_replace('££CAMPO££',$libro[$campo],
+                            $item_spec))."\n";
             }
             $html .= "</dl>\n";
         }
@@ -26,6 +27,7 @@ class htmlMaker{
         $nav_return .=  '        <li class=""><a href="home.php">Home</a></li>'."\n";
         $nav_return .=  '        <li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
         $nav_return .=  '        <li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
+        $nav_return .=  '        <li class=""><a href="inserisci.php">Inserisci</a></li>';
 
         if(!isset($_SESSION)){
             session_start();
