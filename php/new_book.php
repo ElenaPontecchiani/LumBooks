@@ -28,66 +28,70 @@ $isbn =             $_POST['ISBN'];
 $prezzo =           $_POST['prezzo'];
 $libro_catalogo =   $_POST['catalogo'];
 
-
-Validator::registerVal( $scelta_list, $titolo, $autore, $casa_editrice,
-                        $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo); 
-    
-                        
-//MANCA TRIM DEGLI INPUT
-
-
-
-############## FINE VAL ###################
-
-$dati = [];
-session_start();
-
-if($scelta_list){
-    //caso precompilato
-    $dati = SqlWrap::query("SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
-                            FROM Libri_Listati
-                            WHERE Titolo = '$libro_catalogo'",false)[0];
-}
-else{
-    //caso non precompilato
-    $dati = array(  "Titolo" => $titolo,
-                    "Autore" => $autore,
-                    "Casa_Editrice" => $casa_editrice,
-                    "Corso" => $corso);
-}
+try{
+    Validator::registerVal( $scelta_list, $titolo, $autore, $casa_editrice,
+                            $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo); 
+        
+                            
+    //MANCA TRIM DEGLI INPUT
 
 
-//Aggiunta valori comuni
-$dati = $dati + array(  "Stato" => "In vendita",
-                        "Edizione" => $edizione,
-                        "Anno_Pubblicazione" => $annopub,
-                        "ISBN" => $isbn,
-                        "Prezzo" => $prezzo,
-                        "Data_Aggiunta" => date("Y-m-d"),
-                        "Venditore" => $_SESSION['id']); 
 
+    ############## FINE VAL ###################
 
-$par1 = "";
-$par2 = "";
-$keys = array_keys($dati);
-foreach($keys as $key){
-    $par1 .= $key.",";
-    if($dati[$key]!= null){
-        if (gettype($dati[$key]) != "string")
-            $par2 .= $dati[$key].",";
-        else
-            $par2 .= "'".$dati[$key]."'".",";
+    $dati = [];
+    session_start();
+
+    if($scelta_list){
+        //caso precompilato
+        $dati = SqlWrap::query("SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
+                                FROM Libri_Listati
+                                WHERE Titolo = '$libro_catalogo'",false)[0];
     }
-    else
-        $par2 .= "NULL,";
+    else{
+        //caso non precompilato
+        $dati = array(  "Titolo" => $titolo,
+                        "Autore" => $autore,
+                        "Casa_Editrice" => $casa_editrice,
+                        "Corso" => $corso);
+    }
+
+
+    //Aggiunta valori comuni
+    $dati = $dati + array(  "Stato" => "In vendita",
+                            "Edizione" => $edizione,
+                            "Anno_Pubblicazione" => $annopub,
+                            "ISBN" => $isbn,
+                            "Prezzo" => $prezzo,
+                            "Data_Aggiunta" => date("Y-m-d"),
+                            "Venditore" => $_SESSION['id']); 
+
+
+    $par1 = "";
+    $par2 = "";
+    $keys = array_keys($dati);
+    foreach($keys as $key){
+        $par1 .= $key.",";
+        if($dati[$key]!= null){
+            if (gettype($dati[$key]) != "string")
+                $par2 .= $dati[$key].",";
+            else
+                $par2 .= "'".$dati[$key]."'".",";
+        }
+        else
+            $par2 .= "NULL,";
+    }
+
+    $par1 = substr($par1,0,-1);
+    $par2 = substr($par2,0,-1);
+
+    $insert = "INSERT INTO Libri_In_Vendita(".$par1.") VALUES(".$par2.");";
+    echo $insert;
+    SqlWrap::Command($insert);
+    echo "Libro Inserito con successo!";
+} catch (Exception $e) {
+    echo 'Errore: ',  $e->getMessage(), "\n";
 }
 
-$par1 = substr($par1,0,-1);
-$par2 = substr($par2,0,-1);
 
-$insert = "INSERT INTO Libri_In_Vendita(".$par1.") VALUES(".$par2.");";
-echo $insert;
-SqlWrap::Command($insert);
-
-echo "Libro Inserito con successo!";
 ?>
