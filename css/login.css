@@ -1,21 +1,48 @@
 @import url("style.css");
 
-
-
-#loginSubmit, #registerSubmit{
-  float: right;
-}
-
-#recuperoPsw{
-  font-size: 0.63em;
+.label-form-input {
+    color: black;
+    display: inline-block;
 }
 
 
-
-.formText{
-  border: 0.1em solid #111;
+#loginForm {
+    margin-left: 6%;
 }
 
-.errorBox{
-  border-color: red;
+
+.testoinf {
+    width: 24%;
+    margin-left: 6%;
+}
+
+    .testoinf div {
+        display: inline;
+    }
+
+form {
+    width: 24%;
+}
+
+.inserimento {
+    width: 24%;
+    padding-left: 10px;
+}
+
+#loginSubmit, #registerSubmit {
+    float: right;
+}
+
+#recuperoPsw {
+    font-size: 0.63em;
+}
+
+
+
+.formText {
+    border: 0.1em solid #111;
+}
+
+.errorBox {
+    border-color: red;
 }

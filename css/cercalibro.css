@@ -4,10 +4,16 @@
   text-align: right;
 }
 
-.formText{
-  border: 0.1em solid #111;
+label {
+  color: black;
+  font-size: 1.1em;
+  font-family: Georgia;
 }
 
-#searchForm{
-  text-align: left;
+#searchForm {
+  text-align: center;
+}
+
+.outerBox {
+  background-color: white;
 }

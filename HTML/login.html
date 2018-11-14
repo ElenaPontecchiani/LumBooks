@@ -1,37 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
-	<meta charset="UTF-8">
-	<title>Login | LumBooks</title>
-	<link rel="icon" href=""/> <!-- link icona -->
-	<meta name="title" content="login LumBooks" />
-	<meta name="description" content="Pagina di Login" />
-	<meta name="keywords" content="libro, unipd, login" />
-	<meta name="language" content="italian it" />
-	<link rel="stylesheet" type="text/css" href="../css/login.css" />
-	<link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
-	<link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
+    <meta charset="UTF-8">
+    <title>Login | LumBooks</title>
+    <link rel="icon" href="" /> <!-- link icona -->
+    <meta name="title" content="login LumBooks" />
+    <meta name="description" content="Pagina di Login" />
+    <meta name="keywords" content="libro, unipd, login" />
+    <meta name="language" content="italian it" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../css/" media="screen and (max-width:768px)" /> <!-- schermi piccoli --> <!-- da fare -->
+    <link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
 </head>
 <body>
-	<header></header>
-	<nav></nav>
-	<div id="loginBox" class="outerBox">
-		<form id="loginForm" class="innerBox" action="check_login.php" method="post">
-			<div class="form-input">
-				<label>Email:</label>
-				<input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
-			</div>
-			<div class="form-input">
-				<label>Password:</label>
-				<input type="password" id="inputPsw" placeholder="Password" name="password" class="formText"/>
-			</div>
-			<label id='loginError' class='hidden'>Email o Password sbagliata</label>
-			<a href="recuperoPwd.php" id="recuperoPsw">Password dimenticata?</a>
-			<div class="form-input">
-				<input type="submit" id="loginSubmit" value="Login"/>
-			</div>
-		</form>
-	</div>
-	<footer></footer>
+    <header></header>
+    <nav></nav>
+
+    <div id="loginBox" class="infobox">
+        <div class="testoinf">
+            <p>Non sei ancora registrato?</p>
+            <a href="registrati.php" id="recuperoPsw">Registrati!</a>
+        </div>
+        <div class="inserimento">
+            <form id="loginForm" class="innerBox" action="check_login.php" method="post">
+                <div class="form-input">
+                    <div class="label-form-input">
+                        <label>Email:</label>
+                    </div>
+                    <div class="input-form-input">
+                        <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
+                    </div>
+                </div>
+                <div class="form-input">
+                    <div class="label-form-input">
+                        <label>Password:</label>
+                    </div>
+                    <div class="input-form-input">
+                        <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText" />
+                    </div>
+                </div>
+                <label id='loginError' class='hidden'>Email o Password sbagliata</label>
+                <a href="recuperoPwd.php" id="recuperoPsw">Password dimenticata?</a>
+                <div class="form-input">
+                    <input type="submit" id="loginSubmit" value="Login" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <footer></footer>
 </body>
 </html>

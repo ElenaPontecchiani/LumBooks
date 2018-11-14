@@ -1,0 +1,50 @@
+@import url("style.css");
+/*PARTE HOME*/
+/*.infobox {
+    background-image: url("/images/bianca.png");
+}*/
+
+.infobox div {
+    max-width: 55%;
+    display: inline-block;
+    float: right;
+    color: rgb(128, 128, 128);
+}
+
+.infobox h1 {
+    font-size: 1.8em;
+    font-family: Georgia;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.infobox img { /*non manipolata perche forse slide show*/
+    max-width: 40%;
+    float: left;
+    object-fit: fill;
+}
+
+.infobox {
+    overflow: auto;
+    margin: 1em 2em;
+    border: 0.1em solid grey;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.outerBox {
+    padding: 1.875em;
+    text-align: center;
+}
+
+.innerBox {
+    display: inline-block;
+    padding: 5em;
+    text-align: left;
+}
+
+    .innerBox input {
+        margin-bottom: 1em;
+    }
