@@ -27,7 +27,8 @@ class htmlMaker{
         $nav_return .=  '        <li class=""><a href="home.php">Home</a></li>'."\n";
         $nav_return .=  '        <li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
         $nav_return .=  '        <li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
-        $nav_return .=  '        <li class=""><a href="inserisci.php">Inserisci</a></li>';
+        $nav_return .=  '        <li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
+        $nav_return .=  '        <li class="nav"><input type="text" placeholder="Search.."></li>';
 
         if(!isset($_SESSION)){
             session_start();
