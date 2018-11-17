@@ -81,13 +81,14 @@ header {
     font-style: normal;
 }
 
-#left_header h2 {
+/*SE TOGLIAMO COMPRA E VENDI LIBRI IN TOTALE SICUREZZA
+    #left_header h2 {
     font-size: 1.8em;
     color: rgb(180,180,180);
     font-family: Georgia;
     font-weight: 100;
     font-style: italic;
-}
+}*/
 
 #search-bar {
     float: right;
@@ -127,7 +128,7 @@ header {
 nav ul {
     border-radius: 0px;
     border-color: grey;
-    margin-top: 50px;
+  /*  margin-top: 50px;*/
     font-size: 1.1em;
     font-family: Georgia;
     list-style-type: none;
