@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height:100%;
+}
 
 body {
     /*PROPIET� BACKGROUND*/
@@ -16,7 +19,7 @@ body {
     /*RIEMPIMENTO*/
     overflow-x: hidden;
     overflow-y: hidden;
-    border: 0;
+    border: 0px;
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
@@ -30,20 +33,35 @@ body {
 
 div {/*width non qua altremiemnti prende header*/
     
-    color: #aaa;
-    border-radius: 10px;
+   /* color: #aaa;*/
+    
 }
 
 .infobox {
     max-width: 1200px;
     background-image: url("../images/bianca.png");
     overflow: auto;
-    
-    margin-top: 5px auto 0px auto;
+    margin-top: 0px;
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    border: 0.1em solid grey;
+    border-top: 0px;
+    border-bottom: 0.1em solid grey;
+    border-left: 0.1em solid grey;
+    border-right: 0.1em solid grey;
+    border-radius: 0px;
+}
+
+.ptinf {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+  /*  background-image: url("../images/sfondo.jpg");
+    background-image: url("../images/sfondo-grigio1.jpg");*/
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
 }
 
 footer, nav ul, #search-bar button, input, select {
@@ -56,6 +74,9 @@ footer, nav ul, #search-bar button, input, select {
 /*PARTE HEADER*/
 header {
     
+    padding-right: 20px;
+  
+    padding-left: 20px;
     height: 5em;
     min-width: 900px;
     color: rgb(180,180,180); /*colore default grigio*/
@@ -115,47 +136,58 @@ header {
 
 
 
-
-
-
-
-
-
-
 /*PARTE NAVBAR*/
-
+#navbar {
+    
+    /* background-image: url("../images/bianca.png");
+    color: rgb(0,4,92);*/
+}
 
 nav ul {
+    
     border-radius: 0px;
-    border-color: grey;
-  /*  margin-top: 50px;*/
+    border-top: 0px;
+    border-bottom:0px;
+   /* border-bottom-color: grey;*/
     font-size: 1.1em;
     font-family: Georgia;
     list-style-type: none;
-    color: red;
     overflow: hidden;
     padding-left: 0;
     min-width: 25em;
 }
 
 nav li {
+    padding-right: 20px;
+    padding-left: 20px;
     margin-top: 0px;
     display: inline;
     padding: auto;
     float: left;
 }
 
-    nav li a {
+nav li a {
         display: block;
         color: rgb(204, 230, 255);
         text-align: center;
         padding: 0.7em;
         text-decoration: none;
+}
+
+     .right {/*vedere come posizionare login e reg*/
+        float: right;
+      
+
     }
 
-.right {
-    float: right;
-}
+    .nav {
+        margin-top:10px;
+        margin-left:100px;
+        
+    }
+
+
+
 
 nav li:hover:not(.active) {
     background-color: #754b00;
@@ -181,13 +213,23 @@ background-color: #4CAF50;
 
 /*PARTE FOOTER*/
 footer {
-    background-color: white;
     color: black;
     text-align: center;
+    margin-top: 0px;
+    border: 0px;
+    color: rgb(204, 230, 255);
+    /* background-image: url("../images/sfondo.jpg");
+    background-image: url("../images/sfondo-grigio1.jpg");*/
+    margin-bottom: 0px;
     /*  border-style:solid;
   border-width: 5px;
   border-color:white;
   border-radius:10px;	*/
+}
+
+footer, #push {
+    height: 150px;
+    clear: both;
 }
 
 #footer-social li {
