@@ -26,28 +26,28 @@
       <div id="registerBox" class="outerBox">
          <form id="registerForm" class="innerBox" action="../php/new_user.php" method="post">
             <div class="form-input">
-               <label>Email*</label>
-               <input type="email" name="email"/>
+               <label for="email">Email*</label>
+               <input type="email" name="email" id="email"/>
             </div>
             <div class="form-input">
-               <label>Matricola</label>
-               <input type="text"  name="matricola"/>
+               <label for="matricola">Matricola</label>
+               <input type="text"  name="matricola" id="matricola"/>
             </div>
             <div class="form-input">
-               <label>Nome</label>
-               <input type="text" name="nome"/>
+               <label for="nome">Nome</label>
+               <input type="text" name="nome" id="nome"/>
             </div>
             <div class="form-input">
-               <label>Cognome</label>
-               <input type="text" name="cognome"/>
+               <label for="cognome">Cognome</label>
+               <input type="text" name="cognome" id="cognome"/>
             </div>
             <div class="form-input">
-               <label>Nome utente</label>
-               <input type="text" name="user"/>
+               <label for="user">Nome utente</label>
+               <input type="text" name="user" id="user"/>
             </div>
             <div class="form-input">
-               <label>Sesso</label>
-               <select name="sesso" form="registerForm">
+               <label for="sesso">Sesso</label>
+               <select name="sesso" form="registerForm" id="sesso">
                   <option value="M" selected="selected">Uomo</option>
                   <option value="F">Donna</option>
                   <option value="N">Non Specificato</option>
@@ -60,16 +60,16 @@
                   </datalist> -->
             </div>
             <div class="form-input">
-               <label>Data di nascita</label>
-               <input type="date" name="nascita">
+               <label for="nascita">Data di nascita</label>
+               <input type="date" name="nascita" id="nascita">
             </div>
             <div class="form-input">
-               <label>Password*</label>
-               <input type="password" name="password"/>
+               <label for="password">Password*</label>
+               <input type="password" name="password" id="password"/>
             </div>
             <div class="form-input">
-               <label>Ripeti password*</label>
-               <input type="password" name="repeatpassword"/>
+               <label for="ripeatpassword">Ripeti password*</label>
+               <input type="password" name="repeatpassword" id="ripeatpassword"/>
             </div>
             <div class="form-input">
             	<input type="submit" id="registerSubmit" value="Registrati"/>
