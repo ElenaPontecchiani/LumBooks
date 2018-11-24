@@ -30,6 +30,8 @@ $output = str_replace("££titoli££",$opzioni_titolo,$output);
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
 $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);
 $output = str_replace("<footer></footer>",htmlMaker::footer(),$output);
+
+//In caso di errore, riempio di nuovo il form
 if(isset($_GET["titolo"]))
 $output = str_replace('name="titolo"','name="titolo" value="'.$_GET["titolo"].'"',$output);
 if(isset($_GET['autore']))
@@ -38,6 +40,8 @@ if(isset($_GET['isbn']) && $_GET['isbn']!="error")
 $output = str_replace('name="isbn"','name="isbn" value="'.$_GET['isbn'].'"',$output);
 if(isset($_GET['corso']))
 $output = str_replace('name="corso"','name="corso" value="'.$_GET['corso'].'"',$output);
+//#######BISOGNA STAMPARE UN MESSAGGIO DI ERRORE
+
 
 //stampa del body principale della pagina
 echo $output;

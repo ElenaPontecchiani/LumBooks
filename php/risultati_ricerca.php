@@ -3,10 +3,10 @@ require_once "Backend/sql_wrapper.php";
 require_once "Backend/htmlMaker.php";
 require_once "Backend/validator.php";
 
-$titolo = $_POST['titolo'];
-$autore = $_POST['autore'];
-$isbn = $_POST['isbn'];
-$corso = $_POST['corso'];
+$titolo = $_GET['titolo'];
+$autore = $_GET['autore'];
+$isbn = $_GET['isbn'];
+$corso = $_GET['corso'];
 
 
 /*

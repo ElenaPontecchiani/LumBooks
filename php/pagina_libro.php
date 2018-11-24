@@ -4,11 +4,10 @@ require_once "Backend/validator.php";
 try{    
     if (isset($_GET['libro'])){
         $book_hash = $_GET['libro'];
-        $book_hash = trim($book_data);
-        if(Validator::lengthVal(32,32,$book_hash))
+        $book_hash = trim($book_hash);
+        if(!Validator::lengthVal(32,32,$book_hash))
             throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
-        if(sqlWrap::input_escape(array(&$book_hash)))
-            throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
+        sqlWrap::input_escape(array(&$book_hash));
     }    
         
     else
