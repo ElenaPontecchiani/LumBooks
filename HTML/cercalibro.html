@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
     <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
     <link rel="stylesheet" type="text/css" href="../css/" media="print" />
-  <script type="text/javascript" src="../js/searchBook.js"></script>
 </head>
 <body>
     <header></header>
@@ -21,27 +20,27 @@
     <div class="infobox">
         <form id="searchForm" class="innerBox" action="risultati_ricerca.php" method="post">
             <div class="form-group">
-                <label>Parola chiave</label>
-                <input type="text" name="keyword" />
+                <label for="keyword">Parola chiave</label>
+                <input type="text" name="keyword" id="keyword" />
             </div>
             <div class="form-group">
-                <label>Titolo</label>
-                <input list="titleInput" name="titolo" />
+                <label for="titolo">Titolo</label>
+                <input list="titleInput" name="titolo" id="titolo" />
                 <datalist id="titleInput" class="formText">
                     ££titoli££
                 </datalist>
             </div>
             <div class="form-group">
-                <label>Autore</label>
-                <input type="text" name="autore" />
+                <label for="autore">Autore</label>
+                <input type="text" name="autore" id="autore" />
             </div>
             <div class="form-group">
-                <label>ISBN</label>
-                <input type="text" name="isbn" />
+                <label for="isbn">ISBN</label>
+                <input type="text" name="isbn" id="isbn" />
             </div>
             <div class="form-group">
-                <label for="form-group">Corso</label>
-                <select name="corso" form="searchForm">
+                <label for="corso">Corso</label>
+                <select name="corso" form="searchForm" id="corso">
                     <option value="Qualsiasi" selected="selected">Qualsiasi</option>
                     ££opzioni££
                 </select>

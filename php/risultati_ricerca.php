@@ -2,6 +2,7 @@
 require_once "Backend/sql_wrapper.php";
 require_once "Backend/htmlMaker.php";
 require_once "Backend/validator.php";
+
 $titolo = $_POST['titolo'];
 $autore = $_POST['autore'];
 $isbn = $_POST['isbn'];
@@ -14,14 +15,14 @@ $corso = $_POST['corso'];
     *  TRIMMARE ECC
     */
 
-
 //escape dell'input
 SqlWrap::input_escape( array(&$titolo,&$autore,&$isbn,&$corso) );
 $correctSqlInput = Validator::ricercaValidation($titolo,$autore,$isbn,$corso);
 
 //#todo >>>>>>>>>>>>>> visualizzare un errore e riempire i campi <<<<<<<<<<<<
 if($isbn == "error"){
-  header('Location: cercalibro.php');
+  $location = ('Location: cercalibro.php?titolo='.$titolo.'&autore='.$autore.'&isbn='.$isbn.'&corso='.$corso);
+  header($location);
   exit();
 }
   //INZIO COMPOSIZIONE DELLA QUERY"

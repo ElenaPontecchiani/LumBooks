@@ -37,7 +37,7 @@ class Validator{
             (!filter_var($annopub, FILTER_VALIDATE_INT, array("options" => array("min_range"=>1900, "max_range"=>2100)))))
             throw new Exception("Anno non valido");
 
-        //Saranno necessari controlli per stabilire che valore di ezione sia corretto
+        //Saranno necessari controlli per stabilire che valore di edizione sia corretto
         #############################################################################
         if((!Validator::lengthVal(3,20,$edizione)) && $edizione != "")
             throw new Exception("Edizione non valida");
