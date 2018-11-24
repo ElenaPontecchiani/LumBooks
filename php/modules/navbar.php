@@ -17,7 +17,7 @@ if (!isset($_SESSION['nome'])){
 }
     else{
         echo '        <li class="right"><a href="logout.php">Logout</a></li>';
-        echo "        <li class=\"right\"><a>Ciao,{$_SESSION['nome']} :)</a></li>";
+        echo '        <li class="right"><a href="utente.php">Pannello Utente</a></li>';
     }
 
 echo '    </ul>';

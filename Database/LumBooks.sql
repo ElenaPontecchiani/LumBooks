@@ -36,7 +36,10 @@ CREATE TABLE Libri_In_Vendita(
 
     Stato varchar(20) not null,
     Tipo varchar(30) not null,
-    Codice_identificativo_Libro int(5)  REFERENCES Libri_Listati(Codice_identificativo)
+    Codice_identificativo_Libro int(5)  REFERENCES Libri_Listati(Codice_identificativo), 
+
+    md5_Hash char(32) not null unique
+    /*Hash md5 calcolato a partire da valore casuale*/
 );
 ALTER TABLE Libri_In_Vendita AUTO_INCREMENT=10000;
 ALTER TABLE Libri_In_Vendita
