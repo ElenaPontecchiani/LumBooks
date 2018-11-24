@@ -44,7 +44,7 @@ class htmlMaker{
         }
             else{
                 $nav_return .=  '        <li class="right"><a href="logout.php">Logout</a></li>'."\n";
-                $nav_return .=  "        <li class=\"right\"><a>Ciao,{$_SESSION['nome']} :)</a></li>"."\n";
+                $nav_return .=  '        <li class="right"><a href="utente.php">Pannello Utente</a></li>'."\n";
             }
 
         $nav_return .=  '    </ul>'."\n";

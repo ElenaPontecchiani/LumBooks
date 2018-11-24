@@ -15,9 +15,11 @@ class Validator{
         require_once "Backend/sql_wrapper.php";
         //Escape di tutti gli input
         //Tutti insieme per minimiazzare accesso al db
-        SqlWrap::input_escape(array(  &$scelta_list,&$titolo,&$autore,&$casa_editrice,
+        $inputs = array(  &$scelta_list,&$titolo,&$autore,&$casa_editrice,
                                         &$corso,&$edizione,&$annopub,&$isbn,
-                                        &$prezzo,&$libro_catalogo));
+                                        &$prezzo,&$libro_catalogo);
+        SqlWrap::input_escape($inputs);
+        array_walk($inputs,'trim');
 
         //A seconda della scelta dell'utente (listato vs libero), controllo solo
         //i campi necessari
@@ -55,16 +57,20 @@ class Validator{
     }
 
     public static function ricercaValidation(&$titolo, &$autore, &$isbn, &$corso){
-      if(strlen($titolo)>50)
-        $titolo = substr($titolo,0,50);
-      if(strlen($autore)>50)
-        $autore = substr($titolo,0,50);
-      str_replace("-","",$isbn);
-      if(strlen($isbn) != 13 && strlen($isbn) != 0)
-        $isbn = "error";
-      if(strlen($corso)>30)
-        $corso = substr($corso,0,30);
+        $inputs = array(&$titolo,&$autore,&$isbn,&$corso);
+        //array_walk($inputs,'trim');
+        SqlWrap::input_escape($inputs);
+        if(strlen($titolo)>50)
+            $titolo = substr($titolo,0,50);
+        if(strlen($autore)>50)
+            $autore = substr($titolo,0,50);
+        str_replace("-","",$isbn);
+        if(strlen($isbn) != 13 && strlen($isbn) != 0)
+            $isbn = "error";
+        if(strlen($corso)>30)
+            $corso = substr($corso,0,30);
     }
+
 
 }
 
