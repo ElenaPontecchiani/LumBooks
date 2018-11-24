@@ -56,6 +56,8 @@ try{
                         "Corso" => $corso);
     }
 
+    //generazione hashmd5
+    $md5 = md5(time()+mt_rand());
 
     //Aggiunta valori comuni
     $dati = $dati + array(  "Stato" => "In vendita",
@@ -64,7 +66,8 @@ try{
                             "ISBN" => $isbn,
                             "Prezzo" => $prezzo,
                             "Data_Aggiunta" => date("Y-m-d"),
-                            "Venditore" => $_SESSION['id']); 
+                            "Venditore" => $_SESSION['id'],
+                            "md5Hash" => $md5); 
 
 
     $par1 = "";

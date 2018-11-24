@@ -25,7 +25,7 @@ if($isbn == "error"){
   exit();
 }
   //INZIO COMPOSIZIONE DELLA QUERY"
-  $query = "  SELECT Titolo,Autore,Prezzo,ISBN
+  $query = "  SELECT Titolo,Autore,Prezzo,ISBN,md5Hash
               FROM Libri_In_Vendita WHERE 1=1 ";
 
   if (!($titolo == ""))
