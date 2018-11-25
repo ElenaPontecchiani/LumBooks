@@ -1,66 +1,115 @@
 @import url("style.css");
 
+/*GENERALI*/
 
-#Superior{/*SETTARE MEGLIO MARGINI PER EFFETTUA UNA RICERCA E CATEGORIA*/
-  margin: 15px 0 10px 0;
-  
-  
+/*PARTE INPUT SELECT*/
+.infobox select,.infobox input{
+  padding-top: 0.3em;
+  padding-right: 0.6em;
+  padding-bottom: 0.3em;
+  padding-left: 0.6em;
+
+  border: 1px solid grey;
+  border-radius: 2px;
 }
 
+.infobox label{
+  font-weight: 300;
+  text-align: right;
+  
+  font-family: "Open Sans", sans-serif;  
+
+line-height: 1.42857;
+}
+
+
+
+
+
+/*PARTE SUPERIORE*/
 #Superior{
   border-bottom:0.02em solid grey;
   margin-top:1.2em;
   padding-bottom:1.2em;
-  
 }
 
-#Superior label {
+#Superior label {/*CATEGORIA*/
   color:rgb(40, 103, 161);
   font-weight: 400;
 }
-#Superior h2{
-  /*parte effettua ricerca*/
+
+#Superior h2{/*EFFETUA RIC AVANZATA*/
   color:rgb(40, 103, 161);
   padding: 0;
   text-align:left;
- /* width:80%;*/
   font-weight: 600;
-  
   font-size: 18px;
+  
+  
 
 }
 
 .sx1{
   padding-left:3.5em;/*in modo che sia allineato logo*/
+  
+
 }
 
 .dx1{
-  width: 40%;
+  width: 47.5%;
   float: right;
 }
 
 #Superior div{
+  
   
   display:inline-block;
   
 }
 
 
+#Superior select{
+  width: 130px;
+  text-align: left;
+  padding-left:0.2em;
+}
+
+/*PARTE MIDDLE*/
+
+#Middle{
+  
+  margin-top:1em;
+  margin-bottom:1.6em;
+  margin-left:10em;
+  margin-right:0em;
+}
 #Middle div{
   width: 50%;
+  
   display:inline-block; 
+  
+  
 }
+
+#Middle label{
+  font-size: 0.9em;
+}
+
+
+
 
 
 .colSx{
   float:left;
+  
+  
 }
 
 
-/*
-.colSx label{
-  padding-left:7px;
-}*/
+
+
+
+
 
 #Titolo{
   padding-left:0.7em;
@@ -84,33 +133,31 @@
 
 #Corso{/*el allineati a editore*/
   /*label*/
-  padding-left:0em;
+  padding-left:3.35em;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-.colDx{
-  float:right;
+#Middle label,input{
+  display:inline-block;
 }
 
+
+/*PARTE LOWER*/
 
 #Lower{
-  float:right;
+  text-align: center;
 }
 
-#Middle{
-  text-align:center;
-}
+
+
+
+
+
+
+
+
 
 #submitSrc{
   text-align: right;
