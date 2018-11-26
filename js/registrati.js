@@ -1,1 +1,1 @@
-// funzione per nascondere i campi registrazione opzionali
+//controlli in real time (ajax) - opzionale
