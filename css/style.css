@@ -1,21 +1,16 @@
 * {
-    margin-top: 5px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    box-sizing: border-box;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
 }
 
-html, body {
-    height:100%;
-}
 
 body {
     /*PROPIET� BACKGROUND*/
-    background-color: rgb(0,4,92);
+    background-color: #f9f9f9;
     background-image: url("../images/sfondo.jpg");
     background-repeat: repeat;
-    background-attachment: scroll; /*rimane fissa*/
     /*RIEMPIMENTO*/
     overflow-x: hidden;
     overflow-y: hidden;
@@ -122,14 +117,14 @@ header {
 
 
 
-    #search-bar button, input, select {
-        font-family: Georgia;
-        font-size: 15px;
-        text-rendering: optimizeLegibility;
-        text-align: center;
-        border: 0.1em solid black;
-        color: black
-    }
+#search-bar button, input, select {
+    font-family: Georgia;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    text-align: left;
+    border: 0.1em solid black;
+    color: black
+}
 
 
 

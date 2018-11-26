@@ -4,6 +4,7 @@
 
 /*PARTE INPUT SELECT*/
 .infobox select,.infobox input{
+    display: block;
   padding-top: 0.3em;
   padding-right: 0.6em;
   padding-bottom: 0.3em;
@@ -16,10 +17,8 @@
 .infobox label{
   font-weight: 300;
   text-align: right;
-  
-  font-family: "Open Sans", sans-serif;  
-
-line-height: 1.42857;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.42857;
 }
 
 
@@ -27,150 +26,50 @@ line-height: 1.42857;
 
 
 /*PARTE SUPERIORE*/
-#Superior{
+#content-top{
   border-bottom:0.02em solid grey;
   margin-top:1.2em;
   padding-bottom:1.2em;
 }
 
-#Superior label {/*CATEGORIA*/
+#content-top label {/*CATEGORIA*/
   color:rgb(40, 103, 161);
   font-weight: 400;
 }
 
-#Superior h2{/*EFFETUA RIC AVANZATA*/
+#content-top h1{
   color:rgb(40, 103, 161);
-  padding: 0;
+  padding-left: 1.5em;
   text-align:left;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.2em;
   
   
 
 }
 
-.sx1{
-  padding-left:3.5em;/*in modo che sia allineato logo*/
-  
 
+/*PARTE content-mid*/
+
+#content-mid{
+  padding: 1em 20% 1em 20%;
 }
-
-.dx1{
-  width: 47.5%;
-  float: right;
-}
-
-#Superior div{
-  
-  
-  display:inline-block;
-  
-}
-
-
-#Superior select{
-  width: 130px;
-  text-align: left;
-  padding-left:0.2em;
-}
-
-/*PARTE MIDDLE*/
-
-#Middle{
-  
-  margin-top:1em;
-  margin-bottom:1.6em;
-  margin-left:10em;
-  margin-right:0em;
-}
-#Middle div{
-  width: 50%;
-  
+#content-mid div{
   display:inline-block; 
-  
-  
-}
-
-#Middle label{
-  font-size: 0.9em;
-}
-
-
-
-
-
-.colSx{
-  float:left;
+  padding: 0.4em 1.3em 0em 1.3em;
+  min-width: 12em;
   
   
 }
 
 
-
-
-
-
-
-#Titolo{
-  padding-left:0.7em;
+#content-mid div select{
+    width: 100%;
 }
 
-#Publisher{/*el allineati a editore*/
-  padding-left:0em;
-}
-
-#Isbn{/*el allineati a editore*/
-  padding-left:1em;
-}
-
-#Autore{/*el allineati a editore*/
-  padding-left:2.9em;
-}
-
-#PChiave{
-  padding-left:0em;
-}
-
-#Corso{/*el allineati a editore*/
-  /*label*/
-  padding-left:3.35em;
-}
-
-
-
-
-#Middle label,input{
-  display:inline-block;
-}
-
-
-/*PARTE LOWER*/
-
-#Lower{
-  text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-#submitSrc{
-  text-align: right;
-}
 
 label {
   color: black;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-family: Georgia;
-}
-
-
-
-.outerBox {
-  background-color: white;
 }
