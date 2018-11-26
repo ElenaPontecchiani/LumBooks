@@ -21,76 +21,59 @@
     <div class="infobox">
 
         <form id="searchForm" class="innerBox" action="risultati_ricerca.php" method="get">
-            <div id="Superior" >
-                <div class="sx1">
-                    <h2>Effettua una ricerca avanzata!</h2>
-                </div>
-                <div class="dx1">
-                    <label for="Categoria">Categoria</label>
-                    <select name="Categoria" form="searchForm" id="Categoria">
-                        <option value="Qualsiasi" selected="selected">Qualsiasi</option>
-                        ££opzioni££
-                    </select>
-                </div>
-            
+            <div id="content-top" >
+                    <h1>Effettua una ricerca avanzata!</h1>
             </div>  <!--chiude supeiors-->
             
-            <div id="Middle" >
-                <div class="colSx">            
-                    <div class="form-group sx">
-                        <label for="titolo" id="Titolo">Titolo</label>
+            <div id="content-mid" >          
+                    <div>
+                        <label for="titolo">Titolo</label>
                         <input list="titleInput" name="titolo" id="titolo" />
                         <datalist id="titleInput" class="formText">
                             ££titoli££
                         </datalist>
                     </div>
 
-                    <div class="form-group sx">
-                        <label for="Publisher" id="Publisher">Editore</label>
+                    <div>
+                        <label for="Publisher">Editore</label>
                         <input type="text" name="Editore" id="Publisher" />
                     </div>
 
-                    <div class="form-group dx">
-                        <label for="ISBN" id="Isbn">ISBN</label>
+                    <div>
+                        <label for="ISBN">ISBN</label>
                         <input type="text" name="isbn" id="ISBN" />
-                    </div>
+                    </div>  
                     
-
-                </div> <!--chiude colSx-->
-
-
-                <div class="coDSx">  
-                    
-                    <div class="form-group dx">
-                            <label for="autore" id="Autore">Autore</label>
+                    <div>
+                            <label for="autore">Autore</label>
                             <input type="text" name="autore" id="autore" />
                     </div>
-                    <div class="form-group dx">
-                            <label for="keyword" id="PChiave">Parola chiave</label>
+                    <div>
+                            <label for="keyword">Parola chiave</label>
                             <input type="text" name="keyword" id="keyword" />
                     </div>
 
-                    <div class="form-group">
+                    <div>
                         <label for="corso">Corso</label>
                         <select name="corso" form="searchForm" id="corso">
                             <option value="Qualsiasi" selected="selected">Qualsiasi</option>
                             ££opzioni££
                         </select>
                     </div>
-                </div> <!--chiude colDx-->
+                    <div>
+                        <label for="categoria">Categoria</label>
+                        <select name="Categoria" form="searchForm" id="categoria">
+                            <option value="Qualsiasi" selected="selected">Qualsiasi</option>
+                            ££opzioni££
+                        </select>
+                    </div>
+                    <div>
+                        <input type="submit" value="Cerca" id="submitSrc" />
+                    </div>
 
-                
-
-            </div>  <!--chiude Middle-->
-            
-            <div id="Lower">
-                <div class="form-group">
-                    <input type="submit" value="Cerca" id="submitSrc" />
-                </div>
-            </div> <!--chiude Lower-->
+            </div>  <!--chiude content-mid-->
         </form>
     </div> <!--chiude info box-->
-    <div id="push"></div>
     <footer></footer>
 </body>
 </html>

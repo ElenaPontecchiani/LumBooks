@@ -1,129 +1,75 @@
 @import url("style.css");
 
+/*GENERALI*/
 
-#Superior{/*SETTARE MEGLIO MARGINI PER EFFETTUA UNA RICERCA E CATEGORIA*/
-  margin: 15px 0 10px 0;
-  
-  
+/*PARTE INPUT SELECT*/
+.infobox select,.infobox input{
+    display: block;
+  padding-top: 0.3em;
+  padding-right: 0.6em;
+  padding-bottom: 0.3em;
+  padding-left: 0.6em;
+
+  border: 1px solid grey;
+  border-radius: 2px;
 }
 
-#Superior{
+.infobox label{
+  font-weight: 300;
+  text-align: right;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.42857;
+}
+
+
+
+
+
+/*PARTE SUPERIORE*/
+#content-top{
   border-bottom:0.02em solid grey;
   margin-top:1.2em;
   padding-bottom:1.2em;
-  
 }
 
-#Superior label {
+#content-top label {/*CATEGORIA*/
   color:rgb(40, 103, 161);
   font-weight: 400;
 }
-#Superior h2{
-  /*parte effettua ricerca*/
+
+#content-top h1{
   color:rgb(40, 103, 161);
-  padding: 0;
+  padding-left: 1.5em;
   text-align:left;
- /* width:80%;*/
   font-weight: 600;
+  font-size: 1.2em;
   
-  font-size: 18px;
-
-}
-
-.sx1{
-  padding-left:3.5em;/*in modo che sia allineato logo*/
-}
-
-.dx1{
-  width: 40%;
-  float: right;
-}
-
-#Superior div{
   
-  display:inline-block;
-  
+
 }
 
 
-#Middle div{
-  width: 50%;
+/*PARTE content-mid*/
+
+#content-mid{
+  padding: 1em 20% 1em 20%;
+}
+#content-mid div{
   display:inline-block; 
+  padding: 0.4em 1.3em 0em 1.3em;
+  min-width: 12em;
+  
+  
 }
 
 
-.colSx{
-  float:left;
+#content-mid div select{
+    width: 100%;
 }
 
-
-/*
-.colSx label{
-  padding-left:7px;
-}*/
-
-#Titolo{
-  padding-left:0.7em;
-}
-
-#Publisher{/*el allineati a editore*/
-  padding-left:0em;
-}
-
-#Isbn{/*el allineati a editore*/
-  padding-left:1em;
-}
-
-#Autore{/*el allineati a editore*/
-  padding-left:2.9em;
-}
-
-#PChiave{
-  padding-left:0em;
-}
-
-#Corso{/*el allineati a editore*/
-  /*label*/
-  padding-left:0em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.colDx{
-  float:right;
-}
-
-
-#Lower{
-  float:right;
-}
-
-#Middle{
-  text-align:center;
-}
-
-#submitSrc{
-  text-align: right;
-}
 
 label {
   color: black;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-family: Georgia;
-}
-
-
-
-.outerBox {
-  background-color: white;
 }
