@@ -14,7 +14,7 @@ try{
         throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
 
 
-    $book_data = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5Hash = \"$book_hash\"");
+    $book_data = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5_Hash = \"$book_hash\"");
     if ($book_data != null){
         print_r($book_data);
     }

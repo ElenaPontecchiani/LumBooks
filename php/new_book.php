@@ -67,7 +67,7 @@ try{
                             "Prezzo" => $prezzo,
                             "Data_Aggiunta" => date("Y-m-d"),
                             "Venditore" => $_SESSION['id'],
-                            "md5Hash" => $md5); 
+                            "md5_Hash" => $md5); 
 
 
     $par1 = "";
