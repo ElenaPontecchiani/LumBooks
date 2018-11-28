@@ -6,6 +6,11 @@
 }
 
 
+.hidden{
+  /* non togliere */
+  display: none;
+}
+
 body {
     /*PROPIET� BACKGROUND*/
     background-color: #f9f9f9;
@@ -19,7 +24,7 @@ body {
     padding-right: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
-    
+
     position: relative;
     /*PROPRIET� TX*/
     text-align: left;
@@ -28,9 +33,9 @@ body {
 }
 
 div {/*width non qua altremiemnti prende header*/
-    
+
    /* color: #aaa;*/
-    
+
 }
 
 .outerBox,.innerBox {
@@ -68,9 +73,9 @@ footer, nav ul, #search-bar button, input, select {
 
 /*PARTE HEADER*/
 header {
-    
+
     padding-right: 20px;
-  
+
     padding-left: 20px;
     height: 5em;
     min-width: 900px;
@@ -133,13 +138,13 @@ header {
 
 /*PARTE NAVBAR*/
 #navbar {
-    
+
     /* background-image: url("../images/bianca.png");
     color: rgb(0,4,92);*/
 }
 
 nav ul {
-    
+
     border-radius: 0px;
     border-top: 0px;
     border-bottom:0px;
@@ -171,14 +176,14 @@ nav li a {
 
      .right {/*vedere come posizionare login e reg*/
         float: right;
-      
+
 
     }
 
     .nav {
         margin-top:10px;
         margin-left:100px;
-        
+
     }
 
 
