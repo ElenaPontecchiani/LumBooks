@@ -1,41 +1,84 @@
 @import url("style.css");
 
+
+/*testoinf*/
+.testoinf {
+   
+    float:left;
+    padding: 1.8em 7em 1.8em 7em; 
+}
+
+
+
+.testoinf p{
+    color: rgb(40, 103, 161);
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+#recuperoPsw {
+    font-size: 0.9em;
+}
+
+
 .label-form-input {
     color: black;
     display: inline-block;
+    
+}
+
+.inserimento label{
+    font-weight: 300;
+    text-align: right;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.42857;
+    
 }
 
 
-#loginForm {
-    margin-left: 6%;
+
+#loginBox div{
+    display:inline-block;
 }
 
 
-.testoinf {
+
+
+
+.inserimento input{
+    border: 1px solid grey;
+    border-radius: 2px;
+    margin-top:0.2em;
+}
+
+
+.form-input{
+    margin-bottom: 0.7em;
+    
+}
+
+form{
     width: 24%;
-    margin-left: 6%;
+    
 }
-
-    .testoinf div {
-        display: inline;
-    }
-
-form {
-    width: 24%;
+#loginError{
+    width: 100%;
 }
 
 .inserimento {
-    width: 24%;
-    padding-left: 10px;
+    padding-top: 1.8em;
+    width: 40%;
+    padding-left: 8em;
+    border-left: 1px solid grey;
+  
 }
 
 #loginSubmit, #registerSubmit {
     float: right;
 }
 
-#recuperoPsw {
-    font-size: 0.63em;
-}
+
 
 
 
