@@ -33,9 +33,9 @@ div {/*width non qua altremiemnti prende header*/
     
 }
 
-.infobox,.innerBox {
+.outerBox,.innerBox {
     max-width: 1200px;
-    background-image: url("../images/bianca.png");
+    background-color: #f9f9f9;
     overflow: auto;
     margin-top: 0px;
     margin-right: auto;

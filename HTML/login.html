@@ -17,7 +17,7 @@
     <header></header>
     <nav></nav>
 
-    <div id="loginBox" class="infobox">
+    <div id="loginBox" class="outerBox">
         <div class="testoinf">
             <p>Non sei ancora registrato?</p>
             <a href="registrati.php" id="recuperoPsw">Registrati!</a>
@@ -25,20 +25,12 @@
         <div class="inserimento">
             <form id="loginForm" class="innerBox" action="check_login.php" method="post">
                 <div class="form-input">
-                    <div class="label-form-input">
                         <label>Email:</label>
-                    </div>
-                    <div class="input-form-input">
                         <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
-                    </div>
                 </div>
                 <div class="form-input">
-                    <div class="label-form-input">
                         <label>Password:</label>
-                    </div>
-                    <div class="input-form-input">
                         <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText" />
-                    </div>
                 </div>
             
                 <label id='loginError' class='hidden'>Email o Password sbagliata</label>
