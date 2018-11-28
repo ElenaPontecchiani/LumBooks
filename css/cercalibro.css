@@ -68,4 +68,5 @@ label {
   color: black;
   font-size: 0.9em;
   font-family: Georgia;
+  display: block;
 }
