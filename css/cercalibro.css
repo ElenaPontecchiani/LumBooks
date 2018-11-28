@@ -21,10 +21,6 @@
   line-height: 1.42857;
 }
 
-
-
-
-
 /*PARTE SUPERIORE*/
 #content-top{
   border-bottom:0.02em solid grey;
@@ -57,7 +53,7 @@
 #content-mid div{
   display:inline-block; 
   padding: 0.4em 1.3em 0em 1.3em;
-  min-width: 12em;
+  min-width: 11em;
   
   
 }
@@ -72,4 +68,5 @@ label {
   color: black;
   font-size: 0.9em;
   font-family: Georgia;
+  display: block;
 }
