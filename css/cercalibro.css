@@ -3,7 +3,7 @@
 /*GENERALI*/
 
 /*PARTE INPUT SELECT*/
-.infobox select,.infobox input{
+.innerBox select,.innerBox input{
   display: block;
   padding-top: 0.3em;
   padding-right: 0.6em;
@@ -14,7 +14,7 @@
   border-radius: 2px;
 }
 
-.infobox label{
+.innerBox  label{
   font-weight: 300;
   text-align: right;
   font-family: "Open Sans", sans-serif;
@@ -50,8 +50,9 @@
 #content-mid{
   padding: 1em 20% 1em 20%;
 }
-#content-mid div{
-  display:inline-block; 
+
+dl#content-mid dt{
+  display:inline; 
   padding: 0.4em 1.3em 0em 1.3em;
   min-width: 11em;
   
