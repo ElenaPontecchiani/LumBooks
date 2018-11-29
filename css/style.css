@@ -32,12 +32,6 @@ body {
     line-height: 1.42857;
 }
 
-div {/*width non qua altremiemnti prende header*/
-
-   /* color: #aaa;*/
-
-}
-
 .outerBox,.innerBox {
     max-width: 1200px;
     background-color: #f9f9f9;
@@ -65,7 +59,7 @@ div {/*width non qua altremiemnti prende header*/
     margin: 0 auto -50px;
 }
 
-footer, nav ul, #search-bar button, input, select {
+footer, #search-bar button, input, select {
     border-style: solid;
     border-width: 5px 0px 5px 0px;
     border-color: white;
@@ -74,16 +68,15 @@ footer, nav ul, #search-bar button, input, select {
 /*PARTE HEADER*/
 header {
 
-    padding-right: 20px;
-
-    padding-left: 20px;
-    height: 5em;
-    min-width: 900px;
+    padding-left: 1%;
+    min-width: 480px;
     color: rgb(180,180,180); /*colore default grigio*/
     font-family: Arial;
     font-style: italic;
 }
-
+header *{
+  display: inline-block;
+}
 #logo_lumbooks {
     width: 4em;
     height: 4em;
@@ -143,7 +136,7 @@ header {
     color: rgb(0,4,92);*/
 }
 
-nav ul {
+nav ul, #header_login {
 
     border-radius: 0px;
     border-top: 0px;
@@ -156,8 +149,13 @@ nav ul {
     padding-left: 0;
     min-width: 25em;
 }
+#header_login{
+  min-width: 4em;
+  float:right;
+  border-right: 0em;
+}
 
-nav li {
+nav li, #header_login a {
     padding-right: 20px;
     padding-left: 20px;
     margin-top: 0px;
@@ -166,13 +164,14 @@ nav li {
     float: left;
 }
 
-nav li a {
+nav li a,#header_login a {
         display: block;
         color: rgb(204, 230, 255);
         text-align: center;
         padding: 0.7em;
         text-decoration: none;
 }
+
 
      .right {/*vedere come posizionare login e reg*/
         float: right;
@@ -189,7 +188,7 @@ nav li a {
 
 
 
-nav li:hover:not(.active) {
+nav li:hover:not(.active),#header_login a:hover:not(.active) {
     background-color: #754b00;
 }
 
