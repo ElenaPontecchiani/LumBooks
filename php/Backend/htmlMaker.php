@@ -55,10 +55,10 @@ class htmlMaker{
             $header_return .=  '</div>'."\n";
         }
             else{
-                $header_return .=  '<div class="header_login">'."\n";
-                $nav_return .=  '        <a href="logout.php">Logout</a>'."\n";
-                $nav_return .=  '        <a href="utente.php">Pannello Utente</a>'."\n";
-                $header_return .=  '<\div>'."\n";
+                $header_return .=  '<div id="header_login">'."\n";
+                $header_return .=  '        <a href="logout.php">Logout</a>'."\n";
+                $header_return .=  '        <a href="utente.php">Pannello Utente</a>'."\n";
+                $header_return .=  '</div>'."\n";
             }
 
         $header_return .= "</header>";

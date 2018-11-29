@@ -17,8 +17,6 @@ body {
     background-image: url("../images/sfondo.jpg");
     background-repeat: repeat;
     /*RIEMPIMENTO*/
-    overflow-x: hidden;
-    overflow-y: hidden;
     border: 0px;
     padding-top: 0px;
     padding-right: 0px;
@@ -35,7 +33,6 @@ body {
 .outerBox,.innerBox {
     max-width: 1200px;
     background-color: #f9f9f9;
-    overflow: auto;
     margin-top: 0px;
     margin-right: auto;
     margin-bottom: 0px;
@@ -59,11 +56,6 @@ body {
     margin: 0 auto -50px;
 }
 
-footer, #search-bar button, input, select {
-    border-style: solid;
-    border-width: 5px 0px 5px 0px;
-    border-color: white;
-}
 
 /*PARTE HEADER*/
 header {
@@ -78,118 +70,88 @@ header *{
   display: inline-block;
 }
 #logo_lumbooks {
-    width: 4em;
-    height: 4em;
+    width: 2.7em;
+    height: 2.7em;
 }
 
-
-#left_header h1, img {
-    display: inline;
-}
 
 #left_header h1 {
-    font-size: 3.7em;
+    font-size: 2.0em;
     color: white;
     font-family: Georgia;
     font-weight: 100;
     font-style: normal;
 }
 
-/*SE TOGLIAMO COMPRA E VENDI LIBRI IN TOTALE SICUREZZA
-    #left_header h2 {
-    font-size: 1.8em;
-    color: rgb(180,180,180);
-    font-family: Georgia;
-    font-weight: 100;
-    font-style: italic;
-}*/
-
-#search-bar {
-    float: right;
-    position: absolute;
-    top: -10px;
-    right: 30px;
-    -webkit-box-sizing: border-box;
-    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
-
-
 #search-bar button, input, select {
     font-family: Georgia;
-    font-size: 15px;
+    font-size: 0.9em;
     text-rendering: optimizeLegibility;
     text-align: left;
     border: 0.1em solid black;
     color: black
 }
 
-
-
-
-
-
 /*PARTE NAVBAR*/
-#navbar {
-
-    /* background-image: url("../images/bianca.png");
-    color: rgb(0,4,92);*/
+#navbar{
+  padding:0.4em 0em 3em 0em;
 }
 
 nav ul, #header_login {
 
-    border-radius: 0px;
-    border-top: 0px;
-    border-bottom:0px;
    /* border-bottom-color: grey;*/
     font-size: 1.1em;
     font-family: Georgia;
     list-style-type: none;
-    overflow: hidden;
-    padding-left: 0;
     min-width: 25em;
-}
-#header_login{
-  min-width: 4em;
-  float:right;
-  border-right: 0em;
 }
 
 nav li, #header_login a {
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-top: 0px;
-    display: inline;
-    padding: auto;
+    padding:0.1em 0.4em 0.1em 0.4em;
+    display: inline-block;
     float: left;
+    border-right: 2px solid white;
+}
+
+nav li:first-child{
+  border-left: 2px solid white;
+}
+
+#header_login{
+  min-width: 4em;
+  float:right;
 }
 
 nav li a,#header_login a {
-        display: block;
         color: rgb(204, 230, 255);
         text-align: center;
         padding: 0.7em;
         text-decoration: none;
 }
 
-
-     .right {/*vedere come posizionare login e reg*/
-        float: right;
-
-
-    }
-
-    .nav {
-        margin-top:10px;
-        margin-left:100px;
-
-    }
+#header_login a {
+  border-right: 0;
+}
 
 
 
 
-nav li:hover:not(.active),#header_login a:hover:not(.active) {
+ .right {/*vedere come posizionare login e reg*/
+    float: right;
+
+
+}
+
+nav li a:hover:not(.active),#header_login a:hover:not(.active) {
     background-color: #754b00;
+}
+
+.nav{
+  float: right;
+  border-right: 0;
+}
+.nav input{
+  width:13em;
 }
 
 .active {
@@ -242,13 +204,11 @@ footer, #push {
     width: 2.2em;
     float: center;
     display: inline;
-    overflow: hidden;
     border-radius: 10%;
 }
 
 #footer-social ul {
     list-style-type: none;
-    overflow: hidden;
     padding: 0.2em;
 }
 
