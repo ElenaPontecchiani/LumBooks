@@ -1,11 +1,10 @@
 @import url("style.css");
 
-
 /*testoinf*/
 .testoinf {
-   
+
     float:left;
-    padding: 1.8em 7em 1.8em 7em; 
+    padding: 1.8em 7em 1.8em 7em;
 }
 
 
@@ -25,26 +24,18 @@
 .label-form-input {
     color: black;
     display: inline-block;
-    
+
 }
 
 .inserimento label{
     font-weight: 300;
-    text-align: right;
     font-family: "Open Sans", sans-serif;
     line-height: 1.42857;
-    
+
 }
-
-
-
 #loginBox div{
     display:inline-block;
 }
-
-
-
-
 
 .inserimento input{
     border: 1px solid grey;
@@ -55,12 +46,12 @@
 
 .form-input{
     margin-bottom: 0.7em;
-    
+
 }
 
 form{
     width: 24%;
-    
+
 }
 #loginError{
     width: 100%;
@@ -71,16 +62,12 @@ form{
     width: 40%;
     padding-left: 8em;
     border-left: 1px solid grey;
-  
+
 }
 
 #loginSubmit, #registerSubmit {
     float: right;
 }
-
-
-
-
 
 .formText {
     border: 0.1em solid #111;
