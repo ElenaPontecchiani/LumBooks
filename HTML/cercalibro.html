@@ -25,52 +25,47 @@
                     <h1>Effettua una ricerca avanzata!</h1>
             </div>  <!--chiude supeiors-->
             
-            <div id="content-mid" >          
-                    <div>
-                        <label for="titolo">Titolo</label>
-                        <input list="titleInput" name="titolo" id="titolo" />
-                        <datalist id="titleInput" class="formText">
+            <div id="content-mid" >
+            	<dl class="ricerca-libro">
+               		<dt>Titolo</dt>
+               			<dd>
+               				<input list="titleInput" name="titolo" id="titolo" />
+               				<datalist id="titleInput" class="formText">
                             ££titoli££
-                        </datalist>
-                    </div>
-
-                    <div>
-                        <label for="Publisher">Editore</label>
-                        <input type="text" name="Editore" id="Publisher" />
-                    </div>
-
-                    <div>
-                        <label for="ISBN">ISBN</label>
-                        <input type="text" name="isbn" id="ISBN" />
-                    </div>  
-                    
-                    <div>
-                            <label for="autore">Autore</label>
+                        	</datalist>
+               			</dd>
+              		<dt>Autore</dt>
+              			<dd>
                             <input type="text" name="autore" id="autore" />
-                    </div>
-                    <div>
-                            <label for="keyword">Parola chiave</label>
+              			</dd>
+              		<dt>ISBN</dt>
+              			<dd>
+                        <input type="text" name="isbn" id="ISBN" />
+              			</dd>
+              		<dt>Editore</dt>
+              			<dd>
+              				<input type="text" name="Editore" id="Publisher" />
+              			</dd>
+              		<dt>Parola chiave</dt>
+              			<dd>
                             <input type="text" name="keyword" id="keyword" />
-                    </div>
-
-                    <div>
-                        <label for="corso">Corso</label>
-                        <select name="corso" form="searchForm" id="corso">
+              			</dd>
+              		<dt>Corso</dt>
+              			<dd>
+                        	<select name="corso" form="searchForm" id="corso">
+                            	<option value="Qualsiasi" selected="selected">Qualsiasi</option>
+                            	££opzioni££
+                        	</select>
+              			</dd>
+              		<dt>Categoria</dt>
+                    	<dd>
+                    	    <select name="Categoria" form="searchForm" id="categoria">
                             <option value="Qualsiasi" selected="selected">Qualsiasi</option>
                             ££opzioni££
-                        </select>
-                    </div>
-                    <div>
-                        <label for="categoria">Categoria</label>
-                        <select name="Categoria" form="searchForm" id="categoria">
-                            <option value="Qualsiasi" selected="selected">Qualsiasi</option>
-                            ££opzioni££
-                        </select>
-                    </div>
-                    <div>
-                        <input type="submit" value="Cerca" id="submitSrc" />
-                    </div>
-
+                        	</select>
+                    	</dd>
+        		</dl>
+                <input type="submit" value="Cerca" id="submitSrc" />
             </div>  <!--chiude content-mid-->
         </form>
     </div> <!--chiude info box-->
