@@ -31,7 +31,7 @@ body {
 }
 
 .outerBox,.innerBox {
-    max-width: 1200px;
+    max-width: 1024px;
     background-color: #f9f9f9;
     margin-top: 0px;
     margin-right: auto;
@@ -76,12 +76,14 @@ header *{
 
 
 #left_header h1 {
-    font-size: 2.0em;
+    font-size: 2.3em;
     color: white;
     font-family: Georgia;
     font-weight: 100;
     font-style: normal;
 }
+
+
 
 #search-bar button, input, select {
     font-family: Georgia;
@@ -94,14 +96,18 @@ header *{
 
 /*PARTE NAVBAR*/
 #navbar{
-  padding:0.4em 0em 3em 0em;
+  padding:0.5em 0em 2.3em 0em;
+  background:#f9f9f9 url("") no-repeat right top;
+  border-bottom:0.1em solid rgb(1, 0, 52);
+  
 }
 
 nav ul, #header_login {
 
    /* border-bottom-color: grey;*/
     font-size: 1.1em;
-    font-family: Georgia;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style:normal ;
     list-style-type: none;
     min-width: 25em;
 }
@@ -110,27 +116,43 @@ nav li, #header_login a {
     padding:0.1em 0.4em 0.1em 0.4em;
     display: inline-block;
     float: left;
-    border-right: 2px solid white;
+   /* border-right: 2px solid white;VEDERE SE TENERE*/
 }
 
 nav li:first-child{
-  border-left: 2px solid white;
+ /* border-left: 2px solid white;VEDERE SE TENERE*/ 
 }
 
 #header_login{
   min-width: 4em;
   float:right;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-radius: 2px;
 }
 
-nav li a,#header_login a {
-        color: rgb(204, 230, 255);
-        text-align: center;
-        padding: 0.7em;
-        text-decoration: none;
+nav li a {
+    color:rgb(21, 28, 56);
+    text-align: center;
+    padding: 0.7em;
+    text-decoration: none;
 }
+
+.nav input{
+    margin-right:5em;
+    padding-left:0.5em;
+    border-radius:10px;
+    background:white url("../images/lentepng.png") no-repeat right center;
+}
+
 
 #header_login a {
+  color:white;
   border-right: 0;
+  text-align: center;
+  padding: 0.88em;
+ 
+  text-decoration: none;
 }
 
 
