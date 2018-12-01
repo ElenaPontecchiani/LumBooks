@@ -13,8 +13,10 @@
 
 body {
     /*PROPIET� BACKGROUND*/
-    background-color: #f9f9f9;
-    background-image: url("../images/sfondo.jpg");
+    /*background-color: #f9f9f9;*/
+    background-color: #00576d5b;
+    
+   /* background-image: url("../images/sfondo.jpg");*/
     background-repeat: repeat;
     /*RIEMPIMENTO*/
     border: 0px;
@@ -31,17 +33,14 @@ body {
 }
 
 .outerBox,.innerBox {
-    max-width: 1024px;
+    max-width: 1100px;
     background-color: #f9f9f9;
     margin-top: 0px;
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    border-top: 0px;
-    border-bottom: 0.1em solid grey;
-    border-left: 0.1em solid grey;
-    border-right: 0.1em solid grey;
-    border-radius: 0px;
+    border: 0em;
+   
 }
 
 .ptinf {
@@ -59,7 +58,7 @@ body {
 
 /*PARTE HEADER*/
 header {
-
+    background-color:#00576d;
     padding-left: 1%;
     min-width: 480px;
     color: rgb(180,180,180); /*colore default grigio*/
@@ -97,8 +96,8 @@ header *{
 /*PARTE NAVBAR*/
 #navbar{
   padding:0.5em 0em 2.3em 0em;
-  background:#f9f9f9 url("") no-repeat right top;
-  border-bottom:0.1em solid rgb(1, 0, 52);
+  background:#00586d url("") no-repeat right top;
+  
   
 }
 
@@ -126,13 +125,13 @@ nav li:first-child{
 #header_login{
   min-width: 4em;
   float:right;
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
-  border-radius: 2px;
+  
+  
+  
 }
 
 nav li a {
-    color:rgb(21, 28, 56);
+    color:rgba(255, 255, 255, 0.774);
     text-align: center;
     padding: 0.7em;
     text-decoration: none;
@@ -147,7 +146,7 @@ nav li a {
 
 
 #header_login a {
-  color:white;
+  color:rgba(255, 255, 255, 0.774);
   border-right: 0;
   text-align: center;
   padding: 0.88em;
@@ -165,7 +164,7 @@ nav li a {
 }
 
 nav li a:hover:not(.active),#header_login a:hover:not(.active) {
-    background-color: #754b00;
+    background-color: #03383a;
 }
 
 .nav{
@@ -200,10 +199,12 @@ footer {
     text-align: center;
     margin-top: 0px;
     border: 0px;
-    color: rgb(204, 230, 255);
+    color: rgba(255, 255, 255, 0.774);
+    padding-top:1.5em;
     /* background-image: url("../images/sfondo.jpg");
     background-image: url("../images/sfondo-grigio1.jpg");*/
     margin-bottom: 0px;
+    background-color:#00586d;
     /*  border-style:solid;
   border-width: 5px;
   border-color:white;
