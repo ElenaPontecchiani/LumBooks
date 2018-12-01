@@ -1,3 +1,4 @@
+/*GENERALI*/
 * {
     margin-top: 0em;
     margin-right: 0em;
@@ -39,16 +40,15 @@ body {
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    border: 0em;
-   
+    border: 0em;  
 }
-
+/*
 .ptinf {
     margin-top: 0px;
     margin-bottom: 0px;
     border-radius: 0px;
   /*  background-image: url("../images/sfondo.jpg");
-    background-image: url("../images/sfondo-grigio1.jpg");*/
+    background-image: url("../images/sfondo-grigio1.jpg");
     min-height: 100%;
     height: auto !important;
     height: 100%;
@@ -258,4 +258,136 @@ footer, #push {
 #telegram-icon {
     background: #0088CC;
     color: white;
+}
+
+
+/*VARIE*/
+.testoInformativo p{
+    color:#03383ac9;/*rgb(40, 103, 161);*/
+    
+    text-align:left;
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+
+
+
+
+/*PAGINA CERCA LIBRO*/
+.outerBox select,.outerBox input{
+    display: block;
+    padding-top: 0.3em;
+    padding-right: 0.6em;
+    padding-bottom: 0.3em;
+    padding-left: 0.6em;
+  
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+#content-top{
+    padding-top:1.2em;
+    padding-bottom:1.2em;
+}
+
+#content-top p{
+    padding-left: 1.5em;
+    padding-top:0.5em;
+}
+
+#content-mid{
+    padding: 1em 20% 1em 25%;
+}
+
+#content-mid div {
+    width: 100%;
+}
+
+
+#content-mid dt,dd{
+ 
+    display:inline-block;
+}
+  
+#content-mid dt{
+    width:20%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+  
+#content-mid dd{
+    padding-left:1em;
+    padding-right:1em;
+    width:70%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+  
+#submitSrc {
+    width:10% !important;
+    margin-left:20em;
+    margin-top:0.8em;
+    margin-bottom:0.3em;
+    
+    
+ }
+  
+#submitSrc input{
+    margin-left:2em !important;
+}
+  
+#content-mid input{
+    padding-right:2em;
+    width:70%;
+}
+  
+#content-mid select{
+    width:79%;
+}
+  
+
+/*PAGINA LOGIN*/
+#superior {
+    float:left;
+    padding: 1.8em 7em 1.8em 7em;
+}
+
+.inserimento {
+    padding-top: 1.8em;
+    width: 40%;
+    
+    border-left: 1px solid grey;
+
+}
+
+#recuperoPsw {/*link registrati, pw dim*/
+    font-size: 0.9em;
+}
+
+#loginBox div {
+    display:inline-block;
+}
+
+.inserimento input{
+    margin-top:0.2em;
+   
+}
+
+.form-input{
+    margin-bottom: 0.7em;
+
+}
+
+.inserimento form{
+    width: 50%;
+}
+
+#loginSubmit {
+    margin:1em 0em 1em 7.3em;
+    float:right;
+   
+}
+
+.errorBox {
+    border-color: red;
 }
