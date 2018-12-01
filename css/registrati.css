@@ -1,1 +1,47 @@
 @import url("style.css");
+.innerBox{
+    padding: 1em 20% 1em 20%;
+}
+
+.innerBox input,.innerBox select{
+    border: 1px solid grey;
+    border-radius: 2px;
+    margin-top:0.2em;
+   
+}
+
+.innerBox label,{
+    width:30%;
+}
+
+.innerBox select, .innerBox input{
+    width:70%;
+}
+
+.innerBox div{
+    display:block;
+    
+}
+
+#registerSubmit{
+    width:10%;
+}
+
+#registerForm input,label{
+    display:inline-block;
+
+}
+
+#content-mid label{
+    width:20%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+  
+#content-mid input{
+    padding-left:1em;
+    padding-right:1em;
+    width:70%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}

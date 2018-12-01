@@ -1,0 +1,8 @@
+@import url("style.css");
+
+.outerBox  label{
+    font-weight: 300;
+    text-align: right;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.42857;
+}

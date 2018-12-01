@@ -8,6 +8,7 @@
     max-width: 55%;
     display: inline-block;
     float: right;
+    padding-right: 1.6em;
     color: rgb(128, 128, 128);
 }
 
@@ -20,16 +21,19 @@
 
 .outerBox img { /*non manipolata perche forse slide show*/
     max-width: 40%;
+    padding-left: 1.8em;
+   
     float: left;
     object-fit: fill;
 }
 
 .outerBox {
-    padding: 1.8em;
+    padding-top: 1.8em;
+    padding-bottom:1.8em;
+    
     text-align: left;
     overflow: auto;
-    margin: 1em 2em;
-    border: 0.1em solid grey;
+    
 }
 
 .hidden {

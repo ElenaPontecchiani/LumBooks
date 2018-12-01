@@ -1,3 +1,4 @@
+/*GENERALI*/
 * {
     margin-top: 0em;
     margin-right: 0em;
@@ -13,12 +14,12 @@
 
 body {
     /*PROPIET� BACKGROUND*/
-    background-color: #f9f9f9;
-    background-image: url("../images/sfondo.jpg");
+    /*background-color: #f9f9f9;*/
+    background-color: #00576d5b;
+    
+   /* background-image: url("../images/sfondo.jpg");*/
     background-repeat: repeat;
     /*RIEMPIMENTO*/
-    overflow-x: hidden;
-    overflow-y: hidden;
     border: 0px;
     padding-top: 0px;
     padding-right: 0px;
@@ -32,165 +33,146 @@ body {
     line-height: 1.42857;
 }
 
-div {/*width non qua altremiemnti prende header*/
-
-   /* color: #aaa;*/
-
-}
-
 .outerBox,.innerBox {
-    max-width: 1200px;
+    max-width: 1100px;
     background-color: #f9f9f9;
-    overflow: auto;
     margin-top: 0px;
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    border-top: 0px;
-    border-bottom: 0.1em solid grey;
-    border-left: 0.1em solid grey;
-    border-right: 0.1em solid grey;
-    border-radius: 0px;
+    border: 0em;  
 }
-
+/*
 .ptinf {
     margin-top: 0px;
     margin-bottom: 0px;
     border-radius: 0px;
   /*  background-image: url("../images/sfondo.jpg");
-    background-image: url("../images/sfondo-grigio1.jpg");*/
+    background-image: url("../images/sfondo-grigio1.jpg");
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 auto -50px;
 }
 
-footer, nav ul, #search-bar button, input, select {
-    border-style: solid;
-    border-width: 5px 0px 5px 0px;
-    border-color: white;
-}
 
 /*PARTE HEADER*/
 header {
-
-    padding-right: 20px;
-
-    padding-left: 20px;
-    height: 5em;
-    min-width: 900px;
+    background-color:#00576d;
+    padding-left: 1%;
+    min-width: 480px;
     color: rgb(180,180,180); /*colore default grigio*/
     font-family: Arial;
     font-style: italic;
 }
-
+header *{
+  display: inline-block;
+}
 #logo_lumbooks {
-    width: 4em;
-    height: 4em;
+    width: 2.7em;
+    height: 2.7em;
 }
 
-
-#left_header h1, img {
-    display: inline;
-}
 
 #left_header h1 {
-    font-size: 3.7em;
+    font-size: 2.3em;
     color: white;
     font-family: Georgia;
     font-weight: 100;
     font-style: normal;
 }
 
-/*SE TOGLIAMO COMPRA E VENDI LIBRI IN TOTALE SICUREZZA
-    #left_header h2 {
-    font-size: 1.8em;
-    color: rgb(180,180,180);
-    font-family: Georgia;
-    font-weight: 100;
-    font-style: italic;
-}*/
-
-#search-bar {
-    float: right;
-    position: absolute;
-    top: -10px;
-    right: 30px;
-    -webkit-box-sizing: border-box;
-    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
 
 
 #search-bar button, input, select {
     font-family: Georgia;
-    font-size: 15px;
+    font-size: 0.9em;
     text-rendering: optimizeLegibility;
     text-align: left;
     border: 0.1em solid black;
     color: black
 }
 
-
-
-
-
-
 /*PARTE NAVBAR*/
-#navbar {
-
-    /* background-image: url("../images/bianca.png");
-    color: rgb(0,4,92);*/
+#navbar{
+  padding:0.5em 0em 2.3em 0em;
+  background:#00586d url("") no-repeat right top;
+  
+  
 }
 
-nav ul {
+nav ul, #header_login {
 
-    border-radius: 0px;
-    border-top: 0px;
-    border-bottom:0px;
    /* border-bottom-color: grey;*/
     font-size: 1.1em;
-    font-family: Georgia;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style:normal ;
     list-style-type: none;
-    overflow: hidden;
-    padding-left: 0;
     min-width: 25em;
 }
 
-nav li {
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-top: 0px;
-    display: inline;
-    padding: auto;
+nav li, #header_login a {
+    padding:0.1em 0.4em 0.1em 0.4em;
+    display: inline-block;
     float: left;
+   /* border-right: 2px solid white;VEDERE SE TENERE*/
+}
+
+nav li:first-child{
+ /* border-left: 2px solid white;VEDERE SE TENERE*/ 
+}
+
+#header_login{
+  min-width: 4em;
+  float:right;
+  
+  
+  
 }
 
 nav li a {
-        display: block;
-        color: rgb(204, 230, 255);
-        text-align: center;
-        padding: 0.7em;
-        text-decoration: none;
+    color:rgba(255, 255, 255, 0.774);
+    text-align: center;
+    padding: 0.7em;
+    text-decoration: none;
 }
 
-     .right {/*vedere come posizionare login e reg*/
-        float: right;
+.nav input{
+    margin-right:5em;
+    padding-left:0.5em;
+    border-radius:10px;
+    background:white url("../images/lentepng.png") no-repeat right center;
+}
 
 
-    }
+#header_login a {
+  color:rgba(255, 255, 255, 0.774);
+  border-right: 0;
+  text-align: center;
+  padding: 0.88em;
+ 
+  text-decoration: none;
+}
 
-    .nav {
-        margin-top:10px;
-        margin-left:100px;
-
-    }
 
 
 
+ .right {/*vedere come posizionare login e reg*/
+    float: right;
 
-nav li:hover:not(.active) {
-    background-color: #754b00;
+
+}
+
+nav li a:hover:not(.active),#header_login a:hover:not(.active) {
+    background-color: #03383a;
+}
+
+.nav{
+  float: right;
+  border-right: 0;
+}
+.nav input{
+  width:13em;
 }
 
 .active {
@@ -217,10 +199,12 @@ footer {
     text-align: center;
     margin-top: 0px;
     border: 0px;
-    color: rgb(204, 230, 255);
+    color: rgba(255, 255, 255, 0.774);
+    padding-top:1.5em;
     /* background-image: url("../images/sfondo.jpg");
     background-image: url("../images/sfondo-grigio1.jpg");*/
     margin-bottom: 0px;
+    background-color:#00586d;
     /*  border-style:solid;
   border-width: 5px;
   border-color:white;
@@ -243,13 +227,11 @@ footer, #push {
     width: 2.2em;
     float: center;
     display: inline;
-    overflow: hidden;
     border-radius: 10%;
 }
 
 #footer-social ul {
     list-style-type: none;
-    overflow: hidden;
     padding: 0.2em;
 }
 
@@ -276,4 +258,136 @@ footer, #push {
 #telegram-icon {
     background: #0088CC;
     color: white;
+}
+
+
+/*VARIE*/
+.testoInformativo p{
+    color:#03383ac9;/*rgb(40, 103, 161);*/
+    
+    text-align:left;
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+
+
+
+
+/*PAGINA CERCA LIBRO*/
+.outerBox select,.outerBox input{
+    display: block;
+    padding-top: 0.3em;
+    padding-right: 0.6em;
+    padding-bottom: 0.3em;
+    padding-left: 0.6em;
+  
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+#content-top{
+    padding-top:1.2em;
+    padding-bottom:1.2em;
+}
+
+#content-top p{
+    padding-left: 1.5em;
+    padding-top:0.5em;
+}
+
+#content-mid{
+    padding: 1em 20% 1em 25%;
+}
+
+#content-mid div {
+    width: 100%;
+}
+
+
+#content-mid dt,dd{
+ 
+    display:inline-block;
+}
+  
+#content-mid dt{
+    width:20%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+  
+#content-mid dd{
+    padding-left:1em;
+    padding-right:1em;
+    width:70%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+  
+#submitSrc {
+    width:10% !important;
+    margin-left:20em;
+    margin-top:0.8em;
+    margin-bottom:0.3em;
+    
+    
+ }
+  
+#submitSrc input{
+    margin-left:2em !important;
+}
+  
+#content-mid input{
+    padding-right:2em;
+    width:70%;
+}
+  
+#content-mid select{
+    width:79%;
+}
+  
+
+/*PAGINA LOGIN*/
+#superior {
+    float:left;
+    padding: 1.8em 7em 1.8em 7em;
+}
+
+.inserimento {
+    padding-top: 1.8em;
+    width: 40%;
+    
+    border-left: 1px solid grey;
+
+}
+
+#recuperoPsw {/*link registrati, pw dim*/
+    font-size: 0.9em;
+}
+
+#loginBox div {
+    display:inline-block;
+}
+
+.inserimento input{
+    margin-top:0.2em;
+   
+}
+
+.form-input{
+    margin-bottom: 0.7em;
+
+}
+
+.inserimento form{
+    width: 50%;
+}
+
+#loginSubmit {
+    margin:1em 0em 1em 7.3em;
+    float:right;
+   
+}
+
+.errorBox {
+    border-color: red;
 }

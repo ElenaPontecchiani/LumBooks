@@ -42,7 +42,7 @@ try{
     $dati = [];
     session_start();
 
-    if($scelta_list){
+    if($scelta_list == "listato"){
         //caso precompilato
         $dati = SqlWrap::query("SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
                                 FROM Libri_Listati

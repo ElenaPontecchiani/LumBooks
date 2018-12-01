@@ -2,14 +2,14 @@
 <html lang="it">
    <head>
       <meta charset="UTF-8">
-      <title>Inserisci libro - LumBooks</title>
+      <title>Pannello admin - LumBooks</title>
       <link rel="icon" href=""/><!-- link icona -->
-      <meta name="title" content="Inserisci libro - LumBooks" />
-      <meta name="description" content="Pagina per vedere e cambiare le proprie impostazioni e credenziali" /><!-- da fare -->
+      <meta name="title" content="Pannello Admin - LumBooks" />
+      <meta name="description" content="Pagina per gli amministratori che potranno inserire nuovi libri nel catalogo." /><!-- da fare -->
       <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" /><!-- da fare -->
       <meta name="language" content="italian it" />
       <meta name="author" content="" /><!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/inserisci.css" /><!-- FARE CSS -->
+      <link rel="stylesheet" type="text/css" href="../css/account.css" /><!-- FARE CSS -->
       <link rel="stylesheet" type="text/css" href="../css/style.css" />
       <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
       <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
@@ -21,11 +21,8 @@
 <header></header>
 <nav></nav>
 <div id="insertBox" class="outerBox">
-    <h1>Inserisci libro</h1>
-    <p>Il libro che vuoi vendere è già nel nostro catalogo?</p>
-    <form id="input_libri" method="post" action="../php/new_book.php">
-            <input type="radio" name="type" id="listato" value="listato" checked="checked">Sì<br>
-            <input type="radio" name="type" value="personale" id="personale">No<br>
+    <h1>Inserisci libro nel catalogo</h1>
+    <form id="admin" method="post" action="...">
         <!-- Mostra uno dei due div sotto-->
         <!-- LASCIO GLI ID perché non so se fate in js o php ma sistemeremo quando ci vediamo-->
         <div id="inserisci-personale">
@@ -37,23 +34,6 @@
                 <input type="text" name="casaeditrice" id="insertCasaEditrice" />
                 <label>Corso:</label>
                 <input type="text" name="corso" id="insertCorso" />
-        </div>
-        <div id="inserisci-listato">
-                <label>Selezionare il libro dal catalogo:</label>
-                <select name="catalogo">
-                    ££opzioni_titolo££
-                </select>
-        </div>
-        <!-- Mostra sempre il div sotto-->
-        <div id="inserisci-sempre">
-                <label>Edizione:</label>
-                <input type="text" name="edizione" id="insertEdizione" />
-                <label>Anno di pubblicazione:</label>
-                <input type="text" name="anno" id="insertAnno" />
-                <label>ISBN:</label>
-                <input type="text" name="ISBN" id="insertISBN" />
-                <label>Prezzo:</label>
-                <input type="text" name="prezzo" id="insertPrezzo" />
                 <input type="submit" id="insertSubmit" value="Inserisci" />
         </div>
     </form>

@@ -35,17 +35,6 @@ class htmlMaker{
         $nav_return .=  '        <li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
         $nav_return .=  '        <li class="nav"><input type="text" placeholder="Search.."></li>';
 
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        if (!isset($_SESSION['nome'])){
-            $nav_return .=  '        <li class="right"><a href="login.php">Login</a></li>'."\n";
-            $nav_return .=  '        <li class="right"><a href="registrati.php">Registrati</a></li>'."\n";
-        }
-            else{
-                $nav_return .=  '        <li class="right"><a href="logout.php">Logout</a></li>'."\n";
-                $nav_return .=  '        <li class="right"><a href="utente.php">Pannello Utente</a></li>'."\n";
-            }
 
         $nav_return .=  '    </ul>'."\n";
         $nav_return .=  '</nav>'."\n";
@@ -54,7 +43,27 @@ class htmlMaker{
     }
 
     public static function header(){
-        return file_get_contents("../HTML/modules/header.html");
+        $header_return = file_get_contents("../HTML/modules/header.html");
+
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        if (!isset($_SESSION['nome'])){
+            $header_return .=  '<div id="header_login">'."\n";
+            $header_return .=  '  <a href="login.php">Login</a>'."\n";
+            $header_return .=  '  <a href="registrati.php">Registrati</a>'."\n";
+            $header_return .=  '</div>'."\n";
+        }
+            else{
+                $header_return .=  '<div id="header_login">'."\n";
+                $header_return .=  '        <a href="logout.php">Logout</a>'."\n";
+                $header_return .=  '        <a href="utente.php">Pannello Utente</a>'."\n";
+                $header_return .=  '</div>'."\n";
+            }
+
+        $header_return .= "</header>";
+
+        return $header_return;
     }
 
     public static function footer(){
