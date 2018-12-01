@@ -26,3 +26,22 @@
 #registerSubmit{
     width:10%;
 }
+
+#registerForm input,label{
+    display:inline-block;
+
+}
+
+#content-mid label{
+    width:20%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
+  
+#content-mid input{
+    padding-left:1em;
+    padding-right:1em;
+    width:70%;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+}
