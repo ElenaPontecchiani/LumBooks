@@ -4,33 +4,62 @@
     background-image: url("/images/bianca.png");
 }*/
 
-.outerBox div {
-    max-width: 55%;
-    display: inline-block;
-    float: right;
+#txContent {
+    
+    max-width: 45%;
+   /* display: inline-block;*/
+   /* float: right;*/
     padding-right: 1.6em;
     color: rgb(128, 128, 128);
 }
 
+
+
+#txContent,#student{
+    display:inline-block;
+}
+
 .outerBox h1 {
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-family: Georgia;
-    font-weight: 100;
+   /* font-weight: 550;*/
     font-style: normal;
+
+
+    vertical-align: middle;
+    line-height: 1.1em;
+    letter-spacing: -0.02em;
+    color:#03383ac9;
+    font-family:Arial, Helvetica, sans-serif;
+    
+    
+    
 }
 
 .outerBox img { /*non manipolata perche forse slide show*/
     max-width: 40%;
-    padding-left: 1.8em;
+    padding-right:2.5em;
+    float:right;
    
-    float: left;
     object-fit: fill;
 }
 
+
+
+#txContent{
+    padding-left:2em;
+    padding-right:2em;
+    text-align:center;
+}
+
+p {
+   
+    padding:0.7em 0em 1em 0em;
+    font-size:1.3em;
+}
 .outerBox {
     padding-top: 1.8em;
-    padding-bottom:1.8em;
-    
+    padding-bottom: 1.8em;
     text-align: left;
     overflow: auto;
     
