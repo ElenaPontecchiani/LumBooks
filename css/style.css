@@ -16,7 +16,7 @@ body {
     /*PROPIET� BACKGROUND*/
     /*background-color: #f9f9f9;*/
     background-color: #00576d5b;
-    
+
    /* background-image: url("../images/sfondo.jpg");*/
     background-repeat: repeat;
     /*RIEMPIMENTO*/
@@ -40,7 +40,7 @@ body {
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    border: 0em;  
+    border: 0em;
 }
 /*
 .ptinf {
@@ -97,8 +97,8 @@ header *{
 #navbar{
   padding:0.5em 0em 2.3em 0em;
   background:#00586d url("") no-repeat right top;
-  
-  
+
+
 }
 
 nav ul, #header_login {
@@ -119,15 +119,15 @@ nav li, #header_login a {
 }
 
 nav li:first-child{
- /* border-left: 2px solid white;VEDERE SE TENERE*/ 
+ /* border-left: 2px solid white;VEDERE SE TENERE*/
 }
 
 #header_login{
   min-width: 4em;
   float:right;
-  
-  
-  
+
+
+
 }
 
 nav li a {
@@ -150,7 +150,7 @@ nav li a {
   border-right: 0;
   text-align: center;
   padding: 0.88em;
- 
+
   text-decoration: none;
 }
 
@@ -264,7 +264,7 @@ footer, #push {
 /*VARIE*/
 .testoInformativo p{
     color:#03383ac9;/*rgb(40, 103, 161);*/
-    
+
     text-align:left;
     font-weight: 600;
     font-size: 1.2em;
@@ -280,7 +280,7 @@ footer, #push {
     padding-right: 0.6em;
     padding-bottom: 0.3em;
     padding-left: 0.6em;
-  
+
     border: 1px solid grey;
     border-radius: 2px;
 }
@@ -304,11 +304,11 @@ footer, #push {
 }
 
 .outerBox  label,input{
- 
+
     display:inline-block;
 }
 .outerBox  label,select{
- 
+
     display:inline-block;
 }
 
@@ -326,34 +326,30 @@ footer, #push {
     display:inline;
     padding-left:1em;
     padding-right:1em;
-    
+
     padding-top:0.3em;
     padding-bottom:0.3em;
 }
 
 
-#submitSrc {
-    width:10% !important;
-    margin-left:20em;
-    margin-top:0.8em;
-    margin-bottom:0.3em;
-    
-    
+#submitSrc, #insertSubmit {
+    width:auto;
+    margin: 1em 50%;
  }
-  
+
 #submitSrc input{
     margin-left:2em !important;
 }
-  
-.outerBox  input{
+
+.outerBox  input[type="text"], input[list="titleInput"]{
     padding-right:2em;
     width:70%;
 }
-  
+
 .outerBox  select{
     width:77.3%;
 }
-  
+
 
 #registerSubmit {
     width:14% !important;
@@ -371,7 +367,7 @@ footer, #push {
 .inserimento {
     padding-top: 1.8em;
     width: 40%;
-    
+
     border-left: 1px solid grey;
 
 }
@@ -386,7 +382,7 @@ footer, #push {
 
 .inserimento input{
     margin-top:0.2em;
-   
+
 }
 
 .formText{
@@ -406,8 +402,8 @@ footer, #push {
 #loginSubmit {
     margin:1em 4.3em 1em 7.3em;
     float:right;
-   
-   
+
+
 }
 
 .errorBox {
@@ -416,6 +412,3 @@ footer, #push {
 .inserimento label{
     width:auto;
 }
-
-
-
