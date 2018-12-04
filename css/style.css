@@ -16,7 +16,7 @@ body {
     /*PROPIET� BACKGROUND*/
     /*background-color: #f9f9f9;*/
     background-color: #00576d5b;
-    
+
    /* background-image: url("../images/sfondo.jpg");*/
     background-repeat: repeat;
     /*RIEMPIMENTO*/
@@ -36,25 +36,9 @@ body {
 .outerBox,.innerBox {
     max-width: 1100px;
     background-color: #f9f9f9;
-    margin-top: 0px;
     margin-right: auto;
-    margin-bottom: 0px;
     margin-left: auto;
-    border: 0em;  
 }
-/*
-.ptinf {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border-radius: 0px;
-  /*  background-image: url("../images/sfondo.jpg");
-    background-image: url("../images/sfondo-grigio1.jpg");
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -50px;
-}
-
 
 /*PARTE HEADER*/
 header {
@@ -65,9 +49,11 @@ header {
     font-family: Arial;
     font-style: italic;
 }
+
 header *{
   display: inline-block;
 }
+
 #logo_lumbooks {
     width: 2.7em;
     height: 2.7em;
@@ -96,9 +82,9 @@ header *{
 /*PARTE NAVBAR*/
 #navbar{
   padding:0.5em 0em 2.3em 0em;
-  background:#00586d url("") no-repeat right top;
-  
-  
+  background-color:#00586d;
+
+
 }
 
 nav ul, #header_login {
@@ -115,56 +101,53 @@ nav li, #header_login a {
     padding:0.1em 0.4em 0.1em 0.4em;
     display: inline-block;
     float: left;
-   /* border-right: 2px solid white;VEDERE SE TENERE*/
+    /*border-right: 2px solid #42b5b2;*/
 }
 
 nav li:first-child{
- /* border-left: 2px solid white;VEDERE SE TENERE*/ 
+ /*border-left: 1px solid #42b5b2;*/
 }
 
 #header_login{
   min-width: 4em;
   float:right;
-  
-  
-  
-}
 
+
+
+}
+a{
+  text-decoration: none;
+}
 nav li a {
-    color:rgba(255, 255, 255, 0.774);
+    color:#f2fcfa;
     text-align: center;
     padding: 0.7em;
-    text-decoration: none;
+}
+
+#header_login a {
+  color:#f2fcfa;
+  border-right: 0;
+  text-align: center;
+  padding: 0.88em;
+}
+
+a:visited{
+  color:#addbd2;
+}
+nav li a:hover:not(.active),#header_login a:hover:not(.active) {
+    background-color: #03383a;
 }
 
 .nav input{
     margin-right:5em;
     padding-left:0.5em;
     border-radius:10px;
+    /* deve diventare un bottone */
     background:white url("../images/lentepng.png") no-repeat right center;
 }
 
-
-#header_login a {
-  color:rgba(255, 255, 255, 0.774);
-  border-right: 0;
-  text-align: center;
-  padding: 0.88em;
- 
-  text-decoration: none;
-}
-
-
-
-
  .right {/*vedere come posizionare login e reg*/
     float: right;
-
-
-}
-
-nav li a:hover:not(.active),#header_login a:hover:not(.active) {
-    background-color: #03383a;
 }
 
 .nav{
@@ -201,14 +184,8 @@ footer {
     border: 0px;
     color: rgba(255, 255, 255, 0.774);
     padding-top:1.5em;
-    /* background-image: url("../images/sfondo.jpg");
-    background-image: url("../images/sfondo-grigio1.jpg");*/
     margin-bottom: 0px;
     background-color:#00586d;
-    /*  border-style:solid;
-  border-width: 5px;
-  border-color:white;
-  border-radius:10px;	*/
 }
 
 footer, #push {
@@ -233,38 +210,38 @@ footer, #push {
 #footer-social ul {
     list-style-type: none;
     padding: 0.2em;
-}
+  }
 
-#facebook-icon {
-    background: #3B5998;
-    color: white;
-}
+  #facebook-icon {
+      background: #3B5998;
+      color: white;
+  }
 
-#twitter-icon {
-    background: #55ACEE;
-    color: white;
-}
+  #twitter-icon {
+      background: #55ACEE;
+      color: white;
+  }
 
-#youtube-icon {
-    background: #bb0000;
-    color: white;
-}
+  #youtube-icon {
+      background: #bb0000;
+      color: white;
+  }
 
-#instagram-icon {
-    background: #125688;
-    color: white;
-}
+  #instagram-icon {
+      background: #125688;
+      color: white;
+  }
 
-#telegram-icon {
-    background: #0088CC;
-    color: white;
-}
+  #telegram-icon {
+      background: #0088CC;
+      color: white;
+  }
 
 
 /*VARIE*/
 .testoInformativo p{
-    color:#03383ac9;/*rgb(40, 103, 161);*/
-    
+    color:#03383ac9;
+
     text-align:left;
     font-weight: 600;
     font-size: 1.2em;
@@ -280,7 +257,7 @@ footer, #push {
     padding-right: 0.6em;
     padding-bottom: 0.3em;
     padding-left: 0.6em;
-  
+
     border: 1px solid grey;
     border-radius: 2px;
 }
@@ -304,11 +281,11 @@ footer, #push {
 }
 
 .outerBox  label,input{
- 
+
     display:inline-block;
 }
 .outerBox  label,select{
- 
+
     display:inline-block;
 }
 
@@ -321,39 +298,32 @@ footer, #push {
     text-align:center;
 }
 
+#submitSrc, #insertSubmit {
+    margin:0.8em 50%;
 
-.outerBox  input, .outerBox  select{
-    display:inline;
-    padding-left:1em;
-    padding-right:1em;
-    
-    padding-top:0.3em;
-    padding-bottom:0.3em;
-}
-
-
-#submitSrc {
-    width:10% !important;
-    margin-left:20em;
-    margin-top:0.8em;
-    margin-bottom:0.3em;
-    
-    
  }
-  
-#submitSrc input{
-    margin-left:2em !important;
-}
-  
-.outerBox  input{
+
+
+.outerBox  input[type="text"],
+.outerBox  input[list="titleInput"],
+.outerBox  input[type="date"],
+.outerBox  input[type="email"],
+.outerBox  input[type="password"],
+.outerBox  select
+{
+    display: inline-block;
     padding-right:2em;
     width:70%;
 }
-  
+
 .outerBox  select{
     width:77.3%;
 }
-  
+
+.outerBox input[type="radio"]{
+  display: inline-block;
+}
+
 
 #registerSubmit {
     width:14% !important;
@@ -371,7 +341,6 @@ footer, #push {
 .inserimento {
     padding-top: 1.8em;
     width: 40%;
-    
     border-left: 1px solid grey;
 
 }
@@ -384,19 +353,9 @@ footer, #push {
     display:inline-block;
 }
 
-.inserimento input{
-    margin-top:0.2em;
-   
-}
-
 .formText{
     margin-bottom: 0.7em;
 
-}
-
-.inserimento input{
-    width:auto;
-    padding-right:1em;
 }
 
 .inserimento form{
@@ -406,8 +365,6 @@ footer, #push {
 #loginSubmit {
     margin:1em 4.3em 1em 7.3em;
     float:right;
-   
-   
 }
 
 .errorBox {
@@ -416,6 +373,3 @@ footer, #push {
 .inserimento label{
     width:auto;
 }
-
-
-
