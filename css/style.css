@@ -239,7 +239,7 @@ footer, #push {
 
 
 /*VARIE*/
-.testoInformativo p{
+.testoInformativo h1{
     color:#03383ac9;
 
     text-align:left;
@@ -267,13 +267,13 @@ footer, #push {
     padding-bottom:1.2em;
 }
 
-#content-top p{
+#content-top h1{
     padding-left: 1.5em;
     padding-top:0.5em;
 }
 
 #content-mid,#registerForm{
-    padding: 1em 22% 1em 22%;
+    padding: 1em 18% 1em 18%;
 }
 
 #content-mid div {

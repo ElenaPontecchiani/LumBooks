@@ -22,39 +22,43 @@
 <nav></nav>
 <div id="insertBox" class="outerBox">
     <form id="input_libri" method="post" action="../php/new_book.php">
-            <h1>Inserisci libro</h1>
-            <p>Il libro che vuoi vendere è già nel nostro catalogo?</p>
-            <label for="listato">Sì</label><input type="radio" name="type" id="listato" value="listato" checked="checked"/>
-            <label for="personale">No</label><input type="radio" name="type" value="personale" id="personale"/>
-        <!-- Mostra uno dei due div sotto-->
-        <!-- LASCIO GLI ID perché non so se fate in js o php ma sistemeremo quando ci vediamo-->
-        <div id="inserisci-personale">
-                <label>Titolo:</label>
-                <input type="text" name="titolo" id="insertTitolo" />
-                <label>Autore:</label>
-                <input type="text" name="autore" id="insertAutore" />
-                <label>Casa editrice:</label>
-                <input type="text" name="casaeditrice" id="insertCasaEditrice" />
-                <label>Corso:</label>
-                <input type="text" name="corso" id="insertCorso" />
+        <div id="content-top" class="testoInformativo">
+        <h1>Inserisci la tua offerta!</h1>
         </div>
-        <div id="inserisci-listato">
-                <label>Selezionare il libro dal catalogo:</label>
-                <select name="catalogo">
-                    ££opzioni_titolo££
-                </select>
-        </div>
-        <!-- Mostra sempre il div sotto-->
-        <div id="inserisci-sempre">
-                <label>Edizione:</label>
-                <input type="text" name="edizione" id="insertEdizione" />
-                <label>Anno di pubblicazione:</label>
-                <input type="text" name="anno" id="insertAnno" />
-                <label>ISBN:</label>
-                <input type="text" name="ISBN" id="insertISBN" />
-                <label>Prezzo:</label>
-                <input type="text" name="prezzo" id="insertPrezzo" />
-                <input type="submit" id="insertSubmit" value="Inserisci" />
+        <div id="content-mid" >
+                <p class="firstLine">Il libro che vuoi vendere è già nel nostro catalogo?</p>
+                <label for="listato" class="firstLine">Sì</label><input type="radio" name="type" id="listato" value="listato" checked="checked"/>
+                <label for="personale" class="firstLine">No</label><input type="radio" name="type" value="personale" id="personale"/>
+                <!-- Mostra uno dei due div sotto-->
+                <!-- LASCIO GLI ID perché non so se fate in js o php ma sistemeremo quando ci vediamo-->
+                <div id="inserisci-personale">
+                        <label>Titolo:</label>
+                        <input type="text" name="titolo" id="insertTitolo" />
+                        <label>Autore:</label>
+                        <input type="text" name="autore" id="insertAutore" />
+                        <label>Casa editrice:</label>
+                        <input type="text" name="casaeditrice" id="insertCasaEditrice" />
+                        <label>Corso:</label>
+                        <input type="text" name="corso" id="insertCorso" />
+                </div>
+                <div id="inserisci-listato">
+                        <label>Selezionare il libro dal catalogo:</label>
+                        <select name="catalogo">
+                        ££opzioni_titolo££
+                        </select>
+                </div>
+                <!-- Mostra sempre il div sotto-->
+                <div id="inserisci-sempre">
+                        <label>Edizione:</label>
+                        <input type="text" name="edizione" id="insertEdizione" />
+                        <label>Anno di pubblicazione:</label>
+                        <input type="text" name="anno" id="insertAnno" />
+                        <label>ISBN:</label>
+                        <input type="text" name="ISBN" id="insertISBN" />
+                        <label>Prezzo:</label>
+                        <input type="text" name="prezzo" id="insertPrezzo" />
+                        <input type="submit" id="insertSubmit" value="Inserisci" />
+                </div>
         </div>
     </form>
     <div id="push"></div>
