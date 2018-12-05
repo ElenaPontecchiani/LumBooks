@@ -1,0 +1,30 @@
+@import url("style.css");
+
+h2{
+    font-size:1.2em;
+    text-align:center;
+}
+
+dt,dd{
+    
+    text-align:center;
+}
+
+dt{
+    font-weight: 510;
+}
+
+.mostra-libri{
+    width:30%;
+    display:inline-block;
+}
+
+#stato-libri{
+    padding:1em 8% 1em 8%;
+    text-align:center;
+}
+
+.middle{
+    border-left:0.1em solid #00576d;
+    border-right:0.1em solid #00576d;
+}
