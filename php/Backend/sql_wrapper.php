@@ -34,7 +34,7 @@ class SqlWrap{
     public static function query($query, $collapse = false){
         $connect = self::connect();
         if(!$result = $connect->query($query)){
-            throw new Exception("La query non è andata a buon fine");
+            throw new Exception("La query non è andata a buon fine ");
         }
         $connect->close();
         $lista_return = [];
