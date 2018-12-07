@@ -59,13 +59,13 @@ class htmlMaker{
     */
     public static function singleItemWithButtons($libro,$lista_bottoni){
         $html = self::singleItem($libro);   //Creo il search_item di base
-        $html = str_replace('<dl',"<div>\n<dl",$html);
+        $html = str_replace('<dl',"<div class=\"boxx\">\n<dl",$html);
 
-        $buttons = "<form action='book_action.php' method='post'>\n";
+        $buttons = "</dl>\n<form action='book_action.php' method='post'>\n";
         foreach($lista_bottoni as $bot){
             $buttons .= "<button type='submit' name='$bot' value='{$libro['md5_Hash']}'>$bot</button>\n";
         }
-        $buttons .= "</form>\n</div>\n</dl>";
+        $buttons .= "</form>\n</div>\n";
         $html = str_replace('</dl>',$buttons,$html);
         return $html;
     }
