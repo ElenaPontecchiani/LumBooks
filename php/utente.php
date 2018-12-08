@@ -10,7 +10,7 @@ $in_vendita = sqlWrap::query(" SELECT Titolo,Prezzo,Data_Aggiunta as 'Aggiunto i
 if ($in_vendita == null)
     $in_vendita = "Nessun libro in vendita al momento";
 else
-    $in_vendita = htmlMaker::searchItemWithButtons($in_vendita,array("Venduto","Rimuovi"));
+    $in_vendita = htmlMaker::searchItemWithButtons($in_vendita,array("Venduto","Rimuovi","Modifica"));
 
 $venduti = sqlWrap::query(" SELECT Titolo,Prezzo,/*CONCAT(Nome,' ',Cognome) as Acquirente,*/Data_Aggiunta as 'Aggiunto il',md5_Hash
                             FROM Libri_In_Vendita /*as liv JOIN Utente as u*/

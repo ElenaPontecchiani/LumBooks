@@ -33,7 +33,6 @@ try{
                             $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo); 
         
                             
-    //MANCA TRIM DEGLI INPUT
 
 
 
