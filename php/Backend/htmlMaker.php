@@ -73,17 +73,17 @@ class htmlMaker{
     public static function navbar(){
         $nav_return = "";
         $nav_return .=  '<nav id="navbar">'."\n";
-        $nav_return .=  '    <ul id="stdbar">';
-        $nav_return .=  '        <li class=""><a href="home.php">Home</a></li>'."\n";
-        $nav_return .=  '        <li class=""><a href="../php/risultati_ricerca.php?titolo=&autore=&corso=Qualsiasi&Editore=&isbn=&keyword=&Categoria=Qualsiasi">In Vendita</a></li>'."\n";
-        $nav_return .=  '        <li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
-        $nav_return .=  '        <li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
-        $nav_return .=  '        <li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
-        $nav_return .=  '    </ul>'."\n";
-        $nav_return .=  '        <form id="search-bar" action="risultati_ricerca.php" method="get">'."\n";
-        $nav_return .=  '           <input type="text" name="titolo" placeholder="Cerca.."/>';
+        $nav_return .=  '<ul id="stdbar">';
+        $nav_return .=  '<li class=""><a href="home.php">Home</a></li>'."\n";
+        $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
+        $nav_return .=  '<li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
+        $nav_return .=  '<li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
+        $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
+        $nav_return .=  '</ul>'."\n";
+        $nav_return .=  '<form id="search-bar" action="risultati_ricerca.php" method="get">'."\n";
+        $nav_return .=  '<input type="text" name="titolo" placeholder="Cerca.."/>';
         $nav_return .=  '<input type="submit" value="cerca"/>'."\n";
-        $nav_return .=  '        </form>'."\n";
+        $nav_return .=  '</form>'."\n";
         $nav_return .=  '</nav>'."\n";
 
         return $nav_return;
@@ -97,14 +97,14 @@ class htmlMaker{
         }
         if (!isset($_SESSION['nome'])){
             $header_return .=  '<div id="header_login">'."\n";
-            $header_return .=  '  <a href="login.php">Login</a>'."\n";
-            $header_return .=  '  <a href="registrati.php">Registrati</a>'."\n";
+            $header_return .=  '<a href="login.php">Login</a>'."\n";
+            $header_return .=  '<a href="registrati.php">Registrati</a>'."\n";
             $header_return .=  '</div>'."\n";
         }
             else{
                 $header_return .=  '<div id="header_login">'."\n";
-                $header_return .=  '        <a href="logout.php">Logout</a>'."\n";
-                $header_return .=  '        <a href="utente.php">Pannello Utente</a>'."\n";
+                $header_return .=  '<a href="logout.php">Logout</a>'."\n";
+                $header_return .=  '<a href="utente.php">Pannello Utente</a>'."\n";
                 $header_return .=  '</div>'."\n";
             }
 

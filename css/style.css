@@ -378,3 +378,31 @@ footer, #push {
 .inserimento label{
     width:auto;
 }
+
+/* /////////////////////////////// Small screen ////////////////////////// */
+@media only screen and (min-width: 590px) and (max-width: 920px) {
+  #search-bar{
+    display: none;
+  }
+  ul[id="stdbar"]{
+    padding-left:0;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  #search-bar{
+    width: 100%;
+    padding: 1em 2em;
+  }
+  ul[id="stdbar"]{
+    display: none;
+  }
+  #header h1{
+    display: none;
+  }
+  #header{
+      min-width: auto;
+      display: flex;
+      justify-content: space-between;
+  }
+}
