@@ -28,8 +28,10 @@ else if (isset($_POST['Modifica'])){
     sqlWrap::input_escape(array($_POST['Modifica']));
     session_start();
     $user = sqlWrap::query("SELECT Venditore FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Modifica']}'",true)[0];
-    if ($_SESSION['id'] = $user){
+    if ($_SESSION['id'] = $user){//controllo che sto modificando un libro che mi appartiene
         $book_data = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Modifica']}'")[0];
+        if ($book_data['Anno_Pubblicazione'] == '0')
+            $book_data['Anno_Pubblicazione'] = '';
         $output = file_get_contents("../HTML/modifica.html");
         echo str_replace("<nav></nav>",htmlMaker::navbar(),
              str_replace("<header></header>",htmlMaker::header(),

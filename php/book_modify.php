@@ -31,30 +31,54 @@ $prezzo =           $_POST['prezzo'];
 try{
     /*Validator::registerVal( $hash,$titolo, $autore, $casa_editrice,
                             $corso, $edizione, $annopub, $isbn, $prezzo); */
-        
+    
     session_start();
-    $user = sqlWrap::query("SELECT Venditore FROM Libri_In_Vendita WHERE md5_Hash = '$hash'",true)[0];
-    if ($_SESSION['id'] != $user){
-        throw new Exception("Non fare il furbetto");
-    }                       
-
-
-
+    
+    $inputs = array(&$hash,&$titolo,&$autore,&$casa_editrice,&$corso,&$edizione,&$annopub,&$isbn,&$prezzo);
+    array_walk($inputs,'trim');
+    sqlWrap::input_escape($inputs);
+    $prezzo = str_replace(",",".",$prezzo);
+    sqlWrap::input_escape($inputs);
+    Validator::corsoVal($corso);
+    Validator::autoreVal($autore);
+    Validator::titoloVal($titolo);
+    Validator::edizioneVal($edizione);
+    Validator::annoVal($annopub);
+    Validator::edizioneVal($edizione);
+    Validator::ISBNVal($isbn);
+    Validator::prezzoVal($prezzo); 
     ############## FINE VAL ###################
+
+    $vecchio_libro = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5_Hash = '$hash'")[0];
+    if ($_SESSION['id'] != $vecchio_libro['Venditore']){//controllo che sto modficando un libro che mi appartiene
+        throw new Exception("Non fare il furbetto");
+    }    
+    
+
+    //Se viene modificato il titolo o l'autore, il libro non rientra più in catalogo.
+    $ref = "";
+    if( $vecchio_libro['Titolo'] != $titolo ||
+        $vecchio_libro['Autore'] != $autore){
+            $ref = "Codice_identificativo_Libro = NULL,";
+        }
 
     $modify = " UPDATE Libri_In_Vendita
                 SET Titolo = '$titolo',
                     Autore = '$autore',
-                    Casa_editrice = '$casa_editrice',
+                    Casa_Editrice = '$casa_editrice',
                     Corso = '$corso',
                     Edizione = '$edizione',
                     Anno_Pubblicazione = '$annopub',
                     ISBN = '$isbn',
+                    $ref
                     Prezzo = '$prezzo'
                 WHERE md5_Hash = '$hash'";
-    echo $modify;
+    //echo $modify;
     SqlWrap::Command($modify);
-    echo "Libro Modificato con successo";
+    //echo "Libro Modificato con successo";
+
+    header('Location: utente.php');
+    die();
 } catch (Exception $e) {
     echo 'Errore: ',  $e->getMessage(), "\n";
 }
