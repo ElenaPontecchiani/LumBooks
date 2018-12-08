@@ -29,11 +29,12 @@ $prezzo =           $_POST['prezzo'];
 $libro_catalogo =   $_POST['catalogo'];
 
 try{
+    $prezzo = str_replace(",",".",$prezzo);
     Validator::registerVal( $scelta_list, $titolo, $autore, $casa_editrice,
                             $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo); 
         
-                            
-    //MANCA TRIM DEGLI INPUT
+    
+    
 
 
 
