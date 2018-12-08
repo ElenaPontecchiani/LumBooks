@@ -4,10 +4,6 @@
 }
 
 
-.hidden{
-  /* non togliere */
-  display: none;
-}
 
 body {
     /*PROPIET� BACKGROUND*/
@@ -47,7 +43,7 @@ header {
 }
 
 header *{
-  display: inline-block;
+  display: inline-block !important;
 }
 
 #logo_lumbooks {
@@ -285,11 +281,7 @@ footer, #push {
     width: 100%;
 }
 
-.outerBox  label,input{
-
-    display:inline-block;
-}
-.outerBox  label,select{
+.outerBox  label,select,input{
 
     display:inline-block;
 }
@@ -379,6 +371,12 @@ footer, #push {
     width:auto;
 }
 
+
+.hidden{
+  /* non togliere */
+  display: none !important;
+}
+
 /* /////////////////////////////// Small screen ////////////////////////// */
 @media only screen and (min-width: 590px) and (max-width: 920px) {
   #search-bar{
@@ -400,6 +398,7 @@ footer, #push {
   #header h1{
     display: none;
   }
+
   #header{
       min-width: auto;
       display: flex;

@@ -19,29 +19,13 @@
 <div id="accountBox" class="outerBox">
     <h1>Informazioni personali</h1>
     <p>Ciao Nome Cognome. Qui puoi modificare e-mail e password.</p>
-    <!-- le info immutabili le ho messe su utente.html con i libri
-    <div id="constInfo" class="innerBox">
-    	<div class="account-info">
-    		<label>Username</label>
-      		<input type="text" name="username" value="PHP" readonly="readonly">
-      	</div>
-      	<div class="account-info">
-      		<label>Numero di matricola</label>
-      		<input type="text" name="matricola" value="PHP" readonly="readonly">
-      	</div>
-      	<div class="account-info">
-      		<label>Data di nascita</label>
-      		<input type="date" name="nascita" value="PHP" readonly="readonly">
-      	</div>
-    </div>
-    -->
     <form id="nonconstInfo" class="innerBox" action="SCRIPT.php" method="post">
-      		<label>Email</label>
-      		<input type="email" name="email" value="PHP" />
-      		<label>Nuova Password</label>
-      		<input type="password" name="password"/>
-      		<label>Conferma password</label>
-      		<input type="password" name="repeatpassword"/>
+      		<label for="email">Email</label>
+      		<input type="email" name="email" value="PHP" id="email"/>
+      		<label for="newPassword">Nuova Password</label>
+      		<input type="password" name="password" id="newPassword"/>
+      		<label for="confPassword">Conferma password</label>
+      		<input type="password" name="repeatpassword" id="confPassword"/>
       		<input type="submit" id="changeSubmit" value="Cambia"/>
       	</div>
     </form>
