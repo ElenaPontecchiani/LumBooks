@@ -12,7 +12,7 @@
 
 
 
-#txContent,#student{
+#txContent,#mainpageBooksImage{
     display:inline-block;
 }
 
@@ -73,6 +73,17 @@ p {
     text-align: left;
 }
 
-    .innerBox input {
-        margin-bottom: 1em;
-    }
+.innerBox input {
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 1100px) {
+  #mainpageBooksImage{
+    display: none;
+  }
+
+  #txContent{
+    max-width:100%;
+    text-align:left;
+  }
+}
