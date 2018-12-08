@@ -1,9 +1,6 @@
 /*GENERALI*/
 * {
-    margin-top: 0em;
-    margin-right: 0em;
-    margin-bottom: 0em;
-    margin-left: 0em;
+    margin: 0;
 }
 
 
@@ -14,23 +11,18 @@
 
 body {
     /*PROPIET� BACKGROUND*/
-    /*background-color: #f9f9f9;*/
     background-color: #00576d5b;
-
-   /* background-image: url("../images/sfondo.jpg");*/
-    background-repeat: repeat;
     /*RIEMPIMENTO*/
     border: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-
+    padding: 0;
     position: relative;
-    /*PROPRIET� TX*/
+    /*PROPRIETA' TX*/
     text-align: left;
     font-family: Arial,Helvetica,sans-serif;
     line-height: 1.42857;
+}
+a{
+  text-decoration: none;
 }
 
 .outerBox,.innerBox {
@@ -40,10 +32,14 @@ body {
     margin-left: auto;
 }
 
+input[type="submit"],button{
+  cursor: pointer;
+}
+
 /*PARTE HEADER*/
 header {
     background-color:#00576d;
-    padding-left: 1%;
+    padding: 0 1%;
     min-width: 480px;
     color: rgb(180,180,180); /*colore default grigio*/
     font-family: Arial;
@@ -70,21 +66,15 @@ header *{
 
 
 
-#search-bar button, input, select {
-    font-family: Georgia;
-    font-size: 0.9em;
-    text-rendering: optimizeLegibility;
-    text-align: left;
-    border: 0.1em solid black;
-    color: black
-}
+
+
 
 /*PARTE NAVBAR*/
 #navbar{
-  padding:0.5em 0em 2.3em 0em;
   background-color:#00586d;
-
-
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 nav ul, #header_login {
@@ -98,10 +88,9 @@ nav ul, #header_login {
 }
 
 nav li, #header_login a {
-    padding:0.1em 0.4em 0.1em 0.4em;
     display: inline-block;
-    float: left;
     /*border-right: 2px solid #42b5b2;*/
+    height:100%;
 }
 
 nav li:first-child{
@@ -111,49 +100,64 @@ nav li:first-child{
 #header_login{
   min-width: 4em;
   float:right;
-
-
-
 }
-a{
-  text-decoration: none;
+
+#search-bar{
+    padding: 0 1em 0.4em 0;
+    width: 70%;
+    height: 100%;
 }
-nav li a {
+
+#search-bar input{
+    padding: 0.35em;
+}
+
+#search-bar input[type="text"]{
+    width: 60%;
+    font-family: Georgia;
+    font-size: 0.9em;
+    text-rendering: optimizeLegibility;
+    text-align: left;
+    border: 0.1em solid black;
+    color: black;
+    border-right: 0;
+    height: 100%;
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+#search-bar input[type="submit"]{
+  background-color: white;
+  border: 0.1em solid black;
+  border-radius: 0 0.3em 0.3em 0;
+  background-color: #ff9021;
+  border-left: 0;
+  height: 100%;
+}
+
+
+nav li a, #header_login a {
     color:#f2fcfa;
     text-align: center;
-    padding: 0.7em;
+    padding: 0.4em 1em;
 }
 
 #header_login a {
   color:#f2fcfa;
   border-right: 0;
   text-align: center;
-  padding: 0.88em;
 }
 
 a:visited{
   color:#addbd2;
 }
-nav li a:hover:not(.active),#header_login a:hover:not(.active) {
+nav li:hover:not(.active),#header_login a:hover:not(.active) {
     background-color: #03383a;
-}
-
-.nav input{
-    margin-right:5em;
-    padding-left:0.5em;
-    border-radius:10px;
-    /* deve diventare un bottone */
-    background:white url("../images/lentepng.png") no-repeat right center;
 }
 
  .right {/*vedere come posizionare login e reg*/
     float: right;
 }
 
-.nav{
-  float: right;
-  border-right: 0;
-}
 .nav input{
   width:13em;
 }

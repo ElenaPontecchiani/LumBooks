@@ -3,10 +3,18 @@ require_once "Backend/sql_wrapper.php";
 require_once "Backend/htmlMaker.php";
 require_once "Backend/validator.php";
 
-$titolo = $_GET['titolo'];
-$autore = $_GET['autore'];
-$isbn = $_GET['isbn'];
-$corso = $_GET['corso'];
+$titolo = '';
+$autore = '';
+$isbn = '';
+$corso = '';
+if(isset($_GET['titolo']))
+  $titolo = $_GET['titolo'];
+if(isset($_GET['autore']))
+  $autore = $_GET['autore'];
+if(isset($_GET['isbn']))
+  $isbn = $_GET['isbn'];
+if(isset($_GET['corso']))
+  $corso = $_GET['corso'];
 
 
 /*

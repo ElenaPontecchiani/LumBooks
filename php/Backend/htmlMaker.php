@@ -47,10 +47,10 @@ class htmlMaker{
         }
         $html .= "</dl>\n";
         return $html;
-        
+
     }
 
-    
+
 
     /*
     lista bottoni è la lista dei testi che vanno nei bottoni
@@ -75,13 +75,15 @@ class htmlMaker{
         $nav_return .=  '<nav id="navbar">'."\n";
         $nav_return .=  '    <ul id="stdbar">';
         $nav_return .=  '        <li class=""><a href="home.php">Home</a></li>'."\n";
-        $nav_return .=  '        <li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
+        $nav_return .=  '        <li class=""><a href="../php/risultati_ricerca.php?titolo=&autore=&corso=Qualsiasi&Editore=&isbn=&keyword=&Categoria=Qualsiasi">In Vendita</a></li>'."\n";
         $nav_return .=  '        <li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
+        $nav_return .=  '        <li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
         $nav_return .=  '        <li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
-        $nav_return .=  '        <li class="nav"><input type="text" placeholder="Search.."></li>';
-
-
         $nav_return .=  '    </ul>'."\n";
+        $nav_return .=  '        <form id="search-bar" action="risultati_ricerca.php" method="get">'."\n";
+        $nav_return .=  '           <input type="text" name="titolo" placeholder="Cerca.."/>';
+        $nav_return .=  '<input type="submit" value="cerca"/>'."\n";
+        $nav_return .=  '        </form>'."\n";
         $nav_return .=  '</nav>'."\n";
 
         return $nav_return;
