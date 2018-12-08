@@ -56,16 +56,12 @@ try{
 
     $output = str_replace("££LISTA_ATTRIBUTI££",$attr_list,$output);
 
-
-    /*$output = str_replace("££TIPO££",$book_data['Tipo'],$output);
-    $output = str_replace("££EDIZIONE££",$book_data['Edizione'],$output);
-    $output = str_replace("££ISBN££",$book_data['ISBN'],$output);
-    $output = str_replace("££ANNO££",$book_data['Anno_pub'],$output);
-    $output = str_replace("££CORSO££",$book_data['Corso'],$output);
-    $output = str_replace("££STATO££",$book_data['Stato'],$output);
-    $output = str_replace("££DATA££",$book_data['Data_Aggiunta'],$output);
-    $output = str_replace("££VENDITORE££",$book_data['Venditore'],$output);
-    $output = str_replace("££PREZZO££",$book_data['Prezzo'],$output);*/
+    $immagine_path = htmlMaker::getImage($book_hash);
+    if($immagine_path != "")
+        $output = str_replace("<img/>","<img src='{$immagine_path}' alt='Immagine Libro'/>",$output);
+    else
+        $output = str_replace("<img/>","",$output);
+ 
 
 }catch(Exception $e){
     echo $e->getMessage();

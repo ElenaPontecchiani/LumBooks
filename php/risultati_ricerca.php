@@ -52,7 +52,7 @@ if($isbn == "error"){
   $libri = SqlWrap::query($query);
 
 if ($libri)
-    $ris = htmlMaker::searchItem($libri);
+    $ris = htmlMaker::searchItemWithImage($libri);
 else
     $ris = "NESSUN RISULTATO CORRISPONDENTE";
 $output = file_get_contents("../HTML/risultati_ricerca.html");

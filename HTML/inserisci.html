@@ -21,7 +21,7 @@
 <header></header>
 <nav></nav>
 <div id="insertBox" class="outerBox">
-    <form id="input_libri" method="post" action="../php/new_book.php">
+    <form id="input_libri" method="post" action="../php/new_book.php" enctype="multipart/form-data">
         <div id="content-top" class="testoInformativo">
         <h1>Inserisci la tua offerta!</h1>
         </div>
@@ -57,7 +57,9 @@
                         <input type="text" name="ISBN" id="insertISBN" />
                         <label>Prezzo:</label>
                         <input type="text" name="prezzo" id="insertPrezzo" />
-                        <input type="submit" id="insertSubmit" value="Inserisci" />
+                        <label>Immagine Libro</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" id="insertSubmit" value="Inserisci"/>
                 </div>
         </div>
     </form>

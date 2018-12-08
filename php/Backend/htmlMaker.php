@@ -8,6 +8,14 @@ class htmlMaker{
         return $html;
     }
 
+    public static function searchItemWithImage($lista_libri){
+        $html = "";
+        foreach($lista_libri as $libro){
+            $html .= self::singleItemWithImage($libro);
+        }
+        return $html;
+    }
+
     public static function searchItemWithButtons($lista_libri,$lista_bottoni){
         $html = "";
         foreach($lista_libri as $libro){
@@ -50,6 +58,16 @@ class htmlMaker{
 
     }
 
+    public static function singleItemWithImage($libro){
+        $base = self::singleItem($libro);
+        $img = self::getImage($libro['md5_Hash']);
+        if($img != null)
+            return "<div>\n<img src='{$img}' alt='Foto di un libro'/>\n$base\n</div>";
+        else
+            return $base;
+
+    }
+
 
 
     /*
@@ -68,6 +86,14 @@ class htmlMaker{
         $buttons .= "</form>\n</div>\n";
         $html = str_replace('</dl>',$buttons,$html);
         return $html;
+    }
+
+    public static function getImage($hash){
+        $result = glob ("../immagini_libri/{$hash}.*");
+        if (count($result) == 1)
+            return $result[0];
+        else
+            return "";
     }
 
     public static function navbar(){
