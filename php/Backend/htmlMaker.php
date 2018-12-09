@@ -65,7 +65,7 @@ class htmlMaker{
         if($img != null)
             return "<div class='book_with_image'>\n<img src='{$img}' alt='Foto di un libro'/>\n$base\n</div>";
         else
-            return $base;
+            return "<div class='book_with_image'>\n<p>Libro</p>\n$base\n</div>";
 
     }
 

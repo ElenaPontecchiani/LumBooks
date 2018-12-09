@@ -258,7 +258,6 @@ footer, #push {
     padding-right: 0.6em;
     padding-bottom: 0.3em;
     padding-left: 0.6em;
-
     border: 1px solid grey;
     border-radius: 2px;
 }
@@ -389,11 +388,14 @@ footer, #push {
   justify-content: flex-start;
   border-bottom: solid 0.01em grey;
 }
-.book_with_image img{
-  height: 10em;
-  width: 10em;
-  padding: 0.5em 1% 0.2em 1%;
-  background-color: #f7f7f7;
+.book_with_image img {
+    height: 10em;
+    width: 8em;
+    margin: 0.5em;
+    background-color: #f7f7f7;
+    border: 0.1em solid grey;
+    border-radius: 0.2em;
+    object-fit: cover;
 }
 .book_with_image .search_item{
   width: 100%;                      /* se nessuno di quelli sotto è supportato */
@@ -409,7 +411,6 @@ footer, #push {
 
 .item_name{
     color: #0072c1;
-    margin-left:3em;
     font-weight: bold;
     font-size:1.3em;
 }
@@ -427,6 +428,13 @@ footer, #push {
 #filter-tool{
   padding: 0.5em 0 0.5em 1%;
 }
+.book_with_image p{
+    height: 10em;
+    width: 8em;
+    margin: 0.5em;
+    background-color: #25586d;
+    border: 0.1em solid grey;
+    }
 
 
 
