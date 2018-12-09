@@ -32,11 +32,11 @@ class Validator{
             self::autoreVal($autore);
             self::titoloVal($titolo);
             self::edizioneVal($edizione);
-        }        
+        }
         self::annoVal($annopub);
         self::edizioneVal($edizione);
         self::ISBNVal($isbn);
-        self::prezzoVal($prezzo);       
+        self::prezzoVal($prezzo);
     }
 
     public static function titoloVal($titolo){

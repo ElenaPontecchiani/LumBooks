@@ -306,6 +306,7 @@ footer, #push {
 .outerBox  input[type="date"],
 .outerBox  input[type="email"],
 .outerBox  input[type="password"],
+.outerBox  input[type="file"],
 .outerBox  select
 {
     display: inline-block;
@@ -375,6 +376,11 @@ footer, #push {
 .hidden{
   /* non togliere */
   display: none !important;
+}
+
+/* <specifico inserisci.html> */
+#input_libri #content-mid p{
+  display: inline-block;
 }
 
 /* /////////////////////////////// Small screen ////////////////////////// */
