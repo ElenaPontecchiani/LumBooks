@@ -17,15 +17,17 @@
 <header></header>
 <nav></nav>
 <div id="accountBox" class="outerBox">
-    <h1>Informazioni personali</h1>
+    <div id="content-top" class="testoInformativo">
+		    <h1>Informazioni personali</h1>
+    </div>
     <p>Ciao Nome Cognome. Qui puoi modificare e-mail e password.</p>
     <form id="nonconstInfo" class="innerBox" action="SCRIPT.php" method="post">
       		<label for="email">Email</label>
-      		<input type="email" name="email" value="PHP" id="email"/>
+      		<input type="email" name="email" value="PHP"/>
       		<label for="newPassword">Nuova Password</label>
-      		<input type="password" name="password" id="newPassword"/>
+      		<input type="password" name="password"/>
       		<label for="confPassword">Conferma password</label>
-      		<input type="password" name="repeatpassword" id="confPassword"/>
+      		<input type="password" name="repeatpassword"/>
       		<input type="submit" id="changeSubmit" value="Cambia"/>
     </form>
 </div>
