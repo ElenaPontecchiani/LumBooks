@@ -35,7 +35,7 @@ if($isbn == "error"){
 }
   //INZIO COMPOSIZIONE DELLA QUERY"
   $query = "  SELECT Titolo,Autore,Prezzo,ISBN,md5_Hash
-              FROM Libri_In_Vendita WHERE 1=1 ";
+              FROM Libri_In_Vendita WHERE Stato = 'In vendita' ";
 
   if (!($titolo == ""))
       $query.= " AND Titolo like '%$titolo%'";
@@ -52,7 +52,7 @@ if($isbn == "error"){
   $libri = SqlWrap::query($query);
 
 if ($libri)
-    $ris = htmlMaker::searchItem($libri);
+    $ris = htmlMaker::searchItemWithImage($libri);
 else
     $ris = "NESSUN RISULTATO CORRISPONDENTE";
 $output = file_get_contents("../HTML/risultati_ricerca.html");
