@@ -2,29 +2,62 @@
 
 h2{
     font-size:1.2em;
-    text-align:center;
-}
-
-dt,dd{
     
-    text-align:center;
+    padding:0.5em 5em 0.5em 5em;
+
 }
 
-dt{
-    font-weight: 510;
+#text{
+    margin: 0.5em 7em 0.5em 7em; 
 }
 
+
+
+.mostra-libri{
+    padding:0.5em 0em 1em 0em;
+    
+    /*text-align:center;*/
+}
+
+#user_data{
+    
+    border-top: 1px solid grey;
+   /* text-align:center;*/
+}
+
+
+/*PRESA INTERNET*/
+dl {
+    border-bottom: 1px solid grey;
+    padding: 0.5em 7em 0.5em 7em;
+    
+  }
+  dt {
+    float: left;
+    clear: left;
+    width: auto;
+    text-align: right;
+    font-weight: bold;
+    color: #00576d;
+  }
+  dt::after {
+    content: ":";
+  }
+  dd {
+    margin: 0 0 0 10em;
+    padding: 0 0 0.5em 0;
+  }
+
+/*
 .mostra-libri{
     width:30%;
     display:inline-block;
-}
+}*/
 
-#stato-libri{
-    padding:1em 8% 1em 8%;
-    text-align:center;
-}
 
+
+/*
 .middle{
     border-left:0.1em solid #00576d;
     border-right:0.1em solid #00576d;
-}
+}*/
