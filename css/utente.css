@@ -6,25 +6,47 @@ h2{
 }
 
 dt,dd{
-    
-    text-align:center;
+
+
 }
 
 dt{
     font-weight: 510;
 }
 
-.mostra-libri{
+.mostra-libri {
     width:30%;
     display:inline-block;
 }
 
-#stato-libri{
-    padding:1em 8% 1em 8%;
-    text-align:center;
+.mostra-libri div{
+  padding: 0.5em;
 }
 
-.middle{
-    border-left:0.1em solid #00576d;
-    border-right:0.1em solid #00576d;
+#stato-libri {
+    padding:1em 2% 1em 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.boxx {
+  display: flex;
+  justify-content: space-between;
+}
+
+#stato-libri button {
+  display: block;
+  margin-top: 0.6em;
+}
+
+#mostra-libri{
+  padding-top: 1em;
+}
+
+.search_item {
+  width: 100%;
+}
+.boxx form{
+  border-bottom: 1px solid grey;
 }
