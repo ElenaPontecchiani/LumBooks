@@ -20,12 +20,25 @@ body {
 a{
   text-decoration: none;
 }
-
 .outerBox,.innerBox {
     max-width: 1100px;
     background-color: #f9f9f9;
     margin-right: auto;
     margin-left: auto;
+}
+
+h1{
+  font-weight: 600;
+  font-size: 2.3em;
+}
+
+h2{
+  font-weight: 500;
+  font-size: 1.8em;
+}
+
+ul{
+  list-style-type: none;
 }
 
 input[type="submit"],button{
@@ -237,19 +250,6 @@ footer, #push {
       background: #0088CC;
       color: white;
   }
-
-
-/*VARIE*/
-.testoInformativo h1{
-    color:#03383ac9;
-
-    text-align:left;
-    font-weight: 600;
-    font-size: 1.5em;
-  }
-
-
-
 
 /*PAGINA CERCA LIBRO E REGISTRATI*/
 .outerBox select,.outerBox input{
