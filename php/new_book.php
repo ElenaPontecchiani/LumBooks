@@ -91,8 +91,8 @@ try{
 
     $insert = "INSERT INTO Libri_In_Vendita(".$par1.") VALUES(".$par2.");";
     echo $insert;
-    SqlWrap::Command($insert);
     require_once "image_up.php";
+    SqlWrap::Command($insert);
     echo "Libro Inserito con successo!";
 } catch (Exception $e) {
     echo 'Errore: ',  $e->getMessage(), "\n";

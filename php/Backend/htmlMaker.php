@@ -63,9 +63,9 @@ class htmlMaker{
         #// TODO: dare una descrizione al libro (alt)
         $img = self::getImage($libro['md5_Hash']);
         if($img != null)
-            return "<div class='book_with_image'>\n<img src='{$img}' alt='Foto di un libro'/>\n$base\n</div>";
+            return "<div class='book_with_image'>\n<img  class ='libro' src='{$img}' alt='Foto di un libro'/>\n<div class='desc_container'>$base\n</div>\n</div>";
         else
-            return "<div class='book_with_image'>\n<p>Libro</p>\n$base\n</div>";
+            return "<div class='book_with_image'>\n<div class='libro fake'>¯\_(ツ)_/¯</div>\n\n<div class='desc_container'>\n$base\n</div>\n</div>";
 
     }
 
