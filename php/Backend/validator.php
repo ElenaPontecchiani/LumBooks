@@ -32,11 +32,11 @@ class Validator{
             self::autoreVal($autore);
             self::titoloVal($titolo);
             self::edizioneVal($edizione);
-        }        
+        }
         self::annoVal($annopub);
         self::edizioneVal($edizione);
         self::ISBNVal($isbn);
-        self::prezzoVal($prezzo);       
+        self::prezzoVal($prezzo);
     }
 
     public static function titoloVal($titolo){
@@ -62,7 +62,10 @@ class Validator{
     }
 
     public static function ISBNVal($isbn){
-        if (( (!(filter_var($isbn, FILTER_VALIDATE_INT))) || strlen($isbn) != 13) && $isbn != "")
+      /* Il controllo dell'intero fallisce su sistemi a 32 bit perché l' isbn
+         è un numero troppo grande, quindi viene convertito in double
+      */
+        if (( (!(preg_match("/^[0-9]*$/", $isbn))) || strlen($isbn) != 13) && $isbn != "")
             throw new Exception("ISBN non valido");
     }
 
