@@ -1,10 +1,6 @@
 @import url("style.css");
 
 
-dt{
-    font-weight: 500;
-}
-
 .mostra-libri {
     width:30%;
     display:inline-block;
@@ -64,9 +60,11 @@ dt{
   font-size: 1.7em;
   text-align: center;
 }
+
 .account{
   padding-left: 4%;
 }
+
 #datiPersonali li label{
   text-align: right;
   width: 7em;
