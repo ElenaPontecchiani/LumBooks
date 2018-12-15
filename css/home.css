@@ -35,7 +35,7 @@
 
 .outerBox img { /*non manipolata perche forse slide show*/
     max-width: 40%;
-    padding-right:2.5em;
+    margin-right:2.5em;
     float:right;
 
     object-fit: fill;

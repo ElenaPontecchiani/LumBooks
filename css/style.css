@@ -25,12 +25,15 @@ a{
     background-color: #f9f9f9;
     margin-right: auto;
     margin-left: auto;
+    padding: 0.5em;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
 }
 
 h1{
   font-weight: 600;
   font-size: 2em;
 }
+
 
 h2{
   font-weight: 500;
@@ -41,8 +44,18 @@ ul{
   list-style-type: none;
 }
 
+img{
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
 input[type="submit"],button{
   cursor: pointer;
+}
+
+#map-position{
+  font-weight: 100;
+  font-size: 1em;
+  color: grey;
 }
 
 /*PARTE HEADER*/
@@ -132,15 +145,14 @@ nav li:first-child{
     color: black;
     border-right: 0;
     height: 100%;
-    border-radius: 0.3em 0 0 0.3em;
+    border-radius: 0.3em;
 }
 
 #search-bar input[type="submit"]{
   background-color: white;
   border: 0.1em solid black;
-  border-radius: 0 0.3em 0.3em 0;
+  border-radius: 0.3em;
   background-color: #ff9021;
-  border-left: 0;
   height: 100%;
 }
 
@@ -383,7 +395,7 @@ footer, #push {
 }
 
 /* <risultati_ricerca.html> */
-.book_with_image{
+.book_with_image {
   width:100%;
   border-bottom: solid 0.01em grey;
 }
@@ -393,7 +405,7 @@ footer, #push {
     height: 10em;
     width: 8em;
     margin: 0.5em;
-    border: 0.1em solid grey;
+    border: 1px solid grey;
     border-radius: 0.2em;
     display: inline-block;
     overflow: hidden;
@@ -404,6 +416,7 @@ footer, #push {
     line-height: 10em;
     text-align: center;
     background-color: #25576d;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     color: white;
 }
 
@@ -518,6 +531,31 @@ footer, #push {
   padding-right: 1em;
 }
 
+/*////////////////////////////// <about.html> ////////////////////////////// */
+#about-us {
+  border: 3px double #ccc;
+  padding: 0.5em;
+}
+#about-us dt {
+  float: left;
+  clear: left;
+  max-width: 6em;
+  min-height: 5em;
+  text-align: right;
+  font-weight: bold;
+  color: #083b59;
+}
+
+#about-us dd {
+  margin-left: 7em;
+  padding: 0.5em 0 0.5em 0;
+  min-height: 5em;
+}
+
+#about-us dt img{
+  width: 100%;
+  height: 100%;
+}
 /* /////////////////////////////// Small screen ////////////////////////// */
 
 @media only screen and (max-width: 690px) {
@@ -545,18 +583,32 @@ footer, #push {
 @media only screen and (max-width: 590px) {
   #search-bar{
     width: 100%;
-    padding: 1em 2em;
+    padding: 0.3em 0.5em;
+  }
+  #navbar {
+    display: flex;
+    justify-content: center;
   }
   ul[id="stdbar"]{
     display: none;
   }
-  #header h1{
-    display: none;
-  }
+
 
   #header{
       min-width: auto;
       display: flex;
       justify-content: space-between;
+  }
+  #left_header h1 {
+      display: none !important;
+  }
+
+  /*////////////////////////////// small <about.html> ////////////////////////////// */
+  #about-us dd {
+    margin-left: 0;
+  }
+  #about-us dt{
+    float:none;
+    text-align: left;
   }
 }
