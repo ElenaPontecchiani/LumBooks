@@ -5,19 +5,19 @@ require_once "Backend/htmlMaker.php";
 
 $output = file_get_contents("../HTML/libro.html");
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
-$output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
-$output = str_replace("<footer></footer>",htmlMaker::footer(),$output); 
+$output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);
+$output = str_replace("<footer></footer>",htmlMaker::footer(),$output);
 
 
-try{    
+try{
     if (isset($_GET['libro'])){
         $book_hash = $_GET['libro'];
         $book_hash = trim($book_hash);
         if(!Validator::lengthVal(32,32,$book_hash))
             throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
         sqlWrap::input_escape(array(&$book_hash));
-    }    
-        
+    }
+
     else
         throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
 
@@ -32,13 +32,13 @@ try{
                                         Stato,
                                         Data_Aggiunta as 'Data di Aggiunta',
                                         CONCAT(Nome,' ',Cognome) as Venditore,
-                                        Prezzo 
+                                        Prezzo
                                 FROM Libri_In_Vendita
                                 JOIN Utente ON Venditore = Codice_identificativo
                                 WHERE md5_Hash = \"$book_hash\"");
 
     if ($book_data == null){//Se la query è vuota
-        throw new Exception("Per quualche oscuro motivo quacosa è andato storto. Bah...");
+        throw new Exception("Per qualche oscuro motivo quacosa è andato storto. Bah...");
     }
     $book_data = $book_data[0];
     //query ok;
@@ -61,7 +61,7 @@ try{
         $output = str_replace("<img/>","<img src='{$immagine_path}' alt='Immagine Libro'/>",$output);
     else
         $output = str_replace("<img/>","",$output);
- 
+
 
 }catch(Exception $e){
     echo $e->getMessage();
@@ -71,5 +71,3 @@ try{
 
 echo $output;
 ?>
-
-

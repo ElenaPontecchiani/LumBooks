@@ -27,16 +27,25 @@ a{
 }
 .outerBox {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
+    padding: 1em 0;
+    position: relative;
 }
 h1{
   font-weight: 600;
   font-size: 2em;
+  color: #023956;
 }
 
 
 h2{
   font-weight: 500;
   font-size: 1.7em;
+  color: #023956;
+
+}
+
+.outerBox h1,.outerBox h2{
+  padding: 0em 1%;
 }
 
 ul{
@@ -47,6 +56,7 @@ img{
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 
+
 input[type="submit"],button{
   cursor: pointer;
 }
@@ -56,6 +66,8 @@ input[type="submit"],button{
   font-size: 1em;
   color: grey;
 }
+
+
 
 /*PARTE HEADER*/
 header {
@@ -208,13 +220,13 @@ footer {
     margin-top: 0px;
     border: 0px;
     color: rgba(255, 255, 255, 0.774);
-    padding-top:1.5em;
     margin-bottom: 0px;
     background-color:#00586d;
     width: 1100px;
     margin: auto;
     height: 10em;
     clear: both;
+    padding: 1em 0;
 }
 
 
@@ -327,6 +339,9 @@ footer {
   display: inline-block;
 }
 
+#loginForm input{
+  display: block;
+}
 
 #registerSubmit {
     width:7em;
@@ -561,9 +576,34 @@ footer {
   padding-top: 2em;
   font-size: 1.2em;
 }
-/* /////////////////////////////// Small screen ////////////////////////// */
 
-@media only screen (max-width: 920px) {
+/* /////////////////// <pagina libro> ////////////// */
+#info_book{
+  padding: 1em 0;
+  min-height: 25em;
+}
+
+#info_book dt,#info_book dd {
+  float: left;
+  margin-bottom: 1em;
+}
+#info_book dt {
+  clear:both;
+  font-weight: bold;
+}
+#info_book dd {
+  margin-left: 0.4em;
+}
+#box_book img{
+  position: absolute;
+  max-width: 30em;
+  max-height: 40em;
+  top: 2em;
+  right: 2%;
+}
+/* ////////////////////////////////// Small screen ////////////////////////// */
+
+@media only screen and (max-width: 920px) {
   #search-bar{
     display: none;
   }
@@ -574,6 +614,10 @@ footer {
   #stato-libri button{
     width: 6em;
   }
+  #box_book img{
+    position: static;
+  }
+
 }
 
 @media only screen and (max-width: 590px) {
@@ -642,6 +686,7 @@ footer {
     width: auto;
     text-align: left;
   }
+
 
 
 }
