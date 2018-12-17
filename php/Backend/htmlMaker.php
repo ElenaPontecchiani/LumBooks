@@ -44,6 +44,8 @@ class htmlMaker{
         $ref = "<a href=\"££LINK££\">";
         if (isset($libro['md5_Hash']))
             $ref = "<a href=\"../php/pagina_libro.php?libro={$libro['md5_Hash']}\">";
+        else
+            $ref = "<a>";
         $html .= "<dl class=\"search_item\">\n";
         $html .= str_replace('££TITOLO££',$libro['Titolo'],$item_title)."\n";
         $html = str_replace('<a>',$ref,$html);
@@ -79,7 +81,9 @@ class htmlMaker{
     public static function singleItemWithButtons($libro,$lista_bottoni){
         $html = self::singleItem($libro);   //Creo il search_item di base
         $html = str_replace('<dl',"<div class=\"boxx\">\n<dl",$html);
-
+        if(!isset($libro['md5_Hash'])){
+            $libro['md5_Hash'] = $libro['Codice_identificativo'];
+        }
         $buttons = "</dl>\n<form action='book_action.php' method='post'>\n";
         foreach($lista_bottoni as $bot){
             $buttons .= "<button type='submit' name='$bot' value='{$libro['md5_Hash']}'>$bot</button>\n";

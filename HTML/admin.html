@@ -1,46 +1,50 @@
 ﻿<!DOCTYPE html>
 <html lang="it">
-   <head>
-      <meta charset="UTF-8">
-      <title>Pannello admin - LumBooks</title>
-      <link rel="icon" href=""/><!-- link icona -->
-      <meta name="title" content="Pannello Admin - LumBooks" />
-      <meta name="description" content="Pagina per gli amministratori che potranno inserire nuovi libri nel catalogo." /><!-- da fare -->
-      <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" /><!-- da fare -->
-      <meta name="language" content="italian it" />
-      <meta name="author" content="" /><!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/account.css" /><!-- FARE CSS -->
-      <link rel="stylesheet" type="text/css" href="../css/style.css" />
-      <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
-      <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
-      <link rel="stylesheet" type="text/css" href="../css/" media="print" />
-      <script src="../js/inserisci.js"></script>
 
-   </head>
-   <body>
-<header></header>
-<nav></nav>
-<div id="adminBox" class="outerBox">
-    <form id="admin" method="post" action="...">
-        <div id="content-top" class="testoInformativo">
-        <h1>Inserisci un nuovo libro nel catalogo!</h1>
-        </div>
-        <div id="content-mid" >
-            <label>Titolo:</label>
-            <input type="text" name="titolo"/>
-            <label>Autore:</label>
-            <input type="text" name="autore"/>
-            <label>Casa editrice:</label>
-            <input type="text" name="casaeditrice" />
-            <label>Corso:</label>
-            <input type="text" name="corso"/>
-            <input type="submit" id="insertSubmit" value="Inserisci" />
-        </div>
-        <div id="catalogo"> <!-- PER SEBA -->
-        <dl class="search_item"></dl>
-        </div>
-    </form>
-    <div id="push"></div>
-    <footer></footer>
+<head>
+    <meta charset="UTF-8">
+    <title>Pannello admin - LumBooks</title>
+    <link rel="icon" href="" /><!-- link icona -->
+    <meta name="title" content="Pannello Admin - LumBooks" />
+    <meta name="description" content="Pagina per gli amministratori che potranno inserire nuovi libri nel catalogo." /><!-- da fare -->
+    <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" /><!-- da fare -->
+    <meta name="language" content="italian it" />
+    <meta name="author" content="" /><!-- da fare -->
+    <link rel="stylesheet" type="text/css" href="../css/account.css" /><!-- FARE CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen" />
+    <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+    <link rel="stylesheet" type="text/css" href="../css/" media="print" />
+    <script src="../js/inserisci.js"></script>
+
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+    <div id="adminBox" class="outerBox">
+        <form id="admin" method="post" action="new_cat.php">
+            <div id="content-top" class="testoInformativo">
+                <h1>Inserisci un nuovo libro nel catalogo!</h1>
+            </div>
+            <div id="content-mid">
+                <label>Titolo:</label>
+                <input type="text" name="titolo" />
+                <label>Autore:</label>
+                <input type="text" name="autore" />
+                <label>Casa editrice:</label>
+                <input type="text" name="casaeditrice" />
+                <label>Corso:</label>
+                <input type="text" name="corso" />
+                <input type="submit" id="insertSubmit" value="Inserisci" />
+            </div>
+        </form>
+            <div id="catalogo">
+                <dl class="search_item"></dl>
+            </div>
+        
+    </div>
+        <footer></footer>
 </body>
+
 </html>
