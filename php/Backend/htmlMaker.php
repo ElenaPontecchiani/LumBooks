@@ -2,6 +2,8 @@
 class htmlMaker{
     public static function searchItem($lista_libri){
         $html = "";
+        if (!$lista_libri)
+            return "Nessun risultato corripsondente";
         foreach($lista_libri as $libro){
             $html .= self::singleItem($libro);
         }
@@ -10,6 +12,8 @@ class htmlMaker{
 
     public static function searchItemWithImage($lista_libri){
         $html = "";
+        if (!$lista_libri)
+            return "Nessun risultato corripsondente";
         foreach($lista_libri as $libro){
             $html .= self::singleItemWithImage($libro);
         }
@@ -18,6 +22,8 @@ class htmlMaker{
 
     public static function searchItemWithButtons($lista_libri,$lista_bottoni){
         $html = "";
+        if (!$lista_libri)
+            return "Nessun risultato corripsondente";
         foreach($lista_libri as $libro){
             $html .= self::singleItemWithButtons($libro,$lista_bottoni);
         }
@@ -26,6 +32,8 @@ class htmlMaker{
 
     public static function searchItemCatalog($lista_libri){
         $html = "";
+        if (!$lista_libri)
+            return "Nessun risultato corripsondente";
         $begin = 'risultati_ricerca.php?titolo=';
         $end = '&autore=&corso=Qualsiasi&Editore=&isbn=&keyword=&Categoria=Qualsiasi>';
         foreach($lista_libri as $libro){
