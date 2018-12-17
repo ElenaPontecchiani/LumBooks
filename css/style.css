@@ -25,10 +25,10 @@ a{
     background-color: #f9f9f9;
     margin-right: auto;
     margin-left: auto;
-    padding: 0.5em;
+}
+.outerBox {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
 }
-
 h1{
   font-weight: 600;
   font-size: 2em;
@@ -555,6 +555,17 @@ footer, #push {
 #about-us dt img{
   width: 100%;
   height: 100%;
+}
+
+/* ///////////////////// <login> //////////////////*/
+#loginBox .testoInformativo {
+  text-align: center;
+}
+
+#loginBox .testoInformativo #recuperoPsw{
+  display: block;
+  padding-top: 2em;
+  font-size: 1.2em;
 }
 /* /////////////////////////////// Small screen ////////////////////////// */
 

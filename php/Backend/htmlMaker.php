@@ -98,6 +98,9 @@ class htmlMaker{
     }
 
     public static function navbar(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
         $nav_return = "";
         $nav_return .=  '<nav id="navbar">'."\n";
         $nav_return .=  '<ul id="stdbar">';
@@ -105,7 +108,9 @@ class htmlMaker{
         $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
-        $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
+        if(isset($_SESSION['nome'])){
+          $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
+        }
         $nav_return .=  '</ul>'."\n";
         $nav_return .=  '<form id="search-bar" action="risultati_ricerca.php" method="get">'."\n";
         $nav_return .=  '<input type="text" name="titolo" placeholder="Cerca.."/>';
