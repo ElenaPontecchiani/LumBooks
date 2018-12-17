@@ -274,6 +274,10 @@ footer {
       color: white;
   }
 
+  .footer_link{
+    display: block;
+  }
+
 /*PAGINA CERCA LIBRO E REGISTRATI*/
 .outerBox select,.outerBox input{
     display: block;

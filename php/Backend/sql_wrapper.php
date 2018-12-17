@@ -72,6 +72,11 @@ class SqlWrap{
         $connection->close();
     }
 
+    public static function isAdmin(){
+        session_start();
+        return (isset($_SESSION['email']) && $_SESSION['email'] == "admin@admin.com");
+    }
+
 }
 
 
