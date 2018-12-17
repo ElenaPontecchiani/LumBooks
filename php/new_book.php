@@ -12,8 +12,7 @@ if (!isset( $_POST['type'],
             $_POST['corso'],
             $_POST['anno'],
             $_POST['ISBN'],
-            $_POST['prezzo'],
-            $_POST['catalogo']))
+            $_POST['prezzo']))
     throw new Exception("Richiesta Malformata");
 
 //Mi tiro giù variabili dalla post (per aumentare leggibilità codice)
@@ -26,8 +25,10 @@ $edizione =         $_POST['edizione'];
 $annopub =          $_POST['anno'];
 $isbn =             $_POST['ISBN'];
 $prezzo =           $_POST['prezzo'];
-$libro_catalogo =   $_POST['catalogo'];
-
+if(isset($_POST['catalogo']))
+    $libro_catalogo =   $_POST['catalogo'];
+else
+    $libro_catalogo = 1;
 try{
     $prezzo = str_replace(",",".",$prezzo);
     Validator::registerVal( $scelta_list, $titolo, $autore, $casa_editrice,
