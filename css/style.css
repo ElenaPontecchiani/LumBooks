@@ -596,8 +596,8 @@ footer {
 }
 #box_book img{
   position: absolute;
-  max-width: 30em;
-  max-height: 40em;
+  max-width: 30%;
+  max-height: 40%;
   top: 2em;
   right: 2%;
 }
