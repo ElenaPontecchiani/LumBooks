@@ -35,9 +35,9 @@ class htmlMaker{
         if (!$lista_libri)
             return "Nessun risultato corripsondente";
         $begin = 'risultati_ricerca.php?titolo=';
-        $end = '&autore=&corso=Qualsiasi&Editore=&isbn=&keyword=&Categoria=Qualsiasi>';
+        $end = '&autore=&corso=Qualsiasi&Editore=&isbn=&keyword=&Categoria=Qualsiasi';
         foreach($lista_libri as $libro){
-            $html .= str_replace('££LINK££',$begin.$libro['Titolo'].$end,self::singleItem($libro));
+            $html .= str_replace('a>','a href=\''.$begin.$libro['Titolo'].$end."'>",self::singleItem($libro));
         }
         return $html;
     }
@@ -49,7 +49,6 @@ class htmlMaker{
         $html = "";
         $item_title = '<dt class="item_name"><a>££TITOLO££</a></dt>';
         $item_spec = '<dt class="item_spec">££NOMECAMPO££</dt><dd class="spec_desc">££CAMPO££</dd>'."\n";
-        $ref = "<a href=\"££LINK££\">";
         if (isset($libro['md5_Hash']))
             $ref = "<a href=\"../php/pagina_libro.php?libro={$libro['md5_Hash']}\">";
         else
