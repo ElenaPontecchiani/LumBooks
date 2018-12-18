@@ -19,11 +19,9 @@
    <body>
 <header></header>
 <nav></nav>
-<div id="insertBox" class="outerBox">
+<section id="insertBox" class="outerBox">
     <form id="input_libri" method="post" action="../php/new_book.php" enctype="multipart/form-data">
-        <div id="content-top" class="testoInformativo">
         <h1>Inserisci la tua offerta!</h1>
-        </div>
         <div id="content-mid" >
                 <p>Il libro che vuoi vendere è già nel nostro catalogo?</p>
                 <label for="listato" class="firstLine">Sì</label>
@@ -31,7 +29,6 @@
                 <label for="personale" class="firstLine">No</label>
                 <input type="radio" name="type" value="personale" id="personale"/>
                 <!-- Mostra uno dei due div sotto-->
-                <!-- LASCIO GLI ID perché non so se fate in js o php ma sistemeremo quando ci vediamo-->
                 <div id="inserisci-personale">
                         <label for="insertTitolo">Titolo:</label>
                         <input type="text" name="titolo" id="insertTitolo" />
@@ -64,7 +61,7 @@
                 </div>
         </div>
     </form>
-    </div>
+</section>
     <footer></footer>
 </body>
 </html>

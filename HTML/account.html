@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="it">
-   <head>
-      <meta charset="UTF-8">
-      <title>Impostazioni - LumBooks</title>
-      <link rel="icon" href=""/><!-- link icona -->
-      <meta name="title" content="Impostazioni - LumBooks" />
-      <meta name="description" content="Pagina per vedere e cambiare le proprie impostazioni e credenziali" /><!-- da fare -->
-      <meta name="keywords" content="impostazioni, unipd, account, password, email, matricola" /><!-- da fare -->
-      <meta name="language" content="italian it" />
-      <meta name="author" content="" /><!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/account.css" /><!-- FARE CSS -->
-      <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /><!-- schermi piccoli --> <!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/" media="print" /><!-- da fare -->
-   </head>
-   <body>
+<head>
+   <meta charset="UTF-8">
+   <title>Impostazioni - LumBooks</title>
+   <link rel="icon" href=""/><!-- link icona -->
+   <meta name="title" content="Impostazioni - LumBooks" />
+   <meta name="description" content="Pagina per vedere e cambiare le proprie impostazioni e credenziali" /><!-- da fare -->
+   <meta name="keywords" content="impostazioni, unipd, account, password, email, matricola" /><!-- da fare -->
+   <meta name="language" content="italian it" />
+   <meta name="author" content="" /><!-- da fare -->
+   <link rel="stylesheet" type="text/css" href="../css/account.css" /><!-- FARE CSS -->
+   <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /><!-- schermi piccoli --> <!-- da fare -->
+   <link rel="stylesheet" type="text/css" href="../css/" media="print" /><!-- da fare -->
+</head>
+<body>
 <header></header>
 <nav></nav>
-<div id="accountBox" class="outerBox">
-    <div id="content-top" class="testoInformativo">
-		    <h1>Informazioni personali</h1>
-    </div>
-    <p>Ciao Nome Cognome. Qui puoi modificare e-mail e password.</p>
-    <form id="nonconstInfo" class="innerBox" action="SCRIPT.php" method="post">
-      		<label for="email">Email</label>
-      		<input type="email" name="email" value="PHP"/>
-      		<label for="newPassword">Nuova Password</label>
-      		<input type="password" name="password"/>
-      		<label for="confPassword">Conferma password</label>
-      		<input type="password" name="repeatpassword"/>
-      		<input type="submit" id="changeSubmit" value="Cambia"/>
-    </form>
-</div>
+<section id="accountBox" class="outerBox">
+   <h1>Informazioni personali</h1>
+   <p>Ciao Nome Cognome. Qui puoi modificare e-mail e password.</p>
+   <form id="nonconstInfo" class="innerBox" action="SCRIPT.php" method="post">
+         <label for="email">Email</label>
+         <input type="email" name="email" value="PHP"/>
+         <label for="newPassword">Nuova Password</label>
+         <input type="password" name="password"/>
+         <label for="confPassword">Conferma password</label>
+         <input type="password" name="repeatpassword"/>
+         <input type="submit" id="changeSubmit" value="Cambia"/>
+   </form>
+</section>
 <footer></footer>
-   </body>
+</body>
 </html>

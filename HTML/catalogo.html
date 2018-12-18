@@ -14,26 +14,24 @@
 	<link rel="stylesheet" type="text/css" href="../css/" media="print" /> <!-- da fare -->
 </head>
 <body>
-    <header></header>
-    <nav></nav>
-    <div class="outerBox">
-        <div id="content-top" class="testoInformativo">
-            <h1>Il nostro catalogo</h1>
+<header></header>
+<nav></nav>
+<section class="outerBox">
+    <h1>Il nostro catalogo</h1>
+    <div id="filter-bar">
+        <!-- eventualmente altro -->
+        <div id="filter-tool">
+            <label>Ordina:</label>
+            <select name="ordine">
+                <option value="AZ" selected="selected">Dalla A alla Z</option>
+                <option value="ZA" selected="selected">Dalla Z alla A</option>
+                <option value="piurecente" selected="selected">Dal più recente</option>
+                <option value="menorecente">Dal meno recente</option>
+            </select>
         </div>
-        <div id="filter-bar">
-            <!-- eventualmente altro -->
-            <div id="filter-tool">
-                <label>Ordina:</label>
-                <select name="ordine">
-                    <option value="AZ" selected="selected">Dalla A alla Z</option>
-                    <option value="ZA" selected="selected">Dalla Z alla A</option>
-                    <option value="piurecente" selected="selected">Dal più recente</option>
-                    <option value="menorecente">Dal meno recente</option>
-                </select>
-            </div>
-            <dl class="search_item"></dl>
-        </div>
+        <dl class="search_item"></dl>
     </div>
-    <footer></footer>
+</section>
+<footer></footer>
 </body>
 </html>

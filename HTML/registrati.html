@@ -1,61 +1,53 @@
 <!DOCTYPE html>
 <html lang="it">
-   <head>
-      <meta charset="UTF-8">
-      <title>Registrati - LumBooks</title>
-      <link rel="icon" href=""/>
-      <!-- link icona -->
-      <meta name="title" content="Registrati" />
-      <meta name="description" content="Pagins di registrazione al sito" />
-      <!-- da fare -->
-      <meta name="keywords" content="libro, unipd" />
-      <!-- da fare -->
-      <meta name="language" content="italian it" />
-      <meta name="author" content="" />
-      <!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/style.css" />
-      <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
-      <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
-      <link rel="stylesheet" type="text/css" href="../css/" media="print" />
-   </head>
-   <body>
-      <header></header>
-      <nav></nav>
-      <div id="registerBox" class="outerBox">
-         <div id="content-top" class="testoInformativo">
-               <h1>Crea il tuo account LumBooks!</h1>
-         </div>
-         <form id="registerForm" class="innerBox " action="../php/new_user.php" method="post">
-               <label for="email">Email*</label>
-               <input type="email" name="email" id="email"/>
-               <label for="matricola">Matricola</label>
-               <input type="text"  name="matricola" id="matricola"/>
-               <label for="nome">Nome</label>
-               <input type="text" name="nome" id="nome"/>
-               <label for="cognome">Cognome</label>
-               <input type="text" name="cognome" id="cognome"/>
-               <label for="user">Nome utente</label>
-               <input type="text" name="user" id="user"/>
-               <label for="sesso">Sesso</label>
-               <select name="sesso" form="registerForm" id="sesso">
-                  <option value="M" selected="selected">Uomo</option>
-                  <option value="F">Donna</option>
-                  <option value="N">Non Specificato</option>
-               </select>
-               <!-- <input list="Sesso" name="sesso">
-                  <datalist id="sesso">
-                  	<option value="M">
-                  	<option value="F">
-                  	<option value="N">
-                  </datalist> -->
-               <label for="nascita">Data di nascita</label>
-               <input type="date" name="nascita" id="nascita">
-               <label for="password">Password*</label>
-               <input type="password" name="password" id="password"/>
-               <label for="ripeatpassword">Ripeti password*</label>
-               <input type="password" name="repeatpassword" id="ripeatpassword"/>
-               <input type="submit" id="registerSubmit" value="Registrati"/>
-         </form>
-      </div>
-      <footer></footer>
+<head>
+   <meta charset="UTF-8">
+   <title>Registrati - LumBooks</title>
+   <link rel="icon" href=""/>
+   <!-- link icona -->
+   <meta name="title" content="Registrati" />
+   <meta name="description" content="Pagins di registrazione al sito" />
+   <!-- da fare -->
+   <meta name="keywords" content="libro, unipd" />
+   <!-- da fare -->
+   <meta name="language" content="italian it" />
+   <meta name="author" content="" />
+   <!-- da fare -->
+   <link rel="stylesheet" type="text/css" href="../css/style.css" />
+   <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
+   <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
+   <link rel="stylesheet" type="text/css" href="../css/" media="print" />
+</head>
+<body>
+<header></header>
+<nav></nav>
+<section id="registerBox" class="outerBox">
+   <h1>Crea il tuo account LumBooks!</h1>
+   <form id="registerForm" class="innerBox " action="../php/new_user.php" method="post">
+      <label for="email">Email*</label>
+      <input type="email" name="email" id="email"/>
+      <label for="matricola">Matricola</label>
+      <input type="text"  name="matricola" id="matricola"/>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome"/>
+      <label for="cognome">Cognome</label>
+      <input type="text" name="cognome" id="cognome"/>
+      <label for="user">Nome utente</label>
+      <input type="text" name="user" id="user"/>
+      <label for="sesso">Sesso</label>
+      <select name="sesso" form="registerForm" id="sesso">
+         <option value="M" selected="selected">Uomo</option>
+         <option value="F">Donna</option>
+         <option value="N">Non Specificato</option>
+      </select>
+      <label for="nascita">Data di nascita</label>
+      <input type="date" name="nascita" id="nascita">
+      <label for="password">Password*</label>
+      <input type="password" name="password" id="password"/>
+      <label for="ripeatpassword">Ripeti password*</label>
+      <input type="password" name="repeatpassword" id="ripeatpassword"/>
+      <input type="submit" id="registerSubmit" value="Registrati"/>
+   </form>
+</section>
+<footer></footer>
    </body>

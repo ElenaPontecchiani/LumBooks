@@ -123,10 +123,6 @@ class htmlMaker{
           $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
         }
         $nav_return .=  '</ul>'."\n";
-        $nav_return .=  '<form id="search-bar" action="risultati_ricerca.php" method="get">'."\n";
-        $nav_return .=  '<input type="text" name="titolo" placeholder="Cerca.."/>';
-        $nav_return .=  '<input type="submit" value="cerca"/>'."\n";
-        $nav_return .=  '</form>'."\n";
         $nav_return .=  '</nav>'."\n";
 
         return $nav_return;
@@ -140,8 +136,8 @@ class htmlMaker{
         }
         if (!isset($_SESSION['nome'])){
             $header_return .=  '<div id="header_login">'."\n";
-            $header_return .=  '<a href="login.php">Login</a>'."\n";
-            $header_return .=  '<a href="registrati.php">Registrati</a>'."\n";
+            $header_return .=  '<a href="login.php">Login (inserire</a>'."\n";
+            $header_return .=  '<a href="registrati.php">icona)Registrati</a>'."\n";
             $header_return .=  '</div>'."\n";
         }
             else{

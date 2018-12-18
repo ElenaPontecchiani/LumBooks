@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="it">
-   <head>
-      <meta charset="UTF-8">
-      <title>Cerca Libri</title>
-      <link rel="icon" href=""/>
-      <!-- link icona -->
-      <meta name="title" content="Cerca Libri" />
-      <meta name="description" content="Pagina per cercare libri" />
-      <!-- da fare -->
-      <meta name="keywords" content="libro, unipd" />
-      <!-- da fare -->
-      <meta name="language" content="italian it" />
-      <meta name="author" content="" />
-      <!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/style.css" />
-      <!-- da fare -->
-      <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
-      <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
-      <link rel="stylesheet" type="text/css" href="../css/" media="print" />
-   </head>
-   <body>
-      <header></header>
-      <nav></nav>
-      <div class="outerBox">
-         <form id="searchForm" class="innerBox" action="risultati_ricerca.php" method="get">
-            <div id="content-top" class="testoInformativo">
-               <h1>Effettua una ricerca avanzata!</h1>
-            </div>
-            <!--chiude content-top-->
-            <div id="content-mid" >
-               <label for="titolo">Titolo</label>
-               <input list="titleInput" name="titolo" id="titolo" />
-               <datalist id="titleInput" class="formText">
-                  ££titoli££
-               </datalist>
-               <label for="autore">Autore</label>
-               <input type="text" name="autore" id="autore" />
-               <label for="corso">Corso</label>
-               <select name="corso" form="searchForm" id="corso">
-                  <option value="Qualsiasi" selected="selected">Qualsiasi</option>
-                  ££opzioni££
-               </select>
-               <label for="Publisher">Editore</label>
-               <input type="text" name="Editore" id="Publisher" />
-               <label for="ISBN">ISBN</label>
-               <input type="text" name="isbn" id="ISBN" />
-               <label for="keyword">Parola chiave</label>
-               <input type="text" name="keyword" id="keyword" />
-               <label for="categoria">Categoria</label>
-               <select name="Categoria" form="searchForm" id="categoria">
-                  <option value="Qualsiasi" selected="selected">Qualsiasi</option>
-                  ££opzioni££
-               </select>
-               <input type="submit" value="Cerca" id="submitSrc" />
-            </div>
-            <!--chiude content-mid-->
-         </form>
+<head>
+   <meta charset="UTF-8">
+   <title>Cerca Libri</title>
+   <link rel="icon" href=""/>
+   <!-- link icona -->
+   <meta name="title" content="Cerca Libri" />
+   <meta name="description" content="Pagina per cercare libri" />
+   <!-- da fare -->
+   <meta name="keywords" content="libro, unipd" />
+   <!-- da fare -->
+   <meta name="language" content="italian it" />
+   <meta name="author" content="" />
+   <!-- da fare -->
+   <link rel="stylesheet" type="text/css" href="../css/style.css" />
+   <!-- da fare -->
+   <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
+   <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
+   <link rel="stylesheet" type="text/css" href="../css/" media="print" />
+</head>
+<body>
+<header></header>
+<nav></nav>
+<section class="outerBox">
+   <form id="searchForm" class="innerBox" action="risultati_ricerca.php" method="get">
+      <h1>Effettua una ricerca avanzata!</h1>
+      <!--chiude content-top-->
+      <div id="content-mid" >
+         <label for="titolo">Titolo</label>
+         <input list="titleInput" name="titolo" id="titolo" />
+         <datalist id="titleInput" class="formText">
+            ££titoli££
+         </datalist>
+         <label for="autore">Autore</label>
+         <input type="text" name="autore" id="autore" />
+         <label for="corso">Corso</label>
+         <select name="corso" form="searchForm" id="corso">
+            <option value="Qualsiasi" selected="selected">Qualsiasi</option>
+            ££opzioni££
+         </select>
+         <label for="Publisher">Editore</label>
+         <input type="text" name="Editore" id="Publisher" />
+         <label for="ISBN">ISBN</label>
+         <input type="text" name="isbn" id="ISBN" />
+         <label for="keyword">Parola chiave</label>
+         <input type="text" name="keyword" id="keyword" />
+         <label for="categoria">Categoria</label>
+         <select name="Categoria" form="searchForm" id="categoria">
+            <option value="Qualsiasi" selected="selected">Qualsiasi</option>
+            ££opzioni££
+         </select>
+         <input type="submit" value="Cerca" id="submitSrc" />
       </div>
-      <!--chiude outer box-->
-      <footer></footer>
-   </body>
+   </form>
+</section>
+<footer></footer>
+</body>
 </html>
