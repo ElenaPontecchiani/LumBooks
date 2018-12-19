@@ -136,8 +136,8 @@ class htmlMaker{
         }
         if (!isset($_SESSION['nome'])){
             $header_return .=  '<div id="header_login">'."\n";
-            $header_return .=  '<a href="login.php">Login</a>'."\n";
-            $header_return .=  '<a href="registrati.php">Registrati</a>'."\n";
+            $header_return .=  '<a href="login.php">Login (inserire</a>'."\n";
+            $header_return .=  '<a href="registrati.php">icona)Registrati</a>'."\n";
             $header_return .=  '</div>'."\n";
         }
             else{

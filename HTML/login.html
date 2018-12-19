@@ -14,28 +14,19 @@
     <link rel="stylesheet" type="text/css" href="../css/" media="print" />
 </head>
 <body>
-    <header></header>
-    <nav></nav>
-
-    <div id="loginBox" class="outerBox">
-        <div id="superior" class="testoInformativo">
-            <h1>Non sei ancora registrato?</h1>
-            <a href="registrati.php" id="recuperoPsw">Registrati!</a>
-        </div>
-        <div class="inserimento">
-            <form id="loginForm" class="innerBox" action="check_login.php" method="post">
-                        <label class="txtRic">Email:</label>
-                        <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
-                        <label class="txtRic">Password:</label>
-                        <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText" />
-
-                <label id='loginError' class='hidden'>Email o Password sbagliata</label>
-                <a href="recuperoPwd.php" id="recuperoPsw">Password dimenticata?</a>
-                    <input type="submit" id="loginSubmit" value="Login" />
-
-            </form>
-        </div>
-    </div>
-    <footer></footer>
+<header></header>
+<nav></nav>
+<section id="loginBox" class="outerBox">
+    <form id="loginForm" class="innerBox" action="check_login.php" method="post">
+            <label class="txtRic">Email:</label>
+            <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" />
+            <label class="txtRic">Password:</label>
+            <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText" />
+        <label id='loginError' class='hidden'>Email o Password sbagliata</label>
+        <a href="recuperoPwd.php" id="recuperoPsw">Password dimenticata?</a>
+            <input type="submit" id="loginSubmit" value="Login" />
+    </form>
+</section>
+<footer></footer>
 </body>
 </html>

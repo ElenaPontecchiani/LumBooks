@@ -35,30 +35,27 @@
 </head>
 
 <body>
-    <header></header>
-    <nav></nav>
-    <div id="adminBox" class="outerBox">
-        <form id="admin" method="post" action="new_cat.php">
-            <div id="content-top" class="testoInformativo">
-                <h1>Inserisci un nuovo libro nel catalogo!</h1>
-            </div>
-            <div id="content-mid">
-                <label>Titolo:</label>
-                <input type="text" name="titolo" />
-                <label>Autore:</label>
-                <input type="text" name="autore" />
-                <label>Casa editrice:</label>
-                <input type="text" name="casaeditrice" />
-                <label>Corso:</label>
-                <input type="text" name="corso" />
-                <input type="submit" id="insertSubmit" value="Inserisci" />
-            </div>
-        </form>
-            <div id="catalogo">
-                <dl class="search_item"></dl>
-            </div>
-        
+<header></header>
+<nav></nav>
+<section id="adminBox" class="outerBox">
+<form id="admin" method="post" action="new_cat.php">
+    <h1>Inserisci un nuovo libro nel catalogo!</h1>
+    <div id="content-mid">
+        <label>Titolo:</label>
+        <input type="text" name="titolo" />
+        <label>Autore:</label>
+        <input type="text" name="autore" />
+        <label>Casa editrice:</label>
+        <input type="text" name="casaeditrice" />
+        <label>Corso:</label>
+        <input type="text" name="corso" />
+        <input type="submit" id="insertSubmit" value="Inserisci" />
     </div>
-        <footer></footer>
+</form>
+<div id="catalogo">
+    <dl class="search_item"></dl>
+</div>
+</section>
+<footer></footer>
 </body>
 </html>

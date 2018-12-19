@@ -131,9 +131,6 @@ nav li, #header_login a {
     height:100%;
 }
 
-nav li:first-child{
- /*border-left: 1px solid #42b5b2;*/
-}
 
 #header_login{
   min-width: 4em;
@@ -365,7 +362,7 @@ footer {
     padding: 1.8em 7em 1.8em 7em;
 }
 
-.inserimento {
+#loginForm {
     padding-top: 1.8em;
     width: 40%;
     border-left: 1px solid grey;
@@ -385,7 +382,7 @@ footer {
 
 }
 
-.inserimento form{
+#loginBox form{
     width: 50%;
 }
 
@@ -397,7 +394,7 @@ footer {
 .errorBox {
     border-color: red;
 }
-.inserimento label{
+#loginBox label{
     width:auto;
 }
 
@@ -575,12 +572,7 @@ footer {
   height: 70%;
 }
 
-/* ///////////////////// <login> //////////////////*/
-#loginBox .testoInformativo {
-  text-align: center;
-}
-
-#loginBox .testoInformativo #recuperoPsw{
+#recuperoPsw{
   display: block;
   padding-top: 2em;
   font-size: 1.2em;
