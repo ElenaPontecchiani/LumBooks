@@ -1,34 +1,37 @@
 /*GENERALI*/
 * {
     margin: 0;
+    padding: 0;
 }
+
 
 html {
   height: 100%;
 }
 
 body {
-    /*PROPIET� BACKGROUND*/
-    background-color: #00576d5b;
-    /*RIEMPIMENTO*/
-    border: 0px;
-    padding: 0;
-    position: relative;
-    /*PROPRIETA' TX*/
-    text-align: left;
-    font-family: Arial,Helvetica,sans-serif;
-    line-height: 1.42857;
+/*PROPIET� BACKGROUND*/
+  background-color: #fff;
+  text-align: left;
+  font-family: Arial,Helvetica,sans-serif;
+  line-height: 1.42857;
+}
+section {
+  background-color: #f9f9f9;
+  padding: 5em 0 0 10em;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
 }
 
+/*PARTE HEADER*/
 header{
   display:flex;
-  position: fixed;/*questo da problemi*/
+  position: fixed;
   width:100%;
   height: 3.5em;
   margin-left: 10em;
   padding:0.5em 1em 0 1em;
- /*  background-color:#fff;*/
-  color: rgb(30, 59, 112); 
+  background-color:#fff;
+  color: rgb(30, 59, 112);
   font-family: Arial;
   font-style: italic;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
@@ -48,22 +51,6 @@ header *{
 
 
 
-
-
-
-a{
-  text-decoration: none;
-}
-.outerBox,.innerBox {
-    max-width: 1100px;
-    background-color: #f9f9f9;
-    margin: auto;
-}
-.outerBox {
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
-    padding: 1em 0;
-    position: relative;
-}
 h1{
   font-weight: 600;
   font-size: 2em;
@@ -75,19 +62,14 @@ h2{
   font-weight: 500;
   font-size: 1.7em;
   color: #023956;
+  padding-left: 1.5em;
+  padding-top:0.5em;
 
 }
 
-.outerBox h1,.outerBox h2{
-  padding: 0em 1%;
-}
-
-ul{
-  list-style-type: none;
-}
-
-img{
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+#logo_lumbooks {
+    width: 2.7em;
+    height: 2.7em;
 }
 
 
@@ -103,150 +85,51 @@ input[type="submit"],button{
 
 
 
-/*PARTE HEADER*/
-header {
-    background-color:#00576d;
-    padding: 0 1%;
-    min-width: 480px;
-    color: rgb(180,180,180); /*colore default grigio*/
-    font-family: Arial;
-    font-style: italic;
-}
-
-header *{
-  display: inline-block !important;
-}
-
-#logo_lumbooks {
-    width: 2.7em;
-    height: 2.7em;
-}
-
-
-#left_header h1 {
-    font-size: 2.3em;
-    color: white;
-    font-family: Georgia;
-    font-weight: 100;
-    font-style: normal;
-}
-
-
-
-
 
 
 /*PARTE NAVBAR*/
-
-#navbar{
-    background-color:#00586d;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 15em;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+nav {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 10em;
+    position: fixed;
     z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #002a35;
+    overflow-x: hidden;
+    padding-top: 4em;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }
 
-nav ul, #header_login {
-
-   /* border-bottom-color: grey;*/
-    font-size: 1.1em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style:normal ;
-    list-style-type: none;
-    min-width: 25em;
+nav ul {
+    list-style: none;
+    
+}
+nav ul li{
+    margin-top: 0.5em;
+    
 }
 
-nav li, #header_login a {
+nav ul li a{
     display: block;
-    /*border-right: 2px solid #42b5b2;*/
-    height:100%;
+    padding: 1em;
+    border: 1px solid #010708;
+    border-radius : 0.5em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:visited{
+    color: #b1bdff;
+}
+nav ul li a:hover{
+    background-color: #010708;
 }
 
 
-#header_login{
-  min-width: 4em;
-  float:right;
-}
-
-#search-bar{
-    padding: 0 1em 0.4em 0;
-    width: 30%;
-    height: 100%;
-    float:right;
-}
-
-#search-bar input{
-    padding: 0.35em;
-}
-
-#search-bar input[type="text"]{
-    width: 70%;
-    font-family: Georgia;
-    font-size: 0.9em;
-    text-rendering: optimizeLegibility;
-    text-align: left;
-    border: 0.1em solid black;
-    color: black;
-    border-right: 0;
-    height: 100%;
-    border-radius: 0.3em;
-}
-
-#search-bar input[type="submit"]{
-  background-color: white;
-  border: 0.1em solid black;
-  border-radius: 0.3em;
-  background-color: #ff9021;
-  height: 100%;
-}
-
-
-nav li a, #header_login a {
-    color:#f2fcfa;
-    text-align: center;
-    padding: 0.4em 1em;
-}
-
-#header_login a {
-  color:#f2fcfa;
-  border-right: 0;
-  text-align: center;
-}
-
-a:visited{
-  color:#addbd2;
-}
-nav li:hover:not(.active),#header_login a:hover:not(.active) {
-    background-color: #03383a;
-}
-
- .right {/*vedere come posizionare login e reg*/
-    float: right;
-}
-
-.nav input{
-  width:13em;
-}
-
-.active {
-    background-color: black;
-}
-
-.activeR {
-    background-color: black;
-    float: right;
-}
-
-/*Per rendere la casella della pagina corrente sempre attiva
-bisogna fare qualche magicheria in js, per marcare il li
-della pagina attiva con la classe active*/
-/*.active {
-background-color: #4CAF50;
-}*/
 
 
 
@@ -256,14 +139,14 @@ footer {
     text-align: center;
     margin-top: 0px;
     border: 0px;
-    color: rgba(255, 255, 255, 0.774);
+    
     margin-bottom: 0px;
-    background-color:#00586d;
+    
     max-width: 1100px;
     margin: auto;
     height: 10em;
     clear: both;
-    padding: 1em 0;
+    padding: 5em 0 0 10em;
 }
 
 
@@ -275,8 +158,7 @@ footer {
 }
 
 #footer-social img {
-    width: 2.2em;
-    float: center;
+    width:2.2em;
     display: inline;
     border-radius: 10%;
 }
@@ -319,6 +201,16 @@ footer {
     display: block;
   }
 
+
+
+
+
+
+
+
+
+
+  
 /*PAGINA CERCA LIBRO E REGISTRATI*/
 .outerBox select,.outerBox input{
     display: block;
@@ -391,7 +283,14 @@ footer {
     margin-bottom:0.3em;
  }
 
+
+ /* <inserisci.html> */
+#input_libri #content-mid p{
+    display: inline-block;
+  }
+
 /*PAGINA LOGIN*/
+/*
 #superior {
     float:left;
     padding: 1.8em 7em 1.8em 7em;
@@ -402,9 +301,10 @@ footer {
     width: 40%;
     border-left: 1px solid grey;
 
-}
+}*/
+/*
 
-#recuperoPsw {/*link registrati, pw dim*/
+#recuperoPsw {
     font-size: 0.9em;
 }
 
@@ -431,7 +331,7 @@ footer {
 }
 #loginBox label{
     width:auto;
-}
+}*/
 
 
 .hidden{
@@ -439,12 +339,10 @@ footer {
   display: none !important;
 }
 
-/* <inserisci.html> */
-#input_libri #content-mid p{
-  display: inline-block;
-}
 
-/* <risultati_ricerca.html> */
+
+
+/* <risultati_ricerca.html> *//*
 .book_with_image {
   width:100%;
   border-bottom: solid 0.01em grey;
@@ -480,9 +378,9 @@ footer {
 }
 
 .book_with_image .search_item{
-  width: 100%;                      /* se nessuno di quelli sotto è supportato */
-    width: -moz-available;          /* mozzilla */
-    width: -webkit-fill-available;  /* chrome */
+  width: 100%;                      /* se nessuno di quelli sotto è supportato *//*
+    width: -moz-available;          /* mozzilla *//*
+    width: -webkit-fill-available;  /* chrome *//*
     width: fill-available;
 }
 
@@ -512,7 +410,7 @@ footer {
   padding: 0.5em 0 0.5em 1%;
 }
 
-/* <utente.html> */
+/* <utente.html> *//*
 .mostra-libri {
     width:30%;
     display:inline-block;
@@ -581,7 +479,7 @@ footer {
   padding-right: 1em;
 }
 
-/*////////////////////////////// <about.html> ////////////////////////////// */
+/////////////////////////////// <about.html> ////////////////////////////// *//*
 #about-us {
   border: 3px double #ccc;
   padding: 0.5em;
@@ -613,7 +511,7 @@ footer {
   font-size: 1.2em;
 }
 
-/* /////////////////// <pagina libro> ////////////// */
+/ /////////////////// <pagina libro> ////////////// *//*
 #info_book{
   padding: 1em 0;
   min-height: 25em;
@@ -637,7 +535,7 @@ footer {
   top: 2em;
   right: 2%;
 }
-/* ////////////////////////////////// Small screen ////////////////////////// */
+/ ////////////////////////////////// Small screen ////////////////////////// *//*
 
 @media only screen and (max-width: 920px) {
   #search-bar{
@@ -688,7 +586,7 @@ footer {
       display: none !important;
   }
 
-  /*////////////////////////////// small <about.html> ////////////////////////////// */
+  /////////////////////////////// small <about.html> ////////////////////////////// *//*
   #about-us dd {
     margin-left: 0;
   }
@@ -697,7 +595,7 @@ footer {
     text-align: left;
   }
 
-  /*////////////////////////////// small <registrati.html> ////////////////////////////// */
+  /////////////////////////////// small <registrati.html> ////////////////////////////// *//*
   .outerBox  input[type="text"],
   .outerBox  input[list="titleInput"],
   .outerBox  input[type="date"],

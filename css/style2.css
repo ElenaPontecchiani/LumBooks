@@ -9,6 +9,7 @@ html {
 }
 body {
     background-color: #fff;
+    text-align: left;
     font-family: Arial,Helvetica,sans-serif;
     line-height: 1.42857;
 }
@@ -21,11 +22,15 @@ header{
     margin-left: 10em;
     padding:0.5em 1em 0 1em;
     background-color:#fff;
-    color: rgb(30, 59, 112); /*colore default grigio*/
+    color: rgb(30, 59, 112);
     font-family: Arial;
     font-style: italic;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
 
+}
+
+header *{
+    display: inline-block !important;
 }
 
 #logo_lumbooks {
@@ -40,9 +45,20 @@ header{
 }
 
 h1{
+    font-weight: 600;
     font-size: 2em;
     color: #023956;
 }
+  
+h2{
+    font-weight: 500;
+    font-size: 1.7em;
+    color: #023956;
+    padding-left: 1.5em;
+    padding-top:0.5em;
+  
+}
+
 /*//////////////// nav ///////////////////*/
 nav {
     display:flex;
@@ -87,8 +103,79 @@ nav ul li a:hover{
 
 /*///////////////// content ///////////////////////*/
 section{
-    padding: 5em 0 0 11em;
+    background-color: #f9f9f9;
+    padding: 5em 0 0 10em;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
 }
+
+
+/*///////////////// footer ///////////////////////*/
+footer {
+    color: black;
+    text-align: center;
+    margin-top: 0px;
+    border: 0px;
+    
+    margin-bottom: 0px;
+    
+    max-width: 1100px;
+    margin: auto;
+    height: 10em;
+    clear: both;
+    padding: 5em 0 0 10em;
+}
+
+
+#footer-social li {
+    float: center;
+    display: inLine;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+#footer-social img {
+    width:2.2em;
+    display: inline;
+    border-radius: 10%;
+}
+
+#footer-social ul {
+    list-style-type: none;
+    padding: 0.2em;
+  }
+
+  .footer_link {
+    color:black;
+  }
+
+  #facebook-icon {
+      background: #3B5998;
+      color: white;
+  }
+
+  #twitter-icon {
+      background: #55ACEE;
+      color: white;
+  }
+
+  #youtube-icon {
+      background: #bb0000;
+      color: white;
+  }
+
+  #instagram-icon {
+      background: #125688;
+      color: white;
+  }
+
+  #telegram-icon {
+      background: #0088CC;
+      color: white;
+  }
+
+  .footer_link{
+    display: block;
+  }
 
 
 /*///////////////// home ////////////////*/
@@ -96,3 +183,89 @@ section{
     width: 20em;
     height: 20em;
 }
+
+
+/*///////////////// inserisci ////////////////*/
+
+.outerBox select,.outerBox input{
+    display: block;
+    padding:0.3em 1% 0.3em 1%;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+#content-top{
+    padding-top:1.2em;
+    padding-bottom:1.2em;
+}
+
+#content-top h1{
+    padding-left: 1.5em;
+    padding-top:0.5em;
+}
+
+#content-mid,#registerForm{
+    padding: 1em 18% 1em 18%;
+}
+
+#content-mid div {
+    width: 100%;
+}
+
+.outerBox  label,select,input{
+
+    display:inline-block;
+}
+
+
+
+.outerBox  label{
+    width:20%;
+    padding:1em 0.4em 0 0;
+    text-align:right;
+}
+
+#submitSrc, #insertSubmit {
+    margin:0.8em 50%;
+
+ }
+
+
+.outerBox  input[type="text"],
+.outerBox  input[list="titleInput"],
+.outerBox  input[type="date"],
+.outerBox  input[type="email"],
+.outerBox  input[type="password"],
+.outerBox  input[type="file"],
+.outerBox  select
+{
+    display: inline-block;
+    box-sizing: content-box;
+    width:70%;
+}
+.outerBox input[type="radio"]{
+  display: inline-block;
+}
+
+#loginForm input{
+  display: block;
+}
+
+#registerSubmit {
+    width:7em;
+    margin-left:20em;
+    margin-top:0.8em;
+    margin-bottom:0.3em;
+ }
+
+
+ /* <inserisci.html> */
+#input_libri #content-mid p{
+    display: inline-block;
+}
+
+.hidden{
+    /* non togliere */
+    display: none !important;
+}
+ 
