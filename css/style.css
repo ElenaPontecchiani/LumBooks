@@ -104,10 +104,15 @@ header *{
 
 /*PARTE NAVBAR*/
 #navbar{
-  background-color:#00586d;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    background-color:#00586d;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15em;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    z-index: 1;
 }
 
 nav ul, #header_login {
@@ -121,7 +126,7 @@ nav ul, #header_login {
 }
 
 nav li, #header_login a {
-    display: inline-block;
+    display: block;
     /*border-right: 2px solid #42b5b2;*/
     height:100%;
 }
@@ -247,6 +252,10 @@ footer {
 #footer-social ul {
     list-style-type: none;
     padding: 0.2em;
+  }
+
+  .footer_link {
+    color:black;
   }
 
   #facebook-icon {
