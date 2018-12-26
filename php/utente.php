@@ -7,30 +7,21 @@ $in_vendita = sqlWrap::query(" SELECT Titolo,Prezzo,Data_Aggiunta as 'Aggiunto i
                             FROM Libri_In_Vendita
                             WHERE Venditore = {$_SESSION['id']}
                             AND Stato = \"In Vendita\"");
-if ($in_vendita == null)
-    $in_vendita = "Nessun libro in vendita al momento";
-else
-    $in_vendita = htmlMaker::searchItemWithButtons($in_vendita,array("Venduto","Rimuovi","Modifica"));
+$in_vendita = (!$in_vendita) ? "Nessun libro in vendita al momento" : htmlMaker::generateBookCollection($in_vendita,array("Venduto","Rimuovi","Modifica"));
 
 $venduti = sqlWrap::query(" SELECT Titolo,Prezzo,/*CONCAT(Nome,' ',Cognome) as Acquirente,*/Data_Aggiunta as 'Aggiunto il',md5_Hash
                             FROM Libri_In_Vendita /*as liv JOIN Utente as u*/
                             /*ON u.Codice_identificativo = liv.Acquirente*/
                             WHERE Venditore = {$_SESSION['id']}
                             AND Stato = 'Venduto'");
-if ($venduti == null)
-    $venduti = "Non hai venduto nessun libro";
-else
-    $venduti = htmlMaker::searchItemWithButtons($venduti,array("Rimuovi"));
+$venduti = (!$venduti) ? "Non hai venduto nessun libro" : htmlMaker::generateBookCollection($venduti,array("Rimuovi"));
 
 $comprati = sqlWrap::query("SELECT Titolo,Prezzo,CONCAT(Nome,' ',Cognome) as Venditore,Data_Aggiunta as 'Aggiunto il',md5_Hash
                             FROM Libri_In_Vendita as liv JOIN Utente as u
                             ON u.Codice_identificativo = liv.Venditore
                             WHERE Acquirente = {$_SESSION['id']}
                             AND Stato = 'Venduto'");
-if ($comprati == null)
-    $comprati = "Non hai comprato nessun libro";
-else
-    $comprati = htmlMaker::searchItem($comprati);
+ $comprati = (!$comprati) ? "Non hai comprato nessun libro" : htmlMaker::generateBookCollection($comprati);
 
 
 $output = file_get_contents("../HTML/utente.html");

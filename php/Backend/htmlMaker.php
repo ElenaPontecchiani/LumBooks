@@ -1,25 +1,27 @@
 <?php
 class htmlMaker{
 
-    public static function generateBookCollection($lista_libri){
+    public static function generateBookCollection($lista_libri, $lista_bottoni = null){
         if (!$lista_libri)
             return "Nessun risultato corripsondente";
 
-        $html = "<ul class='books_colelction'>";
+        $html = "<ul class='books_collection'>";
         foreach($lista_libri as $libro){
-            $html .= self::singleItem($libro);
+            $html .= $lista_bottoni ? self::singleItemWithButtons($libro,$lista_bottoni) : self::singleItem($libro);
         }
         $html .= "</ul>";
         return $html;
     }
 
     public static function searchItemWithButtons($lista_libri,$lista_bottoni){
-        $html = "";
-        if (!$lista_libri)
+        if (!$lista_libri){
             return "Nessun risultato corripsondente";
+        }
+        $html = "<ul class='books_btn_collection'>";
         foreach($lista_libri as $libro){
             $html .= self::singleItemWithButtons($libro,$lista_bottoni);
         }
+        $html .= "</ul>";
         return $html;
     }
 
@@ -49,16 +51,15 @@ class htmlMaker{
     */
     public static function singleItemWithButtons($libro,$lista_bottoni){
         $html = self::singleItem($libro);   //Creo il search_item di base
-        $html = str_replace('<dl',"<div class=\"boxx\"><dl",$html)."\n";
         if(!isset($libro['md5_Hash'])){
             $libro['md5_Hash'] = $libro['Codice_identificativo'];
         }
-        $buttons = "</dl><form action='book_action.php' method='post'>"."\n";
+        $buttons = "<form action='book_action.php' method='post'>"."\n";
         foreach($lista_bottoni as $bot){
-            $buttons .= "<button type='submit' name='$bot' value='{$libro['md5_Hash']}'>$bot</button>"."\n";
+            $buttons .= "<button type='submit' name='". $bot ."' value='". $libro['md5_Hash'] ."'>". $bot ."</button>"."\n";
         }
-        $buttons .= "</form>\n</div>"."\n";
-        $html = str_replace('</dl>',$buttons,$html);
+        $buttons .= "</form></li>"."\n";
+        $html = str_replace('</li>',$buttons,$html);
         return $html;
     }
 
