@@ -1,22 +1,15 @@
 <?php
 class htmlMaker{
-    public static function searchItem($lista_libri){
-        $html = "";
+
+    public static function generateBookCollection($lista_libri){
         if (!$lista_libri)
             return "Nessun risultato corripsondente";
+
+        $html = "<ul class='books_colelction'>";
         foreach($lista_libri as $libro){
             $html .= self::singleItem($libro);
         }
-        return $html;
-    }
-
-    public static function searchItemWithImage($lista_libri){
-        $html = "";
-        if (!$lista_libri)
-            return "Nessun risultato corripsondente";
-        foreach($lista_libri as $libro){
-            $html .= self::singleItemWithImage($libro);
-        }
+        $html .= "</ul>";
         return $html;
     }
 
@@ -30,55 +23,24 @@ class htmlMaker{
         return $html;
     }
 
-    public static function searchItemCatalog($lista_libri){
-        $html = "";
-        if (!$lista_libri)
-            return "Nessun risultato corripsondente";
-        $begin = 'risultati_ricerca.php?titolo=';
-        $end = '&autore=&corso=Qualsiasi&Editore=&isbn=&keyword=&Categoria=Qualsiasi';
-        foreach($lista_libri as $libro){
-            $html .= str_replace('a>','a href=\''.$begin.$libro['Titolo'].$end."'>",self::singleItem($libro));
-        }
-        return $html;
-    }
-
     public static function singleItem($libro){
         $campi = array_keys($libro);
         $campi = array_diff($campi, array('Titolo'));
         $campi = array_diff($campi, array('md5_Hash'));
-        $html = "";
-        $item_title = '<dt class="item_name"><a>££TITOLO££</a></dt>';
-        $item_spec = '<dt class="item_spec">££NOMECAMPO££</dt><dd class="spec_desc">££CAMPO££</dd>'."\n";
-        if (isset($libro['md5_Hash']))
-            $ref = "<a href=\"../php/pagina_libro.php?libro={$libro['md5_Hash']}\">";
-        else
-            $ref = "<a>";
-        $html .= "<dl class=\"search_item\">\n";
-        $html .= str_replace('££TITOLO££',$libro['Titolo'],$item_title)."\n";
-        $html = str_replace('<a>',$ref,$html);
+
+        $html = "<li class='search_item'>"."\n";
+        $html .= isset($libro['md5_Hash']) ? "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>". $libro['Titolo'] ."</a>"."\n" : "";
         foreach($campi as $campo){
-            if ($libro[$campo] != "")
-                $html.= str_replace('££NOMECAMPO££',$campo,
-                        str_replace('££CAMPO££',$libro[$campo],
-                        $item_spec))."\n";
+            $html .= "<div class='cardText'>";
+            $html .= $libro[$campo] != "" ? "<span class='item_spec'>". $campo .":</span><span class='spec_desc'>". $libro[$campo] ."</span>"."\n" : "";
+            $html .= "</div>"."\n";
         }
-        $html .= "</dl>\n";
+        $img = isset($libro['md5_Hash'])? self::getImage($libro['md5_Hash']): "";
+        $html .= $img != "" ? "<img  class ='libro' src='". $img ."' alt='libro di". $libro['Titolo'] ."'/>"."\n": "<div class='libro_fake'>¯\_(ツ)_/¯</div>"."\n";
+
+        $html .= "</li>"."\n";
         return $html;
-
     }
-
-    public static function singleItemWithImage($libro){
-        $base = self::singleItem($libro);
-        #// TODO: dare una descrizione al libro (alt)
-        $img = self::getImage($libro['md5_Hash']);
-        if($img != null)
-            return "<div class='book_with_image'>\n<img  class ='libro' src='{$img}' alt='Foto di un libro'/>\n<div class='desc_container'>$base\n</div>\n</div>";
-        else
-            return "<div class='book_with_image'>\n<div class='libro fake'>¯\_(ツ)_/¯</div>\n\n<div class='desc_container'>\n$base\n</div>\n</div>";
-
-    }
-
-
 
     /*
     lista bottoni è la lista dei testi che vanno nei bottoni
@@ -87,15 +49,15 @@ class htmlMaker{
     */
     public static function singleItemWithButtons($libro,$lista_bottoni){
         $html = self::singleItem($libro);   //Creo il search_item di base
-        $html = str_replace('<dl',"<div class=\"boxx\">\n<dl",$html);
+        $html = str_replace('<dl',"<div class=\"boxx\"><dl",$html)."\n";
         if(!isset($libro['md5_Hash'])){
             $libro['md5_Hash'] = $libro['Codice_identificativo'];
         }
-        $buttons = "</dl>\n<form action='book_action.php' method='post'>\n";
+        $buttons = "</dl><form action='book_action.php' method='post'>"."\n";
         foreach($lista_bottoni as $bot){
-            $buttons .= "<button type='submit' name='$bot' value='{$libro['md5_Hash']}'>$bot</button>\n";
+            $buttons .= "<button type='submit' name='$bot' value='{$libro['md5_Hash']}'>$bot</button>"."\n";
         }
-        $buttons .= "</form>\n</div>\n";
+        $buttons .= "</form>\n</div>"."\n";
         $html = str_replace('</dl>',$buttons,$html);
         return $html;
     }
@@ -112,9 +74,8 @@ class htmlMaker{
         if(!isset($_SESSION)){
             session_start();
         }
-        $nav_return = "";
-        $nav_return .=  '<nav id="navbar">'."\n";
-        $nav_return .=  '<ul id="stdbar">';
+        $nav_return  =  '<nav id="navbar">'."\n";
+        $nav_return .=  '<ul id="stdbar">'."\n";
         $nav_return .=  '<li class=""><a href="home.php">Home</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
@@ -129,7 +90,7 @@ class htmlMaker{
     }
 
     public static function header(){
-        $header_return = file_get_contents("../HTML/modules/header.html");
+        $header_return = file_get_contents("../HTML/modules/header.html")."\n";
 
         if(!isset($_SESSION)){
             session_start();
@@ -144,10 +105,10 @@ class htmlMaker{
                 $header_return .=  '<div id="header_login">'."\n";
                 $header_return .=  '<a href="logout.php">Logout</a>'."\n";
                 $header_return .=  '<a href="utente.php">Pannello Utente</a>'."\n";
-                $header_return .=  '</div>'."\n";
+                $header_return .=  '</div>';
             }
 
-        $header_return .= "</header>";
+        $header_return .= "</header>"."\n";
 
         return $header_return;
     }

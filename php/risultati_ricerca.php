@@ -20,6 +20,7 @@ if(isset($_GET['corso']))
 /*
     *  ######## IMPORTANTE #################
     *  BISOGNA SANIFICARE INPUT E FARE CONTROLLI
+    *  controlli sul 30 febbraio -_-
     *  TRIMMARE ECC
     */
 
@@ -52,7 +53,7 @@ if($isbn == "error"){
   $libri = SqlWrap::query($query);
 
 if ($libri)
-    $ris = htmlMaker::searchItemWithImage($libri);
+    $ris = htmlMaker::generateBookCollection($libri);
 else
     $ris = "NESSUN RISULTATO CORRISPONDENTE";
 $output = file_get_contents("../HTML/risultati_ricerca.html");

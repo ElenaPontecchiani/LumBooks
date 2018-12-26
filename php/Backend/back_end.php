@@ -126,10 +126,10 @@ class backend{
 
   public static function registerIsValid($mail,$matricola,$nome, $cognome, $user, $sex, $nascita, $password){
     $valid = self::loginIsValid($mail, $password);
-    $a = array($matricola, $nome, $cognome, $user);
+    $registerValues = array($matricola, $nome, $cognome, $user);
 
     if($valid){
-      foreach($a as $val){
+      foreach($registerValues as $val){
         if(strlen($val) < 3 || strlen($val) > 15)
           $valid = false;
       }
