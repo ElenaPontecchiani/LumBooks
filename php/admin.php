@@ -7,8 +7,7 @@ if(sqlWrap::isAdmin()){
       echo str_replace("<nav></nav>",htmlMaker::navbar(),
             str_replace('<dl class="search_item"></dl>',$libri,
             str_replace("<header></header>",htmlMaker::header(),
-            str_replace("<footer></footer>",htmlMaker::footer(),
-                  $output))));
+                  $output)));
 }
 else{
       echo "Devi essere un ammistratore";

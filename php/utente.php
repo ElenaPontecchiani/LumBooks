@@ -27,7 +27,6 @@ $comprati = sqlWrap::query("SELECT Titolo,Prezzo,CONCAT(Nome,' ',Cognome) as Ven
 $output = file_get_contents("../HTML/utente.html");
 echo str_replace("<nav></nav>",htmlMaker::navbar(),
      str_replace("<header></header>",htmlMaker::header(),
-     str_replace("<footer></footer>",htmlMaker::footer(),
      str_replace("<invendita>",$in_vendita,
      str_replace("<venduti>",$venduti,
      str_replace("<acquistati>",$comprati,
@@ -35,7 +34,7 @@ echo str_replace("<nav></nav>",htmlMaker::navbar(),
      str_replace("££cognome££",$_SESSION['cogn'],
      str_replace("££datanascita££",$_SESSION['bdate'],
      str_replace("££mail££",$_SESSION['email'],
-                 $output))))))))));
+                 $output)))))))));
 
 
 

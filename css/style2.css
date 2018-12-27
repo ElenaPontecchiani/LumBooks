@@ -12,25 +12,25 @@ body {
     text-align: left;
     font-family: Arial,Helvetica,sans-serif;
     line-height: 1.42857;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position:relative;
 }
 
 header{
     display:flex;
-    position: fixed;
-    width:100%;
     height: 3.5em;
-    margin-left: 11em;
     padding:0.5em 1em 0 1em;
-    background-color:#fff;
+    background-color:#fafafa;
     color: rgb(30, 59, 112);
     font-family: Arial;
-   
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
-
+    justify-content: space-between;
 }
 
 header *{
-    display: inline-block !important;
+    display: inline-block;
 }
 
 #logo_lumbooks {
@@ -39,7 +39,6 @@ header *{
 }
 
 #header_login{
-    position: fixed;
     right: 1em;
     top: 1em;
 }
@@ -61,107 +60,89 @@ h2{
 
 /*//////////////// nav ///////////////////*/
 nav {
-    display:flex;
-   /* justify-content: center;*/
-    height: 100%;
-    width: 11em;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(128, 128, 128, 0.568);
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding-top: 4em;
+    width: 17em;
+    background-color: #c7c7c7;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    position: relative;
 }
 
-nav ul {
+ul {
     list-style: none;
     text-decoration: none;
 }
 
 
-nav ul li a{
+nav #stdbar li a{
     display: block;    
     padding: 1.2em;
-    width: 100%;
     height: 100%;
-    background-color:white;
-   
-    color: white;
+    background-color:#fafafa;
     
 }
-
-
 
 nav ul li a:visited{
     color: black;
 }
-nav ul li a:hover{
+nav #stdbar li a:hover{
     background-color: #5682a3;
     
 }
-a{
-    text-decoration: underline !important;
-}
-
+/*
 a:hover{
     font-variant: small-caps;
+}*/
+
+#nav_user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #5682a3;
+}
+#nav_user {
+    text-align: center;
+}
+
+.close_nav{
+    width: 4em;
+    position: absolute;
+    right: 0.5em;
 }
 
 /*////////////////////////////// map position ////////////////////////////// */
-#map-position{
+#map-position {
     background-color: #5682a3;
     padding:0.7em;
     color:white;
 
 }
 
+/* /////////////////// main  ////////////////////////// */
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 /*///////////////// content ///////////////////////*/
 section{
-    
-    padding: 4em 0em 5em 11em;
-    
-    height:100%;
-    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em;    
 }
 
 
 /*///////////////// footer ///////////////////////*/
 footer {
-    color: black;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     text-align: center;
-   background:white;
-    justify-content: center;
-    
-    width: 11em;
-    position: fixed;
-    z-index: 1;
-    padding-left:0.5em;
-    overflow-x: hidden;
-    
-    bottom:0;
-   
-    overflow-x: hidden;
-    font-size:0.95em;
-
-
-
-
-   /* margin-top: 0px;
-    border: 0px;
-    
-    margin-bottom: 0px;
-    
-    /*max-width: 1100px;
-    margin: auto;
-    height: 10em;
-    clear: both;
-    padding: 5em 0 0 10em;*/
+    color: black;
+    background:#fafafa;
 }
-
+footer p {
+    font-size:0.95em;
+}
 
 #footer-social li {
     float: center;

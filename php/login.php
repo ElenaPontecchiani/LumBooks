@@ -12,7 +12,6 @@ if(isset($_SESSION['login']) && !$_SESSION['login']){
 
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
 $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
-$output = str_replace("<footer></footer>",htmlMaker::footer(),$output); 
 echo $output;
 
 

@@ -17,7 +17,6 @@ if (isset($_SESSION['id'])){
     $output = str_replace("££opzioni_titolo££",$opzioni_titolo,$output);
     $output = str_replace("<header></header>",htmlMaker::header(),$output);
     $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
-    $output = str_replace("<footer></footer>",htmlMaker::footer(),$output); 
     echo $output;
 }
 else

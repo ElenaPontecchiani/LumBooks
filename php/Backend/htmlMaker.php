@@ -76,6 +76,12 @@ class htmlMaker{
             session_start();
         }
         $nav_return  =  '<nav id="navbar">'."\n";
+        $nav_return .=  '<div id="nav_user">';
+        $nav_return .=  "<button class='close_nav'>chiudi x</button>";
+        $nav_return .=  isset($_SESSION['nome']) ?
+         "<p>".$_SESSION['nome']."</p>" : "";
+        $nav_return .=  isset($_SESSION['email']) ? "<p>".$_SESSION['email']."</p>" : "";
+        $nav_return .=  '</div>';
         $nav_return .=  '<ul id="stdbar">'."\n";
         $nav_return .=  '<li class=""><a href="home.php">Home</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
@@ -85,6 +91,7 @@ class htmlMaker{
           $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
         }
         $nav_return .=  '</ul>'."\n";
+        $nav_return .=  file_get_contents("../HTML/modules/footer.html");
         $nav_return .=  '</nav>'."\n";
 
         return $nav_return;
@@ -112,10 +119,6 @@ class htmlMaker{
         $header_return .= "</header>"."\n";
 
         return $header_return;
-    }
-
-    public static function footer(){
-        return file_get_contents("../HTML/modules/footer.html");
     }
 
 }
