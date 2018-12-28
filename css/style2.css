@@ -19,9 +19,9 @@ body {
 }
 
 header{
-    display:flex;
+    position: relative;
     height: 3.5em;
-    padding:0.5em 1em 0 1em;
+    padding:0.3em 0.2em;
     background-color:#fafafa;
     color: rgb(30, 59, 112);
     font-family: Arial;
@@ -41,12 +41,13 @@ header *{
 #header_login{
     right: 1em;
     top: 1em;
+    position: absolute;
 }
 
 h1{
     font-weight: 250;
-    font-size: 2em;
-    color: #023956;
+    font-size: 1.9em;
+    color: #000000;
 }
   
 h2{
@@ -58,11 +59,15 @@ h2{
   
 }
 
+.login_icon{
+    width: 2.2em;
+}
+
 /*//////////////// nav ///////////////////*/
 nav {
     width: 17em;
     background-color: #c7c7c7;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .3);
     position: relative;
 }
 
@@ -77,40 +82,60 @@ nav #stdbar li a{
     padding: 1.2em;
     height: 100%;
     background-color:#fafafa;
+    text-decoration: none;
     
 }
 
 nav ul li a:visited{
-    color: black;
+    color: auto;
 }
 nav #stdbar li a:hover{
-    background-color: #5682a3;
+    background-color: #0277bd;
+    color: white;
     
 }
-/*
-a:hover{
-    font-variant: small-caps;
-}*/
+
+nav #stdbar li {
+    background-color: #0277bd;
+    margin: 1px 0;
+
+    
+}
 
 #nav_user {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #5682a3;
+    background-color: #0277bd ;
+    min-height: 12em;
 }
 #nav_user {
     text-align: center;
 }
 
-.close_nav{
-    width: 4em;
-    position: absolute;
-    right: 0.5em;
+#toggle_nav {
+    width: 5em;
+    height: 2em;
+    margin-left: auto;
+    background: url("../images/icon/left-arrow.svg") no-repeat;
+    text-align: right;
+    border: 0;
+    outline: 0;
+}
+
+#toggle_nav:hover {
+    cursor: pointer;
+}
+.hidden_nav_button {
+    background: url("../images/icon/menu-open.svg") no-repeat !important;
+}
+.hidden_nav{
+    display: none;
 }
 
 /*////////////////////////////// map position ////////////////////////////// */
 #map-position {
-    background-color: #5682a3;
+    background-color: #0277bd ;
     padding:0.7em;
     color:white;
 
@@ -139,8 +164,6 @@ footer {
     text-align: center;
     color: black;
     background:#fafafa;
-}
-footer p {
     font-size:0.95em;
 }
 

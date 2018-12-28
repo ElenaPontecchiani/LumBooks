@@ -77,7 +77,6 @@ class htmlMaker{
         }
         $nav_return  =  '<nav id="navbar">'."\n";
         $nav_return .=  '<div id="nav_user">';
-        $nav_return .=  "<button class='close_nav'>chiudi x</button>";
         $nav_return .=  isset($_SESSION['nome']) ?
          "<p>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p>".$_SESSION['email']."</p>" : "";
@@ -104,9 +103,8 @@ class htmlMaker{
             session_start();
         }
         if (!isset($_SESSION['nome'])){
-            $header_return .=  '<div id="header_login">'."\n";
-            $header_return .=  '<a href="login.php">Login (inserire</a>'."\n";
-            $header_return .=  '<a href="registrati.php">icona)Registrati</a>'."\n";
+            $header_return .=  "<div id='header_login'>"."\n";
+            $header_return .=  "<img class='login_icon' src='../images/icon/baseline-account_circle-24px.svg'>";
             $header_return .=  '</div>'."\n";
         }
             else{
@@ -117,7 +115,6 @@ class htmlMaker{
             }
 
         $header_return .= "</header>"."\n";
-
         return $header_return;
     }
 

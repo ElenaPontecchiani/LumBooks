@@ -4,7 +4,6 @@ window.onload=function(){
   document.getElementById("personale").addEventListener("click", formselector);
 }
 
-// sto pensando a un nome decente per il metodo. lo finisco quando ho l'html
 function formselector(){
   listato = document.getElementById('listato').checked;
   if(listato){
