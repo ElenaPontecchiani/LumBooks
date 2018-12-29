@@ -226,7 +226,7 @@ footer {
 }
 
 
-/*///////////////// inserisci ////////////////*/
+/*///////////////////////// inserisci ////////////////*/
 
 .outerBox select,.outerBox input{
     display: block;
@@ -310,7 +310,7 @@ footer {
     /* non togliere */
     display: none !important;
 }
- 
+
 
 /*////////////////////////////// <about.html> ////////////////////////////// */
 #about-us, #about-project {
@@ -370,3 +370,34 @@ footer {
     top: 2em;
     right: 2%;
   }
+
+  /* <acquista> */
+  img[class='libro'],.libro_fake{
+    width: 6em;
+    position: absolute;
+    top:1em;
+    right: 1em;
+  }
+
+  .books_collection{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 5%;
+  }
+
+  .search_item{
+    width: 18em;
+    position: relative;
+    height: 10em;
+    background-color: #fafafa;
+    margin: 1em 2em;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);
+  }
+
+  .libro_fake{
+    line-height: 7em;
+    text-align: center;
+    background-color: #0277bd;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    color: white;
+}
