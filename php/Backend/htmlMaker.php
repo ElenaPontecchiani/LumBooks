@@ -104,7 +104,8 @@ class htmlMaker{
         }
         if (!isset($_SESSION['nome'])){
             $header_return .=  "<div id='header_login'>"."\n";
-            $header_return .=  "<img class='login_icon' src='../images/icon/baseline-account_circle-24px.svg'>";
+            $header_return .=  "<a href='../php/registrati.php' class='button register-button'>Registrati</a>"."\n";
+            $header_return .=  "<a href='../php/login.php' class='button login-button'>Accedi</a>"."\n";
             $header_return .=  '</div>'."\n";
         }
             else{
