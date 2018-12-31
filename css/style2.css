@@ -72,6 +72,7 @@ h2{
     padding: 0.2em 0.3em;
     border: 3px solid transparent;
     border-radius: 4px;
+    float: right ;
 }
 
 .button:hover{
@@ -126,17 +127,21 @@ nav #stdbar li {
     min-height: 12em;
     text-align: center;
     padding:0.5em;
+   
 }
 
 
 #toggle_nav {
-    width: 5em;
+    width: 3em;
     height: 2em;
-    margin-left: auto;
+    
+    
+    top:0;
     background: url("../images/icon/left-arrow.svg") no-repeat;
-    text-align: right;
+    text-align: center;
     border: 0;
     outline: 0;
+    
 }
 
 #toggle_nav:hover {
@@ -149,6 +154,13 @@ nav #stdbar li {
     display: none;
 }
 
+.user_data_link{
+    color:black;   
+}
+
+.user_data_link:hover{
+    color: white;
+}
 /*////////////////////////////// map position ////////////////////////////// */
 #map-position {
     background-color: #0277bd ;
@@ -262,7 +274,7 @@ footer {
 }
 
 #content-mid,#registerForm{
-    padding: 1em 18% 1em 18%;
+    padding: 1em 13% 1em 13%;
 }
 
 #content-mid div {
@@ -421,24 +433,17 @@ footer {
 
   /* /////////////////// <pagina dati> ////////////// */
   #box-spacer{
-    display: block !important;
-    width: 100% !important;
-    border-radius: 4px !important;
-    border: 1px solid black !important;
-    box-sizing: border-box !important;
-    padding: 1em !important;
-   
-    margin:  10px 0 10px 0 !important;
-    height: auto !important;
-    
-    line-height: 16px !important;
-    float: left !important;
-    position: relative !important;
+    display: block ;
+    width: 100% ;
+    border-radius: 0.6em ;
+    border: 1px solid black ;
+    box-sizing: border-box ;
+    padding: 1em ;
+    margin:  0.6em 0 0.6em 0 ;
+    float: left;
+    position: relative ;
   }
 
-  .button{
-    float: right !important;
-}
 
 .subtitle{
     font-weight: 600 !important;
