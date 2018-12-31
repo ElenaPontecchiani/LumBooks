@@ -77,9 +77,12 @@ class htmlMaker{
         }
         $nav_return  =  '<nav id="navbar">'."\n";
         $nav_return .=  '<div id="nav_user">';
-        $nav_return .=  isset($_SESSION['nome']) ?
-         "<p>".$_SESSION['nome']."</p>" : "";
+        
         $nav_return .=  isset($_SESSION['email']) ? "<p>".$_SESSION['email']."</p>" : "";
+        if(isset($_SESSION['nome'])){
+            $nav_return .=  '<a class="user_data_link" href="dati_personali.php">I miei dati </a>'."\n";
+            $nav_return .=  '<a class="user_data_link" href="libri_personali.php">I miei libri</a>'."\n"; 
+        }
         $nav_return .=  '</div>';
         $nav_return .=  '<ul id="stdbar">'."\n";
         $nav_return .=  '<li class=""><a href="home.php">Home</a></li>'."\n";
@@ -111,7 +114,7 @@ class htmlMaker{
             else{
                 $header_return .=  '<div id="header_login">'."\n";
                 $header_return .=  '<a href="logout.php">Logout</a>'."\n";
-                $header_return .=  '<a href="utente.php">Pannello Utente</a>'."\n";
+               /* $header_return .=  '<a href="utente.php">Pannello Utente</a>'."\n";*/
                 $header_return .=  '</div>';
             }
 
