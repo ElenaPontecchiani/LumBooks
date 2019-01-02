@@ -77,10 +77,13 @@ class htmlMaker{
         }
         $nav_return  =  '<nav id="navbar">'."\n";
         $nav_return .=  '<div id="nav_user">';
-        
-        $nav_return .=  isset($_SESSION['email']) ? "<p>".$_SESSION['email']."</p>" : "";
         if(isset($_SESSION['nome'])){
-            $nav_return .=  '<a class="user_data_link" href="dati_personali.php">I miei dati </a>'."\n";
+            $nav_return .=  '<img src="../images/user.png" id="userImage" alt="" />'."\n";
+        }
+        $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
+        $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";
+        if(isset($_SESSION['nome'])){
+            $nav_return .=  '<a class="user_data_link" href="dati_personali.php">I miei dati</a>'."\n";
             $nav_return .=  '<a class="user_data_link" href="libri_personali.php">I miei libri</a>'."\n"; 
         }
         $nav_return .=  '</div>';
