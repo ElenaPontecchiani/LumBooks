@@ -113,7 +113,7 @@ class htmlMaker{
         }
             else{
                 $header_return .=  '<div id="header_login">'."\n";
-                $header_return .=  '<a href="logout.php">Logout</a>'."\n";
+                $header_return .=  "<a href='logout.php' class='button logout-button'>Logout</a>"."\n";
                /* $header_return .=  '<a href="utente.php">Pannello Utente</a>'."\n";*/
                 $header_return .=  '</div>';
             }

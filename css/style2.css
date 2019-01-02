@@ -53,8 +53,8 @@ h2{
     font-weight: 500;
     font-size: 1.7em;
     color: #023956;
-    padding-left: 0.5em;
-    padding-top:0.5em;
+   /* padding-left: 0.5em;
+    padding-top:0.5em;*/
   
 }
 
@@ -75,10 +75,21 @@ h2{
     float: right ;
 }
 
-.button:hover{
+.button:hover, .internal-button:hover{
     background-color: #0277bd;
     color:white;
 }
+
+.internal-button{
+    cursor: pointer;
+    font-weight: 450;
+    padding: 0.2em 0.3em;
+    float: initial;
+    margin-left:0;
+}
+
+
+
 
 /*//////////////// nav ///////////////////*/
 nav {
@@ -132,8 +143,8 @@ nav #stdbar li {
 
 
 #toggle_nav {
-    width: 3em;
-    height: 2em;
+    width: 2em;
+    height: 3em;
     
     
     top:0;
@@ -149,6 +160,8 @@ nav #stdbar li {
 }
 .hidden_nav_button {
     background: url("../images/icon/menu-open.svg") no-repeat !important;
+    padding:0.3em;
+
 }
 .hidden_nav{
     display: none;
@@ -273,11 +286,11 @@ footer {
     padding-top:0.5em;
 }
 
-#content-mid,#registerForm{
+.content-mid,#registerForm{
     padding: 1em 13% 1em 13%;
 }
 
-#content-mid div {
+.content-mid div {
     width: 100%;
 }
 
@@ -319,11 +332,12 @@ footer {
 
 #loginForm input{
   display: block;
+  
 }
 
 #registerSubmit {
     width:7em;
-    margin-left:20em;
+    margin-left:12em;
     margin-top:0.8em;
     margin-bottom:0.3em;
  }
@@ -368,11 +382,7 @@ footer {
    
   }
   
-  #recuperoPsw{
-    display: block;
-    padding-top: 2em;
-    font-size: 1.2em;
-  }
+  
   
   /* /////////////////// <pagina libro> ////////////// */
   #info_book{
@@ -449,3 +459,41 @@ footer {
     font-weight: 600 !important;
     font-style:bold;
 }
+
+/*////////////////////////////// <login.html> ////////////////////////////// */
+.txtRic{
+    text-align: left !important;
+}
+/*
+.txtRic, #loginEmail, #inputPsw{
+    margin-left:10em;
+}*/
+
+#loginForm{
+    padding-left:13em;
+    padding-right:13em;
+
+}
+#loginBox{
+  /*  
+    */
+    display: flex;
+    flex-direction: column;
+    
+
+}
+#loginEmail, #inputPsw{
+   width:95%;
+}
+
+#loginSubmit{
+    display:flex;
+    flex-direction: column;
+}
+
+#recuperoPsw{
+   display:block;
+   padding:0.6em 0 0.3em 0;
+   
+}
+
