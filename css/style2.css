@@ -286,7 +286,9 @@ footer {
     display: block;
     padding:0.3em 1% 0.3em 1%;
     border: 1px solid grey;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .3);
     border-radius: 2px;
+    
 }
 
 #content-top{
@@ -484,15 +486,19 @@ footer {
 
 
 #loginForm{
-    padding:2.5em 14em 2.5em 14em;
-    
-
+    padding:2.5em;
 }
-#loginBox{
+#loginBox,#registerBox{
     display: flex;
     flex-direction: column;
-    
+    margin: 3% auto;
+    max-width:35em;
+    background-color: #fafafa;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
+}
 
+#loginBox.h1{
+    text-align: center;
 }
 #loginEmail, #inputPsw{
    width:95%;
