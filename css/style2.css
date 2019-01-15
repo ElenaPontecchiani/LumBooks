@@ -317,7 +317,7 @@ footer {
 
 
 .outerBox  label{
-    width:20%;
+    width:30%;
     padding:1em 0.4em 0 0;
     text-align:right;
 }
@@ -338,7 +338,7 @@ footer {
 {
     display: inline-block;
     box-sizing: content-box;
-    width:70%;
+    width:60%;
     background-color:white;
 }
 .outerBox input[type="radio"]{
@@ -369,8 +369,8 @@ footer {
 }
 
 .firstLine {
-   
-    display:inline;
+    
+    display:block;
 }
 
 /*////////////////////////////// <about.html> ////////////////////////////// */
@@ -438,18 +438,32 @@ footer {
 
   .books_collection{
     display: flex;
-    flex-wrap: wrap;
+   /* flex-wrap: wrap;*/
     padding: 2em 5%;
   }
 
   .search_item{
+    float:none;
+    display:inline-block !important;
     width: 18em;
     position: relative;
     height: 10em;
     background-color: #fafafa;
-    margin: 1em 2em;
-    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);
+    margin: 1% 2%;
+    border: 2px solid rgba(128, 128, 128, 0.582);
+    /*box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);*/
   }
+
+  
+  #catalogueBox label{
+      width:auto !important;
+  }
+
+  #catalogueBox select{
+    width:auto !important;
+}
+
+#filter-tool{margin:1% auto;}
 
   .libro_fake{
     line-height: 7em;
@@ -488,7 +502,7 @@ footer {
 #loginForm{
     padding:2.5em;
 }
-#loginBox,#registerBox{
+#loginBox,#registerBox,#searchBox,#insertBox,#catalogueBox{
     display: flex;
     flex-direction: column;
     margin: 3% auto;
@@ -496,6 +510,9 @@ footer {
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
+
+#catalogueBox{ max-width:45em !important;}
+
 
 #loginBox.h1{
     text-align: center;
