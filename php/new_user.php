@@ -1,6 +1,7 @@
 <?php
 require_once "Backend/sql_wrapper.php";
 require_once "Backend/back_end.php";
+require_once "Backend/htmlMaker.php";
 $mail = $_POST["email"];
 $mat = $_POST["matricola"];
 $name = $_POST["nome"];
@@ -30,6 +31,8 @@ $pw = $_POST["password"];
 
   sqlWrap::command($sql);
 //}
+
+echo htmlMaker::pagina_messaggio("Fantastico!","La tua iscrizione è avvenuta con successo");
 
 
 ?>

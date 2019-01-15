@@ -10,7 +10,7 @@ if(sqlWrap::isAdmin()){
                   $output)));
 }
 else{
-      echo "Devi essere un ammistratore";
+      echo htmlMaker::pagina_messaggio("Ops, non dovresti essere qui","Questa pagina è riservata agli amministratori del sito");
 }
 
 ?>

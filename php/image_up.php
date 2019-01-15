@@ -30,7 +30,7 @@ function correctImageOrientation($filename) {
 
 
 
-print_r($_FILES);
+//print_r($_FILES);
 $target_dir = "../immagini_libri/";
 $file = $_FILES['fileToUpload']['name'];
 if($file != ""){

@@ -125,6 +125,16 @@ class htmlMaker{
         return $header_return;
     }
 
+    public static function pagina_messaggio($titolo,$sottotitolo,$extra = ""){
+        $pagina_return = file_get_contents("../HTML/pag_messaggio.html");
+        
+        return  str_replace("<header></header>",htmlMaker::header(),
+                str_replace("<nav></nav>",      htmlMaker::navbar(),
+                str_replace("££TITOLO££",$titolo,
+                str_replace("££SOTTOTITOLO££",$sottotitolo,
+                str_replace("££EXTRA££",$extra,$pagina_return)))));
+    }
+
 }
 
 

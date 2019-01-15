@@ -1,7 +1,7 @@
 <?php
 require_once "Backend/sql_wrapper.php";
 require_once "Backend/validator.php";
-
+require_once "Backend/htmlMaker.php";
 ################ VALIDAZIONE ###############
 //Controllo di aver ricevuto in post tutte le variabili
 if (!isset( $_POST['type'],
@@ -91,12 +91,13 @@ try{
     $par2 = substr($par2,0,-1);
 
     $insert = "INSERT INTO Libri_In_Vendita(".$par1.") VALUES(".$par2.");";
-    echo $insert;
+    //echo $insert;
     require_once "image_up.php";
     SqlWrap::Command($insert);
-    echo "Libro Inserito con successo!";
+    echo htmlMaker::pagina_messaggio("Yeah!","Il tuo libro è stato inserito con successo");
 } catch (Exception $e) {
-    echo 'Errore: ',  $e->getMessage(), "\n";
+    echo htmlMaker::pagina_messaggio("Accipigna!","Il piccione viaggiatore a cui è stato affidato il tuo inserimento è stato abbatuto. Riprova piu tardi, dai.");
+    //echo 'Errore: ',  $e->getMessage(), "\n";
 }
 
 
