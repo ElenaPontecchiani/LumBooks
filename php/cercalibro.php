@@ -40,6 +40,7 @@ if(isset($_GET['isbn']) && $_GET['isbn']!="error")
 $output = str_replace('name="isbn"','name="isbn" value="'.$_GET['isbn'].'"',$output);
 if(isset($_GET['corso']))
 $output = str_replace('name="corso"','name="corso" value="'.$_GET['corso'].'"',$output);
+$output = str_replace('<a href="cercalibro.php">','<a>',$output);
 //#######BISOGNA STAMPARE UN MESSAGGIO DI ERRORE
 
 
