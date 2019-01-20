@@ -510,7 +510,7 @@ footer {
 
 
   /* /////////////////// <pagina dati> ////////////// */
-  #box-spacer{
+  .box-spacer{
     display: block ;
     width: 100% ;
     border-radius: 0.6em ;
