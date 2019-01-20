@@ -471,7 +471,24 @@ footer {
     border: 2px solid rgba(128, 128, 128, 0.582);
     /*box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);*/
   }
+  
+  .search_item .Prezzo{
+      color: #004d40;
+      font-weight: bold;
+  }
+  .search_item .Prezzo:before{
+        content: "€ ";
+  }
 
+  .search_item p{
+      margin-left: 0.5em;
+      text-transform: capitalize;
+  }
+  .search_item a{
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 1.5em;
+  }
   
   #catalogueBox label{
       width:auto !important;

@@ -124,9 +124,9 @@ class backend{
     return ((!filter_var($mail, FILTER_VALIDATE_EMAIL) || strlen($password)>16 || strlen($password)<3)? false : true);
   }
 
-  public static function registerIsValid($mail,$matricola,$nome, $cognome, $user, $sex, $nascita, $password){
+  public static function registerIsValid($mail,$nome, $cognome, $sex, $nascita, $password){
     $valid = self::loginIsValid($mail, $password);
-    $registerValues = array($matricola, $nome, $cognome, $user);
+    $registerValues = array($nome, $cognome);
 
     if($valid){
       foreach($registerValues as $val){
