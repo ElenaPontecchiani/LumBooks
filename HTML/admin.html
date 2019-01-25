@@ -3,46 +3,50 @@
    <head>
       <meta charset="UTF-8">
       <title>Pannello admin - LumBooks</title>
-      <link rel="icon" href=""/><!-- link icona -->
+      <link rel="icon" href=""/>
+      <!-- link icona -->
       <meta name="title" content="Pannello Admin - LumBooks" />
-      <meta name="description" content="Pagina per gli amministratori che potranno inserire nuovi libri nel catalogo." /><!-- da fare -->
-      <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" /><!-- da fare -->
+      <meta name="description" content="Pagina per gli amministratori che potranno inserire nuovi libri nel catalogo." />
+      <!-- da fare -->
+      <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" />
+      <!-- da fare -->
       <meta name="language" content="italian it" />
-      <meta name="author" content="" /><!-- da fare -->
+      <meta name="author" content="" />
+      <!-- da fare -->
       <link rel="stylesheet" type="text/css" href="../css/style2.css" />
       <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
       <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
       <link rel="stylesheet" type="text/css" href="../css/" media="print" />
       <script src="../js/inserisci.js"></script>
-
-<script src="../js/action.js"></script>
-<script src="../js/jquery-3.3.1.slim.min.js"></script>
-</head>
-
-<body>
-<nav></nav>
-<div class="main">
-<header></header>
-<section id="adminBox" class="outerBox">
-<form id="admin" method="post" action="new_cat.php">
-    <h2>Inserisci un nuovo libro nel catalogo!</h2>
-    <div id="content-mid">
-        <label>Titolo:</label>
-        <input type="text" name="titolo" />
-        <label>Autore:</label>
-        <input type="text" name="autore" />
-        <label>Casa editrice:</label>
-        <input type="text" name="casaeditrice" />
-        <label>Corso:</label>
-        <input type="text" name="corso" />
-        <input type="submit" id="insertSubmit" value="Inserisci" />
-    </div>
-</form>
-<div id="catalogo">
-    <dl class="search_item"></dl>
-</div>
-</section>
-</div>
-
-</body>
+      <script src="../js/action.js"></script>
+      <script src="../js/jquery-3.3.1.slim.min.js"></script>
+   </head>
+   <body>
+      <nav></nav>
+      <div class="main">
+         <header></header>
+         <section id="adminBox" class="outerBox">
+            <form id="admin" method="post" action="new_cat.php">
+               <h2>Inserisci un nuovo libro nel catalogo!</h2>
+               <div id="content-mid">
+                  <fieldset>
+                     <legend>Dati del libro</legend>
+                     <label>Titolo:</label>
+                     <input type="text" name="titolo" tabindex="1"/>
+                     <label>Autore:</label>
+                     <input type="text" name="autore" tabindex="2"/>
+                     <label>Casa editrice:</label>
+                     <input type="text" name="casaeditrice" tabindex="3"/>
+                     <label>Corso:</label>
+                     <input type="text" name="corso" tabindex="4" />
+                     <input type="submit" id="insertSubmit" value="Inserisci" />
+                  </fieldset>
+               </div>
+            </form>
+            <div id="catalogo">
+               <dl class="search_item"></dl>
+            </div>
+         </section>
+      </div>
+   </body>
 </html>

@@ -27,25 +27,28 @@
 <section id="registerBox" class="outerBox">
    <h2>Crea il tuo account LumBooks!</h2>
    <form id="registerForm" class="innerBox " action="../php/new_user.php" method="post">
+   <fieldset>
+   <legend>Dati personali</legend>
       <label for="email">Email*</label>
-      <input type="email" name="email" id="email"/>
+      <input type="email" name="email" id="email" tabindex="1"/>
       <label for="nome">Nome</label>
-      <input type="text" name="nome" id="nome"/>
+      <input type="text" name="nome" id="nome" tabindex="2"/>
       <label for="cognome">Cognome</label>
-      <input type="text" name="cognome" id="cognome"/>
+      <input type="text" name="cognome" id="cognome" tabindex="3"/>
       <label for="sesso">Sesso</label>
-      <select name="sesso" form="registerForm" id="sesso">
+      <select name="sesso" form="registerForm" id="sesso" tabindex="4">
          <option value="M" selected="selected">Uomo</option>
          <option value="F">Donna</option>
          <option value="N">Non Specificato</option>
       </select>
       <label for="nascita">Data di nascita</label>
-      <input type="date" name="nascita" id="nascita">
+      <input type="date" name="nascita" id="nascita" tabindex="5">
       <label for="password">Password*</label>
-      <input type="password" name="password" id="password"/>
+      <input type="password" name="password" id="password" tabindex="6"/>
       <label for="ripeatpassword">Ripeti password*</label>
-      <input type="password" name="repeatpassword" id="ripeatpassword"/>
+      <input type="password" name="repeatpassword" id="ripeatpassword" tabindex="7"/>
       <input type="submit" id="registerSubmit" value="Registrati" class="button internal-button"/>
+      </fieldset>
    </form>
 </section>
 </div>

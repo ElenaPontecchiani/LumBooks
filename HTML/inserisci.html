@@ -3,51 +3,57 @@
    <head>
       <meta charset="UTF-8">
       <title>Inserisci libro - LumBooks</title>
-      <link rel="icon" href=""/><!-- link icona -->
+      <link rel="icon" href=""/>
+      <!-- link icona -->
       <meta name="title" content="Inserisci libro - LumBooks" />
-      <meta name="description" content="Pagina per vedere e cambiare le proprie impostazioni e credenziali" /><!-- da fare -->
-      <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" /><!-- da fare -->
+      <meta name="description" content="Pagina per vedere e cambiare le proprie impostazioni e credenziali" />
+      <!-- da fare -->
+      <meta name="keywords" content="inserisci, libro, unipd, corso, laurea" />
+      <!-- da fare -->
       <meta name="language" content="italian it" />
-      <meta name="author" content="" /><!-- da fare -->
+      <meta name="author" content="" />
+      <!-- da fare -->
       <link rel="stylesheet" type="text/css" href="../css/style2.css" />
       <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen"/>
       <link rel="stylesheet" type="text/css" href="../css/" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)"/>
       <link rel="stylesheet" type="text/css" href="../css/" media="print" />
       <script src="../js/inserisci.js"></script>
-        <script src="../js/jquery-3.3.1.slim.min.js"></script>
-</head>
+      <script src="../js/jquery-3.3.1.slim.min.js"></script>
+   </head>
    <body>
-<nav></nav>
-<div class="main">
-<header></header>
-<section id="insertBox" class="outerBox">
-    <form id="input_libri" method="post" action="../php/new_book.php" enctype="multipart/form-data">
-        <h2>Inserisci la tua offerta!</h2>
-        <div class="content-mid" >
-                <p class="firstLine">Il libro che vuoi vendere è già nel nostro catalogo?</p>
-                <label for="listato" class="firstLine">Sì</label>
-                <input type="radio" name="type" id="listato" value="listato" checked="checked"/>
-                <label for="personale" class="firstLine">No</label>
-                <input type="radio" name="type" value="personale" id="personale"/>
-                <!-- Mostra uno dei due div sotto-->
-                <div id="inserisci-personale">
+      <nav></nav>
+      <div class="main">
+         <header></header>
+         <section id="insertBox" class="outerBox">
+            <form id="input_libri" method="post" action="../php/new_book.php" enctype="multipart/form-data">
+               <h2>Inserisci la tua offerta!</h2>
+               <div class="content-mid" >
+                  <p class="firstLine">Il libro che vuoi vendere è già nel nostro catalogo?</p>
+                  <label for="listato" class="firstLine">Sì</label>
+                  <input type="radio" name="type" id="listato" value="listato" checked="checked"/>
+                  <label for="personale" class="firstLine">No</label>
+                  <input type="radio" name="type" value="personale" id="personale"/>
+                  <fieldset>
+                     <legend>Dati del libro</legend>
+                     <!-- Mostra uno dei due div sotto-->
+                     <div id="inserisci-personale">
                         <label for="insertTitolo">Titolo:</label>
-                        <input type="text" name="titolo" id="insertTitolo" />
+                        <input type="text" name="titolo" id="insertTitolo"/>
                         <label for="insertAutore">Autore:</label>
                         <input type="text" name="autore" id="insertAutore" />
                         <label for="insertCasaEditrice">Casa editrice:</label>
                         <input type="text" name="casaeditrice" id="insertCasaEditrice" />
                         <label for="insertCorso">Corso:</label>
                         <input type="text" name="corso" id="insertCorso" />
-                </div>
-                <div id="inserisci-listato">
+                     </div>
+                     <div id="inserisci-listato">
                         <label for="catalogo">Selezionare dal catalogo:</label>
                         <select name="catalogo" id="catalogo">
                         ££opzioni_titolo££
                         </select>
-                </div>
-                <!-- Mostra sempre il div sotto-->
-                <div id="inserisci-sempre">
+                     </div>
+                     <!-- Mostra sempre il div sotto-->
+                     <div id="inserisci-sempre">
                         <label for="insertEdizione">Edizione:</label>
                         <input type="text" name="edizione" id="insertEdizione" />
                         <label for="insertAnno">Anno di pubblicazione:</label>
@@ -59,11 +65,11 @@
                         <label for="fileToUpload">Immagine Libro</label>
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" id="insertSubmit" value="Inserisci" class="button internal-button"/>
-                </div>
-        </div>
-    </form>
-</section>
-</div>
-    
-</body>
+                     </div>
+               </div>
+               </fieldset>
+            </form>
+         </section>
+      </div>
+   </body>
 </html>

@@ -521,18 +521,25 @@ footer {
     float: left;
     position: relative ;
   }
-
-
+  
 .subtitle{
     font-weight: 600 !important;
     font-style:bold;
 }
 
-/*////////////////////////////// <login.html> ////////////////////////////// */
+/*////////////////////////////// <login.html>
 .txtRic{
     text-align: left !important;
-}
+    }
+    tolto perché credo sia inutile
+ ////////////////////////////// */
 
+legend{
+text-align: center;
+}
+fieldset{
+	padding: 0.3em 0.5em 0.5em 0.5em;
+}
 
 #loginForm{
     padding:2.5em;
