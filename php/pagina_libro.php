@@ -6,6 +6,7 @@ require_once "Backend/htmlMaker.php";
 $output = file_get_contents("../HTML/libro.html");
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
 $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);
+$output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Cerca un Libro","Risulatati ricerca","Libro"),$output);
 
 
 

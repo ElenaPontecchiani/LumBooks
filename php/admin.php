@@ -7,7 +7,8 @@ if(sqlWrap::isAdmin()){
       echo str_replace("<nav></nav>",htmlMaker::navbar(),
             str_replace('<dl class="search_item"></dl>',$libri,
             str_replace("<header></header>",htmlMaker::header(),
-                  $output)));
+            str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Pannello Amministratore"),
+                  $output))));
 }
 else{
       echo htmlMaker::pagina_messaggio("Ops, non dovresti essere qui","Questa pagina è riservata agli amministratori del sito");

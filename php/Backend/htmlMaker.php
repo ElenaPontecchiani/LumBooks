@@ -130,10 +130,18 @@ class htmlMaker{
         $pagina_return = file_get_contents("../HTML/pag_messaggio.html");
         
         return  str_replace("<header></header>",htmlMaker::header(),
-                str_replace("<nav></nav>",      htmlMaker::navbar(),
+                str_replace("<nav></nav>",htmlMaker::navbar(),
                 str_replace("££TITOLO££",$titolo,
                 str_replace("££SOTTOTITOLO££",$sottotitolo,
                 str_replace("££EXTRA££",$extra,$pagina_return)))));
+    }
+
+    public static function breadCrumb(...$sequeza){
+        $breadcrumb = "Ti trovi in: Home ";
+        foreach($sequeza as $el){
+            $breadcrumb .= "> $el ";
+        }
+        return "<p id=\"map-position\">$breadcrumb</p>";
     }
 
 }

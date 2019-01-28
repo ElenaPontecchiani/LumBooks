@@ -60,6 +60,7 @@ $output = file_get_contents("../HTML/risultati_ricerca.html");
 $output = str_replace("££RISULTATI££",$ris,$output);
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
 $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);
+$output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Cerca un Libro","Risultati ricerca"),$output);
 $output = str_replace('<a href="../php/risultati_ricerca.php?">','<a>', $output);
 
 echo $output;

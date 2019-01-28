@@ -29,6 +29,7 @@ $output = str_replace("££opzioni££",$opzioni_corsi,$output);
 $output = str_replace("££titoli££",$opzioni_titolo,$output);
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
 $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);
+$output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Cerca un Libro"),$output);
 
 
 //In caso di errore, riempio di nuovo il form

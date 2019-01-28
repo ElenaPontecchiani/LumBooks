@@ -15,6 +15,7 @@ if (isset($_SESSION['id'])){
     $output = file_get_contents("../HTML/inserisci.html");
 
     $output = str_replace("££opzioni_titolo££",$opzioni_titolo,$output);
+    $output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Inserisci"),$output);
     $output = str_replace("<header></header>",htmlMaker::header(),$output);
     $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
     echo $output;

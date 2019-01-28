@@ -10,6 +10,7 @@ $output = str_replace("<ul class='books_colelction'></ul>",$libri,$output);
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
 $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);
 $output = str_replace('<a href="catalogo.php">',"<a>", $output);
+$output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Catalogo"),$output);
 echo $output;
 
 ?>

@@ -30,9 +30,8 @@ echo str_replace("<nav></nav>",htmlMaker::navbar(),
      str_replace("<invendita>",$in_vendita,
      str_replace("<venduti>",$venduti,
      str_replace("<acquistati>",$comprati,
+     str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("I miei libri"),
      
-                 $output)))));
-
-
+                 $output))))));
 
 ?>
