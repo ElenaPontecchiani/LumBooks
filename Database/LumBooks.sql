@@ -4,14 +4,13 @@ DROP TABLE IF EXISTS Libri_Listati;
 
 CREATE TABLE Utente(
     Codice_identificativo int (6) primary key AUTO_INCREMENT,
-    Matricola int (5) not null,
     Nome varchar(30) not null,
     Cognome varchar(50)not null,
     Sesso char(1) not null,
     Data_di_nascita date not null,
-    Username varchar(30)not null unique,
     Pw_Hash varchar(100)not null,
     Email varchar(50) not null unique,
+    Numero varchar(20) not null unique
 
     unique (Nome,Cognome,Matricola)
 );
