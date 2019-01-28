@@ -31,16 +31,25 @@ class htmlMaker{
         $campi = array_diff($campi, array('md5_Hash'));
 
         $html = "<li class='search_item'>"."\n";
+        $html .= "<div class='search_spec'>";
         $html .= isset($libro['md5_Hash']) ? "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>". $libro['Titolo'] ."</a>"."\n" : 
-        "<a href='http://localhost/lumbooks/php/risultati_ricerca.php?titolo=".$libro['Titolo']."'> ".$libro['Titolo']." </a>";
+        "<a href='../php/risultati_ricerca.php?titolo=".$libro['Titolo']."'> ".$libro['Titolo']." </a>";
         foreach($campi as $campo){
             $html .= "<p class='$campo'>";
             $html .= $libro[$campo] != "" ? $libro[$campo] : "";
             $html .= "</p>"."\n";
         }
+        $html .= "</div>";
         $img = isset($libro['md5_Hash'])? self::getImage($libro['md5_Hash']): "";
+        $a1 = "";
+        $a2 = "";
+        if(isset($libro['md5_Hash'])){
+            $a1 = "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>";
+            $a2 = "</a>";
+        }
+        $html .= $a1;
         $html .= $img != "" ? "<img  class ='libro' src='". $img ."' alt='libro di". $libro['Titolo'] ."'/>"."\n": "<div class='libro_fake'>¯\_(ツ)_/¯</div>"."\n";
-
+        $html .= $a2;
         $html .= "</li>"."\n";
         return $html;
     }
