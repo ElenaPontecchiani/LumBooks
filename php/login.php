@@ -6,7 +6,7 @@ $output = file_get_contents("../HTML/login.html");
 if(!isset($_SESSION))
   session_start();
 if(isset($_SESSION['login']) && !$_SESSION['login']){
-  $output = str_replace("<label id='loginError' class='hidden'>","<label id='loginError'>",$output);
+  $output = str_replace("<p id='loginError' class='hidden'>","<p id='loginError'>",$output);
   session_destroy();
 }
 
