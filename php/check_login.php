@@ -27,12 +27,10 @@ if($result->num_rows > 0)
 		if(!isset($_SESSION))
 			session_start();
 		$_SESSION['id'] = $row['Codice_identificativo'];
-		$_SESSION['mat'] = $row['Matricola'];
 		$_SESSION['nome'] = $row['Nome'];
 		$_SESSION['cogn'] = $row['Cognome'];
 		$_SESSION['sesso'] = $row['Sesso'];
 		$_SESSION['bdate'] = $row['Data_di_nascita'];
-		$_SESSION['user'] = $row['Username'];
 		$_SESSION['email'] = $row['Email'];
 		$_SESSION['login'] = true;
 		header("Location: home.php");

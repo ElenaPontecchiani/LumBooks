@@ -77,7 +77,7 @@ try{
     SqlWrap::Command($modify);
     //echo "Libro Modificato con successo";
 
-    header('Location: utente.php');
+    header('Location: libri_personali.php');
     die();
 } catch (Exception $e) {
     echo 'Errore: ',  $e->getMessage(), "\n";

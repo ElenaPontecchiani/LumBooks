@@ -96,7 +96,8 @@ try{
 
     SqlWrap::Command($insert);
     caricaImmagine($md5,"../immagini_libri/");
-    echo htmlMaker::pagina_messaggio("Yeah!","Il tuo libro è stato inserito con successo");
+    echo htmlMaker::pagina_messaggio("Yeah!","Il tuo libro è stato inserito con successo. Adesso carico la home.");
+    header( "refresh:4; url=home.php" ); 
 } catch (Exception $e) {
     echo htmlMaker::pagina_messaggio("Accipigna!","Il piccione viaggiatore a cui è stato affidato il tuo inserimento è stato abbatuto. Riprova piu tardi, dai.");
     //echo 'Errore: ',  $e->getMessage(), "\n";

@@ -57,7 +57,7 @@ try{
 
     $output = str_replace("££LISTA_ATTRIBUTI££",$attr_list,$output);
 
-    $immagine_path = htmlMaker::getImage($book_hash);
+    $immagine_path = htmlMaker::getImage($book_hash,"../immagini_libri/");
     if($immagine_path != "")
         $output = str_replace("<img/>","<img src='{$immagine_path}' alt='Immagine Libro'/>",$output);
     else
