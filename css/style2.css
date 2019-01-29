@@ -134,7 +134,7 @@ nav #stdbar li a:hover{
 }
 
 nav #stdbar li a:active{
-    background-color:rgb(48,100,153);;/* #0277bd;*/
+    background-color:rgb(48,100,153);
     color: white;   
 }
 
@@ -562,10 +562,14 @@ fieldset{
 	padding: 0.3em 0.5em 0.5em 0.5em;
 }
 
+#proj  {
+    margin-top: 0.5em;   
+}
+
 #loginForm{
     padding:2.5em;
 }
-#loginBox,#registerBox,#searchBox,#insertBox,#catalogueBox{
+#loginBox,#registerBox,#searchBox,#insertBox,#catalogueBox, #aboutBox{
     display: flex;
     flex-direction: column;
     margin: 3% auto;
@@ -574,8 +578,10 @@ fieldset{
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
 
-#catalogueBox{ max-width:45em !important;}
-
+#catalogueBox{ 
+    max-width:45em !important;
+}
+#aboutBox{ max-width:80% !important;}
 
 #loginBox.h1{
     text-align: center;
