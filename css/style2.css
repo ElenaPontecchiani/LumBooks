@@ -534,7 +534,7 @@ footer {
   .box-spacer{
     display: block ;
     width: 100% ;
-    border-radius: 0.6em ;
+  
     border: 1px solid black ;
     box-sizing: border-box ;
     padding: 1em ;
@@ -569,7 +569,9 @@ fieldset{
 #loginForm{
     padding:2.5em;
 }
-#loginBox,#registerBox,#searchBox,#insertBox,#catalogueBox, #aboutBox{
+#loginBox,#registerBox,#searchBox,
+#insertBox,#catalogueBox, #aboutBox,
+#dataBox{
     display: flex;
     flex-direction: column;
     margin: 3% auto;

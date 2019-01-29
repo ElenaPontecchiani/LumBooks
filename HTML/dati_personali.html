@@ -24,7 +24,7 @@
 <div class="main">
 <header></header>
 	<breadcrumb></breadcrumb>
-<section class="outerBox">
+<section class="outerBox" id="dataBox">
   
    <h2 class="account">I tuoi dati personali</h2>
    <div id="spacer">
@@ -42,16 +42,18 @@
          </div>
 
          <div class="box-spacer">   
+            <span class="subtitle">Data di nascita:</span>
+            <span id="data">££datanascita££</span>
+            <a id="modifica_data" class="button" href="#">Modifica</a>
+         </div>
+
+         <div class="box-spacer">   
             <span class="subtitle">E-mail:</span>
             <span id="email">££mail££</span>
             <a id="modifica_mail" class="button" href="#">Modifica</a>
          </div>
 
-         <div class="box-spacer">   
-            <span class="subtitle">Data di nascita:</span>
-            <span id="data">££datanascita££</span>
-            <a id="modifica_data" class="button" href="#">Modifica</a>
-         </div>
+         
 
          <div class="box-spacer">   
             <span>Cancella il tuo account</span>
