@@ -2,6 +2,7 @@
 require_once "Backend/sql_wrapper.php";
 require_once "Backend/back_end.php";
 require_once "Backend/htmlMaker.php";
+require_once "image_up.php";
 $mail = $_POST["email"];
 $name = $_POST["nome"];
 $fname = $_POST["cognome"];
@@ -15,6 +16,7 @@ $pw = $_POST["password"];
 
 /*if(backend::registerIsValid($mail, $name, $fname, $sex, $bdate, $pw))
 {*/
+  
   $pw = password_hash("$pw", PASSWORD_DEFAULT);
   $sql =  "INSERT INTO Utente
           VALUES( NULL,
@@ -27,7 +29,7 @@ $pw = $_POST["password"];
 
   sqlWrap::command($sql);
 //}
-
+caricaImmagine($mail,"../immagini_profilo/");
 echo htmlMaker::pagina_messaggio("Fantastico!","La tua iscrizione è avvenuta con successo");
 
 

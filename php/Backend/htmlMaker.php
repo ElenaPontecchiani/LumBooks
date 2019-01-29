@@ -40,7 +40,7 @@ class htmlMaker{
             $html .= "</p>"."\n";
         }
         $html .= "</div>";
-        $img = isset($libro['md5_Hash'])? self::getImage($libro['md5_Hash']): "";
+        $img = isset($libro['md5_Hash'])? self::getImage($libro['md5_Hash'],"../immagini_libri/"): "";
         $a1 = "";
         $a2 = "";
         if(isset($libro['md5_Hash'])){
@@ -73,8 +73,8 @@ class htmlMaker{
         return $html;
     }
 
-    public static function getImage($hash){
-        $result = glob ("../immagini_libri/{$hash}.*");
+    public static function getImage($nome,$dir){
+        $result = glob ("$dir{$nome}.*");
         if (count($result) == 1)
             return $result[0];
         else
@@ -88,7 +88,10 @@ class htmlMaker{
         $nav_return  =  '<nav id="navbar">'."\n";
         $nav_return .=  '<div id="nav_user">';
         if(isset($_SESSION['nome'])){
-            $nav_return .=  '<img src="../images/user.png" id="userImage" alt="" />'."\n";
+            $img = self::getImage($_SESSION['email'],"../immagini_profilo/");
+            if ($img == "")
+               $img = "../images/user.png";
+            $nav_return .=  "<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n";
         }
         $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";

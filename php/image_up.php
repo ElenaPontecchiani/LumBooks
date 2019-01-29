@@ -29,9 +29,9 @@ function correctImageOrientation($filename) {
   }
 
 
-
+function caricaImmagine($nome,$percorso){
 //print_r($_FILES);
-$target_dir = "../immagini_libri/";
+$target_dir = $percorso;
 $file = $_FILES['fileToUpload']['name'];
 if($file != ""){
     $target_file = $target_dir . $file;
@@ -69,11 +69,12 @@ if($file != ""){
     // if everything is ok, try to upload file
     } else {
         
-        if (!(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$md5.".".$imageFileType))) {
+        if (!(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$nome.".".$imageFileType))) {
             throw new Exception("C'è stato un errore, il tuo file non è stato caricato");
         }
-        correctImageOrientation($target_dir.$md5.".".$imageFileType);
+        correctImageOrientation($target_dir.$nome.".".$imageFileType);
 
+    }
     }
 }
 ?>

@@ -104,6 +104,16 @@ ul {
     text-decoration: none;
 }
 
+#profile_pic {
+    object-fit: cover;
+    width: 10em;
+    height: 10em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    border: 0.5em solid white;
+}
 
 nav #stdbar li a{
     display: block;    
