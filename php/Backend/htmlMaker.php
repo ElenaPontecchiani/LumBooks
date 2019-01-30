@@ -64,12 +64,13 @@ class htmlMaker{
         if(!isset($libro['md5_Hash'])){
             $libro['md5_Hash'] = $libro['Codice_identificativo'];
         }
-        $buttons = "<form action='book_action.php' method='post'>"."\n";
+        $buttons = "<form action='book_action.php' method='post' class='sc_form'>"."\n";
         foreach($lista_bottoni as $bot){
-            $buttons .= "<button type='submit' name='". $bot ."' value='". $libro['md5_Hash'] ."'>". $bot ."</button>"."\n";
+            $buttons .= "<button type='submit' class='sc_button' name='". $bot ."' value='". $libro['md5_Hash'] ."'>". $bot ."</button>"."\n";
         }
         $buttons .= "</form></li>"."\n";
         $html = str_replace('</li>',$buttons,$html);
+        $html = str_replace('search_item','search_item with_bt',$html);
         return $html;
     }
 

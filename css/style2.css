@@ -465,14 +465,15 @@ footer {
     position: absolute;
     top: 0em;
     right: 0em;
-    border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
   }
 
   .books_collection{
     display: flex;
     flex-wrap: wrap;
     padding: 1em;
+    justify-content: center;
   }
 
   .search_item{
@@ -518,6 +519,26 @@ footer {
 
   #catalogueBox select{
     width:auto !important;
+}
+
+.sc_button{
+    height: 2.3em;
+    width: 6.97em;
+    border-radius: 0.3em;
+    background: #0276be;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+li.search_item.with_bt {
+    height: 12em;
+}
+.sc_form{
+    position: absolute;
+    bottom: 0.0em;
+    width: 100%;
+    text-align: center;
 }
 
 #filter-tool{margin:1% auto;}
