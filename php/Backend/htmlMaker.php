@@ -17,7 +17,7 @@ class htmlMaker{
         if (!$lista_libri){
             return "Nessun risultato corripsondente";
         }
-        $html = "<ul class='books_btn_collection'>";
+        $html = "<ul class='books_collection'>";
         foreach($lista_libri as $libro){
             $html .= self::singleItemWithButtons($libro,$lista_bottoni);
         }
