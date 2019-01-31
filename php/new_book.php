@@ -11,8 +11,6 @@ if (!isset( $_POST['type'],
             $_POST['edizione'],
             $_POST['casaeditrice'],
             $_POST['corso'],
-            $_POST['anno'],
-            $_POST['ISBN'],
             $_POST['prezzo']))
     throw new Exception("Richiesta Malformata");
 
@@ -91,7 +89,7 @@ try{
     $par1 = substr($par1,0,-1);
     $par2 = substr($par2,0,-1);
 
-    $insert = "INSERT INTO Libri_In_Vendita(".$par1.") VALUES(".$par2.");";
+    $insert = "INSERT INTO Libri_In_Vendita(".$par1.",Tipo) VALUES(".$par2.",'Libro');";
     //echo $insert;
 
     SqlWrap::Command($insert);

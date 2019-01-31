@@ -48,6 +48,11 @@ try{
     Validator::ISBNVal($isbn);
     Validator::prezzoVal($prezzo); 
     ############## FINE VAL ###################
+    if($annopub == "")
+        $annopub = 'NULL';
+
+    if($isbn == "")
+        $isbn = 'NULL';
 
     $vecchio_libro = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5_Hash = '$hash'")[0];
     if ($_SESSION['id'] != $vecchio_libro['Venditore']){//controllo che sto modficando un libro che mi appartiene
@@ -73,6 +78,8 @@ try{
                     $ref
                     Prezzo = '$prezzo'
                 WHERE md5_Hash = '$hash'";
+
+    $modify = str_replace("'NULL'","NULL",$modify);
     //echo $modify;
     SqlWrap::Command($modify);
     //echo "Libro Modificato con successo";
