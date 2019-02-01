@@ -3,12 +3,6 @@
     padding: 0;
 }
 
-body {
-    font-size: calc(40px - 1.5vw);
-    line-height: calc(40px - 1.5vw);
-  }
-
-
 /*////////////// Struttura generale //////////////*/
 html {
     height: 100%;
@@ -453,7 +447,7 @@ footer {
   #info_book dd {
     margin-left: 0.4em;
   }
-  #bookBox img{
+  #bookBox .bookImg{
     position: absolute;
     max-width: 30%;
     max-height: 40%;
@@ -462,6 +456,29 @@ footer {
     top: 2em;
     right: 2em;
   }
+
+  #vendor_info{
+    width: fit-content;
+    height: 5em;
+    box-shadow: 0.2em 0.1em 1em black;
+    border-radius: 0.3em;
+  }
+
+  #vendor_pic{
+    height: inherit;
+    display: inline-block;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+
+  #vendor_data{
+    display: inline-block;
+    position: relative;
+    bottom: 2em;
+    margin-left: 0.1em;
+    margin-right: 0.5em;
+  }
+
 
   /* <acquista> */
   img.libro, .libro_fake{

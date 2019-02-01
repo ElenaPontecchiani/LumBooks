@@ -33,6 +33,8 @@ try{
                                         Stato,
                                         Data_Aggiunta as 'Data di Aggiunta',
                                         CONCAT(Nome,' ',Cognome) as Venditore,
+                                        Email,
+                                        Numero,
                                         Prezzo
                                 FROM Libri_In_Vendita
                                 JOIN Utente ON Venditore = Codice_identificativo
@@ -46,8 +48,11 @@ try{
 
     $output = str_replace("££TITOLO££",$book_data['Titolo'],$output);
     $output = str_replace("££AUTORE££",$book_data['Autore'],$output);
+    $output = str_replace("££NOME££",$book_data['Venditore'],$output);
+    $output = str_replace("££NUMERO££",$book_data['Numero'],$output);
+    $mail = $book_data['Email'];
 
-    $keys = array_diff(array_keys($book_data),array("Titolo","Autore"));
+    $keys = array_diff(array_keys($book_data),array("Titolo","Autore","Venditore","Numero"));
 
     $attr_list = "";
     foreach($keys as $key){
@@ -59,7 +64,13 @@ try{
 
     $immagine_path = htmlMaker::getImage($book_hash,"../immagini_libri/");
     if($immagine_path != "")
-        $output = str_replace("<img/>","<img src='{$immagine_path}' alt='Immagine Libro'/>",$output);
+        $output = str_replace("<img/>","<img class='bookImg' src='{$immagine_path}' alt='Immagine Libro'/>",$output);
+    else
+        $output = str_replace("<img/>","",$output);
+
+    $immagine_path = htmlMaker::getImage($mail,"../immagini_profilo/");
+    if($immagine_path != "")
+        $output = str_replace("<img id=\"vendor_pic\" src=\"../images/user.png\"","<img id=\"vendor_pic\" src=\"../images/$immagine_path\"",$output);
     else
         $output = str_replace("<img/>","",$output);
 
