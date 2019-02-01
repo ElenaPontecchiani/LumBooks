@@ -465,8 +465,8 @@ footer {
 
   /* <acquista> */
   img.libro, .libro_fake{
-    height: 10em;
-    width: 8em;
+    height: 100%;
+    width: 7em;
     object-fit: cover;
     position: absolute;
     top: 0em;
@@ -486,7 +486,7 @@ footer {
     float:none;
     width: 18em;
     position: relative;
-    height: 10em;
+    height: 8em;
     background-color: #fafafa;
     margin: 0.5em;
     /* border: 2px solid rgba(128, 128, 128, 0.582); */
@@ -601,10 +601,10 @@ fieldset{
 #dataBox{
     display: flex;
     flex-direction: column;
-    margin: 3% auto;
+    margin: 1em auto;
     max-width:35em;
     background-color: #fafafa;
-    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);
 }
 
 #catalogueBox{ 

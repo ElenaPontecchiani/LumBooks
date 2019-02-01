@@ -14,15 +14,20 @@ window.onload=function()
     checkRegisterInput();
     var email = document.getElementById("email");
     var password = document.getElementById("password");
-    checkIfElementIsEmpty(email);
-    checkIfElementIsEmpty(password);
+    var nome = document.getElementById("nome");
+    var tel = document.getElementById("cel");
+    var cognome = document.getElementById("cognome");
+    var nascita = document.getElementById("nascita");
+    var repeatpassword = document.getElementById("repeatpassword");
+
+    // controllo se i campi sono vuoti
+    [email,password,nome,tel,cognome,nascita,repeatpassword].filter(el => el.value == 0)
+      .forEach(element => setErrorBox(element));
+
     errors = document.getElementsByClassName("errorLine");
-    if(errors.length==0)
+    if (!errors.length==0)
     {
-      return true;
-    }else{
       event.preventDefault();
-      alert("Hai inserito dati non corretti");
     }
   });
 
@@ -140,19 +145,16 @@ function setErrorBox(box)
    var firstLetter = 'La';
   }
   var boxName = box.id;
-
-  if(boxName == 'cel')
+  if (boxName == 'cel')
   {
     boxName = 'N. di telefono';
   }
-
-  if(boxName == 'nascita')
+  if (boxName == 'nascita')
   {
     boxName = 'data';
   }
-
   var legend = document.getElementsByTagName("legend")[0];
-  if(boxName == 'repeatpassword')
+  if (boxName == 'repeatpassword')
   {
     legend.outerHTML += "<p class='errorLine' id='errorMessage"+ box.id +"'>Le password non coincidono.</p>";
   }else
@@ -164,7 +166,7 @@ function setErrorBox(box)
 
 function removeErrorBox(box)
 {
-  if(!box.classList.contains('errorBox'))
+  if(box.value == "" || !box.classList.contains('errorBox'))
   {
       return false;
   }
@@ -172,16 +174,4 @@ function removeErrorBox(box)
   errBox.outerHTML = ""; 
   box.classList.remove('errorBox');
   return true;
-}
-
-function checkIfElementIsEmpty(element)
-{
-  if (element.value.length == 0)
-  {
-    setErrorBox(element);
-    return true;
-  }else{
-    removeErrorBox(element);
-    return false;
-  }
 }
