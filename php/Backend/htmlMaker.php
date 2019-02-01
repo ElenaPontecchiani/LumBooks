@@ -33,7 +33,7 @@ class htmlMaker{
         $html = "<li class='search_item'>"."\n";
         $html .= "<div class='search_spec'>";
         $html .= isset($libro['md5_Hash']) ? "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>". $libro['Titolo'] ."</a>"."\n" : 
-        "<a href='../php/risultati_ricerca.php?titolo=".$libro['Titolo']."'> ".$libro['Titolo']." </a>";
+        "<a class='titolo' href='../php/risultati_ricerca.php?titolo=".$libro['Titolo']."'> ".$libro['Titolo']." </a>";
         foreach($campi as $campo){
             $html .= "<p class='$campo'>";
             $html .= $libro[$campo] != "" ? $libro[$campo] : "";

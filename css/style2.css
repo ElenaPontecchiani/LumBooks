@@ -465,8 +465,8 @@ footer {
 
   /* <acquista> */
   img.libro, .libro_fake{
-    height: 100%;
-    width: 7em;
+    height: 10em;
+    width: 8em;
     object-fit: cover;
     position: absolute;
     top: 0em;
@@ -486,7 +486,7 @@ footer {
     float:none;
     width: 18em;
     position: relative;
-    height: 8em;
+    height: 10em;
     background-color: #fafafa;
     margin: 0.5em;
     /* border: 2px solid rgba(128, 128, 128, 0.582); */
@@ -499,7 +499,7 @@ footer {
   }
   
   .search_item .Prezzo{
-      color: #ff00a1;
+      color: #B12704;
       font-weight: bold;
       font-size: 1.3em;
   }
@@ -517,6 +517,10 @@ footer {
       margin-left: 0em;
       padding-left: 0.5em;
       padding-top: 0.5em;
+  }
+
+  .search_item .ISBN{
+     color: grey;
   }
   
   #catalogueBox label{
@@ -601,10 +605,10 @@ fieldset{
 #dataBox{
     display: flex;
     flex-direction: column;
-    margin: 1em auto;
+    margin: 3% auto;
     max-width:35em;
     background-color: #fafafa;
-    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
 
 #catalogueBox{ 
