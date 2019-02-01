@@ -35,7 +35,8 @@ try{
                                         CONCAT(Nome,' ',Cognome) as Venditore,
                                         Email,
                                         Numero,
-                                        Prezzo
+                                        Prezzo,
+                                        Descrizione
                                 FROM Libri_In_Vendita
                                 JOIN Utente ON Venditore = Codice_identificativo
                                 WHERE md5_Hash = \"$book_hash\"");
@@ -53,7 +54,9 @@ try{
     $mail = $book_data['Email'];
 
     $keys = array_diff(array_keys($book_data),array("Titolo","Autore","Venditore","Numero","Email"));
-
+    if ($book_data['Descrizione'] == "NULL"){
+        $keys = array_diff(array_keys($book_data),array("Descrizione"));
+    }
     $attr_list = "";
     foreach($keys as $key){
         if($book_data[$key] != "")

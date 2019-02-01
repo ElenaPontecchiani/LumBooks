@@ -64,10 +64,11 @@ class SqlWrap{
     }
 
 
-    public static function input_escape($input_arr){
+    public static function input_escape($inputs){
         $connection = self::connect();
-        foreach($input_arr as &$input){
-            $input = $connection->escape_string($input);
+        for($i=0;$i < count($inputs);$i++){
+            $inputs[$i] = htmlspecialchars($inputs[$i]);
+            $inputs[$i] = $connection->escape_string($inputs[$i]);
         }
         $connection->close();
     }

@@ -300,13 +300,17 @@ footer {
 
 /*///////////////////////// inserisci ////////////////*/
 
-.outerBox select,.outerBox input{
+.outerBox select,.outerBox input, textarea#insertDescrizione{
     display: block;
     padding:0.3em 1% 0.3em 1%;
     border: 1px solid grey;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .3);
     border-radius: 2px;
     
+}
+
+textarea#insertDescrizione{
+    width:60%;
 }
 
 #content-top{
@@ -352,6 +356,7 @@ footer {
 .outerBox  input[type="email"],
 .outerBox  input[type="password"],
 .outerBox  input[type="file"],
+textarea#insertDescrizione,
 .outerBox  select
 {
     display: inline-block;
@@ -366,6 +371,13 @@ footer {
 #loginForm input{
   display: block;
   
+}
+
+textarea#insertDescrizione{
+    vertical-align: top;
+    margin-top: 1em;
+    max-width: 60%;
+    height: 10em;
 }
 
 #registerSubmit {

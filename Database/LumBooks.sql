@@ -46,6 +46,8 @@ CREATE TABLE Libri_In_Vendita(
     Tipo varchar(30) not null,
     Codice_identificativo_Libro int (5),
 
+    Descrizione varchar(200),
+
     md5_Hash char(32) not null unique,
     /*Hash md5 calcolato a partire da valore casuale*/
     CONSTRAINT fk

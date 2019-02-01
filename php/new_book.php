@@ -24,6 +24,7 @@ $edizione =         $_POST['edizione'];
 $annopub =          $_POST['anno'];
 $isbn =             $_POST['ISBN'];
 $prezzo =           $_POST['prezzo'];
+$descrizione =      $_POST['descrizione'];
 if(isset($_POST['catalogo']))
     $libro_catalogo =   $_POST['catalogo'];
 else
@@ -31,7 +32,7 @@ else
 try{
     $prezzo = str_replace(",",".",$prezzo);
     Validator::registerVal( $scelta_list, $titolo, $autore, $casa_editrice,
-                            $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo); 
+                            $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo, $descrizione); 
         
     
     
@@ -68,6 +69,7 @@ try{
                             "Prezzo" => $prezzo,
                             "Data_Aggiunta" => date("Y-m-d"),
                             "Venditore" => $_SESSION['id'],
+                            "Descrizione" => $descrizione,
                             "md5_Hash" => $md5); 
 
 

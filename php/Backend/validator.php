@@ -11,15 +11,16 @@ class Validator{
         return $val;
     }
 
-    public static function registerVal($scelta_list, $titolo, $autore, $casa_editrice, $corso, $edizione, $annopub, $isbn, $prezzo, $libro_catalogo){
+    public static function registerVal(&$scelta_list, &$titolo, &$autore, &$casa_editrice, &$corso, &$edizione, &$annopub, &$isbn, &$prezzo, &$libro_catalogo,&$descrizione){
         require_once "Backend/sql_wrapper.php";
         //Escape di tutti gli input
         //Tutti insieme per minimiazzare accesso al db
         $inputs = array(  &$scelta_list,&$titolo,&$autore,&$casa_editrice,
                                         &$corso,&$edizione,&$annopub,&$isbn,
-                                        &$prezzo,&$libro_catalogo);
+                                        &$prezzo,&$libro_catalogo,&$descrizione);
         SqlWrap::input_escape($inputs);
         array_walk($inputs,'trim');
+        //$descrizione = htmlspecialchars($descrizione);
 
         //A seconda della scelta dell'utente (listato vs libero), controllo solo
         //i campi necessari
