@@ -1,35 +1,43 @@
 window.onload=function()
 {
 
-  document.getElementById("email").addEventListener("focus",checkRegisterInput);
-  document.getElementById("nome").addEventListener("focus",checkRegisterInput);
-  document.getElementById("password").addEventListener("focus",checkRegisterInput);
-  document.getElementById("cel").addEventListener("focus",checkRegisterInput);
-  document.getElementById("cognome").addEventListener("focus",checkRegisterInput);
-  document.getElementById("nascita").addEventListener("focus",checkRegisterInput);
-  document.getElementById("sesso").addEventListener("focus",checkRegisterInput);
-  document.getElementById("repeatpassword").addEventListener("focus",checkRegisterInput);
-  
-  document.getElementById("registerForm").addEventListener("submit",function(event){
-    checkRegisterInput();
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var nome = document.getElementById("nome");
-    var tel = document.getElementById("cel");
-    var cognome = document.getElementById("cognome");
-    var nascita = document.getElementById("nascita");
-    var repeatpassword = document.getElementById("repeatpassword");
+  // pulsante per l'apertura/chiusura del menu' laterale
+  document.getElementById("toggle_nav").addEventListener("click",toggleNavbar);
 
-    // controllo se i campi sono vuoti
-    [email,password,nome,tel,cognome,nascita,repeatpassword].filter(el => el.value == 0)
-      .forEach(element => setErrorBox(element));
+  // *********** validazione campi Registrazione ********
+  if(document.getElementById("registerForm") != null)
+  {
+    document.getElementById("email").addEventListener("focus",checkRegisterInput);
+    document.getElementById("nome").addEventListener("focus",checkRegisterInput);
+    document.getElementById("password").addEventListener("focus",checkRegisterInput);
+    document.getElementById("cel").addEventListener("focus",checkRegisterInput);
+    document.getElementById("cognome").addEventListener("focus",checkRegisterInput);
+    document.getElementById("nascita").addEventListener("focus",checkRegisterInput);
+    document.getElementById("sesso").addEventListener("focus",checkRegisterInput);
+    document.getElementById("repeatpassword").addEventListener("focus",checkRegisterInput);
+    
+    // disattivazione form quando i dati inseriti sono incorretti
+    document.getElementById("registerForm").addEventListener("submit",function(event){
+      checkRegisterInput();
+      var email = document.getElementById("email");
+      var password = document.getElementById("password");
+      var nome = document.getElementById("nome");
+      var tel = document.getElementById("cel");
+      var cognome = document.getElementById("cognome");
+      var nascita = document.getElementById("nascita");
+      var repeatpassword = document.getElementById("repeatpassword");
 
-    errors = document.getElementsByClassName("errorLine");
-    if (!errors.length==0)
-    {
-      event.preventDefault();
-    }
-  });
+      // controllo se i campi sono vuoti
+      [email,password,nome,tel,cognome,nascita,repeatpassword].filter(el => el.value == 0)
+        .forEach(element => setErrorBox(element));
+
+      errors = document.getElementsByClassName("errorLine");
+      if (!errors.length==0)
+      {
+        event.preventDefault();
+      }
+    });
+  }
 
 }
   
