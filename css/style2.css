@@ -432,6 +432,10 @@ footer {
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);    }
     
+    dd#Prezzo::after {
+        content: "€";
+    }
+
   #info_book{
     padding: 1em 0;
   }
@@ -448,13 +452,12 @@ footer {
     margin-left: 0.4em;
   }
   #bookBox .bookImg{
-    position: absolute;
-    max-width: 30%;
-    max-height: 40%;
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
     padding: 0.2em;
-    border: 1px solid  #ddd;
-    top: 2em;
-    right: 2em;
+    border: 1px solid #ddd;
+    margin-bottom: 2em;
   }
 
   #vendor_info{
@@ -469,6 +472,7 @@ footer {
     display: inline-block;
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
+    object-fit: cover;
   }
 
   #vendor_data{

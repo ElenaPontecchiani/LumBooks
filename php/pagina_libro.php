@@ -52,12 +52,12 @@ try{
     $output = str_replace("££NUMERO££",$book_data['Numero'],$output);
     $mail = $book_data['Email'];
 
-    $keys = array_diff(array_keys($book_data),array("Titolo","Autore","Venditore","Numero"));
+    $keys = array_diff(array_keys($book_data),array("Titolo","Autore","Venditore","Numero","Email"));
 
     $attr_list = "";
     foreach($keys as $key){
         if($book_data[$key] != "")
-            $attr_list .= "<dt>$key:</dt>\n<dd>{$book_data[$key]}</dd>\n";
+            $attr_list .= "<dt>$key:</dt>\n<dd id='$key'>{$book_data[$key]}</dd>\n";
     }
 
     $output = str_replace("££LISTA_ATTRIBUTI££",$attr_list,$output);
