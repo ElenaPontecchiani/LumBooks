@@ -44,13 +44,6 @@ header *{
   right: 1em;
   top: 1em;
 }
-
-
-
-
-
-
-
 a{
   text-decoration: none;
 }
@@ -129,14 +122,7 @@ header *{
     font-family: Georgia;
     font-weight: 100;
     font-style: normal;
-}
-
-
-
-
-
-
-/*PARTE NAVBAR*/
+}/*PARTE NAVBAR*/
 
 #navbar{
     background-color:#00586d;
