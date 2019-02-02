@@ -227,7 +227,8 @@ nav #stdbar li {
 section{
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 1em;    
+    padding: 1em;
+    min-width: 30%;  
 }
 
 
