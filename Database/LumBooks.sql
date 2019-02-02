@@ -11,8 +11,6 @@ CREATE TABLE Utente(
     Pw_Hash varchar(100)not null,
     Email varchar(50) not null unique,
     Numero varchar(20) not null unique
-
-    unique (Nome,Cognome,Matricola)
 );
 ALTER TABLE Utente AUTO_INCREMENT=100000;
 
