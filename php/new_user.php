@@ -9,6 +9,7 @@ $fname = $_POST["cognome"];
 $sex = $_POST["sesso"];
 $bdate = $_POST["nascita"];
 $pw = $_POST["password"];
+$cel = $_POST["cel"];
 
 
 //DA VALIDARE TUTTI I CAMPI
@@ -24,7 +25,8 @@ try{
                     '$sex',
                     '$bdate',
                     '$pw',
-                    '$mail');";
+                    '$mail',
+                    '$cel');";
 
     sqlWrap::command($sql);
   //}
@@ -36,6 +38,7 @@ try{
   $_SESSION['sesso'] = $sex;
   $_SESSION['bdate'] = $bdate;
   $_SESSION['email'] = $mail;
+  $_SESSION['numero'] = $cel;
   $_SESSION['login'] = true;
   header( "refresh:4; url=home.php" ); 
 }

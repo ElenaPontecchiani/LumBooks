@@ -95,7 +95,7 @@ class htmlMaker{
                $img = $userImg;
             }
         }
-        $nav_return .=  "<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n";
+        $nav_return .=  isset($_SESSION['nome']) ?"<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n" : "";
         $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";
         if(isset($_SESSION['nome'])){
