@@ -88,12 +88,14 @@ class htmlMaker{
         }
         $nav_return  =  '<nav id="navbar">'."\n";
         $nav_return .=  '<div id="nav_user">';
+        $img = "../images/user.png";
         if(isset($_SESSION['nome'])){
-            $img = self::getImage($_SESSION['email'],"../immagini_profilo/");
-            if ($img == "")
-               $img = "../images/user.png";
-            $nav_return .=  "<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n";
+            $userImg = self::getImage($_SESSION['email'],"../immagini_profilo/");
+            if ($userImg != ""){
+               $img = $userImg;
+            }
         }
+        $nav_return .=  "<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n";
         $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";
         if(isset($_SESSION['nome'])){
