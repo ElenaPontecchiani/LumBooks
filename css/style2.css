@@ -151,9 +151,7 @@ nav #stdbar li {
     display: flex;
     flex-direction: column;
     background-color: #0277bd ;
-    min-height: 3.1em;
     text-align: center;
-    padding:0.5em;
     color:white;
 }
 
