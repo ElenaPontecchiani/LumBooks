@@ -1,0 +1,69 @@
+Definiamo \textit{loggato} un utente che:
+\begin{itemize}
+	\item Ha eseguito con successo il login;
+	\item Si è registrato con successo, ed è quindi stato rimandato alla home. In questo caso, il login è avvvenuto automaticamente.
+\end{itemize}
+
+L'utente loggato eredita tutti i casi d'uso dell'utente generico, eccetto:
+\begin{itemize}
+	\item Registrazione;
+	\item Login;
+\end{itemize}
+
+L'utente loggato dispone, inoltre, dei seguenti casi d'uso:
+\begin{itemize}
+	\item \hyperref[par:Inserimento]{Inserimento di un nuovo libro (\ref{par:Inserimento}});
+	\item \hyperref[par:VisLibriUt]{Visualizzazione dei propri libri in vendita e venduti (\ref{par:VisLibriUt}});
+	\item \hyperref[par:ModLibro]{Modifica di un proprio libro in vendita (\ref{par:ModLibro}});
+	\item \hyperref[par:VendLibro]{Marcatura di un proprio libro in vendita come venduto (\ref{par:VendLibro}});
+	\item \hyperref[par:RimuoLibro]{Rimozione di un proprio libro dal sito (\ref{par:RimuoLibro}});
+	\item \hyperref[par:VisDati]{Visualizzazione dei propri dati di iscrizione al sito (\ref{par:VisDati}}).
+\end{itemize}
+
+\paragraph{Inserimento di un nuovo libro}\mbox{}\\
+\label{par:Inserimento}
+L'utente loggato entra nella pagina di inserimento libri clickando su \textit{Inserisci} nella navbar. Nella pagina di inserimento l'utente può scegliere se scegliere di inserire:
+\begin{itemize}
+	\item Una propria istanza di un libro già in catalogo: in questo modo, molto dei campi saranno già precompilati. Clicando sul menù a tendina, l'utente avrà a dispozione i titoli dei volumi selezionabili.
+	\item Un libro non presente in catalogo: l'utente dovrà inseirire più campi rispetto alla prima opzione, ma potrà insiere un libro a libera scelta.
+\end{itemize}
+In caso l'utente inserisca un campo dati non conforme al formato atteso (ex. ISBN con lunghezza diversa da 13, prezzo con tre cifre decimali), sarà di ciò dal sito, e verrà invitato a insere i dati nel modo corretto.
+Se, invece, l'inserimento è avvenuto con successo, il sito infomerà l'utente e lo reindirizzerà alla home.
+
+\paragraph{Visualizzazione dei propri libri in vendita e venduti}\mbox{}\\
+\label{par:VisLibriUt}
+L'utente loggato entra nella pagina di visualizzazione libri clickando su \textit{I miei Libri} nella navbar. Da qui, l'utente può visualizzare i proprio libri divisi fra \textit{In vendita} e \textit{Venduti}, e rappresentati tramite delle card simili a quelle presenti nelle schermate di ricerca libro £££££££££££££AGGIUNGERE LINK££££££££££, ma presentanti tre bottoni:
+\begin{itemize}
+	\item \hyperref[par:ModLibro]{Modifica (\ref{par:ModLibro})};
+	\item \hyperref[par:VendLibro]{Venduto (\ref{par:VendLibro})};
+	\item \hyperref[par:RimuoLibro]{Rimuovi (\ref{par:RimuoLibro})}.
+\end{itemize}
+L'utente inoltre, oltre alle informazioni che vedrebbe nella pagina di ricerca del libro, ha a dispozione la data di aggiunta del libro stesso.
+
+\paragraph{Modifica di un proprio libro in vendita}\mbox{}\\
+\label{par:ModLibro}
+Nella schermata di visualizzazione dei propri libri, l'utente preme il tasto \textit{Modifica} sulla card di un libro in vendita. Viene quindi caricata la pagina di modifica del libro, molto simile a quella di inserimento. L'utente, quindi, modifica i campi a sua scelta, e poi conferma i cambiamenti apportarti. Se tutto è andato bene, il sito reindirizza l'utente ai propri libri; in caso contrario, l'utente viene informato dell'errore e invitato a riprovare.
+
+\paragraph{Marcatura di un proprio libro in vendita come venduto}\mbox{}\\
+\label{par:VendLibro}
+Nella schermata di visualizzazione dei propri libri, l'utente preme il tasto \textit{Venduto} sulla card di un libro in vendita. Ciò comporta lo spostamento del libro nella sezione \textit{Libri Venduti} tramite un refresh della pagina. Un libro che viene segnato come venduto non può essere rimesso in vendita, e rimangono disponibili solo le seguenti operazioni:
+\begin{itemize}
+	\item Visualizzazione del libro £££££££INSERIRE LINK£££££££££££;
+	\item \hyperref[par:RimuoLibro]{Rimozione del libro (\ref{par:RimuoLibro})}.
+\end{itemize}
+
+\paragraph{Rimozione di un proprio libro dal sito}\mbox{}\\
+\label{par:RimuoLibro}
+Nella schermata di visualizzazione dei propri libri, l'utente preme il tasto \textit{Rimuovi} sulla card di un libro. Il libro viene rimosso dal sito tramite un refresh della pagina, e non è più possibile reperirlo nella piattaforma.
+
+\paragraph{Visualizzazione dei propri dati di iscrizione al sito}\mbox{}\\
+\label{par:VisDati}
+L'utente, una volta loggato, visuallizza la propria immagine profilo nella navabar. Se invece, al momemento dell'iscrizione, l'utente avesse scelto di non caricarne una, visualizzerà un'immagine generica.
+Per visualizzare il resto dei suo dati, l'utente clicca il link \textit{I miei dati} sulla navbar, e viene portato a una pagina riassuntiva con le sue informazioni.
+
+
+
+
+
+
+
