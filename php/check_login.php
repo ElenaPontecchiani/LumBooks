@@ -10,8 +10,8 @@ try{
 
 	if(backend::loginIsValid($mail, $passw) && !$result = SqlWrap::query("SELECT * FROM Utente WHERE Email = '$mail'"))
 	{
-		header("Location: login.php"); // facciamo finta che non sia successo niente :)
-		exit();
+		$_SESSION['login'] = false;
+		header("Location: login.php");
 	}
 
 	if(count($result)>0)
