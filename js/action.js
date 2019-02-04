@@ -2,7 +2,8 @@ window.onload=function()
 {
 
   // pulsante per l'apertura/chiusura del menu' laterale
-  document.getElementById("toggle_nav").addEventListener("click",toggleNavbar);
+  document.getElementById("toggle_nav").addEventListener("click",openNavbar);
+  document.getElementById("close").addEventListener("click",closeNavbar);
 
   // *********** validazione campi Registrazione ********
   if(document.getElementById("registerForm") != null)
@@ -45,18 +46,17 @@ window.onload=function()
 }
  
 //nascondere/mostrare la navbar
-  function toggleNavbar()
+  function openNavbar()
   {
-    if($('#navbar').hasClass('hidden_nav'))
-    {
-      $('#navbar').removeClass('hidden_nav');
-      $('#toggle_nav').removeClass('hidden_nav_button');
-    }else
-    {
-      $('#navbar').addClass("hidden_nav");
-      $('#toggle_nav').addClass('hidden_nav_button');
-    }
-    
+    var nav = document.getElementById("navbar");
+    nav.style.visibility = "visible";
+    nav.style.width = "17em";
+  }
+
+  function closeNavbar(){
+    var nav = document.getElementById("navbar");
+    nav.style.visibility = "hidden";
+    nav.style.width = "0em";
   }
   
 /*

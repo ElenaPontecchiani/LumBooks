@@ -104,6 +104,7 @@ class htmlMaker{
         }
         $nav_return .=  '</div>';
         $nav_return .=  '<ul id="stdbar">'."\n";
+        $nav_return .=  '<li class="closeNav"><div id="close"></div></li>'."\n";
         $nav_return .=  '<li class=""><a href="home.php">Home</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
