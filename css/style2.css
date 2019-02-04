@@ -438,8 +438,7 @@ textarea#insertDescrizione{
     display: flex;
     flex-direction: column;
     margin: 3% auto;
-    width: 80%;
-    max-width:35em;
+    max-width: 70%;
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);    }
     
@@ -464,7 +463,6 @@ textarea#insertDescrizione{
   }
   #bookBox .bookImg{
     max-width: 80%;
-    text-align: center;
     margin: auto;
     padding: 0.2em;
     border: 1px solid #ddd;

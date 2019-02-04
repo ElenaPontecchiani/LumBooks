@@ -38,9 +38,13 @@ window.onload=function()
       }
     });
   }
+  if(document.getElementById("insertBox") != null){
+    //..validazione inserimento libri
+  }
 
 }
-  
+ 
+//nascondere/mostrare la navbar
   function toggleNavbar()
   {
     if($('#navbar').hasClass('hidden_nav'))
@@ -55,6 +59,9 @@ window.onload=function()
     
   }
   
+/*
+  /////// validazione campi registrazione ////////
+*/
   function checkRegisterInput()
   {
     var email = document.getElementById("email");
@@ -183,3 +190,8 @@ function removeErrorBox(box)
   box.classList.remove('errorBox');
   return true;
 }
+
+/*
+  Validazione campi inserimento libro
+*/
+
