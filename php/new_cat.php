@@ -1,6 +1,7 @@
 <?php
 require_once "Backend/sql_wrapper.php";
 require_once "Backend/validator.php";
+require_once "Backend/htmlMaker.php";
 
 try{
     if(!sqlWrap::isAdmin())
@@ -29,7 +30,7 @@ try{
 
 
 } catch (Exception $e) {
-    echo 'Errore: ',  $e->getMessage(), "\n";
+    echo htmlMaker::pagina_messaggio("Operazione non riuscita!","Ecco cosa hai sbagliato nello specifico: {$e->getMessage()}");
 }
 
 
