@@ -2,7 +2,7 @@ Ogni pagina è formata da tre elementi principali:
 \begin{itemize}
     \item \textbf{header:} contiene il logo, il titolo e i bottoni \textit{accedi} e \textit{registrati} per un utente non autenticato, \textit{Logout} per un utente autenticato;
     \item \textbf{nav:} contiene i link per la navigazione e il footer. L'utente autenticato ha anche l'immagine di profilo e i link per il pannello del controllo. Viene generata da htmlMaker (vedere \ref{htmlmaker});
-    \item \textbf{section:} contiene il contenuto principale del sito. Cambia per ogni pagina.
+    \item \textbf{section:} contiene il contenuto principale del sito. Cambia per ogni pagina. Per la maggior parte dei casi, il contenuto di section corrisponde al contenuto della corrispondente pagina ".html" (es. section della Home è il contenuto di home.html). Il contenuto può essere diverso, se dipende dai dati inseriti nel database (card dei libri o i dati dell'utente nel pannello utente).
 \end{itemize}
 Il catalogo e i libri in vendita sono una unordered list (<ul class='books\_collection'>), creata da generateBookCollection come definito in \ref{htmlmaker}. Ogni libro è un elemento (<li class="search\_item">) con l' id uguale all'id del libro nel database (md5\_Hash). Gli altri elementi del libro sono un div contenete le informazioni dello stesso e l'immagine (se presente).\\
 L'inserimento di un libro in vendita è permesso solamente a un utente registrato. L'utente può scegliere se il libro è nel catalogo (quindi i campi Titolo, Autore, Casa editrice, Corso non sono richiesti) oppure se non è presente. L'immagine del libro non è obbligatoria, se non presente viene mostrato un placeholder.
