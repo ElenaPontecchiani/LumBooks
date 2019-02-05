@@ -1,7 +1,12 @@
 Il linguaggio di programmazione PHP è stato usato per il backend e per la composizione di codice HTML.\\
 I file coinvolti nella parte di struttura sono:
 \begin{itemize}
-    \item \textbf{htmlMaker.php:} contiene una serie di funzioni utili alla costruzione del sito;
+    \item \textbf{htmlMaker.php:} contiene una serie di funzioni utili alla costruzione del sito:\label{htmlmaker}
+        \begin{itemize}
+            \item \textbf{generateBookCollection} costruisce una collezione di libri. Prende come parametri \textit{listaLibri} (array contenente una lista di libri) e \textit{lista\_bottoni} (opzionale. Rappresenta una lista di bottoni da aggiungere al libro). Questa funzione utilizza singleItem e singleItemWithButtons che generano un singolo libro;
+            \item \textbf{navbar} costruisce la navbar; questo è l'elemento più mutabile del sito, quindi viene costruito interamente attraverso del codice php;
+            \item \textbf{pagina\_messaggio} costruisce una pagina molto semplice, usato principalmente per pagine di errore. Prende come parametri titolo, sottotitolo ed extra (opzionale).
+        \end{itemize}
     \item \textbf{"nomepagina".php:} (esempio: home.php, login.php) sono i file che costruiscono le pagine del sito. Utilizzano le funzioni di htmlMaker e il rispettivo file html (es: home.php usa home.html) che contiene l'effettivo html; 
 \end{itemize}
 Il gruppo ha deciso di utilizzare codice PHP rivolto alla struttura del sito, perché alcuni contenuti strutturali del sito sito cambiano se l'utente è sconosciuto oppure ha effettuato l'accesso. Le differenze sono:
@@ -19,7 +24,7 @@ L'utilizzo del PHP per la struttura ha permesso anche le seguenti caratteristich
 \end{itemize}
 La parte di backend gestisce principalmente le richieste di modifica al database da parte degli utenti del sito:
 \begin{itemize}
-    \item \textbf{sql\_wrapper:} il file \textit{sql\_wrapper} contiene delle funzioni per accedere al database. Lo scopo di questo file è semplificare l'accesso al database per gli altri;  
+    \item \textbf{sql\_wrapper:} il file \textit{sql\_wrapper} contiene delle funzioni per accedere al database; lo scopo di questo file è semplificare l'accesso al database per gli altri;  
     \item \textbf{Login:} l'accesso avviene attrraverso il file \textit{check\_login.php}, che, tramite l'sql\_wrapper, controlla se l'email e la password esistono. In caso positivo viene aperta la sessione;
     \item \textbf{Registrazione:} la registrazione avviene attrraverso il file \textit{new\_user.php}. Se la registrazione ha successo, viene fatto il login automatico;
     \item \textbf{Validazione campi:} il file \textit{validator.php} contiene delle funzioni utili alla validazione dei campi in registrazione, login, inserimento libri;
