@@ -1,0 +1,14 @@
+Il gruppo ha considerato come fondamentale la separazione tra la struttura e il contenuto. Per questo fine, si è posto le seguenti regole:
+\begin{itemize}
+    \item \textbf{JavaScript non intrusivo:} tutto il codice JS è stato inserito in un file separato dai file Html e Php (\textit{action.js}), evitando quindi l'utilizzo di elementi come <div "onClick="funzione()"/>;
+    \item \textbf{PHP non intrusivo:} anche se una parte del codice PHP genera codice HTML, la pagina finale non contiene elementi PHP. Inoltre, tutto il codice HTML che non proviene da un file viene scritto attraverso il comando "echo";
+    \item \textbf{CSS non intrusivo:} come per JavaScript, anche tutto il codice CSS è stato inserito in un file dedicato (\textit{style.css}).
+    \item \textbf{HTML solo per la struttura:} come accennato in \ref{struttura}, l'HTML non può contenere elementi di stile. L'HTML, quindi, \textbf{non} deve essere utilizzato in questi casi:
+        \begin{itemize}
+            \item usare una tabella per il layout (usare inceve un layout responsive attraverso CSS);
+            \item definire la dimensione, colore e stile generale del testo (usare invece classi e tagname corretti, per poi essere modificati con il CSS);
+            \item usare le intestazioni (h1,h2,h3...) solo per definire la dimensione del testo;
+            \item usare il <br/> per andare a capo;
+        \end{itemize} 
+\end{itemize} 
+\textit{style.css} e \textit{action.js} sono state importate nell'\textit{head}.

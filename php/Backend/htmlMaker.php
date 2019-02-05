@@ -13,18 +13,6 @@ class htmlMaker{
         return $html;
     }
 
-    public static function searchItemWithButtons($lista_libri,$lista_bottoni){
-        if (!$lista_libri){
-            return "Nessun risultato corripsondente";
-        }
-        $html = "<ul class='books_collection'>";
-        foreach($lista_libri as $libro){
-            $html .= self::singleItemWithButtons($libro,$lista_bottoni);
-        }
-        $html .= "</ul>";
-        return $html;
-    }
-
     public static function singleItem($libro){
         $campi = array_keys($libro);
         $campi = array_diff($campi, array('Titolo'));

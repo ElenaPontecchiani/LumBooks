@@ -1,0 +1,7 @@
+Sql è stato utilizzato per la codifica del database.
+Il database è composto dalle seguenti tabelle:
+\begin{itemize}
+    \item \textbf{Utente:} contiene le credenziali appartenenti a un utente registrato al sito. Per proteggere la password, viene codificata in \textit{Pw\_Hash} tramite la funzione \textit{password\_hash} di php. Il \textit{codice\_identificativo} del libro è un numero che incrementa ad ogni libro inserito;
+    \item \textbf{Libri\_Listati:} contiene i libri listati (catalogo);
+    \item \textbf{Libri\_In\_Vendita:} contiene i libri che gli utenti mettono in vendita. Viene controllato che il \textit{prezzo} sia positivo, che lo \textit{stato} sia "Venduto","In Vendita" o "Prenotato" e che il \textit{tipo} sia "Libro","Slide","Appunti","Altro" o "Dispense";
+\end{itemize}
