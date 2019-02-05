@@ -43,19 +43,20 @@
                   <input type="radio" name="type" value="personale" id="personale"/>
                   <fieldset>
                      <legend>Dati del libro</legend>
+                     <p class="required">I campi marcati con * sono obbligatori</p>
                      <!-- Mostra uno dei due div sotto-->
                      <div id="inserisci-personale">
-                        <label for="insertTitolo">Titolo:</label>
+                        <label for="insertTitolo">*Titolo:</label>
                         <input type="text" name="titolo" id="insertTitolo"/>
-                        <label for="insertAutore">Autore:</label>
+                        <label for="insertAutore">*Autore:</label>
                         <input type="text" name="autore" id="insertAutore" />
-                        <label for="insertCasaEditrice">Casa editrice:</label>
+                        <label for="insertCasaEditrice">*Casa editrice:</label>
                         <input type="text" name="casaeditrice" id="insertCasaEditrice" />
-                        <label for="insertCorso">Corso:</label>
+                        <label for="insertCorso">*Corso:</label>
                         <input type="text" name="corso" id="insertCorso" />
                      </div>
                      <div id="inserisci-listato">
-                        <label for="catalogo">Selezionare dal catalogo:</label>
+                        <label for="catalogo">*Selezionare dal catalogo:</label>
                         <select name="catalogo" id="catalogo">
                         ££opzioni_titolo££
                         </select>
@@ -68,7 +69,7 @@
                         <input type="text" name="anno" id="insertAnno" />
                         <label for="insertISBN">ISBN:</label>
                         <input type="text" name="ISBN" id="insertISBN" />
-                        <label for="insertPrezzo">Prezzo:</label>
+                        <label for="insertPrezzo">*Prezzo:</label>
                         <input type="text" name="prezzo" id="insertPrezzo" />
                         <label for="fileToUpload">Immagine Libro</label>
                         <input type="file" name="fileToUpload" id="fileToUpload">                     

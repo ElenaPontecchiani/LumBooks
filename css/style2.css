@@ -436,7 +436,7 @@ textarea#insertDescrizione{
     display: flex;
     flex-direction: column;
     margin: 3% auto;
-    max-width: 70%;
+    max-width: 80%;
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);    }
     
@@ -560,8 +560,8 @@ textarea#insertDescrizione{
 }
 
 .sc_button{
-    height: 2.3em;
-    width: 6.97em;
+    height: 2em;
+    width: 5.5em;
     border-radius: 0.3em;
     background: #0276be;
     color: white;
@@ -630,7 +630,7 @@ fieldset{
 }
 #loginBox,#registerBox,#searchBox,
 #insertBox,#catalogueBox, #aboutBox,
-#dataBox{
+#dataBox,.mostra-libri{
     display: flex;
     flex-direction: column;
     margin: 3% auto;
@@ -639,10 +639,19 @@ fieldset{
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
 
-#catalogueBox{ 
-    max-width:45em !important;
+.mostra-libri{
+    padding-left: 1em;
+    max-width: 80%;
 }
-#aboutBox{ max-width:80% !important;}
+
+.mostra-libri h2{
+    text-align: center;
+}
+
+#catalogueBox{ 
+    max-width:80%;
+}
+#aboutBox{ max-width:80%;}
 
 #loginBox.h1{
     text-align: center;
@@ -709,6 +718,12 @@ fieldset{
     display:inline-block;
 }
 
+p.required {
+    font-size: 0.8em;
+    color: #4d4d4d;
+    font-style: italic;
+}
+
 
 @media only screen and (max-width: 1100px) {
 
@@ -771,4 +786,17 @@ fieldset{
         position: absolute;
         transform: rotate(-45deg);
     }
+
+    #bookBox,#loginBox,#registerBox,#searchBox,
+    #insertBox,#catalogueBox, #aboutBox,
+    #dataBox,.mostra-libri,#outerbox,section{
+        max-width: none;
+        padding: 1em;
+        margin: 0em;
+    }
+    section{
+        padding: 0em;
+    }
+
+
   }

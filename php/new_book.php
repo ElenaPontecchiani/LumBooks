@@ -93,9 +93,8 @@ try{
 
     $insert = "INSERT INTO Libri_In_Vendita(".$par1.",Tipo) VALUES(".$par2.",'Libro');";
     //echo $insert;
-
-    SqlWrap::Command($insert);
     caricaImmagine($md5,"../immagini_libri/");
+    SqlWrap::Command($insert);
     echo htmlMaker::pagina_messaggio("Yeah!","Il tuo libro è stato inserito con successo. Adesso carico la home.");
     header( "refresh:4; url=home.php" ); 
 } catch (Exception $e) {
