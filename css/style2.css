@@ -18,7 +18,7 @@ body {
     position:relative;
 }
 
-header{
+header {
     position: relative;
     padding:0.4em 0.2em;
     background-color:#fafafa;
@@ -26,24 +26,14 @@ header{
     font-family: Arial;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
     justify-content: space-between;
-}
-
-#toggle_nav {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    vertical-align: top;
-    visibility: hidden;
-    width: 0%;
-  }
-  
-  .bar1, .bar2, .bar3 {
+}  
+.bar1, .bar2, .bar3 {
     width: 2.625em;
     height: 0.375em;
     background-color: #333;
     margin: 0.45em 0;
     display: block;
-  }
+}
 
 header *{
     display: inline-block;
@@ -56,7 +46,7 @@ header *{
     position: relative;
 }
 
-#header_login{
+#header_login {
     right: 1em;
     top: 0.6em;
     position: absolute;
@@ -134,6 +124,11 @@ ul {
     margin-right: auto;
     margin-top: 1em;
     border: 0.5em solid white;
+}
+
+/* da desktop non serve nascondere la navbar */
+#openNavButton {
+    display: none;
 }
 
 nav #stdbar li a{
@@ -260,6 +255,7 @@ footer {
 
   .footer_link {
     color:black;
+    background-color: #fafafa;
   }
 
   #facebook-icon {
@@ -472,6 +468,10 @@ textarea#insertDescrizione{
     height: 5em;
     box-shadow: 0.2em 0.1em 1em black;
     border-radius: 0.3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3em;
   }
 
   #vendor_pic{
@@ -607,13 +607,6 @@ li.search_item.with_bt {
     font-style:bold;
 }
 
-/*////////////////////////////// <login.html>
-.txtRic{
-    text-align: left !important;
-    }
-    tolto perchÃ© credo sia inutile
- ////////////////////////////// */
-
 legend{
 text-align: center;
 }
@@ -695,7 +688,6 @@ fieldset{
 
 #txContent h2 {
     color: #034b72;
-    width: 80%;
     margin:auto;
     font-size: 2.5em;
     
@@ -724,6 +716,7 @@ p.required {
     font-style: italic;
 }
 
+/* BREAKPOINTS */
 
 @media only screen and (max-width: 1100px) {
 
@@ -737,14 +730,11 @@ p.required {
 
 @media only screen and (max-width: 1100px) {
     *{
-        font-size: 30px;
+        font-size: 1.5rem;
     }
     
-    #toggle_nav{
-        visibility: visible;
-        width: unset;
-        margin-left: 1em;
-        margin-right: 1em;
+    #openNavButton {
+        display: inline-block;
     }
 
     nav{
@@ -756,6 +746,13 @@ p.required {
         background-color: white;
     }
 
+    .showNavbar{
+        display: inline-block;
+        visibility: visible;
+        width: 100%;
+    }
+
+    /* bottoni per aprire e chiudere la navbar: */    
     .closeNav{
         height: 3em;
         visibility: visible;
@@ -797,6 +794,12 @@ p.required {
     section{
         padding: 0em;
     }
-
+    footer{
+        max-height: 15%;
+    }
+    #vendor_info{
+        position: initial;
+        margin: 0;
+    }
 
   }

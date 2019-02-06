@@ -2,7 +2,7 @@ window.onload=function()
 {
 
   // pulsante per l'apertura/chiusura del menu' laterale
-  document.getElementById("toggle_nav").addEventListener("click",openNavbar);
+  document.getElementById("openNavButton").addEventListener("click",openNavbar);
   document.getElementById("close").addEventListener("click",closeNavbar);
 
   // *********** validazione campi Registrazione ********
@@ -16,71 +16,48 @@ window.onload=function()
     document.getElementById("nascita").addEventListener("focus",checkRegisterInput);
     document.getElementById("sesso").addEventListener("focus",checkRegisterInput);
     document.getElementById("repeatpassword").addEventListener("focus",checkRegisterInput);
-    
-    // disattivazione form quando i dati inseriti sono incorretti
-    document.getElementById("registerForm").addEventListener("submit",function(event){
-      checkRegisterInput();
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
-      var nome = document.getElementById("nome");
-      var tel = document.getElementById("cel");
-      var cognome = document.getElementById("cognome");
-      var nascita = document.getElementById("nascita");
-      var repeatpassword = document.getElementById("repeatpassword");
-
-      // controllo se i campi sono vuoti
-      [email,password,nome,tel,cognome,nascita,repeatpassword].filter(el => el.value == 0)
-        .forEach(element => setErrorBox(element));
-
-      errors = document.getElementsByClassName("errorLine");
-      if (!errors.length==0)
-      {
-        event.preventDefault();
-      }
-    });
+    //disabilito il form se almeno uno dei seguenti elementi passati come parametro non è corretto
+    disableForm(["email","password","nome","cel","cognome","nascita","repeatpassword"],"registerForm",checkRegisterInput);
   }
-  if(document.getElementById("insertBox") != null){
+
+  /* validazione login */
+  if(document.getElementById("loginForm") != null)
+  {
+    document.getElementById("loginEmail").addEventListener("focus",checkLoginInput);
+    document.getElementById("inputPsw").addEventListener("focus",checkLoginInput);
+
+    disableForm(["loginEmail","inputPsw"],"loginForm",checkLoginInput);
+  }
+  if(document.getElementById("insertBox") != null)
+  {
     //..validazione inserimento libri
+  }
+
+  //nascondere/mostrare la navbar
+  if(document.getElementById('listato') != null)
+  {
+    formselector();
+    document.getElementById("listato").addEventListener("click", formselector);
+    document.getElementById("personale").addEventListener("click", formselector);
+    document.getElementById("openNavButton").addEventListener("click", toggleNavbar);
   }
 
 }
  
-//nascondere/mostrare la navbar
+/*  nascondere/mostrare la navbar */
   function openNavbar()
   {
     var nav = document.getElementById("navbar");
-    nav.style.visibility = "visible";
-    nav.style.width = "17em";
+    nav.classList.add("showNavbar");
   }
 
-  function closeNavbar(){
+  function closeNavbar()
+  {
     var nav = document.getElementById("navbar");
-    nav.style.visibility = "hidden";
-    nav.style.width = "0em";
+    nav.classList.remove("showNavbar");
   }
   
-/*
-  /////// validazione campi registrazione ////////
-*/
-  function checkRegisterInput()
-  {
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var nome = document.getElementById("nome");
-    var tel = document.getElementById("cel");
-    var cognome = document.getElementById("cognome");
-    var nascita = document.getElementById("nascita");
-    var repeatpassword = document.getElementById("repeatpassword");
 
-    checkItem(password,/^(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!.@#$%^&*]{6,16}$/);
-    checkItem(email, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-    checkItem(nome, /^[a-zA-Z]{3,16}$/);
-    checkItem(cognome, /^[a-zA-Z]{3,16}$/);
-    checkNascita(nascita);
-    checkItem(tel, /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/);
-    checkRepeatPassword(password,repeatpassword);
-
-  }
   /*
     se una password ripetuta non è corretta segnala un errore
   */
@@ -152,30 +129,32 @@ function setErrorBox(box)
     return;
   }
   box.classList.add('errorBox');
+  /* stampa un errore scritto bene */
   var lastLetter = 'o';
   var firstLetter = 'Il';
-  if(box.id == 'password' || box.id == 'email' || box.id == 'nascita')
+  var boxName = box.id;
+
+  switch(boxName)
+  {
+    case 'cel': boxName = 'N. di telefono';
+          break;
+    case 'nascita': boxName = 'data' ;
+          break;
+    case 'inputPsw': boxName = 'password';
+          break;
+    case 'loginEmail': boxName = 'email';
+          break;
+  }
+
+  var legend = document.getElementsByTagName("legend")[0];
+  if(boxName == 'password' || boxName == 'email' || boxName == 'nascita')
   {
    var lastLetter = 'a';
    var firstLetter = 'La';
   }
-  var boxName = box.id;
-  if (boxName == 'cel')
-  {
-    boxName = 'N. di telefono';
-  }
-  if (boxName == 'nascita')
-  {
-    boxName = 'data';
-  }
-  var legend = document.getElementsByTagName("legend")[0];
-  if (boxName == 'repeatpassword')
-  {
-    legend.outerHTML += "<p class='errorLine' id='errorMessage"+ box.id +"'>Le password non coincidono.</p>";
-  }else
-  {
-    legend.outerHTML += "<p class='errorLine' id='errorMessage"+ box.id +"'>"+firstLetter+ " " +boxName +" non è corrett"+ lastLetter +"</p>";
-  }
+  legend.outerHTML += (boxName == 'repeatpassword')? 
+    "<p class='errorLine' id='errorMessage"+ box.id +"'>Le password non coincidono.</p>": /* true */
+    "<p class='errorLine' id='errorMessage"+ box.id +"'>"+firstLetter+ " " +boxName +" non è corrett"+ lastLetter +"</p>"; /*false*/
 
 }
 
@@ -195,3 +174,78 @@ function removeErrorBox(box)
   Validazione campi inserimento libro
 */
 
+
+
+/* funzione per inserisci.html */
+function formselector()
+{
+  listato = document.getElementById('listato').checked;
+  if(listato)
+  {
+    document.getElementById('inserisci-personale').classList.add("hidden");
+    document.getElementById('inserisci-listato').classList.remove("hidden");
+  }else
+  {
+    document.getElementById('inserisci-listato').classList.add("hidden");
+    document.getElementById('inserisci-personale').classList.remove("hidden");
+  }
+}
+
+/* validazione login */
+
+function checkLoginInput()
+{
+  var email = document.getElementById("loginEmail");
+  var password = document.getElementById("inputPsw");
+  checkItem(password,/^(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!.@#$%^&*]{6,16}$/);
+  checkItem(email, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+
+}
+
+/*
+  /////// validazione campi registrazione ////////
+*/
+function checkRegisterInput()
+{
+  var email = document.getElementById("email");
+  var password = document.getElementById("password");
+  var nome = document.getElementById("nome");
+  var tel = document.getElementById("cel");
+  var cognome = document.getElementById("cognome");
+  var nascita = document.getElementById("nascita");
+  var repeatpassword = document.getElementById("repeatpassword");
+
+  checkItem(password,/^(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!.@#$%^&*]{6,16}$/);
+  checkItem(email, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+  checkItem(nome, /^[a-zA-Z]{3,16}$/);
+  checkItem(cognome, /^[a-zA-Z]{3,16}$/);
+  checkNascita(nascita);
+  checkItem(tel, /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/);
+  checkRepeatPassword(password,repeatpassword);
+
+}
+
+  /* validazione login */
+  function disableForm(elements, form, funzioneValidazione){
+  if(document.getElementById(form) != null)
+  {
+    elements.forEach(el => function(){
+      document.getElementById(el).addEventListener("focus",funzioneValidazione);
+    });
+    document.getElementById(form).addEventListener("submit",function(event){
+    funzioneValidazione();
+
+    var items = elements.map(el => function(item){
+      return document.getElementById(item);
+    });
+    // controllo campi sono vuoti e segnalazione errore. 
+    items.filter(el => el.value == 0)
+      .forEach(element => setErrorBox(element));
+      errors = document.getElementsByClassName("errorLine");
+    if (!errors.length==0)
+    {
+      event.preventDefault();
+    }
+    });
+  }
+}

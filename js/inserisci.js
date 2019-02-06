@@ -2,7 +2,7 @@ window.onload=function(){
   formselector();
   document.getElementById("listato").addEventListener("click", formselector);
   document.getElementById("personale").addEventListener("click", formselector);
-  document.getElementById("toggle_nav").addEventListener("click", toggleNavbar);
+  document.getElementById("openNavButton").addEventListener("click", toggleNavbar);
 }
 
 function formselector(){
@@ -17,13 +17,15 @@ function formselector(){
   }
 
 }
+/*
 function toggleNavbar(){
   if($('#navbar').hasClass('hidden_nav')){
     $('#navbar').removeClass('hidden_nav');
-    $('#toggle_nav').removeClass('hidden_nav_button');
+    $('#openNavButton').removeClass('hidden_nav_button');
   }else{
     $('#navbar').addClass("hidden_nav");
-    $('#toggle_nav').addClass('hidden_nav_button');
+    $('#openNavButton').addClass('hidden_nav_button');
   }
   
 }
+*/
