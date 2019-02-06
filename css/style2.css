@@ -708,7 +708,7 @@ p.required {
 
 @media only screen and (max-width: 1100px) {
     *{
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
     
     #openNavButton {
@@ -722,6 +722,7 @@ p.required {
         position: absolute;
         height: 100%;
         background-color: white;
+        overflow-y: scroll; 
     }
 
     .showNavbar{
