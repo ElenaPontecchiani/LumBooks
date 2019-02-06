@@ -27,31 +27,6 @@ header {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
     justify-content: space-between;
 }  
-.bar1, .bar2, .bar3 {
-    width: 2.625em;
-    height: 0.375em;
-    background-color: #333;
-    margin: 0.45em 0;
-    display: block;
-}
-
-header *{
-    display: inline-block;
-}
-
-#logo_lumbooks {
-    top: 0.5em;
-    width: 2em;
-    height: 2em;
-    position: relative;
-}
-
-#header_login {
-    right: 1em;
-    top: 0.6em;
-    position: absolute;
-}
-
 h1{
     font-weight: 250;
     font-size: 1.9em;
@@ -68,9 +43,37 @@ h2{
     padding-top:0.5em;*/
   
 }
+.bar1, .bar2, .bar3 {
+    width: 2.625em;
+    height: 0.375em;
+    background-color: #333;
+    margin: 0.45em 0;
+    display: block;
+}
 
+header *{
+    display: inline-block;
+    position: relative;
+    top: 0;
+    
+}
+
+#logo_lumbooks {
+    height: 2em;
+}
+
+#header_login {
+    right: 0;
+    top: 0;
+    position: absolute;
+    padding:1em;
+}
+header a{
+    padding: 0 0.5em;
+}
 .login_icon{
     width: 2.2em;
+    padding:0 0.5em;
 }
 
 .button{
@@ -317,7 +320,7 @@ textarea#insertDescrizione{
 }
 
 .content-mid,#registerForm{
-    padding: 2em 13% 2em 13%;
+    padding: 1em 10%;
 }
 
 .content-mid div {
@@ -373,28 +376,14 @@ textarea#insertDescrizione{
     height: 10em;
 }
 
-#registerSubmit {
-    width:7em;
-    margin-left:12em;
-    margin-top:0.8em;
-    margin-bottom:0.3em;
+#registerSubmit,#loginSubmit {
+    margin:auto;
  }
-
-
- /* <inserisci.html> */
-#input_libri #content-mid p{
-    display: inline-block;
-}
-
-.hidden{
+ .hidden{
     /* non togliere */
     display: none !important;
 }
 
-.firstLine {
-    
-    display:block;
-}
 
 /*////////////////////////////// <about.html> ////////////////////////////// */
 #about-us, #about-project {
@@ -550,14 +539,6 @@ textarea#insertDescrizione{
   .search_item .ISBN{
      color: grey;
   }
-  
-  #catalogueBox label{
-      width:auto !important;
-  }
-
-  #catalogueBox select{
-    width:auto !important;
-}
 
 .sc_button{
     height: 2em;
@@ -627,7 +608,7 @@ fieldset{
     display: flex;
     flex-direction: column;
     margin: 3% auto;
-    max-width:35em;
+    max-width:40em;
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
@@ -677,13 +658,10 @@ fieldset{
 /*////////////////////////////// <home.html> ////////////////////////////// */
 
 #txContent{
-    text-align:center;
-    margin:0.5em auto 2em auto;
-    padding: 3em 0 1.5em 0;
+    padding: 1em;
     color: rgb(83, 83, 83); 
     box-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
-    max-width:90%;
-    background-color:white !important;
+    background-color:white;
 }
 
 #txContent h2 {
@@ -695,7 +673,7 @@ fieldset{
 
 #txContent p {
     margin:2.5em auto 2.5em auto;
-    font-size: 1.5em !important;
+    font-size: 1.5em;
 }
 
 
@@ -794,11 +772,12 @@ p.required {
     section{
         padding: 0em;
     }
-    footer{
-        max-height: 15%;
-    }
     #vendor_info{
         position: initial;
+        margin: 0;
+    }
+    .content-mid,#insertBox,#registerForm{
+        padding:0;
         margin: 0;
     }
 
