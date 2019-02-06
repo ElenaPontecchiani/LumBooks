@@ -55,7 +55,7 @@ if($isbn == "error"){
 if ($libri)
     $ris = htmlMaker::generateBookCollection($libri);
 else
-    $ris = "NESSUN RISULTATO CORRISPONDENTE";
+    $ris = "<p>Ti è andata male, non ho trovato niente.</p> <a href='cercalibro.php'>Prova con una nuova ricerca!</a>";
 $output = file_get_contents("../HTML/risultati_ricerca.html");
 $output = str_replace("££RISULTATI££",$ris,$output);
 $output = str_replace("<header></header>",htmlMaker::header(),$output);
