@@ -99,6 +99,31 @@ class Validator{
             $corso = substr($corso,0,30);
     }
 
+    public static function validateDate($date){
+        $format1 = 'd/m/Y';
+        $d1 = DateTime::createFromFormat($format1, $date);
+        $check1 = $d1 && $d1->format($format1) == $date;
+
+        $format2 = 'd-m-Y';
+        $d2 = DateTime::createFromFormat($format2, $date);
+        $check2 = $d2 && $d2->format($format2) == $date;
+
+        $format3 = 'Y/m/d';
+        $d3 = DateTime::createFromFormat($format3, $date);
+        $check3 = $d3 && $d3->format($format3) == $date;
+
+        $format4 = 'Y-m-d';
+        $d4 = DateTime::createFromFormat($format4, $date);
+        $check4 = $d4 && $d4->format($format4) == $date;
+
+        return ($check1 || $check2 || $check3 || $check4);
+    }
+
+    public static function loginIsValid($mail, $password)
+  {
+    return ((!filter_var($mail, FILTER_VALIDATE_EMAIL) || strlen($password)>16 || strlen($password)<3)? false : true);
+  }
+
 
 }
 

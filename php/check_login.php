@@ -1,14 +1,14 @@
 <?php
 try{
 	require_once "Backend/sql_wrapper.php";
-	require_once "Backend/back_end.php";
+	require_once "Backend/validator.php";
 	$mail = $_POST["mail"];
 	$passw = $_POST["password"];
 	$_POST["password"] = "";
 
 	SqlWrap::input_escape(array($mail,$passw));
 
-	if(backend::loginIsValid($mail, $passw) && !$result = SqlWrap::query("SELECT * FROM Utente WHERE Email = '$mail'"))
+	if(Validator::loginIsValid($mail, $passw) && !$result = SqlWrap::query("SELECT * FROM Utente WHERE Email = '$mail'"))
 	{
 		$_SESSION['login'] = false;
 		header("Location: login.php");
