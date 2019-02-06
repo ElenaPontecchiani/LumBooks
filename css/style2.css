@@ -539,14 +539,6 @@ textarea#insertDescrizione{
   .search_item .ISBN{
      color: grey;
   }
-  
-  #catalogueBox label{
-      width:auto !important;
-  }
-
-  #catalogueBox select{
-    width:auto !important;
-}
 
 .sc_button{
     height: 2em;
@@ -666,13 +658,10 @@ fieldset{
 /*////////////////////////////// <home.html> ////////////////////////////// */
 
 #txContent{
-    text-align:center;
-    margin:0.5em auto 2em auto;
-    padding: 3em 0 1.5em 0;
+    padding: 1em;
     color: rgb(83, 83, 83); 
     box-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
-    max-width:90%;
-    background-color:white !important;
+    background-color:white;
 }
 
 #txContent h2 {
@@ -684,7 +673,7 @@ fieldset{
 
 #txContent p {
     margin:2.5em auto 2.5em auto;
-    font-size: 1.5em !important;
+    font-size: 1.5em;
 }
 
 
@@ -782,9 +771,6 @@ p.required {
     }
     section{
         padding: 0em;
-    }
-    footer{
-        max-height: 15%;
     }
     #vendor_info{
         position: initial;
