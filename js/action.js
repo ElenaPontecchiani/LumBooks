@@ -8,38 +8,50 @@ window.onload=function()
   // *********** validazione campi Registrazione ********
   if(document.getElementById("registerForm") != null)
   {
-    document.getElementById("email").addEventListener("focus",checkRegisterInput);
-    document.getElementById("nome").addEventListener("focus",checkRegisterInput);
-    document.getElementById("password").addEventListener("focus",checkRegisterInput);
-    document.getElementById("cel").addEventListener("focus",checkRegisterInput);
-    document.getElementById("cognome").addEventListener("focus",checkRegisterInput);
-    document.getElementById("nascita").addEventListener("focus",checkRegisterInput);
-    document.getElementById("sesso").addEventListener("focus",checkRegisterInput);
-    document.getElementById("repeatpassword").addEventListener("focus",checkRegisterInput);
+      items = [
+      "email",
+      "password",
+      "nome",
+      "cel",
+      "cognome",
+      "nascita",
+      "repeatpassword"
+    ];
+
+    //aggiungo un controllo mentre i dati vengono modificati
+    items.forEach(function(item){
+      document.getElementById(item).addEventListener("focus",checkRegisterInput);
+    });
+
     //disabilito il form se almeno uno dei seguenti elementi passati come parametro non è corretto
-    disableForm(["email","password","nome","cel","cognome","nascita","repeatpassword"],"registerForm",checkRegisterInput);
+    disableForm(items,"registerForm",checkRegisterInput);
   }
 
   /* validazione login */
   if(document.getElementById("loginForm") != null)
   {
-    document.getElementById("loginEmail").addEventListener("focus",checkLoginInput);
-    document.getElementById("inputPsw").addEventListener("focus",checkLoginInput);
+    items = [
+      "loginEmail",
+      "inputPsw"
+    ];
+    items.forEach(function(item){
+      document.getElementById(item).addEventListener("focus",checkLoginInput);
+    });
 
-    disableForm(["loginEmail","inputPsw"],"loginForm",checkLoginInput);
+    disableForm(items,"loginForm",checkLoginInput);
   }
+
   if(document.getElementById("insertBox") != null)
   {
     //..validazione inserimento libri
   }
 
-  //nascondere/mostrare la navbar
+  //nascondere/mostrare le opzioni per il libro listato (inserisci.html)
   if(document.getElementById('listato') != null)
   {
     formselector();
     document.getElementById("listato").addEventListener("click", formselector);
     document.getElementById("personale").addEventListener("click", formselector);
-    document.getElementById("openNavButton").addEventListener("click", toggleNavbar);
   }
 
 }
