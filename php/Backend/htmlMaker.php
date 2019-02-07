@@ -88,8 +88,10 @@ class htmlMaker{
         $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";
         if(isset($_SESSION['nome'])){
+            $nav_return .=  '<div class ="user_data_button">';
             $nav_return .=  '<a class="user_data_link" href="dati_personali.php">I miei dati</a>'."\n";
             $nav_return .=  '<a class="user_data_link" href="libri_personali.php">I miei libri</a>'."\n"; 
+            $nav_return .=  '</div>';
         }
         $nav_return .=  '</div>';
         $nav_return .=  '<ul id="stdbar">'."\n";

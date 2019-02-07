@@ -173,8 +173,12 @@ nav #stdbar li {
     color:white;
 }
 
-.user_data_link{
-    color:white;   
+.user_data_link {
+    color: white;
+    height: 100%;
+    display: inline-block;
+    width: 48%;
+    line-height: 300%;
 }
 
 #user_name{
@@ -183,7 +187,11 @@ nav #stdbar li {
 
 .user_data_link:hover{
     color: black;
-    
+    background-color: white;   
+}
+
+.user_data_button {
+    height: 3em;
 }
 
 #userImage{
