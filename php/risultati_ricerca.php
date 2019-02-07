@@ -7,6 +7,7 @@ $titolo = '';
 $autore = '';
 $isbn = '';
 $corso = '';
+$desc = '';
 if(isset($_GET['titolo']))
   $titolo = $_GET['titolo'];
 if(isset($_GET['autore']))
@@ -15,6 +16,8 @@ if(isset($_GET['isbn']))
   $isbn = $_GET['isbn'];
 if(isset($_GET['corso']))
   $corso = $_GET['corso'];
+if(isset($_GET['keyword']))
+  $desc = $_GET['keyword'];
 
 
 /*
@@ -25,7 +28,7 @@ if(isset($_GET['corso']))
     */
 
 //escape dell'input
-SqlWrap::input_escape( array(&$titolo,&$autore,&$isbn,&$corso) );
+SqlWrap::input_escape( array(&$titolo,&$autore,&$isbn,&$corso,) );
 $correctSqlInput = Validator::ricercaValidation($titolo,$autore,$isbn,$corso);
 
 //#todo >>>>>>>>>>>>>> visualizzare un errore e riempire i campi <<<<<<<<<<<<
@@ -46,6 +49,8 @@ if($isbn == "error"){
       $query.= " AND ISBN = $isbn";
   if (!($corso == "Qualsiasi"))
       $query.= " AND Corso like '%$corso%'";
+  if (!($desc == ""))
+      $query.= " AND Descrizione like '%$desc%'";
   $query .= " AND 1 = 1; ";
 
   //FINE COMPOSIZIONE DELLA QUERY

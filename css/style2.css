@@ -359,6 +359,7 @@ textarea#insertDescrizione{
 .outerBox  input[type="date"],
 .outerBox  input[type="email"],
 .outerBox  input[type="password"],
+.outerBox  input[type="number"],
 .outerBox  input[type="file"],
 textarea#insertDescrizione,
 .outerBox  select
