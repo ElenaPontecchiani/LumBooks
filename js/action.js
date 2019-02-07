@@ -335,5 +335,5 @@ function checkBookInput()
   checkItem(edizione, /^[a-zA-Z0-9]{3,16}$/);
   checkItem(anno, /^(1|2)[0-9]{3}$/);
   checkItem(isbn, /^[0-9]{13}$/);
-  checkItem(prezzo, /^[1-9][0-9]{0,3}$/);
+  checkItem(prezzo, /(^(\€|\$)?0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?$)|(^0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?(\€|\$)?$)/);
 }
