@@ -691,18 +691,17 @@ fieldset{
 .HomeBox{
     padding:2em 1em 2em 1em;
     
-    
-    max-width:25%;
-    display:inline-block;
+    max-width: 300px;
+    height:20em;
     margin:auto;
 }
 
-.HomeBox #middle{
-    border: 1px solid grey;
-}
+
 
 #subContent{
     padding:1em;
+    display:flex;
+    flex-direction: row;
 }
 
 #txContent p {
@@ -736,30 +735,10 @@ p.required {
 
 /* BREAKPOINTS */
 
-@media only screen and (max-width: 1100px) {
 
 
-    #txContent{
-        max-width:100%;
-        text-align:center;
-      }
-    
-      
-      #subContent .HomeBox{
-          max-width:100%;
-          border:0em;
-          padding: 0.5em 0 0.5em 0;
-          display: flex;
-          flex-direction: column;    
-      }
-    
-      .HomeBox{
-          width:80%;
-          margin:auto;
-      } 
-    
-    
-    }
+
+   
 @media only screen and (max-width: 1100px) {
     *{
         font-size: 1.35rem;
@@ -848,4 +827,30 @@ p.required {
         width: 35%;
     }
 
-  }
+  
+
+   #txContent{
+        max-width:100%;
+        text-align:center;
+      }
+    
+      
+      #subContent .HomeBox{
+          max-width:100%;
+          border:0em;
+          padding: 0.5em 0 0.5em 0;
+      }
+    
+      .HomeBox{
+          width:80%;
+          margin:auto;
+      } 
+
+      #subContent{
+        display: flex;
+        flex-direction: column; 
+        
+    }
+    
+    
+    }
