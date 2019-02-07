@@ -5,7 +5,7 @@ window.onload=function()
   document.getElementById("openNavButton").addEventListener("click",openNavbar);
   document.getElementById("close").addEventListener("click",closeNavbar);
 
-  // *********** validazione campi Registrazione ********
+  // *********** validazione campi Registrazione ******** //
   if(document.getElementById("registerForm") != null)
   {
       items = [
@@ -17,8 +17,6 @@ window.onload=function()
       "nascita",
       "repeatpassword"
     ];
-
-    //aggiungo un controllo mentre i dati vengono modificati
     items.forEach(function(item){
       document.getElementById(item).addEventListener("focus",checkRegisterInput);
     });
@@ -27,7 +25,7 @@ window.onload=function()
     disableForm(items,"registerForm",checkRegisterInput);
   }
 
-  /* validazione login */
+  // ************ validazione login ********* //
   if(document.getElementById("loginForm") != null)
   {
     items = [
@@ -37,13 +35,27 @@ window.onload=function()
     items.forEach(function(item){
       document.getElementById(item).addEventListener("focus",checkLoginInput);
     });
-
     disableForm(items,"loginForm",checkLoginInput);
   }
-
+// ********* Validazione inserimento libri *******************/
   if(document.getElementById("insertBox") != null)
   {
-    //..validazione inserimento libri
+    items = [
+      "insertEdizione",
+      "insertAnno",
+      "insertISBN",
+      "insertPrezzo",
+      "insertTitolo",
+      "insertAutore",
+      "insertCasaEditrice",
+      "insertCorso"
+      ];
+    document.getElementById("listato").addEventListener("change", changeBooksInput);
+    document.getElementById("personale").addEventListener("change", changeBooksInput);
+    items.forEach(function(item){
+      document.getElementById(item).addEventListener("focus",checkBookInput);
+    });
+    disableForm(items,"insertBox",checkBookInput);
   }
 
   //nascondere/mostrare le opzioni per il libro listato (inserisci.html)
@@ -54,9 +66,36 @@ window.onload=function()
     document.getElementById("personale").addEventListener("click", formselector);
   }
 
+}//end window.onload()
+
+/*
+  changeBooksInput cambia i campi obbligatori per "inserisci.html" 
+*/
+function changeBooksInput()
+{
+  items = [
+    "insertTitolo",
+    "insertAutore",
+    "insertCasaEditrice",
+    "insertCorso"
+  ];
+  items.forEach(function(item){
+    var itemClass = document.getElementById(item).classList;
+    if(itemClass.contains("required"))
+    {
+      removeErrorBox(document.getElementById(item), true);
+      document.getElementById(item).value = "";
+      itemClass.remove("required");
+    }else
+    {
+      itemClass.add("required");
+    }
+  });
 }
  
-/*  nascondere/mostrare la navbar */
+/*  
+  nascondere/mostrare la navbar 
+*/
   function openNavbar()
   {
     var nav = document.getElementById("navbar");
@@ -70,37 +109,37 @@ window.onload=function()
   }
   
 
-  /*
-    se una password ripetuta non è corretta segnala un errore
-  */
-  function checkRepeatPassword(password,rpassword)
+/*
+  se una password ripetuta non è corretta segnala un errore
+*/
+function checkRepeatPassword(password,rpassword)
+{
+  if(!rpassword.value == '')
   {
-    if(!rpassword.value == '')
+    if(! (password.value == rpassword.value))
     {
-      if(! (password.value == rpassword.value))
-      {
-        setErrorBox(rpassword);
-        return false;
-      }
-    }
-    removeErrorBox(rpassword);
-    return true;
-  }
-
-  /*
-    se l'item non rispetta l'espressione regolare (RE) => segnala un errore
-    altrimenti => rimuovi la segnalazione (se presente)
-  */
-  function checkItem(item, re)
-  {
-    if(!item.value == '' && !re.test(item.value))
-    {
-      setErrorBox(item);
+      setErrorBox(rpassword);
       return false;
     }
-    removeErrorBox(item);
-    return true;
   }
+  removeErrorBox(rpassword);
+  return true;
+}
+
+/*
+  se l'item non rispetta l'espressione regolare (RE) => segnala un errore
+  altrimenti => rimuovi la segnalazione (se presente)
+*/
+function checkItem(item, re)
+{
+  if(!item.value == '' && !re.test(item.value))
+  {
+    setErrorBox(item);
+    return false;
+  }
+  removeErrorBox(item, true);
+  return true;
+}
 
   /*
     come checkItem, ma specifico per la data
@@ -156,13 +195,31 @@ function setErrorBox(box)
           break;
     case 'loginEmail': boxName = 'email';
           break;
+    case 'insertTitolo': boxName = 'titolo';
+          break;
+    case 'insertAutore': boxName = 'autore';
+          break;
+    case 'insertCasaEditrice': boxName = 'casa editrice';
+          break;
+    case 'insertCorso': boxName = 'corso';
+          break;
+    case 'insertEdizione': boxName = 'edizione';
+          break;
+    case 'insertAnno': boxName = 'anno';
+          break;
+    case 'insertISBN': boxName = 'isbn';
+          break;
+    case 'insertPrezzo': boxName = 'prezzo';
   }
-
   var legend = document.getElementsByTagName("legend")[0];
-  if(boxName == 'password' || boxName == 'email' || boxName == 'nascita')
+  if(boxName == 'password' || boxName == 'email' || boxName == 'nascita' || boxName == 'casa editrice' || boxName == 'edizione')
   {
-   var lastLetter = 'a';
-   var firstLetter = 'La';
+   lastLetter = 'a';
+   firstLetter = 'La';
+  }
+  if(boxName == 'isbn' || boxName == 'anno' || boxName == 'email' || boxName == 'edizione')
+  {
+    firstLetter = "L'";
   }
   legend.outerHTML += (boxName == 'repeatpassword')? 
     "<p class='errorLine' id='errorMessage"+ box.id +"'>Le password non coincidono.</p>": /* true */
@@ -170,9 +227,9 @@ function setErrorBox(box)
 
 }
 
-function removeErrorBox(box)
+function removeErrorBox(box, emptyAllowed = false)
 {
-  if(box.value == "" || !box.classList.contains('errorBox'))
+  if((box.value == "" && emptyAllowed == false) || !box.classList.contains('errorBox'))
   {
       return false;
   }
@@ -181,12 +238,6 @@ function removeErrorBox(box)
   box.classList.remove('errorBox');
   return true;
 }
-
-/*
-  Validazione campi inserimento libro
-*/
-
-
 
 /* funzione per inserisci.html */
 function formselector()
@@ -237,27 +288,52 @@ function checkRegisterInput()
 
 }
 
-  /* validazione login */
-  function disableForm(elements, form, funzioneValidazione){
+/*
+  disabilita un form se gli elementi non validano la funzione di validazione
+
+*/
+function disableForm(elements, form, funzioneValidazione)
+{
   if(document.getElementById(form) != null)
   {
-    elements.forEach(el => function(){
-      document.getElementById(el).addEventListener("focus",funzioneValidazione);
+    elements.forEach(function(el){
+      document.getElementById(el).addEventListener("focus", funzioneValidazione);
     });
-    document.getElementById(form).addEventListener("submit",function(event){
-    funzioneValidazione();
+    document.getElementById(form).addEventListener("submit", function(event){
+      funzioneValidazione();
 
-    var items = elements.map(el => function(item){
-      return document.getElementById(item);
-    });
-    // controllo campi sono vuoti e segnalazione errore. 
-    items.filter(el => el.value == 0)
-      .forEach(element => setErrorBox(element));
+      if(elements.includes("repeatpassword"))
+        elements.splice( elements.indexOf("repeatpassword"), 1 );
+
+      var items = elements.map(function(item){
+        return document.getElementById(item);
+      });
+      // controllo campi sono vuoti e segnalazione errore. 
+      items.filter(el => (el.classList.contains("required") && el.value == ""))
+        .forEach(element => setErrorBox(element));
       errors = document.getElementsByClassName("errorLine");
-    if (!errors.length==0)
-    {
-      event.preventDefault();
-    }
+      if (!errors.length==0)
+      {
+        event.preventDefault();
+      }
     });
   }
+}
+/*
+  Validazione campi inserimento libro
+*/
+function checkBookInput()
+{
+  var autore = document.getElementById("insertAutore");
+  var corso = document.getElementById("insertCorso");
+  var edizione = document.getElementById("insertEdizione");
+  var anno = document.getElementById("insertAnno");
+  var isbn = document.getElementById("insertISBN");
+  var prezzo = document.getElementById("insertPrezzo");
+  checkItem(autore, /^[a-zA-Z]{3,16}$/);
+  checkItem(corso, /^[a-zA-Z]{2,16}$/);
+  checkItem(edizione, /^[a-zA-Z0-9]{3,16}$/);
+  checkItem(anno, /^(1|2)[0-9]{3}$/);
+  checkItem(isbn, /^[0-9]{13}$/);
+  checkItem(prezzo, /^[1-9][0-9]{0,3}$/);
 }

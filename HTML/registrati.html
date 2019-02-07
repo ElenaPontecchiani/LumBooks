@@ -40,13 +40,13 @@
    <p class="required">Password da 6 a 16 caratteri, fra cui almeno una maiuscola e un simbolo</p>   
    <legend>Dati personali</legend>
       <label for="email">*Email</label>
-      <input type="email" name="email" id="email" tabindex="1"/>
+      <input type="email" name="email" id="email" class="required" tabindex="1"/>
       <label for="nome">*Nome</label>
-      <input type="text" name="nome" id="nome" tabindex="2"/>
+      <input type="text" name="nome" id="nome" class="required" tabindex="2"/>
       <label for="cognome">*Cognome</label>
-      <input type="text" name="cognome" id="cognome" tabindex="3"/>
+      <input type="text" name="cognome" id="cognome" class="required" tabindex="3"/>
       <label for="cel">*Numero di telefono</label>
-      <input type="text" name="cel" id="cel" tabindex="4"/>
+      <input type="text" name="cel" id="cel" class="required" tabindex="4"/>
       <label for="sesso">*Sesso</label>
       <select name="sesso" form="registerForm" id="sesso" tabindex="5">
          <option value="M" selected="selected">Uomo</option>
@@ -54,11 +54,11 @@
          <option value="N">Non Specificato</option>
       </select>
       <label for="nascita">*Data di nascita</label>
-      <input type="date" name="nascita" id="nascita" tabindex="6">
+      <input type="date" name="nascita" id="nascita" class="required" tabindex="6">
       <label for="fileToUpload">Profile Pic</label>
       <input type="file" name="fileToUpload" id="fileToUpload" tabindex="7">
       <label for="password">*Password</label>
-      <input type="password" name="password" id="password" tabindex="8"/>
+      <input type="password" name="password" id="password" class="required" tabindex="8"/>
       <label for="ripeatpassword">*Ripeti password</label>
       <input type="password" name="repeatpassword" id="repeatpassword" tabindex="9"/>
       <input type="submit" id="registerSubmit" value="Registrati" class="button internal-button"/>
