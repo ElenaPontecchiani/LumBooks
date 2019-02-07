@@ -671,7 +671,15 @@ fieldset{
     color: rgb(83, 83, 83); 
     box-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
     background-color:white;
+    text-align: center;
 }
+
+#HomeImage{ 
+    max-width: 100%;   
+    height: auto;
+}
+
+
 
 #txContent h2 {
     color: #034b72;
@@ -680,8 +688,25 @@ fieldset{
     
 }
 
+.HomeBox{
+    padding:2em 1em 2em 1em;
+    
+    
+    max-width:25%;
+    display:inline-block;
+    margin:auto;
+}
+
+.HomeBox #middle{
+    border: 1px solid grey;
+}
+
+#subContent{
+    padding:1em;
+}
+
 #txContent p {
-    margin:2.5em auto 2.5em auto;
+    margin:1.7em auto 1.7em auto;
     font-size: 1.5em;
 }
 
@@ -697,24 +722,44 @@ fieldset{
     display:inline-block;
 }
 
+#last_offers{
+    margin:0.7em auto 0.7em auto;
+}
+
 p.required {
     font-size: 0.8em;
     color: #4d4d4d;
     font-style: italic;
 }
 
+
+
 /* BREAKPOINTS */
 
 @media only screen and (max-width: 1100px) {
 
 
-  #txContent{
-    max-width:100%;
-    text-align:left;
-  }
-}
-
-
+    #txContent{
+        max-width:100%;
+        text-align:center;
+      }
+    
+      
+      #subContent .HomeBox{
+          max-width:100%;
+          border:0em;
+          padding: 0.5em 0 0.5em 0;
+          display: flex;
+          flex-direction: column;    
+      }
+    
+      .HomeBox{
+          width:80%;
+          margin:auto;
+      } 
+    
+    
+    }
 @media only screen and (max-width: 1100px) {
     *{
         font-size: 1.35rem;
