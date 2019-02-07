@@ -790,4 +790,16 @@ p.required {
         margin: 0;
     }
 
+    .search_item{
+        width: 100%;
+    }
+
+    .search_spec{
+        width: 60%;
+    }
+
+    img.libro, .libro_fake{
+        width: 35%;
+    }
+
   }
