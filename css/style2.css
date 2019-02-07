@@ -461,16 +461,16 @@ textarea#insertDescrizione{
     margin-bottom: 2em;
   }
 
-  #vendor_info{
+  #vendor_info {
     width: fit-content;
     height: 5em;
-    box-shadow: 0.2em 0.1em 1em black;
     border-radius: 0.3em;
+    border: 0.05em solid grey;
     position: absolute;
     top: 0;
     right: 0;
     margin: 3em;
-  }
+}
 
   #vendor_pic{
     height: inherit;
@@ -742,13 +742,13 @@ p.required {
 
     /* bottoni per aprire e chiudere la navbar: */    
     .closeNav{
-        height: 3em;
+        height: 4em;
         visibility: visible;
     }
 
     #close {
-        width: 2em;
-        height: 2em;
+        width: 3em;
+        height: 3em;
         position: absolute;
         top:0.5em;
         right:0.5em;
@@ -758,16 +758,16 @@ p.required {
     }
     #close:after {
         content: '';
-        height: 2em;
-        border-left: 0.4em solid #1076bc;
+        height: 3em;
+        border-left: 0.4em solid #333;
         position: absolute;
         transform: rotate(45deg);
     }
     
     #close:before {
         content: '';
-        height: 2em;
-        border-left: 0.4em solid #1076bc;
+        height: 3em;
+        border-left: 0.4em solid #333;
         position: absolute;
         transform: rotate(-45deg);
     }
