@@ -32,7 +32,7 @@ h1{
     font-size: 1.9em;
     color: #000000;
     position: relative;
-    top: 0.15em;
+    vertical-align: middle;
 }
   
 h2{
@@ -52,21 +52,19 @@ h2{
 }
 
 header *{
-    display: inline-block;
-    position: relative;
-    top: 0;
-    
+    display: inline-block;    
 }
 
 #logo_lumbooks {
     height: 2em;
+    margin-left:1em;
+    vertical-align: middle;
 }
 
 #header_login {
-    right: 0;
-    top: 0;
     position: absolute;
-    padding:1em;
+    right: 1em;
+    top: 0.8em;
 }
 header a{
     padding: 0 0.5em;
@@ -132,6 +130,8 @@ ul {
 /* da desktop non serve nascondere la navbar */
 #openNavButton {
     display: none;
+    margin-left: 1em;
+    vertical-align: middle;
 }
 
 nav #stdbar li a{
