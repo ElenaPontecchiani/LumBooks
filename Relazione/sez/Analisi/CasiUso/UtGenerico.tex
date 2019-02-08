@@ -1,0 +1,112 @@
+Definiamo \textit{generico} un utente che:
+\begin{itemize}
+	\item visita il sito senza possedere un account Lumbooks;
+	\item visita il sito senza effettuare la login;
+\end{itemize}
+
+L'utente generico dispone dei seguenti casi d'uso:
+\begin{itemize}
+	\item \hyperref[par:VisHome]{Visualizzazione Homepage del sito (\ref{par:VisHome}});
+	\item \hyperref[par:VisLibriVendita]{Visualizzazione dei libri correntemente in vendita nel sito (\ref{par:VisLibriVendita}});
+	\item \hyperref[par:VisLibriCatalogo]{Visualizzazione dei libri appartenenti al catalogo del sito(\ref{par:VisLibriCatalogo}});
+	\item \hyperref[par:RicercaLibro]{Ricerca di uno specifico libro tra quelli in vendita (\ref{par:RicercaLibro}});
+	\item \hyperref[par:VisAbout]{Visualizzazione pagina "Chi siamo" (\ref{par:VisAbout}});	
+	\item \hyperref[par:Reg]{Registrazione (\ref{par:Reg}});
+	\item \hyperref[par:Login]{Login (\ref{par:Login}}).
+\end{itemize}
+
+
+\paragraph{Visualizzazione Homepage del sito}\mbox{}\\
+\label{par:VisHome}
+L'utente generico può entrare nella Homepage in diversi modi:
+\begin{itemize}
+	\item Se è appena entrato nel sito è la prima pagina che viene visualizzata;
+	\item Se si trova in un'altra pagina, può raggiungere la Homepage cliccando la sezione "Home" nella navbar;
+	\item Se si trova in un'altra pagina, può raggiungere la Homepage cliccando sopra la scritta "Lumbooks" presente nell'header;
+\end{itemize}
+All'interno di questa pagina l'utente può apprendere le principali funzionalità del sito e visionare le ultime offerte inserite inserite (nell'apposita sezione in basso "Le nostre ultime offerte!")
+
+
+
+\paragraph{Visualizzazione dei libri correntemente in vendita}\mbox{}\\
+\label{par:VisLibriVendita}
+L'utente generico entra nella pagina di visualizzazione dei libri in vendita cliccando la sezione "in vendita" presente nella navbar".\\
+I libri visualizzati in questa sezione possono essere appartenenti al catalogo Lumbooks o esterni a esso. A seconda della tipologia di libro vi sono delle caratteristiche obbligatorie e altre opzionali. Ogni libro quindi è visualizzato all'interno di una scheda, che ne contiene le seguenti caratteristiche (a prescindere che si tratti di un libro appartenete al catalogo o meno):
+\begin{itemize}
+	\item Titolo (obbligatorio, sempre presente);
+	\item Autore (obbligatorio, sempre presente);
+	\item Prezzo (obbligatorio, sempre presente);
+	\item ISBN (presente opzionalmente);
+	\item Foto del libro (presente opzionalmente);
+\end{itemize}
+Nel caso l'utente volesse ulteriori informazioni su un determinato libro, il titolo del libro presente nella scheda è un link che indirizza a un'altra pagina, dove sono visualizzati in maniera più specifica le caratteristiche del libro. Tra le caratteristiche aggiuntive in questa pagina possiamo trovare:
+\begin{itemize}
+	\item Editore;
+	\item Che tipo di materiale di studio è (libro, dispense..);
+	\item Anno di pubblicazione;
+	\item Edizione;
+	\item Casa editrice;
+	\item Una breve descrizione del libro;
+\end{itemize}
+
+\paragraph{Visualizzazione dei libri del catalogo}\mbox{}\\
+\label{par:VisLibriCatalogo}
+L'utente generico entra nella pagina di visualizzazione dei libri appartenenti al catalogo LumBooks cliccando la sezione "catalogo" presente nella navbar".\\
+All'interno della pagina sono visualizzati i libri del catalogo, all'interno di schede analoghe a quelle riportate nella pagina "In vendita".\\
+Le caratteristiche qui riportate per ogni libro sono:
+\begin{itemize}
+	\item Titolo;
+	\item Autore;
+	\item Casa editrice;
+	\item Corso a cui fanno riferimento;
+\end{itemize}
+Anche in questa pagina il titolo del libro presente in ogni scheda è un link: cliccandolo si viene reindirizzati alla pagina "risultati della ricerca", che visualizza tutti i libri in vendita corrispondenti al libro di catalogo di cui si è selezionato il titolo. Per esempio se clicco il titolo del libro "Programmazione: semplice è bello" vengo reindirizzato alla pagina di risultati che visualizza tutte le offerte di questo libro presenti nel sito.
+
+\paragraph{Ricerca di un libro tra quelli in vendita}\mbox{}\\
+\label{par:RicercaLibro}
+L'utente generico entra nella pagina di ricerca dei libri in vendita cliccando la sezione "Cerca un libro" presente nella navbar".\\
+La pagina offre all'utente un motore di ricerca statico che permette di ricercare determinati materiali all'interno del sito.\\
+I parametri per la ricerca sono:
+\begin{itemize}
+	\item Titolo;
+	\item Autore;
+	\item Corso;
+	\item Editore;
+	\item ISBN;
+	\item Parola chiave;
+\end{itemize}
+L'utente può decidere quali campi compilare a seconda del grado di precisione della ricerca che vuole effettuare: nessun campo è a compilazione obbligatoria. Inoltre la compilazione dei campi non è case sensitive.\\
+Una volta compilati i campi l'utente preme il tasto "Cerca" ed effettua la ricerca. Gli esiti possibili sono due:
+\begin{itemize}
+	\item La ricerca è andata a buon fine, quindi viene visualizzata una pagina contenente tutti i risultati corrispondenti a tale ricerca. La modalità di visualizzazione dei risultati è analoga a quella presente nella sezione "in vendita": ogni libro è contenuto in una scheda che ne descrive le caratteristiche.;
+	\item La ricerca non sortisce risulati: non esistono corrispondenze per la ricerca effettuata: viene visualizzato un seganle di errore che invita a eseguire un'altra ricerca;
+	
+\end{itemize}
+
+\paragraph{Visualizzazione pagina "Chi siamo"}\mbox{}\\
+\label{par:VisAbout}
+L'utente generico entra nella pagina di visualizzazione dei libri in vendita cliccando la sezione "chi siamo" presente nella navbar".\\
+All'interno di questa pagina statica sono contenute le informazioni riguardanti i componenti del gruppo e la nascita del progetto Lumbboks.
+
+\paragraph{Registrati}\mbox{}\\
+\label{par:Reg}
+L'utente generico entra nella pagina di registrazione cliccando la sezione "Registrati" presente nell'header".\\
+La pagina offre all'utente generico la possibilità di creare il proprio account personale LumBooks. Un utente può possedere più account LumBooks, a patto che vengano registrati con email diverse.\\
+Per effettuare la registrazione l'utente deve inserire una serie di dati, alcuni obbligatori (quelli contrassegnati con *) e altri opzionali. al termine dell'inserimento l'utente preme il tasto registrati, e gli esiti possibili sono due:
+\begin{itemize}
+	\item La registrazione è andata a buon fine, l'inserimento dei dati è avvenuto in maniera corretta. Viene visualizzato un messaggio che indica che l'operazione si è conclusa correttamente e si viene reindirizzati alla homepage ;
+	\item La registrazione non è andata a buon fine, e questo può essere dovuto a diverse motivazioni. Se i dati inseriti non sono corretti (per esempio email nel formato sbagliato, ripetizione della password non coincide) vengono visualizzati dei messaggi di errore che indicano il/i problemi e in seguito si invita a reinserire i dati sbagliati (i dati inseriti correttamente rimangono nei campi di compilazione);
+\end{itemize}
+
+\paragraph{Login}\mbox{}\\
+\label{par:Login}
+L'utente generico entra nella pagina di login cliccando la sezione "Accedi" presente nell'header".\\
+La pagina offre all'utente già in possesso di un account Lumbooks la possibilità di accedervi, inserendo le proprie credenziali (email e password). Gli esiti dell'inserimento possono essere due:
+\begin{itemize}
+	\item L'inserimento dei dati è corretto; l'utente accede correttamente al suo account Lumbooks. Al termine dell'inserimento viene reindirizzato alla Homepage;
+	\item L'inserimento dei dati non è corretto; l'utente non accede al suo account Lumbooks. Possono essere diverse le casistiche che portano a tale risultato: password e/o email non corretta. In ogni caso viene indicato all'utente qual'è il problema, attraverso appositi messaggi di errore. 
+\end{itemize}
+L'inserimento inoltre contiene un controllo per quanto riguarda l'inserimento dell'email: viene controllato che il formato sia effetivamente quello di un email, e in caso contrario viene segnalato all'utente.
+
+
+
