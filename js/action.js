@@ -200,8 +200,6 @@ function checkNascita(date)
   removeErrorBox(date);
   return true;
 }
-
-
 function setErrorBox(box)
 {
   if(box.classList.contains('errorBox'))

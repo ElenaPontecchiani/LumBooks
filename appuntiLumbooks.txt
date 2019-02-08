@@ -16,4 +16,3 @@ modificare la definition list sul searchitem
 	<li><em>Autore</em>File</li>
 Ombre
 hover ingrandisce immagine*
-messaggistica
