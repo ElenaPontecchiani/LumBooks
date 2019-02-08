@@ -28,7 +28,7 @@ header {
     justify-content: space-between;
 }  
 h1{
-    font-weight: 250;
+    font-weight: 200;
     font-size: 1.9em;
     color: #000000;
     position: relative;
@@ -96,7 +96,7 @@ header a{
 
 .internal-button{
     cursor: pointer;
-    font-weight: 450;
+    font-weight: 400;
     padding: 0.2em 0.3em;
     float: initial;
     margin-left:0;
@@ -144,9 +144,6 @@ nav #stdbar li a{
 }
 
 
-nav ul li a:visited{
-    color: auto;
-}
 nav #stdbar li a:hover{
     background-color: #0277bd;
     color: white;   
@@ -247,7 +244,6 @@ footer {
 }
 
 #footer-social li {
-    float: center;
     display: inLine;
     padding: 0.5em;
     text-decoration: none;
@@ -593,7 +589,6 @@ li.search_item.with_bt {
   
 .subtitle{
     font-weight: 600 !important;
-    font-style:bold;
 }
 
 legend{
