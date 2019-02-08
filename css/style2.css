@@ -612,7 +612,7 @@ fieldset{
     padding:2.5em;
 }
 #loginBox,#registerBox,#searchBox,
-#insertBox,#catalogueBox, #aboutBox,
+#insertBox,#modifyBox,#catalogueBox, #aboutBox,
 #dataBox,.mostra-libri{
     display: flex;
     flex-direction: column;
@@ -690,9 +690,6 @@ fieldset{
 
 .HomeBox{
     padding:2em 1em 2em 1em;
-   
-    height:20em;
-    margin:auto;
 }
 
 
@@ -796,7 +793,7 @@ p.required {
     }
 
     #bookBox,#loginBox,#registerBox,#searchBox,
-    #insertBox,#catalogueBox, #aboutBox,
+    #insertBox,#modifyBox,#catalogueBox, #aboutBox,
     #dataBox,.mostra-libri,#outerbox,section{
         max-width: none;
         padding: 1em;
@@ -809,7 +806,7 @@ p.required {
         position: initial;
         margin: 0;
     }
-    .content-mid,#insertBox,#registerForm{
+    .content-mid,#insertBox,#modifyBox,#registerForm{
         padding:0;
         margin: 0;
     }

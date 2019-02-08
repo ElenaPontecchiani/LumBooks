@@ -11,8 +11,6 @@ $bdate = $_POST["nascita"];
 $pw = $_POST["password"];
 $cel = $_POST["cel"];
 
-
-//DA VALIDARE TUTTI I CAMPI
 try{
   $errore = "--val--";
   sqlWrap::input_escape(array(&$mail,&$name,&$fname,&$sex,&$bdate,&$pw,&$cel));
