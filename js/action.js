@@ -1,3 +1,14 @@
+// espressioni regolari per la validazione dei campi 
+const RE_PASSWORD = /^(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!.@#$%^&*]{6,16}$/;
+const RE_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const RE_NOME = /^[a-zA-Z]{3,16}$/;
+const RE_TEL = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+const RE_AUTORE = /^[a-zA-Z ]{3,32}$/;
+const RE_CORSO = /^[a-zA-Z0-9 ]{2,64}$/;
+const RE_EDIZIONE= /^[a-zA-Z0-9 ]{3,32}$/;
+const RE_ANNO = /^(1|2)[0-9]{3}$/;
+const RE_ISBN = /^[0-9]{13}$/;
+const RE_PREZZO = /(^(\€|\$)?0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?$)|(^0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?(\€|\$)?$)/;
 window.onload=function()
 {
 
@@ -160,33 +171,33 @@ function checkItem(item, re)
 }
 
   /*
-    come checkItem, ma specifico per la data
+    come checkItem, ma specifico per una data
   */
-function checkNascita(data)
+function checkNascita(date)
 {
-  if(!data.value == '')
+  if(!date.value == '')
   {
     correct = true;
     //controllo iniziale, data generica
-    var re = /^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](19|20)[0-9]{2})|$/;
-    if (!re.test(data.value))
+    var re = /(^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](19|20)[0-9]{2})$)|(^(19|20)[0-9]{2}[\- \/.](0[1-9]|1[012])[\- \/.](0[1-9]|[12][0-9]|3[01])$)/;
+    if (!re.test(date.value))
     {
       correct = false;
     }
     //controllo 31 02,04-06... e febbraio
-    re = /^(31.(0[2469]|11).....)|(30.02.....)$/;
-    if(re.test(data.value))
+    re = /^(31.(0[2469]|11).....)$|^(30.02.....)$|^(.....(0[2469]|11).31)$|^(.....02.30)$/;
+    if(re.test(date.value))
     {
       correct = false;
     }
     //return : true se tutti i controlli passano
     if(!correct)
     {
-      setErrorBox(data);
+      setErrorBox(date);
       return false;
     }
   }
-  removeErrorBox(data);
+  removeErrorBox(date);
   return true;
 }
 
@@ -230,7 +241,7 @@ function setErrorBox(box)
     case 'insertPrezzo': boxName = 'prezzo';
   }
   var legend = document.getElementsByTagName("legend")[0];
-  if(boxName == 'password' || boxName == 'email' || boxName == 'nascita' || boxName == 'casa editrice' || boxName == 'edizione')
+  if(boxName == 'password' || boxName == 'email' || boxName == 'nascita' || boxName == 'casa editrice' || boxName == 'edizione' || boxName == 'data')
   {
    lastLetter = 'a';
    firstLetter = 'La';
@@ -295,20 +306,20 @@ function checkRegisterInput()
   var cognome = document.getElementById("cognome");
   var nascita = document.getElementById("nascita");
   var repeatpassword = document.getElementById("repeatpassword");
-
-  checkItem(password,/^(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!.@#$%^&*]{6,16}$/);
-  checkItem(email, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-  checkItem(nome, /^[a-zA-Z]{3,16}$/);
-  checkItem(cognome, /^[a-zA-Z]{3,16}$/);
+  checkItem(password,RE_PASSWORD);
+  checkItem(email, RE_EMAIL);
+  checkItem(nome, RE_NOME);
+  checkItem(cognome, RE_NOME);
+  checkItem(tel, RE_TEL);
   checkNascita(nascita);
-  checkItem(tel, /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/);
   checkRepeatPassword(password,repeatpassword);
-
 }
 
 /*
   disabilita un form se gli elementi non validano la funzione di validazione
-
+  parametri: elements => id degli elementi da validare
+            form => form da disabilitare
+            funzioneValidazione => funzione che valida gli elementi 
 */
 function disableForm(elements, form, funzioneValidazione)
 {
@@ -338,7 +349,7 @@ function disableForm(elements, form, funzioneValidazione)
   }
 }
 /*
-  Validazione campi inserimento libro
+  Validazione dei campi inserimento libro
 */
 function checkBookInput()
 {
@@ -348,10 +359,10 @@ function checkBookInput()
   var anno = document.getElementById("insertAnno");
   var isbn = document.getElementById("insertISBN");
   var prezzo = document.getElementById("insertPrezzo");
-  checkItem(autore, /^[a-zA-Z ]{3,32}$/);
-  checkItem(corso, /^[a-zA-Z0-9 ]{2,64}$/);
-  checkItem(edizione, /^[a-zA-Z0-9 ]{3,32}$/);
-  checkItem(anno, /^(1|2)[0-9]{3}$/);
-  checkItem(isbn, /^[0-9]{13}$/);
-  checkItem(prezzo, /(^(\€|\$)?0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?$)|(^0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?(\€|\$)?$)/);
+  checkItem(autore, RE_AUTORE);
+  checkItem(corso, RE_CORSO);
+  checkItem(edizione, RE_EDIZIONE);
+  checkItem(anno, RE_ANNO);
+  checkItem(isbn, RE_ISBN);
+  checkItem(prezzo, RE_PREZZO);
 }
