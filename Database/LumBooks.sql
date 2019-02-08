@@ -28,9 +28,7 @@ CREATE TABLE Libri_In_Vendita(
 
     Titolo varchar(50) not null,
     Autore varchar(50)not null,
-
     Venditore int (6)not null references Utente(Codice_Identificativo),
-    Acquirente int (6) references Utente(Codice_Identificativo),
     Prezzo decimal(5,2) not null,
     Data_Aggiunta date not null,
 
