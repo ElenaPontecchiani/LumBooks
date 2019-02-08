@@ -37,7 +37,7 @@ window.onload=function()
     });
     disableForm(items,"loginForm",checkLoginInput);
   }
-// ********* Validazione inserimento libri *******************/
+/************ Validazione inserimento libri *******************/
   if(document.getElementById("insertBox") != null)
   {
     items = [
@@ -56,6 +56,24 @@ window.onload=function()
       document.getElementById(item).addEventListener("focus",checkBookInput);
     });
     disableForm(items,"insertBox",checkBookInput);
+  }
+/************** Validazione modifica libro *************/
+  if(document.getElementById("modifyBox") != null)
+  {
+    items = [
+      "insertEdizione",
+      "insertAnno",
+      "insertISBN",
+      "insertPrezzo",
+      "insertTitolo",
+      "insertAutore",
+      "insertCasaEditrice",
+      "insertCorso"
+      ];
+    items.forEach(function(item){
+      document.getElementById(item).addEventListener("focus",checkBookInput);
+    });
+    disableForm(items,"modifyBox",checkBookInput);
   }
 
   //nascondere/mostrare le opzioni per il libro listato (inserisci.html)
@@ -330,9 +348,9 @@ function checkBookInput()
   var anno = document.getElementById("insertAnno");
   var isbn = document.getElementById("insertISBN");
   var prezzo = document.getElementById("insertPrezzo");
-  checkItem(autore, /^[a-zA-Z]{3,16}$/);
-  checkItem(corso, /^[a-zA-Z]{2,16}$/);
-  checkItem(edizione, /^[a-zA-Z0-9]{3,16}$/);
+  checkItem(autore, /^[a-zA-Z ]{3,32}$/);
+  checkItem(corso, /^[a-zA-Z0-9 ]{2,64}$/);
+  checkItem(edizione, /^[a-zA-Z0-9 ]{3,32}$/);
   checkItem(anno, /^(1|2)[0-9]{3}$/);
   checkItem(isbn, /^[0-9]{13}$/);
   checkItem(prezzo, /(^(\€|\$)?0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?$)|(^0*[1-9][0-9]{0,3}((,|.)[0-9]{0,2}0*)?(\€|\$)?$)/);
