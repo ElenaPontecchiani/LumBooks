@@ -105,7 +105,7 @@ class htmlMaker{
         if(isset($_SESSION['email']) && $_SESSION['email'] == "admin@admin.com"){
             $nav_return .=  '<li class=""><a href="admin.php">Pannnello Amministratore</a></li>'."\n";
           }
-        $nav_return .=  '<li class=""><a href="about.php">Chi Siamo</a></li>'."\n";
+        $nav_return .=  '<li class=""><a href="about.php" accesskey="c">(C)hi Siamo</a></li>'."\n";
         $nav_return .=  '</ul>'."\n";
         //$nav_return .=  file_get_contents("../HTML/modules/footer.html");
         $nav_return .=  '</nav>'."\n";
