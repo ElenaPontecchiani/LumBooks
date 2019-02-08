@@ -738,6 +738,12 @@ p.required {
     *{
         font-size: 1.35rem;
     }
+
+    #map-position {
+        background-color: #0277bd;
+        padding: 0.4em;
+        color: white;
+    }
     
     #openNavButton {
         display: inline-block;
