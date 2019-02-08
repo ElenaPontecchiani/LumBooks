@@ -466,10 +466,7 @@ textarea#insertDescrizione{
     height: 5em;
     border-radius: 0.3em;
     border: 0.05em solid grey;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 3em;
+    margin: 1em;
 }
 
   #vendor_pic{
@@ -536,6 +533,7 @@ textarea#insertDescrizione{
   .search_item p{
       margin-left: 0.5em;
       text-transform: capitalize;
+      text-align: left;
   }
   .search_item a{
       font-weight: 600;
@@ -543,6 +541,7 @@ textarea#insertDescrizione{
       margin-left: 0em;
       padding-left: 0.5em;
       padding-top: 0.5em;
+      text-align: left;
   }
 
   .search_item .ISBN{
@@ -700,7 +699,7 @@ fieldset{
     flex-direction: row;
 }
 
-#txContent p {
+#txContent .blurb {
     margin:1.7em auto 1.7em auto;
     font-size: 1.5em;
 }
@@ -738,6 +737,12 @@ p.required {
 @media only screen and (max-width: 1024px) {
     *{
         font-size: 1.35rem;
+    }
+
+    #map-position {
+        background-color: #0277bd;
+        padding: 0.4em;
+        color: white;
     }
     
     #openNavButton {
