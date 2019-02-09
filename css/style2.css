@@ -684,7 +684,6 @@ fieldset{
 
 .HomeBox{
     padding:2em 1em 2em 1em;
-    margin: auto;
 }
 
 
@@ -693,6 +692,7 @@ fieldset{
     padding:1em;
     display:flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 #txContent .blurb {
