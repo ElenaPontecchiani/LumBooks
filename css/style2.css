@@ -668,9 +668,9 @@ fieldset{
     text-align: center;
 }
 
-#HomeImage{ 
-    max-width: 100%;   
-    height: auto;
+.HomeImage{ 
+    width: 15em;   
+    height: 15em;
 }
 
 
