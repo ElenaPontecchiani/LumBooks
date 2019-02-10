@@ -4,8 +4,8 @@ require_once("Backend/sql_wrapper.php");
 require_once("Backend/htmlMaker.php");
 
 //lista corsi e titoli sono array di stringhe
-$lista_corsi = SqlWrap::query("SELECT distinct Corso FROM Libri_Listati",true);
-$lista_titoli = SqlWrap::query("SELECT distinct Titolo FROM Libri_Listati",true);
+$lista_corsi = SqlWrap::query("SELECT distinct Corso FROM Libri_Listati ORDER BY Corso",true);
+$lista_titoli = SqlWrap::query("SELECT distinct Titolo FROM Libri_Listati ORDER BY Titolo",true);
 
 /*creazione html da inserire*/
 //corsi
