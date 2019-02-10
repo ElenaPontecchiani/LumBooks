@@ -94,7 +94,8 @@ window.onload=function()
     document.getElementById("listato").addEventListener("click", formselector);
     document.getElementById("personale").addEventListener("click", formselector);
   }
-  /* regolamento.html */
+  
+  /* mostrare e nascondere regole in regolamento.html */
   if(document.getElementById("ruleBox") != null)
   {
     var input = document.getElementsByTagName("dt");
@@ -292,16 +293,7 @@ function removeErrorBox(box, emptyAllowed = false)
 /* funzione per inserisci.html */
 function formselector()
 {
-  listato = document.getElementById('listato').checked;
-  if(listato)
-  {
-    document.getElementById('inserisci-personale').classList.add("hidden");
-    document.getElementById('inserisci-listato').classList.remove("hidden");
-  }else
-  {
-    document.getElementById('inserisci-listato').classList.add("hidden");
-    document.getElementById('inserisci-personale').classList.remove("hidden");
-  }
+    document.getElementById('inserisci-personale').classList.toggle("hidden");
 }
 
 /* validazione login */
