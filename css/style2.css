@@ -318,6 +318,7 @@ textarea#insertDescrizione{
 
 #registerSubmit,#loginSubmit {
     margin:auto;
+    margin-top:0.5em;
  }
  .hidden{
     /* non togliere */

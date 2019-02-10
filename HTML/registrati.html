@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <title>Registrati - LumBooks</title>
-   <link rel="icon" src="../images/books.svg"/>
+   
    
    <meta name="title" content="Registrati" />
    <meta name="description" content="Pagins di registrazione al sito" />
@@ -36,9 +36,9 @@
    <h1>Crea il tuo account LumBooks!</h1>
    <form id="registerForm" class="innerBox " action="../php/new_user.php" method="post" enctype="multipart/form-data">
    <fieldset>
+   <legend>Dati personali</legend>
    <p class="required">I campi marcati con * sono obbligatori</p> 
    <p class="required">Password da 6 a 16 caratteri, fra cui almeno una maiuscola e un simbolo</p>   
-   <legend>Dati personali</legend>
       <label for="email">*Email</label>
       <input type="email" name="email" id="email" class="required" tabindex="1"/>
       <label for="nome">*Nome</label>
@@ -59,7 +59,7 @@
       <input type="file" name="fileToUpload" id="fileToUpload" tabindex="7">
       <label for="password">*Password</label>
       <input type="password" name="password" id="password" class="required" tabindex="8"/>
-      <label for="ripeatpassword">*Ripeti password</label>
+      <label for="repeatpassword">*Ripeti password</label>
       <input type="password" name="repeatpassword" id="repeatpassword" tabindex="9"/>
       <input type="submit" id="registerSubmit" value="Registrati" class="button internal-button"/>
       </fieldset>
