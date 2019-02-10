@@ -4,7 +4,7 @@ function correctImageOrientation($filename) {
       $exif = exif_read_data($filename);
       if($exif && isset($exif['Orientation'])) {
         $orientation = $exif['Orientation'];
-        if($orientation != 1){
+        if($orientation != 1) {
           $img = imagecreatefromjpeg($filename);
           $deg = 0;
           switch ($orientation) {
@@ -29,11 +29,11 @@ function correctImageOrientation($filename) {
   }
 
 
-function caricaImmagine($nome,$percorso){
+function caricaImmagine($nome,$percorso) {
 //print_r($_FILES);
 $target_dir = $percorso;
 $file = $_FILES['fileToUpload']['name'];
-if($file != ""){
+if($file != "") {
     $target_file = $target_dir . $file;
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

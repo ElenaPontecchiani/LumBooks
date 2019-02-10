@@ -28,7 +28,7 @@ window.onload=function()
       "nascita",
       "repeatpassword"
     ];
-    items.forEach(function(item){
+    items.forEach(function(item) {
       document.getElementById(item).addEventListener("focus",checkRegisterInput);
     });
 
@@ -43,7 +43,7 @@ window.onload=function()
       "loginEmail",
       "inputPsw"
     ];
-    items.forEach(function(item){
+    items.forEach(function(item) {
       document.getElementById(item).addEventListener("focus",checkLoginInput);
     });
     disableForm(items,"loginForm",checkLoginInput);
@@ -63,7 +63,7 @@ window.onload=function()
       ];
     document.getElementById("listato").addEventListener("change", changeBooksInput);
     document.getElementById("personale").addEventListener("change", changeBooksInput);
-    items.forEach(function(item){
+    items.forEach(function(item) {
       document.getElementById(item).addEventListener("focus",checkBookInput);
     });
     disableForm(items,"insertBox",checkBookInput);
@@ -81,7 +81,7 @@ window.onload=function()
       "insertCasaEditrice",
       "insertCorso"
       ];
-    items.forEach(function(item){
+    items.forEach(function(item) {
       document.getElementById(item).addEventListener("focus",checkBookInput);
     });
     disableForm(items,"modifyBox",checkBookInput);
@@ -108,7 +108,7 @@ function changeBooksInput()
     "insertCasaEditrice",
     "insertCorso"
   ];
-  items.forEach(function(item){
+  items.forEach(function(item) {
     var itemClass = document.getElementById(item).classList;
     if(itemClass.contains("required"))
     {
@@ -323,16 +323,16 @@ function disableForm(elements, form, funzioneValidazione)
 {
   if(document.getElementById(form) != null)
   {
-    elements.forEach(function(el){
+    elements.forEach(function(el) {
       document.getElementById(el).addEventListener("focus", funzioneValidazione);
     });
-    document.getElementById(form).addEventListener("submit", function(event){
+    document.getElementById(form).addEventListener("submit", function(event) {
       funzioneValidazione();
 
       if(elements.includes("repeatpassword"))
         elements.splice( elements.indexOf("repeatpassword"), 1 );
 
-      var items = elements.map(function(item){
+      var items = elements.map(function(item) {
         return document.getElementById(item);
       });
       // controllo campi sono vuoti e segnalazione errore. 

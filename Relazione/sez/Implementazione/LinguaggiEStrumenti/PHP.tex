@@ -17,7 +17,7 @@ Il gruppo ha deciso di utilizzare codice PHP rivolto alla struttura del sito, pe
 \end{itemize}
 L'utilizzo del PHP per la struttura ha permesso anche le seguenti caratteristiche:
 \begin{itemize}
-    \item \textbf{Unico header, navbar e footer}: L'header, la navbar e il footer sono gli stessi per ogni pagina. Questo permette una maggiore manuntenibilità del sito, in quanto una modifica a un file si riflette su tutte le pagine del sito web;
+    \item \textbf{Unico header e navbar}: L'header e la navbar sono gli stessi per ogni pagina. Questo permette una maggiore manuntenibilità del sito, in quanto una modifica a un file si riflette su tutte le pagine del sito web;
     \item \textbf{Link circolari:} Un solo codice per tutti i file genera dei link circolari, che vengono rimossi tramite codice PHP (esempio: per rimuovere i link circolari dalla home si utilizza questa funzione: str\_replace('<a href="home.php">','<a>',"\- link alla pagina home \-");
     \item \textbf{Riempire i campi in caso di errore:} se prova a inserire un libro ma ci sono degli errori (che passano i controlli JavaScript), tramite PHP vengono riempiti i campi corretti, permettendo all'utente di non doverli inserire nuovamente;
     \item \textbf{Costruzione card dei libri:} le pagine che contenegono dei libri cambiano a seconda dei libri presenti nel database. Per questo motivo, il file \textit{htmlMaker.php} contiene le funzioni \textit{singleItem} e \textit{singleItemWithButtons} per costruire le card dei libri, a partire da un risultato SQL.

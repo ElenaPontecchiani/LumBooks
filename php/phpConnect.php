@@ -4,7 +4,7 @@ $dbuser = 'admin';
 $dbpass = 'admin';
 $dbhost = 'localhost';
 $connect = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-if($connect->connect_errno){
+if($connect->connect_errno) {
 	echo "Conncection Error";
 	exit();
 }

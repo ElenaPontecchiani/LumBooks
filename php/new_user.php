@@ -59,7 +59,7 @@ try{
   $_SESSION['login'] = true;
   header( "refresh:4; url=home.php" ); 
 }
-catch(Exception $e){
+catch(Exception $e) {
   $optional = null;
   if (preg_match("/^(--val--){1}/", "{$e->getMessage()}"))
     $optional = str_replace("--val--","",$e->getMessage());

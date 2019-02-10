@@ -9,7 +9,7 @@ try{
             $ris = htmlMaker::generateBookCollection($libri);
       else
             $ris = "<p>Sembra che non ci siano libri inseriti nel sito!</p>";
-}catch(Exception $e){
+}catch(Exception $e) {
       $ris = "<p>Sembra che non ci siano libri inseriti nel sito!</p>";
 }
 

@@ -44,7 +44,7 @@ try{
     $dati = [];
     session_start();
 
-    if($scelta_list == "listato"){
+    if($scelta_list == "listato") {
         //caso precompilato
         $dati = SqlWrap::query("SELECT Titolo, Autore, Casa_Editrice,Corso, Codice_identificativo as Codice_identificativo_Libro
                                 FROM Libri_Listati
@@ -76,9 +76,9 @@ try{
     $par1 = "";
     $par2 = "";
     $keys = array_keys($dati);
-    foreach($keys as $key){
+    foreach($keys as $key) {
         $par1 .= $key.",";
-        if($dati[$key]!= null){
+        if($dati[$key]!= null) {
             if (gettype($dati[$key]) != "string")
                 $par2 .= $dati[$key].",";
             else

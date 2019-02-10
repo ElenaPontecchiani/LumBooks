@@ -10,15 +10,15 @@ $lista_titoli = SqlWrap::query("SELECT distinct Titolo FROM Libri_Listati",true)
 /*creazione html da inserire*/
 //corsi
 $opzioni_corsi = "";
-if ($lista_corsi){
-    foreach($lista_corsi as $corso){
+if ($lista_corsi) {
+    foreach($lista_corsi as $corso) {
         $opzioni_corsi .= "<option value=\"$corso\">$corso</option>\n";
     }
 }
 //titoli
 $opzioni_titolo = "";
-if ($lista_titoli){
-    foreach($lista_titoli as $titolo){
+if ($lista_titoli) {
+    foreach($lista_titoli as $titolo) {
         $opzioni_titolo .= "<option value=\"$titolo\">\n";
     }
 }

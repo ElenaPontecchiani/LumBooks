@@ -63,7 +63,7 @@ try{
     //Se viene modificato il titolo o l'autore, il libro non rientra più in catalogo.
     $ref = "";
     if( $vecchio_libro['Titolo'] != $titolo ||
-        $vecchio_libro['Autore'] != $autore){
+        $vecchio_libro['Autore'] != $autore) {
             $ref = "Codice_identificativo_Libro = NULL,";
         }
 

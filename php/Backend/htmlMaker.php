@@ -1,19 +1,19 @@
 <?php
 class htmlMaker{
 
-    public static function generateBookCollection($lista_libri, $lista_bottoni = null){
+    public static function generateBookCollection($lista_libri, $lista_bottoni = null) {
         if (!$lista_libri)
             return "Nessun risultato corripsondente";
 
         $html = "<ul class='books_collection'>";
-        foreach($lista_libri as $libro){
+        foreach($lista_libri as $libro) {
             $html .= $lista_bottoni ? self::singleItemWithButtons($libro,$lista_bottoni) : self::singleItem($libro);
         }
         $html .= "</ul>";
         return $html;
     }
 
-    public static function singleItem($libro){
+    public static function singleItem($libro) {
         $campi = array_keys($libro);
         $campi = array_diff($campi, array('Titolo'));
         $campi = array_diff($campi, array('md5_Hash'));
@@ -22,7 +22,7 @@ class htmlMaker{
         $html .= "<div class='search_spec'>";
         $html .= isset($libro['md5_Hash']) ? "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>". $libro['Titolo'] ."</a>"."\n" : 
         "<a class='titolo' href='../php/risultati_ricerca.php?titolo=".$libro['Titolo']."'> ".$libro['Titolo']." </a>";
-        foreach($campi as $campo){
+        foreach($campi as $campo) {
             $html .= "<p class='$campo'>";
             $html .= $libro[$campo] != "" ? $libro[$campo] : "";
             $html .= "</p>"."\n";
@@ -31,7 +31,7 @@ class htmlMaker{
         $img = isset($libro['md5_Hash'])? self::getImage($libro['md5_Hash'],"../immagini_libri/"): "";
         $a1 = "";
         $a2 = "";
-        if(isset($libro['md5_Hash'])){
+        if(isset($libro['md5_Hash'])) {
             $a1 = "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>";
             $a2 = "</a>";
         }
@@ -47,13 +47,13 @@ class htmlMaker{
     ogni bottone manda una post con name= nome del comando del bottone
     e value = md5_Hash del libro
     */
-    public static function singleItemWithButtons($libro,$lista_bottoni){
+    public static function singleItemWithButtons($libro,$lista_bottoni) {
         $html = self::singleItem($libro);
-        if(!isset($libro['md5_Hash'])){
+        if(!isset($libro['md5_Hash'])) {
             $libro['md5_Hash'] = $libro['Codice_identificativo'];
         }
         $buttons = "<form action='book_action.php' method='post' class='sc_form'>"."\n";
-        foreach($lista_bottoni as $bot){
+        foreach($lista_bottoni as $bot) {
             $buttons .= "<button type='submit' class='sc_button' name='". $bot ."' value='". $libro['md5_Hash'] ."'>". $bot ."</button>"."\n";
         }
         $buttons .= "</form></li>"."\n";
@@ -62,7 +62,7 @@ class htmlMaker{
         return $html;
     }
 
-    public static function getImage($nome,$dir){
+    public static function getImage($nome,$dir) {
         $result = glob ("$dir{$nome}.*");
         if (count($result) == 1)
             return $result[0];
@@ -70,24 +70,24 @@ class htmlMaker{
             return "";
     }
 
-    public static function navbar(){
-        if(!isset($_SESSION)){
+    public static function navbar() {
+        if(!isset($_SESSION)) {
             session_start();
         }
         $nav_return  =  '<nav id="navbar">'."\n";
         $nav_return .=  '<div class="closeNav"><div id="close"></div></div>'."\n";
         $nav_return .=  '<div id="nav_user">';
         $img = "../images/user.png";
-        if(isset($_SESSION['nome'])){
+        if(isset($_SESSION['nome'])) {
             $userImg = self::getImage($_SESSION['email'],"../immagini_profilo/");
-            if ($userImg != ""){
+            if ($userImg != "") {
                $img = $userImg;
             }
         }
         $nav_return .=  isset($_SESSION['nome']) ?"<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n" : "";
         $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";
-        if(isset($_SESSION['nome'])){
+        if(isset($_SESSION['nome'])) {
             $nav_return .=  '<div class ="user_data_button">';
             $nav_return .=  '<a class="user_data_link" href="dati_personali.php">I miei dati</a>'."\n";
             $nav_return .=  '<a class="user_data_link" href="libri_personali.php">I miei libri</a>'."\n"; 
@@ -99,10 +99,10 @@ class htmlMaker{
         $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
         $nav_return .=  '<li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
-        if(isset($_SESSION['nome'])){
+        if(isset($_SESSION['nome'])) {
           $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
         }
-        if(isset($_SESSION['email']) && $_SESSION['email'] == "admin@admin.com"){
+        if(isset($_SESSION['email']) && $_SESSION['email'] == "admin@admin.com") {
             $nav_return .=  '<li class=""><a href="admin.php">Pannnello Amministratore</a></li>'."\n";
           }
         $nav_return .=  '<li class=""><a href="about.php" accesskey="c">c̲hi Siamo</a></li>'."\n";
@@ -112,13 +112,13 @@ class htmlMaker{
         return $nav_return;
     }
 
-    public static function header(){
+    public static function header() {
         $header_return = file_get_contents("../HTML/modules/header.html")."\n";
 
-        if(!isset($_SESSION)){
+        if(!isset($_SESSION)) {
             session_start();
         }
-        if (!isset($_SESSION['nome'])){
+        if (!isset($_SESSION['nome'])) {
             $header_return .=  "<div id='header_login'>"."\n";
             $header_return .=  "<a href='../php/registrati.php' class='button register-button'>Registrati</a>"."\n";
             $header_return .=  "<a href='../php/login.php' class='button login-button'>Accedi</a>"."\n";
@@ -134,7 +134,7 @@ class htmlMaker{
         return $header_return;
     }
 
-    public static function pagina_messaggio($titolo,$sottotitolo,$extra = ""){
+    public static function pagina_messaggio($titolo,$sottotitolo,$extra = "") {
         $pagina_return = file_get_contents("../HTML/pag_messaggio.html");
         
         return  str_replace("<header></header>",htmlMaker::header(),
@@ -144,9 +144,9 @@ class htmlMaker{
                 str_replace("££EXTRA££",$extra,$pagina_return)))));
     }
 
-    public static function breadCrumb(...$sequeza){
+    public static function breadCrumb(...$sequeza) {
         $breadcrumb = "Ti trovi in: Home ";
-        foreach($sequeza as $el){
+        foreach($sequeza as $el) {
             $breadcrumb .= "> $el ";
         }
         return "<p id=\"map-position\">$breadcrumb</p>";

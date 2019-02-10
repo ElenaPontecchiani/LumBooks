@@ -46,7 +46,7 @@ try{
 	}
 	$result->free();
 }
-catch(Exception $e){
+catch(Exception $e) {
 	echo htmlMaker::pagina_messaggio("Operazione non riuscita!","Purtroppo i poteri forti non vogliono farti loggare al nostro sito. Riprova, dai");
 	header( "refresh:5; url=login.php" ); 
 }

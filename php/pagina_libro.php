@@ -11,7 +11,7 @@ $output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Cerca u
 
 
 try{
-    if (isset($_GET['libro'])){
+    if (isset($_GET['libro'])) {
         $book_hash = $_GET['libro'];
         $book_hash = trim($book_hash);
         if(!Validator::lengthVal(32,32,$book_hash))
@@ -54,11 +54,11 @@ try{
     $mail = $book_data['Email'];
 
     $keys = array_diff(array_keys($book_data),array("Titolo","Autore","Venditore","Numero","Email"));
-    if ($book_data['Descrizione'] == "NULL"){
+    if ($book_data['Descrizione'] == "NULL") {
         $keys = array_diff(array_keys($book_data),array("Descrizione"));
     }
     $attr_list = "";
-    foreach($keys as $key){
+    foreach($keys as $key) {
         if($book_data[$key] != "")
             $attr_list .= "<dt>$key:</dt>\n<dd id='$key'>{$book_data[$key]}</dd>\n";
     }
@@ -78,7 +78,7 @@ try{
         $output = str_replace("<img/>","",$output);
 
 
-}catch(Exception $e){
+}catch(Exception $e) {
     echo $e->getMessage();
 }
 

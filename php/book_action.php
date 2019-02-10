@@ -2,33 +2,33 @@
 require_once "Backend/sql_wrapper.php";
 require_once "Backend/htmlMaker.php";
 try{
-    if (isset($_POST['Venduto'])){
+    if (isset($_POST['Venduto'])) {
         sqlWrap::input_escape(array($_POST['Venduto']));
         session_start();
         $user = sqlWrap::query("SELECT Venditore FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Venduto']}'",true)[0];
-        if ($_SESSION['id'] = $user){
+        if ($_SESSION['id'] = $user) {
             sqlWrap::command("UPDATE Libri_In_Vendita SET Stato ='Venduto' WHERE md5_Hash = '{$_POST['Venduto']}'");
             header('Location: libri_personali.php');
             die();
         }
     }
 
-    else if (isset($_POST['Rimuovi'])){
+    else if (isset($_POST['Rimuovi'])) {
         sqlWrap::input_escape(array($_POST['Rimuovi']));
         session_start();
         $user = sqlWrap::query("SELECT Venditore FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Rimuovi']}'",true)[0];
-        if ($_SESSION['id'] = $user){
+        if ($_SESSION['id'] = $user) {
             sqlWrap::command("DELETE FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Rimuovi']}'");
             header('Location: libri_personali.php');
             die();
         }
     }
 
-    else if (isset($_POST['Modifica'])){
+    else if (isset($_POST['Modifica'])) {
         sqlWrap::input_escape(array($_POST['Modifica']));
         session_start();
         $user = sqlWrap::query("SELECT Venditore FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Modifica']}'",true)[0];
-        if ($_SESSION['id'] = $user){
+        if ($_SESSION['id'] = $user) {
             $book_data = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Modifica']}'")[0];
             if ($book_data['Anno_Pubblicazione'] == '0')
                 $book_data['Anno_Pubblicazione'] = '';
@@ -49,10 +49,10 @@ try{
         }
     }
 
-    else if (isset($_POST['Elimina'])){
+    else if (isset($_POST['Elimina'])) {
         sqlWrap::input_escape(array($_POST['Elimina']));
         session_start();
-        if(sqlWrap::isAdmin()){
+        if(sqlWrap::isAdmin()) {
             sqlWrap::command("DELETE FROM Libri_Listati WHERE Codice_Identificativo = {$_POST['Elimina']}");
         }
         header('Location: admin.php');

@@ -32,7 +32,7 @@ SqlWrap::input_escape( array(&$titolo,&$autore,&$isbn,&$corso,) );
 $correctSqlInput = Validator::ricercaValidation($titolo,$autore,$isbn,$corso);
 
 //#todo >>>>>>>>>>>>>> visualizzare un errore e riempire i campi <<<<<<<<<<<<
-if($isbn == "error"){
+if($isbn == "error") {
   $location = ('Location: cercalibro.php?titolo='.$titolo.'&autore='.$autore.'&isbn='.$isbn.'&corso='.$corso);
   header($location);
   exit();
