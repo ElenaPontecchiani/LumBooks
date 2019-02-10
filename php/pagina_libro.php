@@ -48,15 +48,17 @@ try{
     //query ok;
 
     $output = str_replace("££TITOLO££",$book_data['Titolo'],$output);
-    $output = str_replace("££AUTORE££",$book_data['Autore'],$output);
     $output = str_replace("££NOME££",$book_data['Venditore'],$output);
     $output = str_replace("££NUMERO££",$book_data['Numero'],$output);
     $mail = $book_data['Email'];
 
-    $keys = array_diff(array_keys($book_data),array("Titolo","Autore","Venditore","Numero","Email"));
+    $keys = array_diff(array_keys($book_data),array("Titolo","Venditore","Numero","Email"));
     if ($book_data['Descrizione'] == "NULL") {
         $keys = array_diff(array_keys($book_data),array("Descrizione"));
     }
+
+    $book_data['Prezzo'] .= " €";
+
     $attr_list = "";
     foreach($keys as $key) {
         if($book_data[$key] != "")
