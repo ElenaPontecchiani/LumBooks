@@ -1,73 +1,82 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-      <meta charset="UTF-8">
-      <title>Libri venduti - LumBooks</title>
-      
-      <meta name="title" content="Libri venduti - LumBooks" />
-      <meta name="description" content="In questa pagina vedi i libri che hai venduto in passato" />
-      <meta name="keywords" content="libro, unipd" />
-      <meta name="language" content="italian it" />
-      <meta name="author" content="TecSwag" />
-      <link rel="stylesheet" type="text/css" href="../css/libri.css" />
-      <link rel="stylesheet" type="text/css"  href="../css/" media="screen and (max-width:768px)" /><!-- schermi piccoli --> 
-      
-      <script type="text/javascript" src="../js/buildStructure.js"></script>
-<script src="../js/action.js"></script>
+	<meta charset="UTF-8">
+	<title>Libri venduti - LumBooks</title>
+
+	<meta name="title" content="Libri venduti - LumBooks" />
+	<meta name="description" content="In questa pagina vedi i libri che hai venduto in passato" />
+	<meta name="keywords" content="libro, unipd" />
+	<meta name="language" content="italian it" />
+	<meta name="author" content="TecSwag" />
+	<link rel="stylesheet" type="text/css" href="../css/libri.css" />
+	<link rel="stylesheet" type="text/css" href="../css/" media="screen and (max-width:768px)" />
+	<!-- schermi piccoli -->
+
+	<script type="text/javascript" src="../js/buildStructure.js"></script>
+	<script src="../js/action.js"></script>
 
 </head>
+
 <body>
-<nav></nav>
-<div class="main">
-<header></header>
-	<breadcrumb></breadcrumb>
-<section class="outerBox">
-<h1>Libri in vendita</h1>
-	<div id="filter-bar">
-		<div id="filter-tool">
-			<label>Visualizza: </label>
-			<select name="categoria">
-				<option value="all" selected="selected">Tutte le categorie</option>
-				<option value="libro">Libro</option>
-				<option value="slide">Slide</option>
-				<option value="appunti">Appunti</option>
-				<option value="dispense">Dispense</option>
-				<option value="altro">Altro</option>
-			</select>
-			<label>Mostra:</label>
-			<select name="numero">
-				<option value="all" selected="selected">Tutti i libri</option>
-				<option value="primi20">Primi 20</option>
-				<option value="primi50">Primi 50</option>
-			</select>
-			<label>Ordina:</label>
-			<select name="ordine">
-				<option value="piurecente" selected="selected">Dal più recente</option>
-				<option value="menorecente">Dal meno recente</option>
-				<option value="AZ">Dalla A alla Z</option>
-				<option value="ZA">Dalla Z alla A</option>
-				<option value="crescente">Dal meno caro</option>
-				<option value="decrescente">Dal più caro</option>
-			</select>
-		</div>
-	</div>
-	<dl class="search_item">
-		<dt class="item_name">Titolo</dt>
-		<dt class="item_spec">Autore</dt><dd class="spec_desc">AUTORE</dd>
-		<dt class="item_spec">Prezzo</dt><dd class="spec_desc">PREZZO</dd>
-		<dt class="item_spec">Stato</dt><dd class="spec_desc">STATO</dd>
-		<dt class="item_spec">Tipo</dt><dd class="spec_desc">TIPO</dd>
-		<dt class="item_spec">Acquirente</dt><dd class="spec_desc">UsernameAcquirente</dd>
-		<!-- con SCRIPT visualizza altro>
+	<nav></nav>
+	<div class="main">
+		<header></header>
+		<breadcrumb></breadcrumb>
+		<section class="outerBox">
+			<h1>Libri in vendita</h1>
+			<div id="filter-bar">
+				<div id="filter-tool">
+					<label>Visualizza: </label>
+					<select name="categoria">
+						<option value="all" selected="selected">Tutte le categorie</option>
+						<option value="libro">Libro</option>
+						<option value="slide">Slide</option>
+						<option value="appunti">Appunti</option>
+						<option value="dispense">Dispense</option>
+						<option value="altro">Altro</option>
+					</select>
+					<label>Mostra:</label>
+					<select name="numero">
+						<option value="all" selected="selected">Tutti i libri</option>
+						<option value="primi20">Primi 20</option>
+						<option value="primi50">Primi 50</option>
+					</select>
+					<label>Ordina:</label>
+					<select name="ordine">
+						<option value="piurecente" selected="selected">Dal più recente</option>
+						<option value="menorecente">Dal meno recente</option>
+						<option value="AZ">Dalla A alla Z</option>
+						<option value="ZA">Dalla Z alla A</option>
+						<option value="crescente">Dal meno caro</option>
+						<option value="decrescente">Dal più caro</option>
+					</select>
+				</div>
+			</div>
+			<dl class="search_item">
+				<dt class="item_name">Titolo</dt>
+				<dt class="item_spec">Autore</dt>
+				<dd class="spec_desc">AUTORE</dd>
+				<dt class="item_spec">Prezzo</dt>
+				<dd class="spec_desc">PREZZO</dd>
+				<dt class="item_spec">Stato</dt>
+				<dd class="spec_desc">STATO</dd>
+				<dt class="item_spec">Tipo</dt>
+				<dd class="spec_desc">TIPO</dd>
+				<dt class="item_spec">Acquirente</dt>
+				<dd class="spec_desc">UsernameAcquirente</dd>
+				<!-- con SCRIPT visualizza altro>
 		<dt class="item_spec">Data aggiunta</dt><dd class="spec_desc">DATA AGGIUNTA</dd>
 		<dt class="item_spec">Corso</dt><dd class="spec_desc">CORSO</dd>
 		<dt class="item_spec">Edizione</dt><dd class="spec_desc">EDIZIONE</dd>
 		<dt class="item_spec">ISBN</dt><dd class="spec_desc">ISBN</dd>
 		<dt class="item_spec">Casa Editrice</dt><dd class="spec_desc">CASA ED</dd>
 		<dt class="item_spec">Anno pubblicazione</dt><dd class="spec_desc">2025</dd> -->
-	</dl>
-</section>
-</div>
+			</dl>
+		</section>
+	</div>
 
 </body>
+
 </html>
