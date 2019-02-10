@@ -639,7 +639,7 @@ fieldset{
     background-repeat: no-repeat;
     background-position: center;
 }
-#ruleBox dt:hover,#ruleBox dd:hover {
+#ruleBox dt:hover+ dd,#ruleBox dt:hover {
     background-color:#e7e7e7;
 }
 #ruleBox dt:hover>.more-icon{

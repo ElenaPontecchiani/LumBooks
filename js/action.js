@@ -100,19 +100,26 @@ window.onload=function()
     var input = document.getElementsByTagName("dt");
     titles = Array.prototype.slice.call(input).map(el=> el.id);
     titles.forEach(function(el){
-      document.getElementById(el).addEventListener("click",function(){
-        descId = el.replace('Title','Desc');
-        document.getElementById(descId).classList.toggle("hidden");
-        // non posso usare il last element di css perché dopo di questo c'è un dd che può comparire o scomparire.
-        if(el == "contactsTitle")
-        {
-          document.getElementById(el).classList.toggle("lastElement");
-        }
-      });
+      toggleRuleBox(el);
+      toggleRuleBox(el.replace('Title','Desc'));
     });
   }
 }//end window.onload()
 
+/*
+  attiva o disattiva le descrizioni nel regolamento
+*/
+function toggleRuleBox(el){
+  document.getElementById(el).addEventListener("click",function(){
+    descId = el.replace('Title','Desc');
+    document.getElementById(descId).classList.toggle("hidden");
+    // non posso usare il last element di css perché dopo di questo c'è un dd che può comparire o scomparire.
+    if(el == "contactsTitle")
+    {
+      document.getElementById(el).classList.toggle("lastElement");
+    }
+  });
+}
 /*
   changeBooksInput cambia i campi obbligatori per "inserisci.html" 
 */
