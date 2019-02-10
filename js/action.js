@@ -91,8 +91,8 @@ window.onload=function()
   if(document.getElementById('listato') != null)
   {
     formselector();
-    document.getElementById("listato").addEventListener("click", formselector);
-    document.getElementById("personale").addEventListener("click", formselector);
+    document.getElementById("listato").addEventListener("change", formselector);
+    document.getElementById("personale").addEventListener("change", formselector);
   }
   
   /* mostrare e nascondere regole in regolamento.html */
