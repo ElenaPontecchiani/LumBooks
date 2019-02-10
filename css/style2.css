@@ -692,6 +692,7 @@ fieldset{
     padding:1em;
     display:flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 #txContent .blurb {
@@ -844,8 +845,7 @@ p.required {
 
       #subContent{
         display: flex;
-        flex-direction: column; 
-        
+        flex-direction: column;         
     }
     
     
