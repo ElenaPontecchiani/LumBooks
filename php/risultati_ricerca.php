@@ -44,7 +44,7 @@ if($isbn == "error") {
       $query.= " AND ISBN = $isbn";
   if (!($editore == ""))
       $query.= " AND Casa_Editrice like '%$editore%'";
-  if (!($corso == "Qualsiasi"))
+  if (!($corso == "Qualsiasi" || $corso==""))
       $query.= " AND Corso = '%$corso%'";
   if (!($desc == ""))
       $query.= " AND Descrizione like '%$desc%'";
