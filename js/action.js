@@ -57,7 +57,7 @@ window.onload = function () {
       "insertCasaEditrice",
       "insertCorso"
     ];
-    document.getElementById("listato").addEventListener("change", changeBooksInput);
+    document.getElementById("listato").addEventListener("change", changeBooksInput);    
     document.getElementById("personale").addEventListener("change", changeBooksInput);
     items.forEach(function (item) {
       document.getElementById(item).addEventListener("focus", checkBookInput);
@@ -263,6 +263,7 @@ function removeErrorBox(box, emptyAllowed = false) {
 /* funzione per inserisci.html */
 function formselector() {
   document.getElementById('inserisci-personale').classList.toggle("hidden");
+  document.getElementById('inserisci-listato').classList.toggle("hidden");
 }
 
 /* validazione login */
