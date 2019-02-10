@@ -94,7 +94,23 @@ window.onload=function()
     document.getElementById("listato").addEventListener("click", formselector);
     document.getElementById("personale").addEventListener("click", formselector);
   }
-
+  /* regolamento.html */
+  if(document.getElementById("ruleBox") != null)
+  {
+    var input = document.getElementsByTagName("dt");
+    titles = Array.prototype.slice.call(input).map(el=> el.id);
+    titles.forEach(function(el){
+      document.getElementById(el).addEventListener("click",function(){
+        descId = el.replace('Title','Desc');
+        document.getElementById(descId).classList.toggle("hidden");
+        // non posso usare il last element di css perché dopo di questo c'è un dd che può comparire o scomparire.
+        if(el == "contactsTitle")
+        {
+          document.getElementById(el).classList.toggle("lastElement");
+        }
+      });
+    });
+  }
 }//end window.onload()
 
 /*

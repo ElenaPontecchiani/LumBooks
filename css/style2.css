@@ -35,12 +35,11 @@ h1{
     vertical-align: middle;
 }
   
-h2{
+h2,section>h1{
     font-weight: 500;
     font-size: 1.7em;
     color: #023956;
-   /* padding-left: 0.5em;
-    padding-top:0.5em;*/
+    padding-top: 1em;
   
 }
 .bar1, .bar2, .bar3 {
@@ -229,6 +228,11 @@ section {
     padding: 1em;
     min-width: 30%;  
 }
+
+section > h1{
+    border-bottom: 1px solid #c5c5c5;
+    margin-bottom: 1em;
+}
 /*///////////////////////// inserisci ////////////////*/
 
 .outerBox select,.outerBox input, textarea#insertDescrizione {
@@ -359,27 +363,39 @@ textarea#insertDescrizione{
     margin: 3% auto;
     max-width: 80%;
     background-color: #fafafa;
-    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);    }
-    
-    dd#Prezzo::after {
-        content: "€";
-    }
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);
+}
 
-  #info_book{
+
+  #info_book {
     padding: 1em 0;
   }
   
-  #info_book dt,#info_book dd {
-    float: left;
-    margin-bottom: 1em;
-  }
+  
   #info_book dt {
-    clear:both;
-    font-weight: bold;
-  }
-  #info_book dd {
-    margin-left: 0.4em;
-  }
+      float: left;
+      margin-right: 10%;
+      max-width: 40%;
+      font-weight: bold;
+    }
+    #info_book dd:nth-child(4n){
+        background-color: #e4e4e4;
+    }
+    
+    #info_book dd {
+      padding-bottom: .5em;
+      text-align: right;
+    }
+    
+    #info_book dd::after {
+      content: " ";
+      display: block;
+      clear: left;
+    } 
+    #Prezzo{
+        content: "€";
+    }
+  
   #bookBox .bookImg{
     max-width: 80%;
     margin: auto;
@@ -452,9 +468,6 @@ textarea#insertDescrizione{
       color: #B12704;
       font-weight: bold;
       font-size: 1.3em;
-  }
-  .search_item .Prezzo:before{
-        content: "€";
   }
 
   .search_item p{
@@ -578,7 +591,6 @@ fieldset{
     background: #c13636;
     width: 100%;
     color: white;
-    box-shadow: 0px 1px 2px 1px grey;
     padding: 0.3em 0em 0.3em 0em;
 }
 
@@ -586,9 +598,46 @@ fieldset{
     margin-bottom: 0.2em;
 }
 
+/* //////////////////// regolamento.html /////////////////////////// */
+#ruleBox {
+    margin: 3% auto;
+    background-color: #fafafa;
+    width: 80%;
+}
+#ruleBox dl {
+    display: block;
+}
+#ruleBox dt {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-bottom: 0;
+}
 
 
-
+#ruleBox dt span{
+    font-size: 1.3em;;
+    padding: 1em;
+}
+#ruleBox dd {
+    padding: 1em;
+    order:1;
+    border: 1px solid black;
+    border-top: 0;
+    border-bottom: 0;
+}
+#ruleBox dd:last-of-type{
+    border-bottom:1px solid black;
+}
+.lastElement{
+    border-bottom:1px solid black !important;
+}
+.more-icon {
+    background-image: url("../images/icon/moreicon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /*////////////////////////////// <home.html> ////////////////////////////// */
 
 #txContent{
@@ -654,13 +703,8 @@ p.required {
 }
 
 
-
 /* BREAKPOINTS */
 
-
-
-
-   
 @media only screen and (max-width: 1024px) {
     *{
         font-size: 1.35rem;
@@ -747,37 +791,44 @@ p.required {
         width: 100%;
     }
 
-    .search_spec{
+    .search_spec {
         width: 60%;
     }
 
-    img.libro, .libro_fake{
+    img.libro, .libro_fake {
         width: 35%;
     }
 
   
 
-   #txContent{
+   #txContent {
         max-width:100%;
         text-align:center;
       }
     
       
-      #subContent .HomeBox{
+      #subContent .HomeBox {
           max-width:100%;
           border:0em;
           
       }
     
-      .HomeBox{
+      .HomeBox {
           width:80%;
           margin:auto;
       } 
 
-      #subContent{
+      #subContent {
         display: flex;
         flex-direction: column;         
     }
-    
-    
+    #ruleBox {
+        max-width: unset;
+        width: unset;
+        margin:unset;
     }
+    #ruleBox dl{
+        flex-direction: column;
+    }
+    
+}
