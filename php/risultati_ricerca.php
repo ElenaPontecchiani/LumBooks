@@ -8,30 +8,25 @@ $autore = '';
 $isbn = '';
 $corso = '';
 $desc = '';
+$editore = '';
 if(isset($_GET['titolo']))
   $titolo = $_GET['titolo'];
 if(isset($_GET['autore']))
   $autore = $_GET['autore'];
 if(isset($_GET['isbn']))
   $isbn = $_GET['isbn'];
+if(isset($_GET['Editore']))
+  $editore = $_GET['Editore'];
 if(isset($_GET['corso']))
   $corso = $_GET['corso'];
 if(isset($_GET['keyword']))
   $desc = $_GET['keyword'];
 
 
-/*
-    *  ######## IMPORTANTE #################
-    *  BISOGNA SANIFICARE INPUT E FARE CONTROLLI
-    *  controlli sul 30 febbraio -_-
-    *  TRIMMARE ECC
-    */
-
 //escape dell'input
-SqlWrap::input_escape( array(&$titolo,&$autore,&$isbn,&$corso,) );
-$correctSqlInput = Validator::ricercaValidation($titolo,$autore,$isbn,$corso);
+SqlWrap::input_escape( array(&$titolo,&$autore,&$isbn,&$corso,&$editore) );
+$correctSqlInput = Validator::ricercaValidation($titolo,$autore,$isbn,$corso,$editore);
 
-//#todo >>>>>>>>>>>>>> visualizzare un errore e riempire i campi <<<<<<<<<<<<
 if($isbn == "error") {
   $location = ('Location: cercalibro.php?titolo='.$titolo.'&autore='.$autore.'&isbn='.$isbn.'&corso='.$corso);
   header($location);
@@ -47,8 +42,10 @@ if($isbn == "error") {
       $query.= " AND Autore like '%$autore%'";
   if (!($isbn == ""))
       $query.= " AND ISBN = $isbn";
+  if (!($editore == ""))
+      $query.= " AND Casa_Editrice like '%$editore%'";
   if (!($corso == "Qualsiasi"))
-      $query.= " AND Corso like '%$corso%'";
+      $query.= " AND Corso = '%$corso%'";
   if (!($desc == ""))
       $query.= " AND Descrizione like '%$desc%'";
   $query .= " AND 1 = 1; ";
@@ -60,7 +57,7 @@ if($isbn == "error") {
 if ($libri)
     $ris = htmlMaker::generateBookCollection($libri);
 else
-    $ris = "<p>Ti è andata male, non ho trovato niente.</p> <a href='cercalibro.php'>Prova con una nuova ricerca!</a>";
+    $ris = "<p>Ti è andata male, non ho trovato niente.</p> <a href='cercalibro.php'>Prova con una nuova ricerca!$query</a>";
 $output = file_get_contents("../HTML/risultati_ricerca.html");
 $output = str_replace("££RISULTATI££",$ris,$output);
 $output = str_replace("<header></header>",htmlMaker::header(),$output);

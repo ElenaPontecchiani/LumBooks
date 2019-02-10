@@ -79,9 +79,8 @@ class Validator{
     }
 
 
-    public static function ricercaValidation(&$titolo, &$autore, &$isbn, &$corso) {
+    public static function ricercaValidation(&$titolo, &$autore, &$isbn, &$corso, &$editore) {
         $inputs = array(&$titolo,&$autore,&$isbn,&$corso);
-        SqlWrap::input_escape($inputs);
         if(strlen($titolo)>50)
             $titolo = substr($titolo,0,50);
         if(strlen($autore)>50)
@@ -91,6 +90,8 @@ class Validator{
             $isbn = "error";
         if(strlen($corso)>30)
             $corso = substr($corso,0,30);
+        if(strlen($editore)>30)
+            $editore = substr($editore,0,30);
     }
 
     public static function validateDate($date) {
