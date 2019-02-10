@@ -21,5 +21,5 @@ if (isset($_SESSION['id'])) {
     echo $output;
 }
 else
-    echo "<p>Questa funzione è disponibile solo per utenti iscritti</p>";
+    echo htmlMaker::pagina_messaggio("Ops, non puoi inserire un libro!","Questa funzione è disponibile solo per utenti iscritti");
 ?>

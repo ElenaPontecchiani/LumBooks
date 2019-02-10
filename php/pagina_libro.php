@@ -15,12 +15,12 @@ try{
         $book_hash = $_GET['libro'];
         $book_hash = trim($book_hash);
         if(!Validator::lengthVal(32,32,$book_hash))
-            throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
+            throw new Exception("Magari hai copiato male il link");
         sqlWrap::input_escape(array(&$book_hash));
     }
 
     else
-        throw new Exception("Ops, qualcosa è andato storto. Magari hai copiato male il link");
+        throw new Exception("Magari hai copiato male il link");
 
 
     $book_data = sqlWrap::query("SELECT Titolo,
@@ -42,7 +42,7 @@ try{
                                 WHERE md5_Hash = \"$book_hash\"");
 
     if ($book_data == null){//Se la query è vuota
-        throw new Exception("Per qualche oscuro motivo quacosa è andato storto. Bah...");
+        throw new Exception("Per qualche oscuro motivo quacosa è andato storto, sembra che questo libro non esita. Bah...");
     }
     $book_data = $book_data[0];
     //query ok;
@@ -71,12 +71,8 @@ try{
     $immagine_path = htmlMaker::getImage($mail,"../immagini_profilo/");
     $output = ($immagine_path != "")?
     str_replace("<img id=\"vendor_pic\" src=\"../images/user.png\"","<img id=\"vendor_pic\" src=\"../images/$immagine_path\"",$output): str_replace("<img/>","",$output);
-
+    echo $output;
 }catch(Exception $e) {
-    echo $e->getMessage();
+    echo htmlMaker::pagina_messaggio("Urca! C'è un problema","{$e->getMessage()}");
 }
-
-
-
-echo $output;
 ?>
