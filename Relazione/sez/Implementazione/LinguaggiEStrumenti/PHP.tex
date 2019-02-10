@@ -11,7 +11,7 @@ I file coinvolti nella parte di struttura sono:
 \end{itemize}
 Il gruppo ha deciso di utilizzare codice PHP rivolto alla struttura del sito, perché alcuni contenuti strutturali del sito sito cambiano se l'utente è sconosciuto oppure ha effettuato l'accesso. Le differenze sono:
 \begin{itemize}
-    \item I bottoni per effetturare il login vengono sostituiti dal bottone di logout;
+    \item I bottoni per effettuare il login vengono sostituiti dal bottone di logout;
     \item Alla navbar laterale vengono aggiunti l'immagine di profilo dell'utente e i link per accedere alla configurazione del suo account;
     \item Alla narbar laterale viene aggiunto il pulsante (inserisci) per la vendita di un libro;
 \end{itemize}
@@ -20,13 +20,13 @@ L'utilizzo del PHP per la struttura ha permesso anche le seguenti caratteristich
     \item \textbf{Unico header e navbar}: L'header e la navbar sono gli stessi per ogni pagina. Questo permette una maggiore manuntenibilità del sito, in quanto una modifica a un file si riflette su tutte le pagine del sito web;
     \item \textbf{Link circolari:} Un solo codice per tutti i file genera dei link circolari, che vengono rimossi tramite codice PHP (esempio: per rimuovere i link circolari dalla home si utilizza questa funzione: str\_replace('<a href="home.php">','<a>',"\- link alla pagina home \-");
     \item \textbf{Riempire i campi in caso di errore:} se prova a inserire un libro ma ci sono degli errori (che passano i controlli JavaScript), tramite PHP vengono riempiti i campi corretti, permettendo all'utente di non doverli inserire nuovamente;
-    \item \textbf{Costruzione card dei libri:} le pagine che contenegono dei libri cambiano a seconda dei libri presenti nel database. Per questo motivo, il file \textit{htmlMaker.php} contiene le funzioni \textit{singleItem} e \textit{singleItemWithButtons} per costruire le card dei libri, a partire da un risultato SQL.
+    \item \textbf{Costruzione card dei libri:} le pagine che contengono dei libri cambiano a seconda dei libri presenti nel database. Per questo motivo, il file \textit{htmlMaker.php} contiene le funzioni \textit{singleItem} e \textit{singleItemWithButtons} per costruire le card dei libri, a partire da un risultato SQL.
 \end{itemize}
 La parte di backend gestisce principalmente le richieste di modifica al database da parte degli utenti del sito:
 \begin{itemize}
     \item \textbf{sql\_wrapper:} il file \textit{sql\_wrapper} contiene delle funzioni per accedere al database; lo scopo di questo file è semplificare l'accesso al database per gli altri;  
-    \item \textbf{Login:} l'accesso avviene attrraverso il file \textit{check\_login.php}, che, tramite l'sql\_wrapper, controlla se l'email e la password esistono. In caso positivo viene aperta la sessione;
-    \item \textbf{Registrazione:} la registrazione avviene attrraverso il file \textit{new\_user.php}. Se la registrazione ha successo, viene fatto il login automatico;
+    \item \textbf{Login:} l'accesso avviene attraverso il file \textit{check\_login.php}, che, tramite l'sql\_wrapper, controlla se l'email e la password esistono. In caso positivo viene aperta la sessione;
+    \item \textbf{Registrazione:} la registrazione avviene attraverso il file \textit{new\_user.php}. Se la registrazione ha successo, viene fatto il login automatico;
     \item \textbf{Validazione campi:} il file \textit{validator.php} contiene delle funzioni utili alla validazione dei campi in registrazione, login, inserimento libri;
     \item \textbf{Sessione:} il file \textit{back\_end.php} contiene funzioni per capire se la sessione è aperta (quindi se il login è stato effettuato).
 \end{itemize}
