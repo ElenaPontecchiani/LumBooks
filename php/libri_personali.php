@@ -16,14 +16,6 @@ $venduti = sqlWrap::query(" SELECT Titolo,Prezzo,/*CONCAT(Nome,' ',Cognome) as A
                             AND Stato = 'Venduto'");
 $venduti = (!$venduti) ? "Non hai venduto nessun libro" : htmlMaker::generateBookCollection($venduti,array("Rimuovi"));
 
-$comprati = sqlWrap::query("SELECT Titolo,Prezzo,CONCAT(Nome,' ',Cognome) as Venditore,Data_Aggiunta as 'Aggiunto il',md5_Hash
-                            FROM Libri_In_Vendita as liv JOIN Utente as u
-                            ON u.Codice_identificativo = liv.Venditore
-                            WHERE Acquirente = {$_SESSION['id']}
-                            AND Stato = 'Venduto'");
- $comprati = (!$comprati) ? "Non hai comprato nessun libro" : htmlMaker::generateBookCollection($comprati);
-
-
 $output = file_get_contents("../HTML/libri_personali.html");
 echo str_replace("<nav></nav>",htmlMaker::navbar(),
      str_replace("<header></header>",htmlMaker::header(),
