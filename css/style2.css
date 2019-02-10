@@ -600,7 +600,6 @@ fieldset{
     background-color: #fafafa;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    cursor:pointer;
 }
 #ruleBox dl {
     display: block;
@@ -611,6 +610,7 @@ fieldset{
     justify-content: space-between;
     border: 1px solid black;
     border-bottom: 0;
+    cursor:pointer;
 }
 
 
