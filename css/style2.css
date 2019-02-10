@@ -39,7 +39,7 @@ h2,section>h1{
     font-weight: 500;
     font-size: 1.7em;
     color: #023956;
-    padding-top: 1em;
+    padding: 1em 0em 0em 1em;
   
 }
 .bar1, .bar2, .bar3 {
@@ -634,9 +634,20 @@ fieldset{
     border-bottom:1px solid black !important;
 }
 .more-icon {
-    background-image: url("../images/icon/moreicon.svg");
+    background-image: url("../images/icon/uparrow.svg");
+    transform: rotate(90deg);
     background-repeat: no-repeat;
     background-position: center;
+}
+#ruleBox dt:hover,#ruleBox dd:hover {
+    background-color:#e7e7e7;
+}
+#ruleBox dt:hover>.more-icon{
+    transform: rotate(180deg);
+    -webkit-transform: translateY(180deg);
+    transition: transform 1.5s ease-in;
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    
 }
 /*////////////////////////////// <home.html> ////////////////////////////// */
 
@@ -645,7 +656,6 @@ fieldset{
     color: rgb(83, 83, 83); 
     box-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
     background-color:white;
-    text-align: center;
 }
 
 .HomeImage{ 
@@ -673,6 +683,7 @@ fieldset{
     display:flex;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
 }
 
 #txContent .blurb {

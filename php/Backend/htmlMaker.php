@@ -106,7 +106,7 @@ class htmlMaker{
             $nav_return .=  '<li class=""><a href="admin.php">Pannnello Amministratore</a></li>'."\n";
           }
         $nav_return .=  '<li class=""><a href="regolamento.php">Regolamento</a></li>'."\n";
-        $nav_return .=  '<li class=""><a href="about.php" accesskey="c">c̲hi Siamo</a></li>'."\n";
+        $nav_return .=  '<li class=""><a href="about.php" accesskey="c">chi Siamo</a></li>'."\n";
         $nav_return .=  '</ul>'."\n";
         $nav_return .=  '</nav>'."\n";
 
