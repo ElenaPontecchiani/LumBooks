@@ -603,6 +603,7 @@ fieldset{
     margin: 3% auto;
     background-color: #fafafa;
     width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 #ruleBox dl {
     display: block;
