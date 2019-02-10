@@ -17,7 +17,7 @@ try{
     $autore =           $_POST['autore'];
     $casa_editrice =    $_POST['casaeditrice'];
     $corso =            $_POST['corso'];
-
+    sqlWrap::input_escape(array(&$titolo,&$autore,&$casa_editrice,&$corso,));
     Validator::titoloVal($titolo);
     Validator::autoreVal($autore);
     Validator::corsoVal($casa_editrice);
