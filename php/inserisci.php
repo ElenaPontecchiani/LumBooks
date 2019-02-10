@@ -17,7 +17,7 @@ if (isset($_SESSION['id'])) {
     $output = str_replace("<breadcrumb></breadcrumb>",htmlMaker::breadCrumb("Inserisci"),$output);
     $output = str_replace("<header></header>",htmlMaker::header(),$output);
     $output = str_replace("<nav></nav>",      htmlMaker::navbar(),$output);  
-    $output = str_replace('href="inserisci.php','',$output);  
+    $output = str_replace('href="inserisci.php"','',$output);  
     echo $output;
 }
 else

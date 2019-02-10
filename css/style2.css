@@ -117,13 +117,15 @@ ul {
 
 #profile_pic {
     object-fit: cover;
-    width: 7em;
-    height: 7em;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 1em;
     border: 0.5em solid white;
+    height: 7em;
+    width: 7em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+        
 }
 
 /* da desktop non serve nascondere la navbar */
@@ -190,14 +192,6 @@ nav #stdbar li {
     height: 3em;
 }
 
-#userImage{
-    height: 8em;
-    width: 8em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
 
 .closeNav{
     visibility: hidden;
@@ -560,6 +554,7 @@ fieldset{
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
+
 
 .mostra-libri{
     padding-left: 1em;

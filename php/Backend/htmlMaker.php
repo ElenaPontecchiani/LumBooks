@@ -21,7 +21,7 @@ class htmlMaker{
         $html = "<li class='search_item'>"."\n";
         $html .= "<div class='search_spec'>";
         $html .= isset($libro['md5_Hash']) ? "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>". $libro['Titolo'] ."</a>"."\n" : 
-        "<a class='titolo' href='../php/risultati_ricerca.php?titolo=".$libro['Titolo']."'> ".$libro['Titolo']." </a>";
+        "<a class='titolo' href='../php/risultati_ricerca.php?titolo=".urlencode($libro['Titolo'])."'> ".$libro['Titolo']." </a>";
         foreach($campi as $campo) {
             $html .= "<p class='$campo'>";
             $html .= $libro[$campo] != "" ? $libro[$campo] : "";
@@ -84,7 +84,7 @@ class htmlMaker{
                $img = $userImg;
             }
         }
-        $nav_return .=  isset($_SESSION['nome']) ?"<img id=\"profile_pic\" src=\"$img\" id=\"userImage\" alt=\"immagine profilo\" />"."\n" : "";
+        $nav_return .=  isset($_SESSION['nome']) ?"<img id=\"profile_pic\" src=\"$img\" alt=\"immagine profilo\" />"."\n" : "";
         $nav_return .=  isset($_SESSION['nome']) ? "<p id='user_name'>".$_SESSION['nome']."</p>" : "";
         $nav_return .=  isset($_SESSION['email']) ? "<p id='user_email'>".$_SESSION['email']."</p>" : "";
         if(isset($_SESSION['nome'])) {
@@ -95,18 +95,18 @@ class htmlMaker{
         }
         $nav_return .=  '</div>';
         $nav_return .=  '<ul id="stdbar">'."\n";
-        $nav_return .=  '<li class=""><a href="home.php">Home</a></li>'."\n";
-        $nav_return .=  '<li class=""><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
-        $nav_return .=  '<li class=""><a href="catalogo.php">Catalogo</a></li>'."\n";
-        $nav_return .=  '<li class=""><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
+        $nav_return .=  '<li><a href="home.php">Home</a></li>'."\n";
+        $nav_return .=  '<li><a href="../php/risultati_ricerca.php?">In Vendita</a></li>'."\n";
+        $nav_return .=  '<li><a href="catalogo.php">Catalogo</a></li>'."\n";
+        $nav_return .=  '<li><a href="cercalibro.php">Cerca un Libro</a></li>'."\n";
         if(isset($_SESSION['nome'])) {
-          $nav_return .=  '<li class=""><a href="inserisci.php">Inserisci</a></li>'."\n";
+          $nav_return .=  '<li><a href="inserisci.php">Inserisci</a></li>'."\n";
         }
         if(isset($_SESSION['email']) && $_SESSION['email'] == "admin@admin.com") {
-            $nav_return .=  '<li class=""><a href="admin.php">Pannnello Amministratore</a></li>'."\n";
+            $nav_return .=  '<li><a href="admin.php">Pannnello Amministratore</a></li>'."\n";
           }
-        $nav_return .=  '<li class=""><a href="regolamento.php">Regolamento</a></li>'."\n";
-        $nav_return .=  '<li class=""><a href="about.php" accesskey="c">Chi Siamo</a></li>'."\n";
+        $nav_return .=  '<li><a href="regolamento.php">Regolamento</a></li>'."\n";
+        $nav_return .=  '<li><a href="about.php" accesskey="c">Chi Siamo</a></li>'."\n";
         $nav_return .=  '</ul>'."\n";
         $nav_return .=  '</nav>'."\n";
 
