@@ -4,7 +4,7 @@ require_once "Backend/sql_wrapper.php";
 
 $ris = "";
 try{
-      $libri = SqlWrap::query("SELECT Titolo,Autore,Prezzo,ISBN,md5_Hash FROM Libri_In_Vendita ORDER BY Codice_Vendita DESC LIMIT 4");
+      $libri = SqlWrap::query("SELECT Titolo,Autore,Prezzo,ISBN,md5_Hash FROM Libri_In_Vendita WHERE Stato = 'In Vendita' ORDER BY Codice_Vendita DESC LIMIT 4");
       if ($libri)
             $ris = htmlMaker::generateBookCollection($libri);
       else
