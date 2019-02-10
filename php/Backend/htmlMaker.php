@@ -22,6 +22,8 @@ class htmlMaker{
         $html .= "<div class='search_spec'>";
         $html .= isset($libro['md5_Hash']) ? "<a href='../php/pagina_libro.php?libro=". $libro['md5_Hash'] ."'>". $libro['Titolo'] ."</a>"."\n" : 
         "<a class='titolo' href='../php/risultati_ricerca.php?titolo=".urlencode($libro['Titolo'])."'> ".$libro['Titolo']." </a>";
+        if (isset($libro["Prezzo"]))
+            $libro["Prezzo"] .= " €";
         foreach($campi as $campo) {
             $html .= "<p class='$campo'>";
             $html .= $libro[$campo] != "" ? $libro[$campo] : "";
