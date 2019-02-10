@@ -68,7 +68,7 @@ try{
     $output = str_replace("££LISTA_ATTRIBUTI££",$attr_list,$output);
 
     $immagine_path = htmlMaker::getImage($book_hash,"../immagini_libri/");
-    $output = ($immagine_path != "")?str_replace("<img/>","<img class='bookImg' src='{$immagine_path}' alt='Immagine Libro'/>",$output): str_replace("<img/>","",$output);
+    $output = ($immagine_path != "")? str_replace("<img>","<img class='bookImg' src='{$immagine_path}' alt='Immagine Libro'/>",$output): str_replace("<img>","",$output);
 
     $immagine_path = htmlMaker::getImage($mail,"../immagini_profilo/");
     $output = ($immagine_path != "")?
