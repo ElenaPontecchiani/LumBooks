@@ -9,9 +9,8 @@ $in_vendita = sqlWrap::query(" SELECT Titolo,Prezzo,Data_Aggiunta as 'Aggiunto i
                             AND Stato = \"In Vendita\"");
 $in_vendita = (!$in_vendita) ? "Nessun libro in vendita al momento" : htmlMaker::generateBookCollection($in_vendita,array("Venduto","Rimuovi","Modifica"));
 
-$venduti = sqlWrap::query(" SELECT Titolo,Prezzo,/*CONCAT(Nome,' ',Cognome) as Acquirente,*/Data_Aggiunta as 'Aggiunto il',md5_Hash
-                            FROM Libri_In_Vendita /*as liv JOIN Utente as u*/
-                            /*ON u.Codice_identificativo = liv.Acquirente*/
+$venduti = sqlWrap::query(" SELECT Titolo,Prezzo,Data_Aggiunta as 'Aggiunto il',md5_Hash
+                            FROM Libri_In_Vendita
                             WHERE Venditore = {$_SESSION['id']}
                             AND Stato = 'Venduto'");
 $venduti = (!$venduti) ? "Non hai venduto nessun libro" : htmlMaker::generateBookCollection($venduti,array("Rimuovi"));

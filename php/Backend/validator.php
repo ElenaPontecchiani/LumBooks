@@ -63,16 +63,11 @@ class Validator{
     }
 
     public static function ISBNVal($isbn){
-      /* Il controllo dell'intero fallisce su sistemi a 32 bit perché l' isbn
-         è un numero troppo grande, quindi viene convertito in double
-      */
         if (( (!(preg_match("/^[0-9]*$/", $isbn))) || strlen($isbn) != 13) && $isbn != "")
             throw new Exception("ISBN non valido");
     }
 
     public static function edizioneVal($edizione){
-        //Saranno necessari controlli per stabilire che valore di edizione sia corretto
-        #############################################################################
         if((!Validator::lengthVal(3,20,$edizione)) && $edizione != "")
             throw new Exception("Edizione non valida");
     }
@@ -86,7 +81,6 @@ class Validator{
 
     public static function ricercaValidation(&$titolo, &$autore, &$isbn, &$corso){
         $inputs = array(&$titolo,&$autore,&$isbn,&$corso);
-        //array_walk($inputs,'trim');
         SqlWrap::input_escape($inputs);
         if(strlen($titolo)>50)
             $titolo = substr($titolo,0,50);
@@ -119,15 +113,10 @@ class Validator{
         return ($check1 || $check2 || $check3 || $check4);
     }
 
-    public static function loginIsValid($mail, $password)
-  {
+    public static function loginIsValid($mail, $password){
     return ((!filter_var($mail, FILTER_VALIDATE_EMAIL) || strlen($password)>16 || strlen($password)<3)? false : true);
   }
 
 
 }
-
-
-
-
 ?>

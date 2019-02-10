@@ -17,7 +17,6 @@ class SqlWrap{
         if ($result == null){
             return null;
         }
-        //mi ricordo di gestire il caso in cui ho un array nullo
         $key = array_keys($result[0])[0];
         $new_result = [];
         $lim = count($result);
@@ -62,7 +61,6 @@ class SqlWrap{
         }
         $connect->close();
     }
-
 
     public static function input_escape($inputs){
         $connection = self::connect();

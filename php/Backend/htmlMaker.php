@@ -48,7 +48,7 @@ class htmlMaker{
     e value = md5_Hash del libro
     */
     public static function singleItemWithButtons($libro,$lista_bottoni){
-        $html = self::singleItem($libro);   //Creo il search_item di base
+        $html = self::singleItem($libro);
         if(!isset($libro['md5_Hash'])){
             $libro['md5_Hash'] = $libro['Codice_identificativo'];
         }
@@ -107,7 +107,6 @@ class htmlMaker{
           }
         $nav_return .=  '<li class=""><a href="about.php" accesskey="c">c̲hi Siamo</a></li>'."\n";
         $nav_return .=  '</ul>'."\n";
-        //$nav_return .=  file_get_contents("../HTML/modules/footer.html");
         $nav_return .=  '</nav>'."\n";
 
         return $nav_return;
@@ -128,7 +127,6 @@ class htmlMaker{
             else{
                 $header_return .=  '<div id="header_login">'."\n";
                 $header_return .=  "<a href='logout.php' class='button logout-button'>Logout</a>"."\n";
-               /* $header_return .=  '<a href="utente.php">Pannello Utente</a>'."\n";*/
                 $header_return .=  '</div>';
             }
 

@@ -80,9 +80,7 @@ try{
                 WHERE md5_Hash = '$hash'";
 
     $modify = str_replace("'NULL'","NULL",$modify);
-    //echo $modify;
     SqlWrap::Command($modify);
-    //echo "Libro Modificato con successo";
 
     header('Location: libri_personali.php');
     die();

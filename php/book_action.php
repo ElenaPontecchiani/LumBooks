@@ -28,7 +28,7 @@ try{
         sqlWrap::input_escape(array($_POST['Modifica']));
         session_start();
         $user = sqlWrap::query("SELECT Venditore FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Modifica']}'",true)[0];
-        if ($_SESSION['id'] = $user){//controllo che sto modificando un libro che mi appartiene
+        if ($_SESSION['id'] = $user){
             $book_data = sqlWrap::query("SELECT * FROM Libri_In_Vendita WHERE md5_Hash = '{$_POST['Modifica']}'")[0];
             if ($book_data['Anno_Pubblicazione'] == '0')
                 $book_data['Anno_Pubblicazione'] = '';
