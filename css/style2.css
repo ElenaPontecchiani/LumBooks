@@ -839,5 +839,9 @@ p.required {
     #ruleBox dl{
         flex-direction: column;
     }
+
+    .books_collection{
+        display: block;
+    }
     
 }
