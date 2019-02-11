@@ -42,7 +42,7 @@ try{
                                 WHERE md5_Hash = \"$book_hash\"");
 
     if ($book_data == null){//Se la query è vuota
-        throw new Exception("Per qualche oscuro motivo quacosa è andato storto, sembra che questo libro non esita. Bah...");
+        throw new Exception("Per qualche oscuro motivo quacosa è andato storto, sembra che questo libro non esista. Bah...");
     }
     $book_data = $book_data[0];
     //query ok;
@@ -62,7 +62,8 @@ try{
     $attr_list = "";
     foreach($keys as $key) {
         if($book_data[$key] != "")
-            $attr_list .= "<dt>$key:</dt>\n<dd id='$key'>{$book_data[$key]}</dd>\n";
+        	$id = str_replace(' ', '', $key);
+            $attr_list .= "<dt>$key:</dt>\n<dd id='$id'>{$book_data[$key]}</dd>\n";
     }
 
     $output = str_replace("££LISTA_ATTRIBUTI££",$attr_list,$output);
