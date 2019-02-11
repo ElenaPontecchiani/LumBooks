@@ -710,7 +710,9 @@ p.required {
     color: #4d4d4d;
     font-style: italic;
 }
-
+#tornasu-button{
+	max-width: 22%;
+}
 
 /* BREAKPOINTS */
 
@@ -843,5 +845,7 @@ p.required {
     .books_collection{
         display: block;
     }
-    
+    #tornasu-button{
+	max-width: 15%;
+	}
 }
